@@ -1,0 +1,94 @@
+[
+  { "Type": "player", "Name": "player", "Location": "front street" },
+  {
+    "Name": "front street",
+    "Description": "It runs north/south and the school is to the west. In the morning the street is the greyest gloomiest place on earth, after 15:30 it's a brightly lit golden pathway to freedom and happiness.",
+    "Help": "You're going to need all the help you can get to survive a day at school, but you don't need any help here.",
+    "Type": "location",
+    "Actions": [
+      {
+        "Verb": "north",
+        "Updates": [
+          {
+            "TargetItem": "player",
+            "Property": "location",
+            "Value": "north street"
+          }
+        ]
+      },
+      {
+        "Verb": "east",
+        "Updates": [
+          {
+            "TargetItem": "player",
+            "Property": "location",
+            "Value": "the way home"
+          }
+        ],
+        "Conditions": [
+          {
+            "Item": "bike",
+            "Property": "location",
+            "Equality": "=",
+            "Value": "player",
+            "FailResponse": "Home is over 2 miles away, the only way to reach home is by riding your iron steed."
+          }
+        ]
+      }
+    ],
+    "Location": "front street"
+  },
+  {
+    "Name": "north street",
+    "Description": "An eclectic collection of detached and semi-detached houses line each side of the street, their value would increase greatly if there weren't thousands of school kids traipsing past twice daily.",
+    "Type": "location",
+    "Actions": [
+      {
+        "Verb": "south",
+        "Updates": [
+          {
+            "TargetItem": "player",
+            "Property": "location",
+            "Value": "front street"
+          }
+        ]
+      },
+      {
+        "Verb": "west",
+        "Updates": [
+          {
+            "TargetItem": "player",
+            "Property": "location",
+            "Value": "north driveway"
+          }
+        ],
+        "Conditions": [
+          {
+            "Item": "bike",
+            "Property": "location",
+            "Value": "player",
+            "FailResponse": "Mr Broom prevents you from going any further, he shouts \"Vehicular access only! Don't you know pedestrians and vehicles don't mix?\" before going about his other business."
+          }
+        ]
+      }
+    ],
+    "Location": "north street"
+  },
+  {
+    "Name": "the way home",
+    "Description": "You are on \"the way home\", congratulations! You have completed your goal and are free from the hell of school for the rest of the day. Be sure to get some R&R tonight and brace yourself for a repeat of the same suffering tomorrow. The End.",
+    "Help": "You won't need any help with anything outside of school.",
+    "Type": "location",
+    "Location": "the way home"
+  },
+
+  {
+    "Name": "bike",
+    "Prefix": "a",
+    "Type": "mobile",
+    "Description": "Your trusty 5 speed bicycle, the fastest way around town and better than Shank's pony.",
+    "Location": "north street",
+    "State": "It has a significant amount of rust.",
+    "Help": "A bike can cover 4 times the distance of a person in the same time, it's the only way to get home in time for tea."
+  }
+]
