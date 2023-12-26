@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import { useEffect, useRef } from "react";
+import { Fragment, useEffect, useRef } from "react";
 import { useWindowSize } from "./useWindowSize";
 import { guid } from "../Utils";
 
@@ -39,11 +39,23 @@ export default function History(props: HistoryType) {
         );
       }
       //output
-      return (
-        <Typography key={guid()} sx={{ color: "text.primary" }}>
-          {h}
-        </Typography>
-      );
+      if (h.includes("|")) {
+        //if multi line content
+        return h.split("|").map((r: string) => {
+          return (
+            <Typography key={guid()} sx={{ color: "text.primary" }}>
+              {r}
+            </Typography>
+          );
+        });
+      } else {
+        //single line content
+        return (
+          <Typography key={guid()} sx={{ color: "text.primary" }}>
+            {h}
+          </Typography>
+        );
+      }
     });
 
     return <Box sx={{ p: 0 }}>{rv}</Box>;

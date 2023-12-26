@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 import History from "./components/History";
 import React from "react";
 import initialWorld from "../src/content/initialWorld.json";
-import { Blurb } from "./content/Blurb";
+import { About, Instructions } from "./content/Blurb";
 
 function App() {
   //#region ThemeProvider
@@ -58,7 +58,11 @@ function App() {
   const [items, setItems] = React.useState<Array<Item>>(
     JSON.parse(JSON.stringify(initialWorld))
   );
-  const [log, setLog] = React.useState<string[]>(Blurb());
+  const [log, setLog] = React.useState<string[]>([
+    About(),
+    ".",
+    Instructions(),
+  ]);
   //#endregion
 
   return (
