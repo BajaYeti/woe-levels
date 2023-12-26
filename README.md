@@ -12,7 +12,7 @@ npm install gh-pages
 Add the following to package.json:
 root:
 ```
-"homepage": "http://BajaYeti.github.io/woe-levels-public",
+"homepage": "http://BajaYeti.github.io/woe-levels",
 ```
 
 

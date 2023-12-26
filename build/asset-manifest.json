@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/woe-levels/static/css/main.64c6e761.css",
+    "main.js": "/woe-levels/static/js/main.483fac0e.js",
+    "index.html": "/woe-levels/index.html",
+    "main.64c6e761.css.map": "/woe-levels/static/css/main.64c6e761.css.map",
+    "main.483fac0e.js.map": "/woe-levels/static/js/main.483fac0e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.64c6e761.css",
+    "static/js/main.483fac0e.js"
+  ]
+}
