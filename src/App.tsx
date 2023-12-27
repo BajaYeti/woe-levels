@@ -62,6 +62,7 @@ function App() {
     About(),
     ".",
     Instructions(),
+    "."
   ]);
   //#endregion
 

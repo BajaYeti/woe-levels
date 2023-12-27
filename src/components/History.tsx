@@ -1,7 +1,8 @@
 import { Box, Typography } from "@mui/material";
-import { Fragment, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useWindowSize } from "./useWindowSize";
 import { guid } from "../Utils";
+import { Carat } from "../content/Constants";
 
 type HistoryType = {
   history: string[];
@@ -20,10 +21,8 @@ export default function History(props: HistoryType) {
   const rows = () => {
     let rv = [] as any;
     rv = props.history.map((h: string) => {
-      //TODO. encode a line break here... split on \n and then map each element to a new Typopgraphy
-      // history: string[]; could be extended to a type that include the type of message to display
       //input
-      if (h.startsWith("-")) {
+      if (h.startsWith(Carat)) {
         return (
           <Typography key={guid()} sx={{ color: "text.secondary" }}>
             {h}

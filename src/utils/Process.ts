@@ -1,3 +1,6 @@
+import { Player } from "../content/Constants";
+import { getItemByName } from "./ItemQueries";
+
 /**
  * Process a user parsed and checked action
  * @param request: An action to be processed
@@ -11,19 +14,32 @@ export function Process(request: Action, items: Array<Item>): Array<Item> {
 
   let updatedItems: Array<Item> = items;
   request.Updates.forEach((u) => {
-    let item = items.find(
-      (i) => i.Name.toLowerCase() === u.TargetItem.toLowerCase()
-    );
-    if (item === null || item === undefined) {
-      return;
-    }
-    switch (u.Property) {
-      case "state":
-        item.State = u.Value;
-        break;
-      default: //location is default property to update
-        item.Location = u.Value;
-        break;
+    let item = getItemByName(items, u.TargetItem.toLowerCase());
+    if (item !== undefined) {
+      switch (u.Property) {
+        case "state":
+          item.State = u.Value;
+          break;
+        default: //location is default property to update
+          item.Location = u.Value;
+          //if player is moving, update location counter for brevity
+          if (item.Name.toLowerCase() === Player) {
+            let location = getItemByName(items, item.Location);
+            if (location !== undefined) {
+              if (
+                location.Count === undefined ||
+                Number.isNaN(location.Count)
+              ) {
+                location.Count = 0;
+                console.log("Counter zeroed");
+              } else {
+                console.log("Counter incremented");
+                location.Count++;
+              }
+            }
+          }
+          break;
+      }
     }
   });
   return updatedItems;
