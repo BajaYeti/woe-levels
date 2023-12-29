@@ -39,6 +39,7 @@ type MyRequest = {
   OK: boolean; //indicate input parsed OK and requires checking
   Look: { Refresh: boolean; Brevity: boolean }; //inidcate that location needs to be displayed again and in full
   Action: Action; //the action to be processed
+  Load: Array<Item> | undefined; //the items to be loaded
 };
 
 type Check = {

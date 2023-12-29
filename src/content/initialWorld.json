@@ -66,7 +66,7 @@
           {
             "Item": "bike",
             "Property": "location",
-            "Value": "player",
+            "Value": "the way home",
             "FailResponse": "Mr Broom prevents you from going any further, he shouts \"Vehicular access only! Don't you know pedestrians and vehicles don't mix?\" before going about his other business."
           }
         ]
@@ -76,7 +76,7 @@
   },
   {
     "Name": "the way home",
-    "Description": "You are on \"the way home\", congratulations! You have completed your goal and are free from the hell of school for the rest of the day. Be sure to get some R&R tonight and brace yourself for a repeat of the same suffering tomorrow. The End.",
+    "Description": "You are on \"the way home\", congratulations! You have completed your goal and are free from the hell of school for the rest of the day. Be sure to get some R&R tonight and brace yourself for a repeat of the same suffering tomorrow. The end.",
     "Help": "You won't need any help with anything outside of school.",
     "Type": "location",
     "Location": "the way home"

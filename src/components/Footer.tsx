@@ -1,5 +1,6 @@
 import { Typography } from "@mui/material";
 import "../global.css";
+import { AppAuthor, AppTitle, AppVersion } from "../content/Constants";
 
 export default function Footer(props: any) {
   return (
@@ -10,8 +11,8 @@ export default function Footer(props: any) {
       sx={{ pt: 3 }}
       className="wl-noselect"
     >
-      {process.env.REACT_APP_TITLE} {process.env.REACT_APP_VERSION} - Copyright ©{" "}
-      {process.env.REACT_APP_AUTHOR} {new Date().getFullYear()}
+      {AppTitle} {AppVersion} - Copyright © {AppAuthor}{" "}
+      {new Date().getFullYear()}
     </Typography>
   );
 }

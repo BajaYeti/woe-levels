@@ -1,9 +1,27 @@
-import { About } from "../content/Blurb";
-import { Player, Location, Look, Help, Get } from "../content/Constants";
+import { getAbout } from "../content/Blurb";
+import {
+  Player,
+  Location,
+  Look,
+  Help,
+  Get,
+  Inventory,
+  About,
+  Instructions,
+  Save,
+  LocalStoargeKey,
+  Load,
+  Examine,
+} from "../content/Constants";
 import { Moves } from "../content/Moves";
 import Truncations from "../content/Truncations.json";
 import { getLocalItems } from "./ItemQueries";
-import { Inventory, getRandomElement } from "./Utils";
+import {
+  getInventory,
+  getRandomElement,
+  loadFromLocalStorage,
+  saveToLocalStorage,
+} from "./Utils";
 
 /**
  *
@@ -30,7 +48,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
       OK: false,
       Look: { Refresh: false, Brevity: true },
       Action: { UnconditionalResponse: "You have ceased to exist." } as Action,
-    };
+    } as MyRequest;
   }
   //#endregion
 
@@ -45,7 +63,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
       Action: {
         UnconditionalResponse: "You have fallen off the map.",
       } as Action,
-    };
+    } as MyRequest;
   }
   //#endregion
 
@@ -67,18 +85,18 @@ export function Parse(input: string, items: Item[]): MyRequest {
           Action: {
             UnconditionalResponse: "You can't move in that direction.",
           } as Action,
-        };
+        } as MyRequest;
       }
       //valid move
       return {
         OK: true,
         Look: { Refresh: true, Brevity: true },
         Action: move,
-      };
+      } as MyRequest;
     }
     // #endregion
 
-    //#region Look
+    //#region LOOK
     if (verb === Look) {
       return {
         OK: true,
@@ -94,18 +112,18 @@ export function Parse(input: string, items: Item[]): MyRequest {
             } as Update,
           ],
         } as Action,
-      };
+      } as MyRequest;
     }
 
-    //#region Inventory
-    if (verb === "inventory") {
+    //#region INVENTORY
+    if (verb === Inventory) {
       return {
         OK: false,
         Look: { Refresh: false, Brevity: true },
         Action: {
-          UnconditionalResponse: Inventory(items),
+          UnconditionalResponse: getInventory(items),
         } as Action,
-      };
+      } as MyRequest;
     }
     //#endregion
 
@@ -129,7 +147,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
             UnconditionalResponse:
               "Like the majority of school life, there is no help here.",
           } as Action,
-        };
+        } as MyRequest;
       }
       return {
         OK: true,
@@ -137,40 +155,83 @@ export function Parse(input: string, items: Item[]): MyRequest {
         Action: {
           UnconditionalResponse: getRandomElement(helps),
         } as Action,
-      };
+      } as MyRequest;
     }
     //#endregion
 
-    //#region About
-    if (verb === "about") {
+    //#region ABOUT
+    if (verb === About) {
       return {
         OK: false,
         Look: { Refresh: false, Brevity: true },
         Action: {
-          UnconditionalResponse: About(),
+          UnconditionalResponse: getAbout(),
         } as Action,
-      };
+      } as MyRequest;
     }
     //#endregion
 
-    //#region Instructions
-    if (verb === "instructions") {
+    //#region INSTRUCTIONS
+    if (verb === Instructions) {
       return {
         OK: false,
         Look: { Refresh: false, Brevity: true },
         Action: {
           UnconditionalResponse: "TODO: Work in progres...",
         } as Action,
-      };
+      } as MyRequest;
     }
-    //#engregion
+    //#endregion
 
-    //#region invalid verb
+    //#region LOAD
+    if (verb === Load) {
+      let load = loadFromLocalStorage(LocalStoargeKey);
+      if (load === undefined) {
+        return {
+          OK: false,
+          Look: { Refresh: false, Brevity: true },
+          Action: {
+            UnconditionalResponse: "No saved game found.",
+          } as Action,
+        } as MyRequest;
+      }
+      return {
+        OK: false,
+        Look: { Refresh: true, Brevity: false },
+        Action: {
+          UnconditionalResponse: "Saved game loaded, take a look around.",
+          Updates: [
+            {
+              TargetItem: Player,
+              Property: Location,
+              Value: location.Name,
+            } as Update,
+          ],
+        } as Action,
+        Load: load,
+      } as MyRequest;
+    }
+    //#endregion
+
+    //#region SAVE
+    if (verb === Save) {
+      let save = saveToLocalStorage(LocalStoargeKey, items);
+      return {
+        OK: false,
+        Look: { Refresh: false, Brevity: true },
+        Action: {
+          UnconditionalResponse: save,
+        } as Action,
+      } as MyRequest;
+    }
+    //#endregion
+
+    //#region INVALID
     return {
       OK: false,
       Look: { Refresh: false, Brevity: true },
       Action: { UnconditionalResponse: "You can't do that here." } as Action,
-    };
+    } as MyRequest;
     //#endregion
   }
   //#endregion
@@ -191,7 +252,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
         Action: {
           UnconditionalResponse: "You can't get that.",
         } as Action,
-      };
+      } as MyRequest;
     }
     //get any specified get actions (with conditions)
     let action = item.Actions?.find((a) => {
@@ -212,7 +273,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
             },
           ],
         } as Action,
-      };
+      } as MyRequest;
     }
     //return custom get action, to check any conditions
     //TODO: Need to assert the Update Value property to current Player
@@ -220,7 +281,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
       OK: true,
       Look: { Refresh: false, Brevity: true },
       Action: action as Action,
-    };
+    } as MyRequest;
   }
   //#endregion
 
@@ -239,7 +300,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
         Action: {
           UnconditionalResponse: "You can't drop that.",
         } as Action,
-      };
+      } as MyRequest;
     }
     //get any specified drop actions (with conditions)
     let action = item.Actions?.find((a) => {
@@ -260,7 +321,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
             },
           ],
         } as Action,
-      };
+      } as MyRequest;
     }
     //return custom drop action
     //TODO: Need to assert the Update Value property to current location
@@ -268,12 +329,12 @@ export function Parse(input: string, items: Item[]): MyRequest {
       OK: true,
       Look: { Refresh: false, Brevity: true },
       Action: action as Action,
-    };
+    } as MyRequest;
   }
   //#endregion
 
   //#region EXAMINE
-  if (verb === "examine") {
+  if (verb === Examine) {
     let item = items.find((i) => {
       return (
         i.Name === noun &&
@@ -287,7 +348,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
         Action: {
           UnconditionalResponse: "You can't examine that here.",
         } as Action,
-      };
+      } as MyRequest;
     }
     //create default examine action is no custom examine action defined
     let state =
@@ -298,7 +359,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
       Action: {
         UnconditionalResponse: `${item.Description}${state}`,
       } as Action,
-    };
+    } as MyRequest;
   }
   //#endregion
 
@@ -308,6 +369,6 @@ export function Parse(input: string, items: Item[]): MyRequest {
     Action: {
       UnconditionalResponse: "Sorry, I don't understand.",
     } as Action,
-  };
+  } as MyRequest;
   //#endregion
 }

@@ -1,7 +1,7 @@
 import { Player } from "../content/Constants";
 import { Moves } from "../content/Moves";
 
-export function Exits(location: Item | undefined): string {
+export function getExits(location: Item | undefined): string {
   if (location === undefined) {
     return "";
   }
@@ -19,10 +19,10 @@ export function Exits(location: Item | undefined): string {
       lastCommaIndex
     )} and${exitList?.substring(lastCommaIndex + 1)}`;
   }
-  return `Exits: ${capitalizeFirstLetter(exitList)}`;
+  return `Exits: ${getFirstLetterCaps(exitList)}`;
 }
 
-export function Inventory(items: Array<Item>): string {
+export function getInventory(items: Array<Item>): string {
   let inv = items.filter((i) => {
     return i.Location === Player;
   });
@@ -40,7 +40,7 @@ export function Inventory(items: Array<Item>): string {
   return `You are carrying ${carrying}`;
 }
 
-export function capitalizeFirstLetter(str: string): string {
+export function getFirstLetterCaps(str: string): string {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
@@ -49,7 +49,7 @@ export function getRandomElement(arr: any[]): any {
   return arr[randomIndex];
 }
 
-export function LocationDescription(
+export function getLocationDescription(
   location: Item | undefined,
   brevity: boolean
 ): string {
@@ -63,11 +63,33 @@ export function LocationDescription(
     location.Count === 0 ||
     !brevity
   ) {
-    description = `${capitalizeFirstLetter(location?.Name)}: ${
+    description = `${getFirstLetterCaps(location?.Name)}: ${
       location?.Description
     }`;
   } else {
-    description = `${capitalizeFirstLetter(location?.Name)}:`;
+    description = `${getFirstLetterCaps(location?.Name)}:`;
   }
   return description;
+}
+
+export function saveToLocalStorage(key: string, data: any): string {
+  try {
+    const serializedData = JSON.stringify(data);
+    localStorage.setItem(key, serializedData);
+    return "Save OK. To continue at a later date using this save, type 'load'";
+  } catch (error) {
+    return `Error saving to localStorage: ${error}`;
+  }
+}
+
+export function loadFromLocalStorage(key: string): any {
+  try {
+    const serializedData = localStorage.getItem(key);
+    if (serializedData === null) {
+      return undefined;
+    }
+    return JSON.parse(serializedData);
+  } catch (error) {
+    return undefined;
+  }
 }

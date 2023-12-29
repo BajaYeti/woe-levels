@@ -5,7 +5,7 @@ import { Process } from "../utils/Process";
 import { Check } from "../utils/Check";
 import { Carat, Player } from "../content/Constants";
 import { View } from "../utils/View";
-import { Exits, LocationDescription } from "../utils/Utils";
+import { getExits, getLocationDescription } from "../utils/Utils";
 import { getItemByName } from "../utils/ItemQueries";
 
 type CommandType = {
@@ -43,6 +43,9 @@ export default function Input(props: CommandType) {
     ) {
       newLog.push(request.Action.UnconditionalResponse);
     }
+    if (request.Load !== undefined) {
+      props.setItems(request.Load);
+    }
     if (request.OK === false) {
       props.setLog(newLog);
       setInput("");
@@ -72,8 +75,8 @@ export default function Input(props: CommandType) {
         : undefined;
       //if user moved, display new location description
       if (location !== undefined && request.Look.Refresh) {
-        newLog.push(LocationDescription(location, request.Look.Brevity));
-        newLog.push(Exits(location));
+        newLog.push(getLocationDescription(location, request.Look.Brevity));
+        newLog.push(getExits(location));
         newLog.push(View(props.items));
       }
     }
