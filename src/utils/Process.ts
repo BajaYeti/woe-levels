@@ -26,14 +26,13 @@ export function Process(request: Action, items: Array<Item>): Array<Item> {
           if (item.Name.toLowerCase() === Player) {
             let location = getItemByName(items, item.Location);
             if (location !== undefined) {
+              //update location counter
               if (
                 location.Count === undefined ||
                 Number.isNaN(location.Count)
               ) {
                 location.Count = 0;
-                console.log("Counter zeroed");
               } else {
-                console.log("Counter incremented");
                 location.Count++;
               }
             }

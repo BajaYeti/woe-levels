@@ -2,7 +2,7 @@
   { "Type": "player", "Name": "player", "Location": "front street" },
   {
     "Name": "front street",
-    "Description": "It runs north/south and the school is to the west. In the morning the street is the greyest gloomiest place on earth, after 15:30 it's a brightly lit golden pathway to freedom and happiness.",
+    "Description": "The street runs north/south, and the school is to the west. In the morning, it is the greyest, gloomiest place on earth. After 15:30, it becomes a brightly lit golden pathway to freedom and happiness.",
     "Help": "You're going to need all the help you can get to survive a day at school, but you don't need any help here.",
     "Type": "location",
     "Actions": [

@@ -1,7 +1,10 @@
 import { Player } from "../content/Constants";
 import { Moves } from "../content/Moves";
 
-export function Exits(location: Item): string {
+export function Exits(location: Item | undefined): string {
+  if (location === undefined) {
+    return "";
+  }
   if (location.Actions === null || location.Actions === undefined) {
     return "";
   }
@@ -44,4 +47,27 @@ export function capitalizeFirstLetter(str: string): string {
 export function getRandomElement(arr: any[]): any {
   const randomIndex = Math.floor(Math.random() * arr.length);
   return arr[randomIndex];
+}
+
+export function LocationDescription(
+  location: Item | undefined,
+  brevity: boolean
+): string {
+  let description = "";
+  if (location === undefined) {
+    return description;
+  }
+  if (
+    location.Count === undefined ||
+    Number.isNaN(location.Count) ||
+    location.Count === 0 ||
+    !brevity
+  ) {
+    description = `${capitalizeFirstLetter(location?.Name)}: ${
+      location?.Description
+    }`;
+  } else {
+    description = `${capitalizeFirstLetter(location?.Name)}:`;
+  }
+  return description;
 }

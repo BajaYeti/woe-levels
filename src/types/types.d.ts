@@ -36,9 +36,9 @@ type Condition = {
 };
 
 type MyRequest = {
-  OK: boolean;
-  Look: boolean;
-  Action: Action;
+  OK: boolean; //indicate input parsed OK and requires checking
+  Look: { Refresh: boolean; Brevity: boolean }; //inidcate that location needs to be displayed again and in full
+  Action: Action; //the action to be processed
 };
 
 type Check = {

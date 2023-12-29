@@ -1,5 +1,5 @@
 import { About } from "../content/Blurb";
-import { Player, Location } from "../content/Constants";
+import { Player, Location, Look, Help, Get } from "../content/Constants";
 import { Moves } from "../content/Moves";
 import Truncations from "../content/Truncations.json";
 import { getLocalItems } from "./ItemQueries";
@@ -28,7 +28,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
   if (player === null || player === undefined) {
     return {
       OK: false,
-      Look: false,
+      Look: { Refresh: false, Brevity: true },
       Action: { UnconditionalResponse: "You have ceased to exist." } as Action,
     };
   }
@@ -41,7 +41,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
   if (location === null || location === undefined) {
     return {
       OK: false,
-      Look: false,
+      Look: { Refresh: false, Brevity: true },
       Action: {
         UnconditionalResponse: "You have fallen off the map.",
       } as Action,
@@ -63,7 +63,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
       if (move === null || move === undefined) {
         return {
           OK: false,
-          Look: false,
+          Look: { Refresh: false, Brevity: true },
           Action: {
             UnconditionalResponse: "You can't move in that direction.",
           } as Action,
@@ -72,22 +72,36 @@ export function Parse(input: string, items: Item[]): MyRequest {
       //valid move
       return {
         OK: true,
-        Look: true,
+        Look: { Refresh: true, Brevity: true },
         Action: move,
       };
     }
     // #endregion
 
     //#region Look
-    if (verb === "look") {
-      return { OK: true, Look: true, Action: {} as Action };
+    if (verb === Look) {
+      return {
+        OK: true,
+        Look: { Refresh: true, Brevity: false },
+        //create a dummy action to move the player to the same location
+        //  this is all to achieve a move count on the very first move!
+        Action: {
+          Updates: [
+            {
+              TargetItem: Player,
+              Property: Location,
+              Value: location.Name,
+            } as Update,
+          ],
+        } as Action,
+      };
     }
 
     //#region Inventory
     if (verb === "inventory") {
       return {
         OK: false,
-        Look: false,
+        Look: { Refresh: false, Brevity: true },
         Action: {
           UnconditionalResponse: Inventory(items),
         } as Action,
@@ -98,7 +112,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
     //#endregion
 
     //#region HELP
-    if (verb === "help") {
+    if (verb === Help) {
       let local = getLocalItems(items, location?.Name);
       let helps = local
         .filter((i) => {
@@ -110,7 +124,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
       if (helps.length === 0) {
         return {
           OK: true,
-          Look: false,
+          Look: { Refresh: false, Brevity: true },
           Action: {
             UnconditionalResponse:
               "Like the majority of school life, there is no help here.",
@@ -119,7 +133,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
       }
       return {
         OK: true,
-        Look: false,
+        Look: { Refresh: false, Brevity: true },
         Action: {
           UnconditionalResponse: getRandomElement(helps),
         } as Action,
@@ -131,7 +145,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
     if (verb === "about") {
       return {
         OK: false,
-        Look: false,
+        Look: { Refresh: false, Brevity: true },
         Action: {
           UnconditionalResponse: About(),
         } as Action,
@@ -143,7 +157,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
     if (verb === "instructions") {
       return {
         OK: false,
-        Look: false,
+        Look: { Refresh: false, Brevity: true },
         Action: {
           UnconditionalResponse: "TODO: Work in progres...",
         } as Action,
@@ -154,7 +168,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
     //#region invalid verb
     return {
       OK: false,
-      Look: false,
+      Look: { Refresh: false, Brevity: true },
       Action: { UnconditionalResponse: "You can't do that here." } as Action,
     };
     //#endregion
@@ -164,7 +178,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
   //#region VERB & NOUN
 
   //#region GET
-  if (verb === "get") {
+  if (verb === Get) {
     let item = items.find((i) => {
       return (
         i.Name === noun && i.Location === location?.Name && i.Type === "mobile"
@@ -173,7 +187,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
     if (item === null || item === undefined) {
       return {
         OK: false,
-        Look: false,
+        Look: { Refresh: false, Brevity: true },
         Action: {
           UnconditionalResponse: "You can't get that.",
         } as Action,
@@ -181,13 +195,13 @@ export function Parse(input: string, items: Item[]): MyRequest {
     }
     //get any specified get actions (with conditions)
     let action = item.Actions?.find((a) => {
-      return a.Verb === "get";
+      return a.Verb === Get;
     });
     //create default get action is no custom get action defined
     if (action === null || action === undefined) {
       return {
         OK: true,
-        Look: false,
+        Look: { Refresh: false, Brevity: true },
         Action: {
           UnconditionalResponse: `You got the ${item.Name}.`,
           Updates: [
@@ -204,7 +218,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
     //TODO: Need to assert the Update Value property to current Player
     return {
       OK: true,
-      Look: false,
+      Look: { Refresh: false, Brevity: true },
       Action: action as Action,
     };
   }
@@ -221,7 +235,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
     if (item === null || item === undefined) {
       return {
         OK: false,
-        Look: false,
+        Look: { Refresh: false, Brevity: true },
         Action: {
           UnconditionalResponse: "You can't drop that.",
         } as Action,
@@ -235,7 +249,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
     if (action === null || action === undefined) {
       return {
         OK: true,
-        Look: false,
+        Look: { Refresh: false, Brevity: true },
         Action: {
           UnconditionalResponse: `You dropped the ${item.Name}.`,
           Updates: [
@@ -252,7 +266,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
     //TODO: Need to assert the Update Value property to current location
     return {
       OK: true,
-      Look: false,
+      Look: { Refresh: false, Brevity: true },
       Action: action as Action,
     };
   }
@@ -269,7 +283,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
     if (item === null || item === undefined) {
       return {
         OK: false,
-        Look: false,
+        Look: { Refresh: false, Brevity: true },
         Action: {
           UnconditionalResponse: "You can't examine that here.",
         } as Action,
@@ -280,7 +294,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
       item.State === null || item.State === undefined ? "" : ` ${item.State}`;
     return {
       OK: false,
-      Look: false,
+      Look: { Refresh: false, Brevity: true },
       Action: {
         UnconditionalResponse: `${item.Description}${state}`,
       } as Action,
@@ -290,7 +304,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
 
   return {
     OK: false,
-    Look: false,
+    Look: { Refresh: false, Brevity: true },
     Action: {
       UnconditionalResponse: "Sorry, I don't understand.",
     } as Action,

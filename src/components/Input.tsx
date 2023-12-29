@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import { TextField, capitalize } from "@mui/material";
+import { TextField } from "@mui/material";
 import { Parse } from "../utils/Parse";
 import { Process } from "../utils/Process";
 import { Check } from "../utils/Check";
 import { Carat, Player } from "../content/Constants";
 import { View } from "../utils/View";
-import { Exits, capitalizeFirstLetter } from "../utils/Utils";
+import { Exits, LocationDescription } from "../utils/Utils";
 import { getItemByName } from "../utils/ItemQueries";
 
 type CommandType = {
@@ -16,10 +16,11 @@ type CommandType = {
 };
 
 export default function Input(props: CommandType) {
-  //rename to INPUT
   const [input, setInput] = React.useState<string>("");
+  //look action on page load
   useEffect(() => {
     act("look");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const keyPress = (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -66,12 +67,12 @@ export default function Input(props: CommandType) {
     if (result.length > 0) {
       props.setItems(result);
       let player = result.find((i) => i.Name === Player);
-      let location = props.items.find((l) => l.Name === player?.Location);
+      let location = player
+        ? getItemByName(props.items, player.Location)
+        : undefined;
       //if user moved, display new location description
-      if (location !== null && location !== undefined && request.Look) {
-        newLog.push(
-          `${capitalizeFirstLetter(location?.Name)}: ${location?.Description}`
-        );
+      if (location !== undefined && request.Look.Refresh) {
+        newLog.push(LocationDescription(location, request.Look.Brevity));
         newLog.push(Exits(location));
         newLog.push(View(props.items));
       }
