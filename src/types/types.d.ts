@@ -46,3 +46,8 @@ type Check = {
   OK: boolean;
   Feedback: string | null;
 };
+
+type Truncation = {
+  short: string;
+  long: string;
+};

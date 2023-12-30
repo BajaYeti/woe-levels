@@ -1,4 +1,3 @@
-import { getAbout } from "../content/Blurb";
 import {
   Player,
   Location,
@@ -12,9 +11,11 @@ import {
   LocalStoargeKey,
   Load,
   Examine,
+  AboutResponse,
+  InstructionsResponse,
+  Moves,
 } from "../content/Constants";
-import { Moves } from "../content/Moves";
-import Truncations from "../content/Truncations.json";
+import { Truncations } from "../content/Constants";
 import { getLocalItems } from "./ItemQueries";
 import {
   getInventory,
@@ -165,7 +166,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
         OK: false,
         Look: { Refresh: false, Brevity: true },
         Action: {
-          UnconditionalResponse: getAbout(),
+          UnconditionalResponse: AboutResponse,
         } as Action,
       } as MyRequest;
     }
@@ -177,7 +178,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
         OK: false,
         Look: { Refresh: false, Brevity: true },
         Action: {
-          UnconditionalResponse: "TODO: Work in progres...",
+          UnconditionalResponse: InstructionsResponse,
         } as Action,
       } as MyRequest;
     }
@@ -258,7 +259,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
     let action = item.Actions?.find((a) => {
       return a.Verb === Get;
     });
-    //create default get action is no custom get action defined
+    //create default get action if no custom get action defined
     if (action === null || action === undefined) {
       return {
         OK: true,
@@ -276,7 +277,6 @@ export function Parse(input: string, items: Item[]): MyRequest {
       } as MyRequest;
     }
     //return custom get action, to check any conditions
-    //TODO: Need to assert the Update Value property to current Player
     return {
       OK: true,
       Look: { Refresh: false, Brevity: true },
@@ -324,7 +324,6 @@ export function Parse(input: string, items: Item[]): MyRequest {
       } as MyRequest;
     }
     //return custom drop action
-    //TODO: Need to assert the Update Value property to current location
     return {
       OK: true,
       Look: { Refresh: false, Brevity: true },

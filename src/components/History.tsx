@@ -1,15 +1,15 @@
 import { Box, Typography } from "@mui/material";
 import { useEffect, useRef } from "react";
-import { useWindowSize } from "./useWindowSize";
 import { guid } from "../Utils";
 import { Carat } from "../content/Constants";
+import { useWindowSize } from "../utils/WindowSize";
 
 type HistoryType = {
   history: string[];
 };
 
 export default function History(props: HistoryType) {
-  const { height, width } = useWindowSize(250);
+  const { height } = useWindowSize(250);
   const messagesEndRef = useRef<null | HTMLDivElement>(null);
   const scrollToBottom = () => {
     if (messagesEndRef.current) {

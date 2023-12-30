@@ -67,7 +67,6 @@ export function Check(action: Action, items: Array<Item>): Check {
   });
 
   //return flatted uncondition response if all conditions pass
-  //TODO - not sure if this is the best way to handle this
   let failed = checked.find((c) => c.OK === false);
   if (failed === null || failed === undefined) {
     let flattened = checked.map((c) => c.Feedback).join(". ");

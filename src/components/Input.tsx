@@ -4,8 +4,7 @@ import { Parse } from "../utils/Parse";
 import { Process } from "../utils/Process";
 import { Check } from "../utils/Check";
 import { Carat, Player } from "../content/Constants";
-import { View } from "../utils/View";
-import { getExits, getLocationDescription } from "../utils/Utils";
+import { getView, getExits, getLocationDescription } from "../utils/Utils";
 import { getItemByName } from "../utils/ItemQueries";
 
 type CommandType = {
@@ -77,7 +76,7 @@ export default function Input(props: CommandType) {
       if (location !== undefined && request.Look.Refresh) {
         newLog.push(getLocationDescription(location, request.Look.Brevity));
         newLog.push(getExits(location));
-        newLog.push(View(props.items));
+        newLog.push(getView(props.items));
       }
     }
     //#endregion
