@@ -3,9 +3,9 @@ import { TextField } from "@mui/material";
 import { Parse } from "../utils/Parse";
 import { Process } from "../utils/Process";
 import { Check } from "../utils/Check";
-import { Carat, Player } from "../content/Constants";
+import { Carat } from "../content/Constants";
 import { getView, getExits, getLocationDescription } from "../utils/Utils";
-import { getItemByName } from "../utils/ItemQueries";
+import { getItemByName, getPlayer } from "../utils/ItemQueries";
 
 type CommandType = {
   items: Array<Item>;
@@ -68,7 +68,7 @@ export default function Input(props: CommandType) {
     let result = Process(request.Action, props.items);
     if (result.length > 0) {
       props.setItems(result);
-      let player = result.find((i) => i.Name === Player);
+      let player = getPlayer(result);
       let location = player
         ? getItemByName(props.items, player.Location)
         : undefined;

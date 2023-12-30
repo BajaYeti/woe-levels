@@ -16,7 +16,14 @@ import {
   Moves,
 } from "../content/Constants";
 import { Truncations } from "../content/Constants";
-import { getLocalItems } from "./ItemQueries";
+import {
+  getDropableItem,
+  getGettableItem,
+  getLocalItem,
+  getLocalItems,
+  getLocation,
+  getPlayer,
+} from "./ItemQueries";
 import {
   getInventory,
   getRandomElement,
@@ -41,9 +48,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
   let verb = trunc === null || trunc === undefined ? actual : trunc;
 
   //#region get player
-  let player = items.find((i) => {
-    return i.Type === Player;
-  });
+  let player = getPlayer(items);
   if (player === null || player === undefined) {
     return {
       OK: false,
@@ -54,9 +59,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
   //#endregion
 
   //#region get player's location
-  let location = items.find((i) => {
-    return i.Type === Location && i.Location === player?.Location;
-  });
+  let location = getLocation(items);
   if (location === null || location === undefined) {
     return {
       OK: false,
@@ -241,11 +244,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
 
   //#region GET
   if (verb === Get) {
-    let item = items.find((i) => {
-      return (
-        i.Name === noun && i.Location === location?.Name && i.Type === "mobile"
-      );
-    });
+    let item = getGettableItem(items, noun);
     if (item === null || item === undefined) {
       return {
         OK: false,
@@ -287,12 +286,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
 
   //#region DROP
   if (verb === "drop") {
-    let item = items.find((i) => {
-      return (
-        i.Name === noun &&
-        (i.Location === location?.Name || i.Location === Player)
-      );
-    });
+    let item = getDropableItem(items, noun);
     if (item === null || item === undefined) {
       return {
         OK: false,
@@ -334,12 +328,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
 
   //#region EXAMINE
   if (verb === Examine) {
-    let item = items.find((i) => {
-      return (
-        i.Name === noun &&
-        (i.Location === location?.Name || i.Location === Player)
-      );
-    });
+    let item = getLocalItem(items, noun);
     if (item === null || item === undefined) {
       return {
         OK: false,

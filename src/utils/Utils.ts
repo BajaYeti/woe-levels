@@ -1,4 +1,5 @@
 import { Mobile, Player, Moves } from "../content/Constants";
+import { getLocation, getPlayer } from "./ItemQueries";
 
 export function getExits(location: Item | undefined): string {
   if (location === undefined) {
@@ -72,8 +73,8 @@ export function getLocationDescription(
 }
 
 export function getView(items: Array<Item>): string {
-  let player = items.find((i) => i.Name === Player);
-  let location = items.find((i) => i.Name === player?.Location);
+  let player = getPlayer(items);
+  let location = getLocation(items);
   if (location === null && location === undefined) {
     return "You cannot see where you are.";
   }

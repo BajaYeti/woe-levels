@@ -1,3 +1,5 @@
+import { getItemByName } from "./ItemQueries";
+
 /**
  * Check all conditions for an action
  * @param action
@@ -14,7 +16,7 @@ export function Check(action: Action, items: Array<Item>): Check {
   }
 
   let checked: Array<Check> = action.Conditions.map((c) => {
-    let item = items.find((i) => i.Name === c.Item);
+    let item = getItemByName(items, c.Item);
     if (item === null || item === undefined) {
       return { OK: false, Feedback: "Uh oh!" };
     }
