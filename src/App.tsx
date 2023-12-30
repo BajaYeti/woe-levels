@@ -6,7 +6,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Footer from "./components/Footer";
 import History from "./components/History";
 import React from "react";
-import initialWorld from "../src/content/initialWorld.json";
+import World from "../src/content/World.json";
 import { AboutResponse, InstructionsResponse } from "./content/Constants";
 
 function App() {
@@ -56,7 +56,7 @@ function App() {
 
   //#region HOOKS
   const [items, setItems] = React.useState<Array<Item>>(
-    JSON.parse(JSON.stringify(initialWorld))
+    JSON.parse(JSON.stringify(World))
   );
   const [log, setLog] = React.useState<string[]>([
     AboutResponse,

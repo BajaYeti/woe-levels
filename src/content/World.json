@@ -1,4 +1,5 @@
 [
+  { "Type": "version", "Name": "version", "Location": "V0.0.1" },
   { "Type": "player", "Name": "player", "Location": "front street" },
   {
     "Name": "front street",

@@ -1,0 +1,31 @@
+{
+  "Item": {
+    "Name": "Main Road",
+    "Description": "The main road through the town and runs east/west with two lanes of traffic in each direction, intersecting the school street at a large traffic light controlled junction. Due to the volume of traffic the only way across is via a pedestrian bridge.",
+    "Type": "location",
+    "Actions": [
+      {
+        "Verb": "up",
+        "UnconditionalResponse": "You climb the dog-leg steps of the Blue Bridge and walk across to the middle of the bridge's span.",
+        "Updates": [
+          {
+            "TargetItem": "player",
+            "Property": "Location",
+            "Value": "Blue Bridge"
+          }
+        ]
+      },
+      {
+        "Verb": "south",
+        "Updates": [
+          {
+            "TargetItem": "player",
+            "Property": "Location",
+            "Value": "North Street"
+          }
+        ]
+      }
+    ],
+    "Location": "Main Road"
+  }
+}

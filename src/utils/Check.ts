@@ -25,7 +25,7 @@ export function Check(action: Action, items: Array<Item>): Check {
     let value = "";
     switch (c.Property) {
       case "state":
-        value = item.State.toLowerCase();
+        value = item.State?.toLowerCase();
         break;
       default: //Location is default
         value = item.Location.toLowerCase();
