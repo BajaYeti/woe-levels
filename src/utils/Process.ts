@@ -1,4 +1,4 @@
-import { Player } from "../content/Constants";
+import { FrontStreet, Player } from "../content/Constants";
 import { getItemByName } from "./ItemQueries";
 
 /**
@@ -35,6 +35,12 @@ export function Process(request: Action, items: Array<Item>): Array<Item> {
               } else {
                 location.Count++;
               }
+            } else {
+              //catch breaking move and tele port back to front street
+              console.log(
+                `Player moved to undefined location "${item.Location}"`
+              );
+              item.Location = FrontStreet;
             }
           }
           break;

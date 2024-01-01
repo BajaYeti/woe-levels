@@ -14,6 +14,7 @@ import {
   AboutResponse,
   InstructionsResponse,
   Moves,
+  FrontStreet,
 } from "../content/Constants";
 import { Truncations } from "../content/Constants";
 import {
@@ -52,8 +53,17 @@ export function Parse(input: string, items: Item[]): MyRequest {
   if (player === null || player === undefined) {
     return {
       OK: false,
-      Look: { Refresh: false, Brevity: true },
-      Action: { UnconditionalResponse: "You have ceased to exist." } as Action,
+      Look: { Refresh: true, Brevity: false },
+      Action: {
+        UnconditionalResponse: `You have ceased to exist, but through the magic of adventure you are granted an extra life and teleported back to ${FrontStreet}.`,
+        Updates: [
+          {
+            TargetItem: Player,
+            Property: Location,
+            Value: FrontStreet,
+          } as Update,
+        ],
+      } as Action,
     } as MyRequest;
   }
   //#endregion
@@ -62,10 +72,17 @@ export function Parse(input: string, items: Item[]): MyRequest {
   let location = getLocation(items);
   if (location === null || location === undefined) {
     return {
-      OK: false,
-      Look: { Refresh: false, Brevity: true },
+      OK: true,
+      Look: { Refresh: true, Brevity: false },
       Action: {
-        UnconditionalResponse: "You have fallen off the map.",
+        UnconditionalResponse: `You have fallen off the map, but through the magic of adventure you are granted an extra life and teleported back to ${FrontStreet}.`,
+        Updates: [
+          {
+            TargetItem: Player,
+            Property: Location,
+            Value: FrontStreet,
+          } as Update,
+        ],
       } as Action,
     } as MyRequest;
   }

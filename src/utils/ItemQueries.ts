@@ -37,7 +37,7 @@ export function getItemByName(
   items: Array<Item>,
   name: string
 ): Item | undefined {
-  return items.find((i) => i.Name.toLowerCase() === name.toLowerCase());
+  return items.find((i) => i.Name?.toLowerCase() === name.toLowerCase());
 }
 
 export function getPlayer(items: Array<Item>): Item | undefined {

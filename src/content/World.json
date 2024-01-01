@@ -1,9 +1,15 @@
 [
-  { "Type": "version", "Name": "version", "Location": "V0.0.1" },
+  { "Type": "version", "Name": "version", "Location": "V0.0.2" },
   { "Type": "player", "Name": "player", "Location": "front street" },
+
+  {
+    "Name": "hidden",
+    "Type": "location",
+    "Description": "An unreachable location used to hide items from the player"
+  },
   {
     "Name": "front street",
-    "Description": "The street runs north/south, and the school is to the west. In the morning, it is the greyest, gloomiest place on earth. After 15:30, it becomes a brightly lit golden pathway to freedom and happiness.",
+    "Description": "The street runs north/south, and the school is to the west. In the morning, it is the greyest, gloomiest place on earth, but after 'home time', it becomes a brightly lit golden pathway to freedom and happiness.",
     "Help": "You're going to need all the help you can get to survive a day at school, but you don't need any help here.",
     "Type": "location",
     "Actions": [
@@ -45,6 +51,16 @@
     "Type": "location",
     "Actions": [
       {
+        "Verb": "north",
+        "Updates": [
+          {
+            "TargetItem": "player",
+            "Property": "location",
+            "Value": "main road"
+          }
+        ]
+      },
+      {
         "Verb": "south",
         "Updates": [
           {
@@ -67,8 +83,9 @@
           {
             "Item": "bike",
             "Property": "location",
-            "Value": "the way home",
-            "FailResponse": "Mr Broom prevents you from going any further, he shouts \"Vehicular access only! Don't you know pedestrians and vehicles don't mix?\" before going about his other business."
+            "Value": "player",
+            "FailResponse": "Mr Broom prevents you from going any further, he shouts \"Vehicular access only! Don't you know pedestrians and vehicles don't mix?\" before going about his other business.",
+            "PassResponse": "Mr Broom is busy sweeping the driveway, he doesn't notice you as you ride past."
           }
         ]
       }
@@ -81,6 +98,35 @@
     "Help": "You won't need any help with anything outside of school.",
     "Type": "location",
     "Location": "the way home"
+  },
+  {
+    "Name": "main road",
+    "Location": "main road",
+    "Type": "location",
+    "Description": "The east-west road bisects the town, carrying two lanes of traffic in each direction and intersecting the school access road at a large, traffic-light controlled junction. Due to the volume of traffic, the only way across is via a blue pedestrian bridge, offering a safe haven above the bustling flow below.",
+    "Actions": [
+      {
+        "Verb": "up",
+        "UnconditionalResponse": "You climb the dog-leg steps of the blue bridge and walk across to the middle of the bridge's span.",
+        "Updates": [
+          {
+            "TargetItem": "player",
+            "Property": "location",
+            "Value": "blue bridge"
+          }
+        ]
+      },
+      {
+        "Verb": "south",
+        "Updates": [
+          {
+            "TargetItem": "player",
+            "Property": "location",
+            "Value": "north street"
+          }
+        ]
+      }
+    ]
   },
 
   {

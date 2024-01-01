@@ -67,7 +67,7 @@ export function getLocationDescription(
       location?.Description
     }`;
   } else {
-    description = `${getFirstLetterCaps(location?.Name)}:`;
+    description = `${getFirstLetterCaps(location?.Name)}.`;
   }
   return description;
 }
