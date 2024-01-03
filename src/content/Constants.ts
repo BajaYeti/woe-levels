@@ -4,13 +4,15 @@ export const AppAuthor = "BajaYeti";
 export const LocalStoargeKey = "woe-levels";
 
 export const Player = "player";
+export const Location = "location";
+export const Person = "person";
 export const Mobile = "mobile";
 export const Fixed = "fixed";
-export const Location = "location";
 export const Carat = "-";
 export const Look = "look";
 export const Help = "help";
 export const Get = "get";
+export const Drop = "drop";
 export const Inventory = "inventory";
 export const About = "about";
 export const Instructions = "instructions";

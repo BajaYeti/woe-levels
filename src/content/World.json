@@ -1,5 +1,5 @@
 [
-  { "Type": "version", "Name": "version", "Description": "V0.0.5" },
+  { "Type": "version", "Name": "version", "Description": "V0.0.7" },
   {
     "Name": "player",
     "Type": "player",
@@ -7,12 +7,11 @@
   },
   {
     "Name": "hidden",
-    "Description": "An unreachable location used to hide items from the player",
+    "Description": "An unreachable location used to hide items from the player.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "in",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -25,14 +24,71 @@
     "Location": "hidden"
   },
   {
+    "Name": "front street",
+    "Description": "The street runs north/south with the school is to the west. In the morning the street is the greyest gloomiest place on earth, after 15:30 it's a brightly lit golden pathway to freedom and happiness.",
+    "Help": "You are going to need all the help you can get because last night's homework assignments were English, French, maths, physics, biology, chemistry, geography, history, woodwork, metalwork, P.E., GED, art, home economics and drama. Good job there was less than usual homework yesterday!",
+    "Type": "location",
+    "Actions": [
+      {
+        "Verb": "north",
+        "Updates": [
+          {
+            "TargetItem": "player",
+            "Property": "location",
+            "Value": "north street"
+          }
+        ]
+      },
+      {
+        "Verb": "east",
+        "Updates": [
+          {
+            "TargetItem": "player",
+            "Property": "location",
+            "Value": "the way home"
+          }
+        ],
+        "Conditions": [
+          {
+            "Item": "bike",
+            "Property": "location",
+            "Value": "player",
+            "PassResponse": "you have completed your goal!",
+            "FailResponse": "home is over 2 miles away, the only way to reach home is by riding your iron steed."
+          }
+        ]
+      },
+      {
+        "Verb": "south",
+        "Updates": [
+          {
+            "TargetItem": "player",
+            "Property": "location",
+            "Value": "south street"
+          }
+        ]
+      },
+      {
+        "Verb": "west",
+        "Updates": [
+          {
+            "TargetItem": "player",
+            "Property": "location",
+            "Value": "front path"
+          }
+        ]
+      }
+    ],
+    "Location": "front street"
+  },
+  {
     "Name": "north driveway",
-    "Description": "connects the school property to the public road and allows small vehicle access. the north driveway entrance is used mostly by pupils who cycle to school, those who are live the furthest away and don't have the luxury of generous parents to provide endless taxi services.",
-    "Help": "the north driveway is the only place you can take bicycles into and out of the school property.",
+    "Description": "The driveway connects the school property to the public road and allows small vehicle access. the north driveway entrance is used mostly by pupils who cycle to school, those who are live the furthest away and don't have the luxury of generous parents to provide endless taxi services.",
+    "Help": "A driveway is the only place you can take bicycles into and out of the school property.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -52,7 +108,6 @@
             "Item": "pencil",
             "Property": "location",
             "Value": "player",
-
             "FailResponse": "it would be unwise to leave school without your trusty pencil, not only will you be unable to do any homework but you are unlikely to get back into school!"
           },
           {
@@ -60,7 +115,6 @@
             "Property": "state",
             "Equality": "*",
             "Value": "homework",
-
             "FailResponse": "miss battle prevents you from leaving, insisting that you still need to hand in your homework although her gaze never strays from the direction of the front path."
           },
           {
@@ -68,7 +122,6 @@
             "Property": "state",
             "Equality": "*",
             "Value": "homework",
-
             "FailResponse": "miss french vous empêche de partir, insistant sur le fait que vous devez toujours rendre vos devoirs."
           },
           {
@@ -76,15 +129,13 @@
             "Property": "state",
             "Equality": "*",
             "Value": "certificate",
-
-            "FailResponse": "mr ball prevents you from leaving, insisting that you still need to hand in your homework while jogging on the spot."
+            "FailResponse": "mr ball prevents you from leaving, insisting that you still need to hand in your P.E. homework while jogging on the spot."
           },
           {
             "Item": "dr atom",
             "Property": "state",
             "Equality": "*",
             "Value": "homework",
-
             "FailResponse": "dr atom prevents you from leaving, insisting that you still need to hand in your physics homework."
           },
           {
@@ -92,7 +143,6 @@
             "Property": "state",
             "Equality": "*",
             "Value": "homework",
-
             "FailResponse": "mr foot leaps out in front of you like an energetic frog and prevents you from leaving school, \"you don't seem to have submitted your biology homework.\" he asserts firmly, before hopping off as quickly as he appeared."
           },
           {
@@ -100,7 +150,6 @@
             "Property": "state",
             "Equality": "*",
             "Value": "homework",
-
             "FailResponse": "mr square prevents you from leaving, insisting that you still need to hand in your homework - he seems aggrieved at having to ask you and would rather be off drawing isometric objects."
           },
           {
@@ -108,7 +157,6 @@
             "Property": "state",
             "Equality": "*",
             "Value": "homework",
-
             "FailResponse": "mr rhumb prevents you from leaving, insisting that you still need to hand in your geography homework, although it pains him to do so."
           },
           {
@@ -116,7 +164,6 @@
             "Property": "state",
             "Equality": "*",
             "Value": "homework",
-
             "FailResponse": "mr silver prevents you from leaving, insisting that you still need to hand in your homework."
           },
           {
@@ -124,7 +171,6 @@
             "Property": "state",
             "Equality": "*",
             "Value": "homework",
-
             "FailResponse": "miss sketch timidly chases after you and politely informs you that you haven't submitted your art homework yet, she is so nice it would be a crime not to hand in your art homework before going home."
           },
           {
@@ -132,7 +178,6 @@
             "Property": "state",
             "Equality": "*",
             "Value": "doodles",
-
             "FailResponse": "miss sharp prevents you from leaving, stating that you still need to hand in your music homework in almost song."
           },
           {
@@ -140,7 +185,6 @@
             "Property": "state",
             "Equality": "*",
             "Value": "homework",
-
             "FailResponse": "mr saw prevents you from leaving, insisting that you still need to hand in your homework."
           },
           {
@@ -148,7 +192,6 @@
             "Property": "state",
             "Equality": "*",
             "Value": "homework",
-
             "FailResponse": "mrs bakewell prevents you from leaving, insisting that you still need to hand in your homework - she looks hungry too!"
           },
           {
@@ -156,7 +199,6 @@
             "Property": "state",
             "Equality": "*",
             "Value": "maths homework",
-
             "FailResponse": "mr bodmas leaps out from no-where and prevents you from leaving school, \"i don't seem to have your maths homework.\" he asserts firmly, before disappearing as quickly as he appeared."
           },
           {
@@ -164,7 +206,6 @@
             "Property": "state",
             "Equality": "*",
             "Value": "homework",
-
             "FailResponse": "miss mcqueen prevents you from leaving, stating that you still need to hand in your homework dramatically."
           },
           {
@@ -172,7 +213,6 @@
             "Property": "state",
             "Equality": "*",
             "Value": "homework",
-
             "FailResponse": "mr booker prevents you from leaving, stating that you still need to hand in your homework in a soliloquy."
           },
           {
@@ -180,14 +220,12 @@
             "Property": "state",
             "Equality": "*",
             "Value": "keyring",
-
             "FailResponse": "mr steel prevents you from leaving, insisting that you still need to hand in your homework."
           }
         ]
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -227,7 +265,6 @@
     "Actions": [
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -240,76 +277,13 @@
     "Location": "the way home"
   },
   {
-    "Name": "front street",
-
-    "Description": "it runs north/south and the school is to the west. in the morning the street is the greyest gloomiest place on earth, after 15:30 it's a brightly lit golden pathway to freedom and happiness.",
-    "Help": "you're going to need all the help you can get to survive a day at school, but you don't need any help here.",
-    "Type": "location",
-    "Actions": [
-      {
-        "Verb": "north",
-
-        "Updates": [
-          {
-            "TargetItem": "player",
-            "Property": "location",
-            "Value": "north street"
-          }
-        ]
-      },
-      {
-        "Verb": "east",
-        "Updates": [
-          {
-            "TargetItem": "player",
-            "Property": "location",
-            "Value": "the way home"
-          }
-        ],
-        "Conditions": [
-          {
-            "Item": "bike",
-            "Property": "location",
-            "Value": "player",
-            "PassResponse": "you have completed your goal!",
-            "FailResponse": "home is over 2 miles away, the only way to reach home is by riding your iron steed."
-          }
-        ]
-      },
-      {
-        "Verb": "south",
-
-        "Updates": [
-          {
-            "TargetItem": "player",
-            "Property": "location",
-            "Value": "south street"
-          }
-        ]
-      },
-      {
-        "Verb": "west",
-        "Updates": [
-          {
-            "TargetItem": "player",
-            "Property": "location",
-            "Value": "front path"
-          }
-        ]
-      }
-    ],
-    "Location": "front street"
-  },
-  {
     "Name": "south street",
-
     "Description": "lined with flint stone wall houses interspersed by thatched cottages, this is clearly heading towards the better part of town.",
     "Help": "you will need a lot of financial help to live in this part of town.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -320,7 +294,6 @@
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -344,14 +317,11 @@
   },
   {
     "Name": "south driveway",
-
     "Description": "connects the school property to the public road and allows large vehicle access. although pedestrial access is allowed pupils rarely use it because it is quicker to leave by any other exit.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -364,14 +334,12 @@
             "Item": "pencil",
             "Property": "location",
             "Value": "player",
-
             "FailResponse": "it would be unwise to leave school without your trusty pencil, not only will you be unable to do any homework but you are unlikely to get back into school!"
           }
         ]
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -385,7 +353,6 @@
   },
   {
     "Name": "front path",
-
     "Description": "well attended and the surrounding lawns are immaculate; it looks like the entire school maintenance budget has been spent here merely to impress passers-by and anyone who won't ever venture inside.",
     "Help": "don't show any sign of weakness here, you will need all your fortitude to survive the day.",
     "Type": "location",
@@ -402,7 +369,6 @@
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -426,7 +392,6 @@
   },
   {
     "Name": "entrance hall",
-
     "Description": "exhibits all the pomp and circumstance required to lull parents into a false belief that the school is being run in a professional way. the cracks are showing and it is not as well maintained as the public façade outside. celebrations of current locale festivals adorn the walls with endless contributions from pupils.",
     "Help": "you fell very conspicuous so don't do anything silly.",
     "Type": "location",
@@ -455,14 +420,12 @@
             "Item": "pencil",
             "Property": "location",
             "Value": "player",
-
             "FailResponse": "it would be unwise to leave school without your trusty pencil, not only will you be unable to do any homework but you are unlikely to get back into school!"
           }
         ]
       },
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -473,7 +436,6 @@
       },
       {
         "Verb": "southwest",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -484,7 +446,6 @@
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -498,14 +459,12 @@
   },
   {
     "Name": "corridor of gloom",
-
     "Description": "a horrific sense of dread overwhelms you as there is very little natural ligh heret. it's the central hub of paths behind the entrance hall but it's forebodingness sums up the remainder of the school accurately.",
     "Help": "go towards the light, although not metaphorically!",
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -526,7 +485,6 @@
       },
       {
         "Verb": "southwest",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -537,7 +495,6 @@
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -548,7 +505,6 @@
       },
       {
         "Verb": "northwest",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -573,14 +529,12 @@
   },
   {
     "Name": "east toilets",
-
     "Description": "a very unpleasant place to be; most of the stall are broken and don't have locks or even doors, the remaining stalls are soiled beyond what is believable. there is a row of thankfully clean hand basins half of which have working taps.",
     "Help": "there is a plentiful supply of water in the toilets.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "southeast",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -594,9 +548,7 @@
   },
   {
     "Name": "assembly hall",
-
     "Description": "the hub of school assembly, both for internal curiculum activities and also for the wider community. the hall hosts everything from morning assembly, music concerts, dramatic performances for pupils to being ballet voting and bingo sessions for the locals.",
-
     "Type": "location",
     "Actions": [
       {
@@ -693,7 +645,6 @@
     "Name": "main store room",
     "Prefix": "the",
     "Description": "it has a musty smell and is lined by rows of freestanding shelving units. unsurprisingly it is full of school antiquites most of which look like they haven't been used in decades and are unfamiliar to you.",
-
     "Type": "location",
     "Actions": [
       {
@@ -708,7 +659,6 @@
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -722,14 +672,12 @@
   },
   {
     "Name": "administration office",
-
     "Description": "possibly the most efficient room in the entire school. filing cabinets line all the walls and above them shelves are stacked end-to-end with ring-bound folders.",
     "Help": "every single record on every single pupil is stored in this room.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -740,7 +688,6 @@
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -754,14 +701,11 @@
   },
   {
     "Name": "headmaster's office",
-
     "Description": "the most intimidating room in the entire school. despite the school headmaster effectively being the veo of the school he still likes to medal in individual pupil disciplinaries. the walls are faded cream and all the woodwork is very aged, the only thing that looks modern is the numerous certificates and citations frames and hung on the walls.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -775,14 +719,12 @@
   },
   {
     "Name": "east canteen",
-
     "Description": "contains not enough seating for the amassed pupils, so a shift pattern is employed to ensure all pupils get to enjoy the experience on a daily basis.",
     "Help": "the east canteen is overflowing with vanity.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -793,7 +735,6 @@
       },
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -804,7 +745,6 @@
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -819,14 +759,12 @@
   },
   {
     "Name": "west canteen",
-
     "Description": "this west end of the canteen is filled mostly with hot food counters and a queuing serpentine made from very study railing. the smell of food in unavailable although it is not appealing.",
     "Help": "bringing your own fruit for lunch may be more desirable that school dinners",
     "Type": "location",
     "Actions": [
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -837,7 +775,6 @@
       },
       {
         "Verb": "southwest",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -848,7 +785,6 @@
       },
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -862,9 +798,7 @@
   },
   {
     "Name": "under the stage",
-
     "Description": "this is the most bizarre place in the school. although accessible via a trapdoor in the stage the stage basement is latticed with rough-wood support beam and everything is layered with deep dust. the atmosphere here has more drama than has ever been seen on the stage.",
-
     "Type": "location",
     "Actions": [
       {
@@ -882,14 +816,11 @@
   },
   {
     "Name": "back stage",
-
     "Description": "as old and rough as the rest of the stage, although it is a clear indication of academic and social divide; anyone without enough academic acumen to be teacher's pet is doomed to only ever become a behind-the-scenes stage hand in any school productions.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -900,7 +831,6 @@
       },
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -914,14 +844,11 @@
   },
   {
     "Name": "gym",
-
     "Description": "a large hall with a shiny parquet floor covered with different court markings. bandminton, tennis, netball, five-a-side football and basketball courts can be made out, but the others are a mystery.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -932,7 +859,6 @@
       },
       {
         "Verb": "northeast",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -946,14 +872,12 @@
   },
   {
     "Name": "gym changing room",
-
     "Description": "as basic as any room can be, bare walls and brown tiled floor. even the wooden-slat benches are utilitarion with grey metal hanging pegs. there are no soft furnishings for any odour to cling to.",
     "Help": "your privates are not private here",
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -964,7 +888,6 @@
       },
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -975,7 +898,6 @@
       },
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -989,14 +911,12 @@
   },
   {
     "Name": "showers",
-
     "Description": "the open showers resemble nothing other than prison showers and not a nice prison - a really, really bad one. no shower in the world is as grim as this place.",
     "Help": "the showers may clearn your body but your soul will be scarred for life if you stay too long here.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1010,14 +930,12 @@
   },
   {
     "Name": "kitchen",
-
     "Description": "large on an industrial scale; the floor is covered in utilitarian tiles and over-sized cooking utilis hang around the room above oversides sinks and cookers - even the suppliest are oversized ro cater for all the pupils and staff. it has a perma-small of cooked food.",
     "Help": "you aren't allowed in the kitchen.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1028,7 +946,6 @@
       },
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1042,14 +959,12 @@
   },
   {
     "Name": "music room",
-
     "Description": "it is unique in that it feels less like an academic classroom than any other room in the school. it is twice the size of other classroms and filled with more instruments than chairs and desks.",
     "Help": "the music room is by far the loudest room in the school and the only room where you won't be punished for making noise.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1070,7 +985,6 @@
     "Actions": [
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1081,7 +995,6 @@
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1092,7 +1005,6 @@
       },
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1117,7 +1029,6 @@
   },
   {
     "Name": "binside",
-
     "Description": "inside the bin smells even worse than outside, but be thankful that you have entered the right-way-up, unlike many previous unwilling visitors!  you are standing on rubbish which is many feet deep, but at least this will allow you to exist easily.",
     "Help": "binside is a portmanteau of bin and inside.",
     "Type": "location",
@@ -1139,7 +1050,6 @@
   },
   {
     "Name": "bike sheds",
-
     "Description": "the bike sheds are filled with a variety of bicycles, from racers to bmxs and shoppers to choppers. they are all dilligently locked up as a bike is usually the most expensive item a school pupil owns.",
     "Help": "to get home you will need your bike.",
     "Type": "location",
@@ -1157,7 +1067,6 @@
       },
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1168,7 +1077,6 @@
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1182,7 +1090,6 @@
             "Property": "location",
             "Equality": "!",
             "Value": "player",
-
             "FailResponse": "mr broom appears immediately in your path. \"hoy!  no bikes in school!  i shouldn't have to keep telling you kids\" he informs you before disappearing back to his regular work."
           }
         ]
@@ -1192,14 +1099,12 @@
   },
   {
     "Name": "behind the bike sheds",
-
     "Description": "the most illicit area in the school, the name alone is synonmous with unauthorised acitivitys from heavy petting to smoking. as if further proof is needed the ground is littered with cigarette butts.",
     "Help": "like in prison, cigarettes can be used as currency in school.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1213,14 +1118,11 @@
   },
   {
     "Name": "covered path",
-
     "Description": "main throroughfare through the school, joiing the front of the building to the back, while avoiding all classroms and offices inbetween. although outdoors the path is covered with a clear plastic canopy which allows dry passage during the rain.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1231,7 +1133,6 @@
       },
       {
         "Verb": "northeast",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1242,7 +1143,6 @@
       },
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1253,7 +1153,6 @@
       },
       {
         "Verb": "southeast",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1264,7 +1163,6 @@
       },
       {
         "Verb": "southwest",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1275,7 +1173,6 @@
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1286,7 +1183,6 @@
       },
       {
         "Verb": "northwest",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1300,9 +1196,7 @@
   },
   {
     "Name": "physics lab",
-
     "Description": "filled with old-fasioned fixed benches in ranks lined with high bar-like stools. this allows gas and water supplies to the benches to facilitates experiments. it still retains old-fashioned blackboards at the front of the lab. this lab is distinct for its view over the school's science courtyard, kind of like a blue peter garden but of course off-limits to pupils.",
-
     "Type": "location",
     "Actions": [
       {
@@ -1318,7 +1212,6 @@
       },
       {
         "Verb": "southeast",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1332,14 +1225,11 @@
   },
   {
     "Name": "chemistry lab",
-
     "Description": "filled with old-fasioned fixed benches in ranks lined with high bar-like stools. this allows gas and water supplies to the benches to facilitates chemical experiments. it still retains old-fashioned blackboards at the front of the lab.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "northwest",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1350,7 +1240,6 @@
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1364,14 +1253,11 @@
   },
   {
     "Name": "science store room",
-
     "Description": "separates the biology and chemistry labs with access doors leading to each. this room is often frequented by biology and chemistry teachers during lessons and houses all the supplies needed for science lessons - it's a treasure trove of dangerous chemicals!",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1382,7 +1268,6 @@
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1396,14 +1281,11 @@
   },
   {
     "Name": "biology lab",
-
     "Description": "filled with old-fasioned fixed benches in ranks lined with high bar-like stools. this allows water supplies to the benches to facilitates biology experiments, which mostly involve washing things. it still retains old-fashioned blackboards at the front of the lab.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1414,7 +1296,6 @@
       },
       {
         "Verb": "northeast",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1428,14 +1309,12 @@
   },
   {
     "Name": "lockers",
-
     "Description": "generic grey steel lockers line ever square foot of wall in this corridoor leading to its name. the only free spare are the entrances including the foot of the west stairwell.",
     "Help": "lockers allow you to store items and keep them private from others.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1446,7 +1325,6 @@
       },
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1457,7 +1335,6 @@
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1468,7 +1345,6 @@
       },
       {
         "Verb": "up",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1482,14 +1358,11 @@
   },
   {
     "Name": "gloomy path",
-
     "Description": "leads from the main school building the to out buildings and temporary wooden classrooms, affectionately knows as huts. this path leads to you home room and is not covered, meaning that a rainy start to the school day is as miserable as it gets.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1500,7 +1373,6 @@
       },
       {
         "Verb": "southwest",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1511,7 +1383,6 @@
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1525,14 +1396,11 @@
   },
   {
     "Name": "workshop path",
-
     "Description": "this path leads to the workshops of the school, which are snesibly kept separate from the main building due to the nature of dangerous materials and tools kept in them.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "northeast",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1543,7 +1411,6 @@
       },
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1554,7 +1421,6 @@
       },
       {
         "Verb": "southwest",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1565,7 +1431,6 @@
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1579,14 +1444,11 @@
   },
   {
     "Name": "grassy area",
-
     "Description": "betwix the huts it borders your home room and is a gather area before class registration each morning, although outdoors and subject to the elements it could be a lot worse.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1597,7 +1459,6 @@
       },
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1608,7 +1469,6 @@
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1622,14 +1482,12 @@
   },
   {
     "Name": "ged hut",
-
     "Description": "(geometric engineering and design) a standlone wooden classroom, it is bitterly cold in winter and the bare wooden floor allows the draught to whistle up between the floor boards. each desk is equipped with a single drawing desk which is adjustable and has an attached horizonal rule complete with multiple goemetric drawing attachments.",
     "Help": "pencils softer than 2h are banned in this classroom.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1643,14 +1501,11 @@
   },
   {
     "Name": "library corridor",
-
     "Description": "another hub of directions, it is often lined with pupils queuing up to enter the library or art studio but due to its proximity to the staff room there is very little mischief.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1661,7 +1516,6 @@
       },
       {
         "Verb": "southeast",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1689,7 +1543,6 @@
       },
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1700,7 +1553,6 @@
       },
       {
         "Verb": "southwest",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1711,7 +1563,6 @@
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1722,7 +1573,6 @@
       },
       {
         "Verb": "northwest",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1747,14 +1597,12 @@
   },
   {
     "Name": "west toilets",
-
     "Description": "school toilets are a very unpleasant plave to be. most of the stall are broken and don't have locks or even doors, the remaining stalls are soiled beyond what is believable. there is a row is thankfully clean hand basins half of which have working taps.",
     "Help": "there is a plentiful supply of water in the toilets.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "southeast",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1768,14 +1616,12 @@
   },
   {
     "Name": "library",
-
     "Description": "tthe quietest place in the school and is the only room that can be visited at any time of day, during lessons, break time or lunch. wooden book shelves line the walls with small piers protuding to form nooks, which allow pupils to hide from teachers easily. a card based index system exists to locate books, but generally it's easier to browse alphabetically for them.",
     "Help": "shhh!",
     "Type": "location",
     "Actions": [
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1789,14 +1635,11 @@
   },
   {
     "Name": "tennis courts",
-
     "Description": "the tennis courts are made from a hard all-weather surfce similar to tarmac,  the nets are permanently mounted and well maintained, although this area is off-limits to boys as in an exclusive physcial education area for girls only.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "northeast",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1810,14 +1653,11 @@
   },
   {
     "Name": "sixth form",
-
     "Description": "the entrance to the sixth form area is surprisingly bare, as if the area beyond is a secret government facility. it might as well be as it is off limits to pupils in fifth form and below. accasionally 17 and 18 years olds can be seen coming and going at all times dress in causal wear. the door to the south is locked and you can go no further until you pass exhibit enough academic acumen to be considered investment worthy.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1831,14 +1671,11 @@
   },
   {
     "Name": "south stairwell first floor",
-
     "Description": "well lit by a floor-to-ceiling windows. the first floor is where the pomp ends and is the business floor of learning.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1874,14 +1711,11 @@
   },
   {
     "Name": "south stairwell second floor",
-
     "Description": "well lit by a floor-to-ceiling windows. the second floor represents even more intense levels of academia.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1906,14 +1740,11 @@
   },
   {
     "Name": "west stairwell first floor",
-
     "Description": "the stairwell is well lit by a floor-to-ceiling window. the first floor is where the pomp ends and is the business floor of learning.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1924,7 +1755,6 @@
       },
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1960,14 +1790,11 @@
   },
   {
     "Name": "west stairwell second floor",
-
     "Description": "the stairwell is well lit by a floor-to-ceiling window. the second floor represents even more intense levels of academia.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -1978,7 +1805,6 @@
       },
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2003,14 +1829,11 @@
   },
   {
     "Name": "east stairwell first floor",
-
     "Description": "well lit by floor-to-ceiling windows. the first floor is where the pomp ends and is the business floor of learning.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2021,7 +1844,6 @@
       },
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2032,7 +1854,6 @@
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2068,14 +1889,11 @@
   },
   {
     "Name": "east stairwell second floor",
-
     "Description": "well lit by floor-to-ceiling windows. the second floor represents even more intense levels of academia.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2086,7 +1904,6 @@
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2122,14 +1939,11 @@
   },
   {
     "Name": "southwest corner",
-
     "Description": "the southwest corner of the school building is technically the centre of the school propery.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2140,7 +1954,6 @@
       },
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2151,7 +1964,6 @@
       },
       {
         "Verb": "southwest",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2162,7 +1974,6 @@
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2173,7 +1984,6 @@
       },
       {
         "Verb": "northwest",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2187,7 +1997,6 @@
   },
   {
     "Name": "football pitch",
-
     "Description": "a full sized pitch along with a five-a-side pitch accompanying it. this is where the majority of imaginationless physical exercise takes place, usually in the form of shirts vs. skins in all weather.",
     "Help": "association football is also know as soccer.",
     "Type": "location",
@@ -2242,9 +2051,7 @@
   },
   {
     "Name": "rugby pitch",
-
     "Description": "any effort put into pupil safety is completely abandonded here, broken bones and blindness inducing concussions are common here all the the pursuit of mandatory black vs. whites, no doubt fuelled by staff room betting by the sports teachers.",
-
     "Type": "location",
     "Actions": [
       {
@@ -2285,14 +2092,11 @@
   },
   {
     "Name": "cricket pitch",
-
     "Description": "rarly used and only visited in summer, although it is well maintainced thanks in part to an all weather surface between the stumps. forget any dreams of olympic glory from this physcial education.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2303,7 +2107,6 @@
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2317,9 +2120,7 @@
   },
   {
     "Name": "athletics field",
-
     "Description": "a vast expanse of grass with no discenrable marking of any kind. it is used during summer for javelin and discus throwning and for long distance running during autumn, winter and spring.",
-
     "Type": "location",
     "Actions": [
       {
@@ -2360,14 +2161,11 @@
   },
   {
     "Name": "home room",
-
     "Description": "is where classes gather prior to banding-lessons for purposes of registration, twice daily; in the morning and after lunch. for some pupils this is as long as they will stay in school each day. the room is some kind of lab, but rarely used for lessons.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2378,7 +2176,6 @@
       },
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2392,14 +2189,11 @@
   },
   {
     "Name": "home store room",
-
     "Description": "separates the home room and the weird room labs, with access doors leading to each. there is a large selection of supplies for a variety of lessons.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2410,7 +2204,6 @@
       },
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2424,14 +2217,11 @@
   },
   {
     "Name": "weird room",
-
     "Description": "this room is weird in that it's identical to your home room, but a perfect mirror image in its layout. this serves as the home room for the pupils with behavioral problems, who have long since been abandonded by the school based purely on their willingness to conform to the system rather than their academic abilities.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2445,14 +2235,11 @@
   },
   {
     "Name": "art studio",
-
     "Description": "a large room which is light and airy to facility the creative art process. exhibits from former pupils adorn the wall, leaving little space for new submissions, unless they are deemed better than those already existing.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "northeast",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2466,14 +2253,11 @@
   },
   {
     "Name": "swimming pool",
-
     "Description": "a place of dread; while simming is a fun pastime for most kids at school it becomes a funless lesson in a freezing unheated outdoor pool that is over chlorinated and full of bullys who are angry that they can't swim.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2487,14 +2271,11 @@
   },
   {
     "Name": "swimming changing room",
-
     "Description": "basic at best; the building is a wooden hut with no windows for privacy which leads to the room being very dimley lit and unnerving. it is also unheated and drafty; you are expected to get naked in here.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "northeast",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2505,7 +2286,6 @@
       },
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2518,14 +2298,12 @@
             "Item": "never",
             "Property": "state",
             "Value": "pass",
-
             "FailResponse": "the gate to the swimming pool is locked from the other side."
           }
         ]
       },
       {
         "Verb": "southeast",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2539,14 +2317,11 @@
   },
   {
     "Name": "west path",
-
     "Description": "the east path leads round the back of the school past the library, connecting the huts to the school playing fields.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2557,7 +2332,6 @@
       },
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2568,7 +2342,6 @@
       },
       {
         "Verb": "northwest",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2582,14 +2355,12 @@
   },
   {
     "Name": "sewing room",
-
     "Description": "the most tranquil room in the entire school. there is nothing to do here except needle point in near silence, like a form of meditation it relaxes even the harshest bully who tries it.",
     "Help": "the sewing room is a great place to repair clothes.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2600,7 +2371,6 @@
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2614,14 +2384,12 @@
   },
   {
     "Name": "cooking room",
-
     "Description": "lined with worktops, sinks and half as many ovens. there is an enormous industrial sized fridge in the corner.",
     "Help": "overs make things hot and frieges make things cold.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2632,7 +2400,6 @@
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2646,14 +2413,12 @@
   },
   {
     "Name": "french room",
-
     "Description": "les murs sont couverts d'affiches évoquant la culture française stéréotypée ainsi que des phrases sans fin et des exemples de situation de la langue française. rien n'est en anglais ici.",
     "Help": "je ne comprends pas.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2664,7 +2429,6 @@
       },
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2678,14 +2442,12 @@
   },
   {
     "Name": "german room",
-
     "Description": "die wände sind mit plakaten bedeckt, die auch stereotype französische kultur vorgeben, und endlose satz- und situationsbeispiele der deutschen sprache. hier ist nichts auf englisch.",
     "Help": "ich verstehe nicht.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2696,7 +2458,6 @@
       },
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2710,14 +2471,11 @@
   },
   {
     "Name": "audio lab",
-
     "Description": "like a classroom that was high tech in the 1970s. instead of desks it is filled with ranks of partitioned booths each containing a pair of uncomfortable pre-war looking headphones and an open reel tape desk made from bakelite.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2728,7 +2486,6 @@
       },
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2742,14 +2499,11 @@
   },
   {
     "Name": "maths room",
-
     "Description": "there are no posters on the walls here - maths related posts woulkd look too childish here, instead the walls are bare anbd uninviting.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2760,7 +2514,6 @@
       },
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2774,14 +2527,12 @@
   },
   {
     "Name": "english language",
-
     "Description": "the walls are covered with information about the correct use of punctiation, margins, case, tense, nouns, verbs,  similies, metaphors and onomatopoeias yet strangely nothing of swear words - something that exists in equal measures in the real world.",
     "Help": "swearing will get you an immediate detention in any part of the school, but if used grammatically correctly here you might get away with it.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2792,7 +2543,6 @@
       },
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2803,7 +2553,6 @@
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2826,14 +2575,12 @@
   },
   {
     "Name": "english literature",
-
     "Description": "the walls are covered with posters of shakespeare, keats, dickens, orwell, eliot, chaucer, tolkien and wordsworth. here are you expected to forget everything you learned about modern english language next door and appreacite an unrecognisabl;e language from centuries ago.",
     "Help": "to be, or not to be?",
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2844,7 +2591,6 @@
       },
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2858,14 +2604,12 @@
   },
   {
     "Name": "metal workshop",
-
     "Description": "a large room full of lathes and pillar drills, along with surrounding benches with rows of vices; in the corner there is a furnaces for heating metal to extremely dangerous levels complete with a bucket for quenching and case hardning.",
     "Help": "the metal workshop is a great place for working metals of all types.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2879,14 +2623,11 @@
   },
   {
     "Name": "wood workshop",
-
     "Description": "the wood workshop is large and full of work benches and metal cabinets which house a variety of very sharp tools, all kept under lock and key by the teacher. the air smells of sawdust and treatment oils.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2897,7 +2638,6 @@
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2911,14 +2651,11 @@
   },
   {
     "Name": "back street",
-
     "Description": "a narrow but busy road, it is frequented by a large preportion on the pupils who attend the shcool; those who live to the west for daily access and other who visit the local shops during lunch break. there are no consesions for pupil safety here, no crossing or traffic calming.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2929,7 +2666,6 @@
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2943,14 +2679,12 @@
   },
   {
     "Name": "news agent",
-
     "Description": "a misnomer of a shop, although it sells news papers it sells just about everything from magazine, snacks, groceries and school supplies. no more than four pupils are allowed in at any time to reduce the chances of theivery.",
     "Help": "being located opposite a school it sells plenty of items that would be helpful during a normal schoolday.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2964,14 +2698,11 @@
   },
   {
     "Name": "typing pool",
-
     "Description": "TODO",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2982,7 +2713,6 @@
       },
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -2996,14 +2726,12 @@
   },
   {
     "Name": "poker den",
-
     "Description": "a spare classroom that rarely sees academic use, it has plenty of seating and desks which go unused and are ideal for lunch time poker games. although seedy in nature playing poker is not frowned upon by the faculty.",
     "Help": "healthy profits can be made by playing the odds.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3017,14 +2745,11 @@
   },
   {
     "Name": "north street",
-
     "Description": "an eclectic collection of detached and semi-detached houses line each side of the street, their value would increase greatly if there weren't thousands of school kids traipsing past twice daily.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3035,7 +2760,6 @@
       },
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3046,7 +2770,6 @@
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3068,9 +2791,7 @@
   },
   {
     "Name": "main road",
-
     "Description": "it is the main road through the town and runs east/west with two lanes of traffic in each direction, intersecting the school street at a large traffic light controlled junction. due to the volume of traffic the only way across is via a pedestrian bridge.",
-
     "Type": "location",
     "Actions": [
       {
@@ -3086,7 +2807,6 @@
       },
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3100,9 +2820,7 @@
   },
   {
     "Name": "blue bridge",
-
     "Description": "you are in the middle of the span of a steel pedestrian bridge across the main road, named for its colour. it is safe from traffic here.",
-
     "Type": "location",
     "Actions": [
       {
@@ -3132,14 +2850,12 @@
   },
   {
     "Name": "grassy knoll",
-
     "Description": "traffic races past to the south and houses line the streets to the north accompanied by a row of shops.",
     "Help": "there is no lone shooter here",
     "Type": "location",
     "Actions": [
       {
         "Verb": "up",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3164,14 +2880,11 @@
   },
   {
     "Name": "chinese takeaway",
-
     "Description": "affectionately known as the 'chippy' the takeaway restaurant is adorned with chinese decore.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3185,14 +2898,11 @@
   },
   {
     "Name": "computer room",
-
     "Description": "despite sounding high-tech the school can only afford a single computer; a commodire pet, which is mostly off limits to pupils. it is possible to connect the pet to another computer elsewhere in the world via a phone line using called a modem with an accoustic coupler, but this is isn't taught in the computer room.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3206,14 +2916,12 @@
   },
   {
     "Name": "first aid room",
-
     "Description": "small but well stocked with medial supplies. it smells of antiseptic and there is a single bed in the corner, this is the only place in the entire school where you are authorised to lay down.",
     "Help": "if you need to vomit, this is the best place to do it.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "northeast",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3227,14 +2935,11 @@
   },
   {
     "Name": "caretaker's office",
-
     "Description": "an office by name only and moreover an extension of the store room. items are scattered accross the room piled high and stacked deep. although there is a desk is is covered by ring binders of inventories maintenance instructions and schedules.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3245,7 +2950,6 @@
       },
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3256,7 +2960,6 @@
       },
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3270,14 +2973,11 @@
   },
   {
     "Name": "car park",
-
     "Description": "filled with an assortment of cars ranging from teacher's classics, the head master's modern luxury saloon and the starter-cars of the eldest and richest sixth formers.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3288,7 +2988,6 @@
       },
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3299,7 +2998,6 @@
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3310,7 +3008,6 @@
       },
       {
         "Verb": "in",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3333,14 +3030,11 @@
   },
   {
     "Name": "staff room",
-
     "Description": "the only place in the school where you can find armchairs and sofas, although the quality of them is more line with a care home. there is a kitchenette to meet teacher's dietry needs and the air is thick with cigarette smoke.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "northwest",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3354,14 +3048,11 @@
   },
   {
     "Name": "hall corridor",
-
     "Description": "runs the length of the assembly hall and it most commonly used to que for the gym or hall. sometimes pupils will be ejected from assemblies and made to stand in the hall corridor, although this less of a punishment than attending assemblies.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "northeast",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3372,7 +3063,6 @@
       },
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3383,7 +3073,6 @@
       },
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3394,7 +3083,6 @@
       },
       {
         "Verb": "southwest",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3405,7 +3093,6 @@
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3419,14 +3106,11 @@
   },
   {
     "Name": "north woods",
-
     "Description": "a small haven from the rest of the school. the trees here provide a dense canopy of leaves which prevents any sun from penetrating and offers seculusion whent he deciduous trees have leaves.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3440,14 +3124,12 @@
   },
   {
     "Name": "west woods",
-
     "Description": "the west woods is a small haven from the rest of the school. the trees here provide a dense canopy of leaves which prevents anything from growning on the ground, as a result the soil is very loose here.",
     "Help": "loose soil is easy to dig.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3461,14 +3143,11 @@
   },
   {
     "Name": "south woods",
-
     "Description": "a small haven from the rest of the school. the trees here are small and dense with bushes and shrubs creating a maze of small pathways in which to evade capture from teachers and pupils alike.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3482,14 +3161,11 @@
   },
   {
     "Name": "back gate",
-
     "Description": "a pedestrian-only entrace to the school, it is a large rusty metal gate flanked by matching metal railing to supposidly keep people out but more likely pupils in.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3500,7 +3176,6 @@
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3514,14 +3189,12 @@
   },
   {
     "Name": "history room",
-
     "Description": "the walls are adorned with stock picture of british kings and queens however not of the lessons ever focus on this part of history. other posters highlight the current ciriculum of crop rotation in the 14th century so pointless to anyone who isn't going to become a farmer.",
     "Help": "those who do not learn history are doomed to repeat it.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3532,7 +3205,6 @@
       },
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3546,14 +3218,12 @@
   },
   {
     "Name": "geography room",
-
     "Description": "unsurprisingly the walls are covered with maps; world maps, teraing maps, geo-political maps, topological maps and geographical features such as ox-bow lakes and volcanoes.",
     "Help": "ox-bow lake and volcano knowledge won't help you as an adult but map reading will yield dividends immediately, like finding yuour way around the school.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3567,14 +3237,11 @@
   },
   {
     "Name": "drama room",
-
     "Description": "full of chairs without desks or benches and a few oversized props such as trees and shrubs. it smells like \"back stage\" here.",
-
     "Type": "location",
     "Actions": [
       {
         "Verb": "east",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3585,7 +3252,6 @@
       },
       {
         "Verb": "west",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3596,7 +3262,6 @@
       },
       {
         "Verb": "in",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3620,14 +3285,12 @@
   },
   {
     "Name": "drama cupboard",
-
     "Description": "full of small props for the school plays and a wide variety of costumes. if you've ever wanted to be a roman centurion or ghost this is the place to be.",
     "Help": "drama costumes allow actors to become other people, albeit as part of a subterfuge.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "out",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3641,9 +3304,7 @@
   },
   {
     "Name": "top of east stairwell",
-
     "Description": "the top of the each stairwell is not afforded the lighting of the lower floors and is technically off limits, ending in a mysterious locked door.",
-
     "Type": "location",
     "Actions": [
       {
@@ -3659,7 +3320,6 @@
       },
       {
         "Verb": "south",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3680,7 +3340,6 @@
             "Property": "state",
             "Equality": "*",
             "Value": "master",
-
             "FailResponse": "the door leading south from the top of the stairwell is closed - it is a mystery what is on the other side."
           }
         ]
@@ -3690,14 +3349,12 @@
   },
   {
     "Name": "flat roof",
-
     "Description": "an expansive area of flat grey roofing felt covering the whole scool footage, save a some plant and chimney stacks. there is a small parapet around the edge but only large enough to provide a trip hazard.",
     "Help": "you could race go-karts around the roof.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-
         "Updates": [
           {
             "TargetItem": "player",
@@ -3711,9 +3368,7 @@
   },
   {
     "Name": "science courtyard",
-
     "Description": "a tranquil place of beauty, herbaceous borders guide a narrow pathway around the courtyard while other indigenous shrubs separate the path from the central pond. the courtyard is surrounded by buildings with no apparent entry or exist which makes you wonder how it can be so well maintained, yet it is teaming with flora and fauna.",
-
     "Type": "location",
     "Actions": [
       {
@@ -3732,7 +3387,6 @@
   },
   {
     "Name": "miss sharp",
-
     "Description": "a newly qualified music teacher in her early twenties, she is sporting a contemporary blond perm. she lives and breaths music although is reticent about her favourite band and won't be drawn into discussions about popular music.",
     "Help": "if you don't know the lyrics try humming it.",
     "Type": "person",
@@ -3740,15 +3394,12 @@
   },
   {
     "Name": "mr steel",
-
     "Description": "the metalwork teacher know for his furious grip. hje is calm but has little patience and any infraction is pushed with an immediate and unnerving \"grip\", usually around the upper arm.",
-
     "Type": "person",
     "Location": "metal workshop"
   },
   {
     "Name": "miss french",
-
     "Description": "miss french is a young teacher and a francophile, meaning that she loves her job teaching french even though 99% of her pupils are uninterested and undeserving of her ambition.",
     "Help": "peut-être que parler français aiderait ?",
     "Type": "person",
@@ -3756,7 +3407,6 @@
   },
   {
     "Name": "mr bodmas",
-
     "Description": "a middle aged maths teacher. he is extremely very firm but fair once his dominance is acknowledged. his har is thinning and wsipy and he had a large lumberjack beard - he looks like a caveman.",
     "Help": "it is best not to upset mr bodmas, he has been known to weaponise blackboard rubbers.",
     "Type": "person",
@@ -3765,7 +3415,6 @@
   },
   {
     "Name": "mr silver",
-
     "Description": "a daring young chemistry teacher, although chemistry is not even remotely related to archeology he comes across like indiana jones and appears to be a risk taker.",
     "Help": "mr silver would sacrifice personal health to save lab equipment.",
     "Type": "person",
@@ -3773,7 +3422,6 @@
   },
   {
     "Name": "mr saw",
-
     "Description": "the woodwork teacher; he is nearing retirement and has always lvoed teaching pupils practical uses of wood. he is stick-think and his nostril are stained brown from all the saw-dust he has inhaled over the decades.",
     "Help": "talking abour egg-shell finish will engane mr saw.",
     "Type": "person",
@@ -3781,7 +3429,6 @@
   },
   {
     "Name": "dr atom",
-
     "Description": "the physics teacher; he habitually wears a white lab coat and large thick pebble glasses. he is frienmdly but slightly mad and unpredictable in a doc brown kind of way.",
     "Help": "dr atom maybe the cleverest person in school so it is wise to heed his wise counsel.",
     "Type": "person",
@@ -3790,7 +3437,6 @@
   },
   {
     "Name": "mr ball",
-
     "Description": "the p.e. teacher; he is wearing disturbingly short shorts, a track suit top and a stopwatch around his neck - at least it has purpose and is better than a necktie. he has no sense of humour and has never been seen smiling.",
     "Help": "mr ball is impressed by any feet of physical strength or perseverence and less imporessed by academic achievments.",
     "Type": "person",
@@ -3798,7 +3444,6 @@
   },
   {
     "Name": "miss battle",
-
     "Description": "she is a recently qualified teacher and has yet to be come bitter towards all her pupils.",
     "Help": "miss battle has very high standards.",
     "Type": "person",
@@ -3807,49 +3452,38 @@
   },
   {
     "Name": "mr square",
-
     "Description": "the ged teacher; he is beyong excentric and is of senior years. middle age spread has not been good to him and he dresses mostly in comfortable brown clothes but is kiond and gentle - unless pushed to the edge.",
-
     "Type": "person",
     "Location": "ged hut"
   },
   {
     "Name": "mr foot",
-
     "Description": "the biology teacher; he is young and enthusiastic. he will listen to any biological questions pupils have without judgment, as if he still remembers being a teenager himself.",
-
     "Type": "person",
     "Location": "biology lab"
   },
   {
     "Name": "mrs bakewell",
-
     "Description": "the cooking teacher; she is middle aged, somewhat scatty and very easy going making cooking lessons easy and untaxing, although unsafe practices will not be tolerated.",
-
     "Type": "person",
     "Location": "cooking room",
     "State": "she looks like she missed breakfast and looks hungry and agitated."
   },
   {
     "Name": "miss mcqueen",
-
     "Description": "the drama teacher and the epitome of a drama queen - she lives for drama but can also defuse a crisis down to a drama.",
-
     "Type": "person",
     "Location": "drama room",
     "State": "she is practising her dramatic reaction to not receiving your drama assignment."
   },
   {
     "Name": "mr booker",
-
     "Description": "english language teacher; he is perputuially carrying a novel around in his flap-topped jacket pockets and taking every opportunity to read it. he smells musty like a secondhand bookshop.",
-
     "Type": "person",
     "Location": "english language"
   },
   {
     "Name": "miss sketch",
-
     "Description": "the art teacher, she is middle ages and as learned enough to not let pupils take advantage or control. she is friendly but firm and throouglky organised as shjown by the immacualte state of the art studio.",
     "Help": "miss sketch would apprciate anything drawn by hand.",
     "Type": "person",
@@ -3857,7 +3491,6 @@
   },
   {
     "Name": "mr rhumb",
-
     "Description": "the geography teacher; he is young but already bitter, possibly that he intentiosn to travel have been ruined by having to baby-sit ungrateful teens who have no aspiration to travel the world as he did during his year off. he often regails his time living in brazil and eating star fruit.",
     "Help": "what is a star fruit?",
     "Type": "person",
@@ -3865,15 +3498,12 @@
   },
   {
     "Name": "mr head",
-
     "Description": "the headmaster; the highest authority in the school, although his purpose is not really known to pupils - he takes no classes and doesn't appear to do anything other than preach assemblies, it seems like an easy job so it is a wondy why is he so furious all the time.",
-
     "Type": "person",
     "Location": "headmaster's office"
   },
   {
     "Name": "mr broom",
-
     "Description": "the caretaker; grumpier than the local park-keeper and he clearly hates his job and/or teenagers. it is inconceivable how someone with his disposition can home the position.",
     "Help": "dropping litter would be the worst thing to do in mr broom's presence.",
     "Type": "person",
@@ -3881,9 +3511,7 @@
   },
   {
     "Name": "spider web",
-
     "Description": "a bizarre pupil, sometimes friendly and other times aggressive, probably best avoided.",
-
     "Type": "person",
     "Location": "french room"
   },
@@ -3891,7 +3519,6 @@
     "Name": "dog",
     "Prefix": "a",
     "Description": "a long haired golden retriever with mischeif in its eyes and energy in its belly. it bounds around when you approach in an attempt to play. a random dog on school propertly is the best thing that can happen during a school day.",
-
     "Type": "person",
     "Location": "athletics field",
     "State": "it has some homework in its mouth, unless you recover it the dog really will eat your homework."
@@ -3907,7 +3534,6 @@
   },
   {
     "Name": "pierre",
-
     "Description": "the french exchange student.he is effortlessly chic and oozes european charisma that makes him attractive but is unbothered by such existential concerns.",
     "Help": "pierre is not adapting well to uk life and missing his french customs.",
     "Type": "person",
@@ -3918,7 +3544,6 @@
     "Name": "minibus",
     "Prefix": "the school",
     "Description": "a dilapidated and rusty minibus.",
-
     "Type": "fixed",
     "Location": "car park",
     "State": "the minibus rear doors are locked with a staple and hasp secured by a padlock."
@@ -3927,7 +3552,6 @@
     "Name": "piano",
     "Prefix": "a",
     "Description": "a cheap, but well serviced upright piano",
-
     "Type": "fixed",
     "Actions": [
       {
@@ -3976,9 +3600,7 @@
   },
   {
     "Name": "table saw",
-
     "Description": "TODO",
-
     "Type": "fixed",
     "Location": "wood workshop"
   },
@@ -4007,12 +3629,10 @@
     "Name": "view",
     "Prefix": "a",
     "Description": "the view afforded from the school roof is very impressive, it shows the history and heritage of the town along with the diverse collection of domiciles which home the town's denizens. this could be argued as the best part of the school.",
-
     "Type": "fixed",
     "Actions": [
       {
         "Verb": "draw,sketch,capture,copy",
-
         "Updates": [
           {
             "TargetItem": "art homework",
@@ -4032,7 +3652,6 @@
             "Item": "art homework",
             "Property": "location",
             "Value": "player",
-
             "FailResponse": "you don't have anything to draw on."
           }
         ]
@@ -4057,7 +3676,6 @@
     "Actions": [
       {
         "Verb": "use,play",
-
         "Updates": [
           [
             {
@@ -4084,7 +3702,6 @@
             "Item": "lead",
             "Property": "location",
             "Value": "player",
-
             "FailResponse": "you can't play the fruit machine for free."
           },
           {
@@ -4092,7 +3709,6 @@
             "Property": "state",
             "Equality": "*",
             "Value": "pence",
-
             "FailResponse": "you can't play the fruit machine for free."
           }
         ]
@@ -4109,7 +3725,6 @@
     "Actions": [
       {
         "Verb": "open,unlock",
-
         "Updates": [
           {
             "TargetItem": "padlock",
@@ -4151,7 +3766,6 @@
     "Actions": [
       {
         "Verb": "open,unlock",
-
         "Updates": [
           [
             {
@@ -4190,7 +3804,6 @@
       },
       {
         "Verb": "close",
-
         "Conditions": [
           {
             "Item": "locker",
@@ -4208,9 +3821,7 @@
   },
   {
     "Name": "never",
-
     "Description": "a dummy item that never passes, and can be used as a generic fail state",
-
     "Type": "mobile",
     "Location": "hidden"
   },
@@ -4218,12 +3829,10 @@
     "Name": "crowbar",
     "Prefix": "a",
     "Description": "a large, heavy case-hardened steel crowbar. it is well worn and chipped from former illicit use but still performs its function.",
-
     "Type": "mobile",
     "Actions": [
       {
         "Verb": "use",
-
         "Updates": [
           {
             "TargetItem": "shackle lock",
@@ -4253,7 +3862,6 @@
     "Actions": [
       {
         "Verb": "wear,don",
-
         "Updates": [
           {
             "TargetItem": "moustache",
@@ -4273,7 +3881,6 @@
       },
       {
         "Verb": "remove,doff",
-
         "Updates": [
           {
             "TargetItem": "moustache",
@@ -4300,7 +3907,6 @@
       },
       {
         "Verb": "drop",
-
         "Updates": [
           [
             {
@@ -4339,7 +3945,6 @@
     "Name": "splint",
     "Prefix": "a",
     "Description": "a small piece of softwood that looks like a long thin lolly stick. splits must be used to light bunson burners, any other naken flame is strictly forbidden.",
-
     "Type": "mobile",
     "Location": "south woods"
   },
@@ -4352,7 +3957,6 @@
     "Actions": [
       {
         "Verb": "light,ignite",
-
         "Updates": [
           {
             "TargetItem": "bunsen burner",
@@ -4416,7 +4020,6 @@
     "Name": "balloon",
     "Prefix": "a",
     "Description": "todo",
-
     "Type": "mobile",
     "Location": "news agent"
   },
@@ -4444,7 +4047,6 @@
     "Actions": [
       {
         "Verb": "file,shape",
-
         "Updates": [
           {
             "TargetItem": "lead",
@@ -4483,7 +4085,6 @@
     "Name": "magazine",
     "Prefix": "a",
     "Description": "a \"nudie\" mag called razzle. while this is obviously ontraband they intention of confescation by a mail teach is somewhat ambiguous.",
-
     "Type": "mobile",
     "Location": "news agent",
     "State": "it is very tatty and worn, clearly read a lot more than many books in the school library."
@@ -4511,7 +4112,6 @@
             "Property": "location",
             "Equality": "=",
             "Value": "player",
-
             "FailResponse": "TODO"
           }
         ]
@@ -4524,12 +4124,10 @@
     "Name": "bike",
     "Prefix": "a",
     "Description": "your trusty bicycle, the fastest way around town and better than shank's pony",
-
     "Type": "mobile",
     "Actions": [
       {
         "Verb": "get",
-
         "Updates": [
           {
             "TargetItem": "bike",
@@ -4570,7 +4168,6 @@
     "Name": "typewriter",
     "Prefix": "a",
     "Description": "TODO",
-
     "Type": "mobile",
     "Location": "typing pool"
   },
@@ -4591,7 +4188,6 @@
     "Actions": [
       {
         "Verb": "drop",
-
         "Updates": [
           {
             "TargetItem": "swimming trunks",
@@ -4611,7 +4207,6 @@
       },
       {
         "Verb": "wear,don",
-
         "Updates": [
           {
             "TargetItem": "swimming trunks",
@@ -4631,7 +4226,6 @@
       },
       {
         "Verb": "remove,undress,doff",
-
         "Updates": [
           {
             "TargetItem": "swimming trunks",
@@ -4662,7 +4256,6 @@
     "Actions": [
       {
         "Verb": "wash,clean",
-
         "Updates": [
           {
             "TargetItem": "flag",
@@ -4683,7 +4276,6 @@
       },
       {
         "Verb": "raise",
-
         "Updates": [
           [
             {
@@ -4757,12 +4349,10 @@
     "Name": "key",
     "Prefix": "a",
     "Description": "the key is a standard key to fit a night latch lock, it has a dull nickel finish.",
-
     "Type": "mobile",
     "Actions": [
       {
         "Verb": "file,shape",
-
         "Updates": [
           {
             "TargetItem": "key",
@@ -4824,7 +4414,6 @@
             "Property": "state",
             "Equality": "*",
             "Value": "geography homework",
-
             "FailResponse": "it would be wise to hang onto the key until you've found all your homework."
           },
           {
@@ -4832,7 +4421,6 @@
             "Property": "state",
             "Equality": "*",
             "Value": "carrying your art homework",
-
             "FailResponse": "it would be wise to hang onto the key until you've found all your homework."
           },
           {
@@ -4840,7 +4428,6 @@
             "Property": "state",
             "Equality": "*",
             "Value": "delighted",
-
             "FailResponse": "it would be wise to hang onto the key until you've found all your homework."
           },
           {
@@ -4848,7 +4435,6 @@
             "Property": "state",
             "Equality": "*",
             "Value": "holding your maths homework",
-
             "FailResponse": "it would be wise to hang onto the key until you've found all your homework."
           }
         ]
@@ -4859,14 +4445,12 @@
   },
   {
     "Name": "shackle lock",
-
     "Description": "it has a combination lock. unfortunately you have forgotten the combination number.",
     "Help": "a key cannot open a combination lock.",
     "Type": "mobile",
     "Actions": [
       {
         "Verb": "break,pry,open",
-
         "Updates": [
           {
             "TargetItem": "shackle lock",
@@ -4900,7 +4484,7 @@
     "Name": "chips",
     "Prefix": "some",
     "Description": "wrapped in greaseproof and white paper, they are still warm although slightly soggy and smell of vinegar.",
-    "Help": "despite common held beliefes eating chips will not give you achne.",
+    "Help": "despite common held beliefes eating chips will not give you acne.",
     "Type": "mobile",
     "Location": "chinese takeaway"
   },
@@ -4908,13 +4492,11 @@
     "Name": "blackboard rubber",
     "Prefix": "a",
     "Description": "a smooth wooden handle attached to a very, very dusty felt pad.it is used primarily to remove chalk from a blackboard and secondarily as a weapon hurled by angry teachers and pupils.",
-
     "Type": "mobile",
     "Location": "maths room"
   },
   {
     "Name": "hammer",
-
     "Description": "a standard imperial 12lb ball pein hammer with a smooth wooden handle.",
     "Help": "hammers are great for hammering home nails.",
     "Type": "mobile",
@@ -4937,7 +4519,6 @@
     "Actions": [
       {
         "Verb": "fix,repair,mend",
-
         "Updates": [
           {
             "TargetItem": "physics homework",
@@ -4959,7 +4540,6 @@
             "Property": "state",
             "Equality": "*",
             "Value": "wearing",
-
             "FailResponse": "dr atom looks up from the laser maintenance manual and says \"you can play with the laser if you want, but you only get two goes before you are blind\""
           }
         ]
@@ -4977,7 +4557,6 @@
     "Actions": [
       {
         "Verb": "pour,use",
-
         "Updates": [
           {
             "TargetItem": "lamp",
@@ -5093,20 +4672,17 @@
     "Name": "tennis ball",
     "Prefix": "a",
     "Description": "TODO",
-
     "Type": "mobile",
     "Location": "tennis courts"
   },
   {
     "Name": "pencil sharpener",
-
     "Description": "it has has a rusty steel blade and a dull grey metal body, it doesn't weigh much. essential for shaprening a blunt or broken pencil.",
     "Help": "metal pencil sharpeners are made of a magnesium alloy.",
     "Type": "mobile",
     "Actions": [
       {
         "Verb": "burn,ignite,light",
-
         "Updates": [
           [
             {
@@ -5145,7 +4721,6 @@
     "Name": "beaker",
     "Prefix": "a",
     "Description": "a pyrex beaker, impervious to heat but not unbreakable.",
-
     "Type": "mobile",
     "Actions": [
       {
@@ -5170,7 +4745,6 @@
             "Property": "location",
             "Equality": "*",
             "Value": "toilet",
-
             "FailResponse": "you cannot fill the beaker here"
           }
         ]
@@ -5224,7 +4798,6 @@
       },
       {
         "Verb": "insert",
-
         "Updates": [
           [
             {
@@ -5271,7 +4844,6 @@
     "Name": "compasses",
     "Prefix": "a pair of",
     "Description": "better know as just a 'compass', it's a basic school instrument that houses a pencil and allows circles to be drawn, angles to be measured and hands to be stabbed.",
-
     "Type": "mobile",
     "Location": "hidden"
   },
@@ -5292,7 +4864,6 @@
     "Actions": [
       {
         "Verb": "get",
-
         "Updates": [
           [
             {
@@ -5319,7 +4890,6 @@
       },
       {
         "Verb": "throw,toss,chuck,lob",
-
         "Updates": [
           {
             "TargetItem": "ged homework",
@@ -5345,12 +4915,10 @@
     "Name": "bird box",
     "Prefix": "a",
     "Description": "TODO",
-
     "Type": "mobile",
     "Actions": [
       {
         "Verb": "get",
-
         "Updates": [
           [
             {
@@ -5377,7 +4945,6 @@
       },
       {
         "Verb": "fix,repair",
-
         "Updates": [
           {
             "TargetItem": "bird box",
@@ -5397,14 +4964,12 @@
             "Item": "nails",
             "Property": "location",
             "Value": "player",
-
             "FailResponse": "you don't have anything that could fix the bird box."
           }
         ]
       },
       {
         "Verb": "give",
-
         "Updates": [
           [
             {
@@ -5443,7 +5008,6 @@
             "Item": "player",
             "Property": "location",
             "Value": "wood workshop",
-
             "FailResponse": "there is no-one around who wants to accept the bird box."
           }
         ]
@@ -5461,7 +5025,6 @@
     "Actions": [
       {
         "Verb": "get",
-
         "Updates": [
           {
             "TargetItem": "frog",
@@ -5488,7 +5051,6 @@
       },
       {
         "Verb": "give",
-
         "Updates": [
           [
             {
@@ -5525,7 +5087,6 @@
     "Actions": [
       {
         "Verb": "get",
-
         "Updates": [
           [
             {
@@ -5552,7 +5113,6 @@
       },
       {
         "Verb": "buy,purchase",
-
         "Updates": [
           [
             {
@@ -5597,7 +5157,6 @@
       },
       {
         "Verb": "give",
-
         "Updates": [
           [
             {
@@ -5647,7 +5206,6 @@
       },
       {
         "Verb": "give",
-
         "Updates": [
           [
             {
@@ -5695,7 +5253,6 @@
     "Actions": [
       {
         "Verb": "wear,don",
-
         "Updates": [
           {
             "TargetItem": "gloves",
@@ -5715,7 +5272,6 @@
       },
       {
         "Verb": "drop",
-
         "Updates": [
           {
             "TargetItem": "gloves",
@@ -5735,7 +5291,6 @@
       },
       {
         "Verb": "remove,undress,doff",
-
         "Updates": [
           {
             "TargetItem": "gloves",
@@ -5766,7 +5321,6 @@
     "Actions": [
       {
         "Verb": "wear,don",
-
         "Updates": [
           {
             "TargetItem": "sunglasses",
@@ -5786,7 +5340,6 @@
       },
       {
         "Verb": "remove,doff",
-
         "Updates": [
           {
             "TargetItem": "sunglasses",
@@ -5813,7 +5366,6 @@
       },
       {
         "Verb": "drop",
-
         "Updates": [
           [
             {
@@ -5858,7 +5410,6 @@
     "Actions": [
       {
         "Verb": "play",
-
         "Updates": [
           [
             {
@@ -5922,7 +5473,6 @@
     "Actions": [
       {
         "Verb": "get",
-
         "Updates": [
           [
             {
@@ -5949,7 +5499,6 @@
       },
       {
         "Verb": "buy,purchase,take",
-
         "Updates": [
           [
             {
@@ -5976,7 +5525,6 @@
       },
       {
         "Verb": "use",
-
         "Updates": [
           {
             "TargetItem": "maths homework",
@@ -6004,7 +5552,6 @@
       },
       {
         "Verb": "wear,don",
-
         "Updates": [
           {
             "TargetItem": "calculator watch",
@@ -6031,7 +5578,6 @@
       },
       {
         "Verb": "remove,doff",
-
         "Updates": [
           {
             "TargetItem": "calculator watch",
@@ -6055,7 +5601,6 @@
   },
   {
     "Name": "fifty quid",
-
     "Description": "a crisp bearly used fifty pound note. it is huge compares to one pound notes, almost as big as a handkerchief and far more rare.",
     "Help": "fifty pound will buy a lot!",
     "Type": "mobile",
@@ -6070,7 +5615,6 @@
     "Actions": [
       {
         "Verb": "use",
-
         "Updates": [
           [
             {
@@ -6119,7 +5663,6 @@
     "Actions": [
       {
         "Verb": "use,dig",
-
         "Updates": [
           {
             "TargetItem": "locker key",
@@ -6156,12 +5699,10 @@
     "Name": "french homework",
     "Prefix": "your",
     "Description": "TODO",
-
     "Type": "mobile",
     "Actions": [
       {
         "Verb": "give",
-
         "Updates": [
           [
             {
@@ -6202,12 +5743,10 @@
     "Name": "history homework",
     "Prefix": "your",
     "Description": "an assignment to write about the battle of hastings, which is far less interesting than it sounds.",
-
     "Type": "mobile",
     "Actions": [
       {
         "Verb": "get",
-
         "Updates": [
           {
             "TargetItem": "history homework",
@@ -6228,7 +5767,6 @@
       },
       {
         "Verb": "give",
-
         "Updates": [
           [
             {
@@ -6260,12 +5798,10 @@
     "Name": "english homework",
     "Prefix": "your",
     "Description": "an assignment to write an essay about espionage.",
-
     "Type": "mobile",
     "Actions": [
       {
         "Verb": "give",
-
         "Updates": [
           [
             {
@@ -6292,7 +5828,6 @@
             "Item": "player",
             "Property": "location",
             "Value": "english language",
-
             "FailResponse": "there isn't anyone around who wants your english homework."
           }
         ]
@@ -6341,14 +5876,12 @@
             "Item": "player",
             "Property": "location",
             "Value": "maths room",
-
             "FailResponse": "this is not the best place to submit your maths homework."
           }
         ]
       },
       {
         "Verb": "do",
-
         "Updates": [
           {
             "TargetItem": "maths homework",
@@ -6390,12 +5923,10 @@
     "Name": "swimming certificate",
     "Prefix": "your",
     "Description": "it certifies that you have swam 40 lengths of the swimming pool, or 1km in closed water.",
-
     "Type": "mobile",
     "Actions": [
       {
         "Verb": "give",
-
         "Updates": [
           {
             "TargetItem": "mr ball",
@@ -6427,7 +5958,6 @@
     "Actions": [
       {
         "Verb": "give",
-
         "Updates": [
           [
             {
@@ -6454,7 +5984,6 @@
             "Item": "ged homework",
             "Property": "location",
             "Value": "player",
-
             "FailResponse": "you don't seem to be carrying your ged homework."
           }
         ]
@@ -6471,7 +6000,6 @@
     "Actions": [
       {
         "Verb": "give",
-
         "Updates": [
           {
             "TargetItem": "miss sketch",
@@ -6492,7 +6020,6 @@
             "Property": "state",
             "Equality": "*",
             "Value": "vista",
-
             "FailResponse": "you haven't completed your art homework yet."
           }
         ]
@@ -6505,12 +6032,10 @@
     "Name": "physics homework",
     "Prefix": "your",
     "Description": "an assignment to investgate the applciations of light amplification stimulation by emission of radiation.",
-
     "Type": "mobile",
     "Actions": [
       {
         "Verb": "give",
-
         "Updates": [
           [
             {
@@ -6539,7 +6064,6 @@
             "Property": "state",
             "Equality": "*",
             "Value": "burn",
-
             "FailResponse": "dr atom is too busy reading the maintenance manual for the laser to accept your homework."
           }
         ]
@@ -6557,7 +6081,6 @@
     "Actions": [
       {
         "Verb": "give",
-
         "Updates": [
           [
             {
@@ -6586,7 +6109,6 @@
             "Property": "location",
             "Equality": "=",
             "Value": "chemistry lab",
-
             "FailResponse": "there is no-one around to accept your homework."
           },
           {
@@ -6594,7 +6116,6 @@
             "Property": "location",
             "Equality": "=",
             "Value": "chemistry lab",
-
             "FailResponse": "there is no-one around to accept your homework."
           }
         ]
@@ -6612,7 +6133,6 @@
     "Actions": [
       {
         "Verb": "give",
-
         "Updates": [
           [
             {
@@ -6653,7 +6173,6 @@
     "Name": "drama homework",
     "Prefix": "your",
     "Description": "the assignment is to write an essay on the practical usage of dramatic pose.",
-
     "Type": "mobile",
     "Actions": [
       {
@@ -6697,7 +6216,6 @@
     "Name": "woodwork homework",
     "Prefix": "your",
     "Description": "TODO",
-
     "Type": "mobile",
     "Location": "hidden"
   },
@@ -6705,12 +6223,10 @@
     "Name": "geography homework",
     "Prefix": "your",
     "Description": "you don't rememebr the assignent but it contains a detailed analysis of the runcorn bus service and some sketches of corfe castle.",
-
     "Type": "mobile",
     "Actions": [
       {
         "Verb": "give",
-
         "Updates": [
           [
             {
@@ -6737,7 +6253,6 @@
             "Item": "geography homework",
             "Property": "location",
             "Value": "player",
-
             "FailResponse": "you don't seem to be carrying your geography homework."
           }
         ]

@@ -16,15 +16,17 @@ import {
   Moves,
   FrontStreet,
   Version,
+  Drop,
 } from "../content/Constants";
 import { Truncations } from "../content/Constants";
 import {
   getDropableItem,
   getGettableItem,
   getItemByName,
-  getLocalItems,
+  getHelpItems,
   getLocation,
   getPlayer,
+  getAvailbleItem,
 } from "./ItemQueries";
 import {
   getInventory,
@@ -167,7 +169,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
 
     //#region HELP
     if (verb === Help) {
-      let local = getLocalItems(items, location?.Name);
+      let local = getHelpItems(items);
       let helps = local
         .filter((i) => {
           return i.Help !== null && i.Help !== undefined;
@@ -326,7 +328,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
   //#endregion
 
   //#region DROP
-  if (verb === "drop") {
+  if (verb === Drop) {
     let item = getDropableItem(items, noun);
     if (item === null || item === undefined) {
       return {
@@ -339,7 +341,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
     }
     //get any specified drop actions (with conditions)
     let action = item.Actions?.find((a) => {
-      return a.Verb === "drop";
+      return a.Verb === Drop;
     });
     //create default drop action is no custom drop action defined
     if (action === null || action === undefined) {
@@ -390,6 +392,20 @@ export function Parse(input: string, items: Item[]): MyRequest {
       } as Action,
     } as MyRequest;
   }
+  //#endregion
+
+  //#region CUSTOM VERB
+  let local = getAvailbleItem(items);
+  let target = getItemByName(local, noun);
+  let action = target?.Actions.find((a) => a.Verb.toLowerCase().includes(verb));
+  if (action !== null && action !== undefined) {
+    return {
+      OK: true,
+      Look: { Refresh: false, Brevity: true },
+      Action: action,
+    } as MyRequest;
+  }
+
   //#endregion
 
   return {

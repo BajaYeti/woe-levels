@@ -4,7 +4,7 @@ import { Parse } from "../utils/Parse";
 import { Process } from "../utils/Process";
 import { Check } from "../utils/Check";
 import { Carat } from "../content/Constants";
-import { getView, getExits, getLocationDescription } from "../utils/Utils";
+import { getView, getExits, getLocationDescription, capitalizeFirstLetter } from "../utils/Utils";
 import { getLocation } from "../utils/ItemQueries";
 
 type CommandType = {
@@ -40,7 +40,7 @@ export default function Input(props: CommandType) {
       request.Action.UnconditionalResponse !== null &&
       request.Action.UnconditionalResponse !== undefined
     ) {
-      newLog.push(request.Action.UnconditionalResponse);
+      newLog.push(capitalizeFirstLetter(request.Action.UnconditionalResponse));
     }
     if (request.Load !== undefined) {
       props.setItems(request.Load);

@@ -1,4 +1,4 @@
-import { Player, Moves } from "../content/Constants";
+import { Player, Moves, Person } from "../content/Constants";
 import { getLocation, getVisibleItems } from "./ItemQueries";
 
 export function getExits(location: Item | undefined): string {
@@ -19,7 +19,7 @@ export function getExits(location: Item | undefined): string {
       lastCommaIndex
     )} and${exitList?.substring(lastCommaIndex + 1)}`;
   }
-  return `Exits: ${getFirstLetterCaps(exitList)}`;
+  return `Exits: ${capitalizeFirstLetter(exitList)}`;
 }
 
 export function getInventory(items: Array<Item>): string {
@@ -40,8 +40,15 @@ export function getInventory(items: Array<Item>): string {
   return `You are carrying ${carrying}`;
 }
 
-export function getFirstLetterCaps(str: string): string {
+export function capitalizeFirstLetter(str: string): string {
   return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+export function capitalizeEveryWord(sentence: string): string {
+  return sentence
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(" ");
 }
 
 export function getRandomElement(arr: any[]): any {
@@ -63,27 +70,28 @@ export function getLocationDescription(
     location.Count === 0 ||
     !brevity
   ) {
-    description = `${getFirstLetterCaps(location?.Name)}: ${
+    description = `${capitalizeFirstLetter(location?.Name)}: ${
       location?.Description
     }`;
   } else {
-    description = `${getFirstLetterCaps(location?.Name)}.`;
+    description = `${capitalizeFirstLetter(location?.Name)}.`;
   }
   return description;
 }
 
 export function getView(items: Array<Item>): string {
-  let location = getLocation(items);
-  if (location === null || location === undefined) {
-    return "You cannot see where you are.";
-  }
-  let local = getVisibleItems(items, location.Name);
+  let local = getVisibleItems(items);
   if (local.length === 0) {
     return "";
   }
 
   let view = local
-    .map((i) => `${i.Prefix === undefined ? "" : i.Prefix} ${i.Name}`)
+    .map(
+      (i) =>
+        `${i.Prefix === undefined ? "" : i.Prefix} ${
+          i.Type === Person ? capitalizeEveryWord(i.Name) : i.Name
+        }`
+    )
     .join(", ");
   const lastCommaIndex = view.lastIndexOf(",");
   if (lastCommaIndex !== -1) {
