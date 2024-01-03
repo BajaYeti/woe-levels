@@ -5,7 +5,7 @@ import { Process } from "../utils/Process";
 import { Check } from "../utils/Check";
 import { Carat } from "../content/Constants";
 import { getView, getExits, getLocationDescription } from "../utils/Utils";
-import { getItemByName, getPlayer } from "../utils/ItemQueries";
+import { getItemByName, getLocation, getPlayer } from "../utils/ItemQueries";
 
 type CommandType = {
   items: Array<Item>;
@@ -66,12 +66,14 @@ export default function Input(props: CommandType) {
 
     //#region process response
     let result = Process(request.Action, props.items);
-    if (result.length > 0) {
-      props.setItems(result);
-      let player = getPlayer(result);
-      let location = player
-        ? getItemByName(props.items, player.Location)
-        : undefined;
+    if (result.Items.length > 0) {
+      //update procsessed items
+      props.setItems(result.Items);
+      //display any message returned from processing
+      if (result.Feedback) {
+        newLog.push(result.Feedback);
+      }
+      let location = getLocation(props.items);
       //if user moved, display new location description
       if (location !== undefined && request.Look.Refresh) {
         newLog.push(getLocationDescription(location, request.Look.Brevity));

@@ -53,7 +53,6 @@ type Truncation = {
 };
 
 type Process = {
-  OK: boolean;
   Feedback: string | null;
   Items: Array<Item>;
 };

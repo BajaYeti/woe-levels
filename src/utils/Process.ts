@@ -7,14 +7,13 @@ import { getItemByName } from "./ItemQueries";
  * @param items: An array of items to be updated
  * @returns items: An array of updated
  */
-export function Process(request: Action, items: Array<Item>): Array<Item> {
+export function Process(request: Action, items: Array<Item>): Process {
   if (request.Updates === null || request.Updates === undefined) {
-    return items;
+    return { Feedback: null, Items: items };
   }
 
   let updatedItems: Array<Item> = items;
-  let OK = true;
-  let Feedback = null;
+  let Feedback = Array<string>();
   request.Updates.forEach((u) => {
     let item = getItemByName(items, u.TargetItem);
     if (item !== undefined) {
@@ -39,8 +38,8 @@ export function Process(request: Action, items: Array<Item>): Array<Item> {
               }
             } else {
               //catch breaking move and tele port back to front street
-              console.log(
-                `Player moved to undefined location "${item.Location}"`
+              Feedback.push(
+                `You try to move to "${item.Location}, but you pass out and wake up in a different location."`
               );
               item.Location = FrontStreet;
             }
@@ -49,5 +48,5 @@ export function Process(request: Action, items: Array<Item>): Array<Item> {
       }
     }
   });
-  return updatedItems;
+  return { Feedback: Feedback.join(". "), Items: updatedItems };
 }
