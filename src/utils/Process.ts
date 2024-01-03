@@ -13,6 +13,8 @@ export function Process(request: Action, items: Array<Item>): Array<Item> {
   }
 
   let updatedItems: Array<Item> = items;
+  let OK = true;
+  let Feedback = null;
   request.Updates.forEach((u) => {
     let item = getItemByName(items, u.TargetItem);
     if (item !== undefined) {

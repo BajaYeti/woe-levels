@@ -1,10 +1,11 @@
-export const AppVersion = "V1.0.2";
+export const AppVersion = "V1.0.3";
 export const AppTitle = "Woe Levels";
 export const AppAuthor = "BajaYeti";
 export const LocalStoargeKey = "woe-levels";
 
 export const Player = "player";
 export const Mobile = "mobile";
+export const Fixed = "fixed";
 export const Location = "location";
 export const Carat = "-";
 export const Look = "look";
@@ -60,4 +61,5 @@ export const Truncations: Array<Truncation> = [
   { short: "l", long: "look" },
   { short: "inv", long: "inventory" },
   { short: "exam", long: "examine" },
+  { short: "h", long: "help" },
 ];

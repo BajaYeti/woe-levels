@@ -1,5 +1,5 @@
 [
-  { "Type": "version", "Name": "version", "Location": "V0.0.3" },
+  { "Type": "version", "Name": "version", "Location": "V0.0.4" },
   {
     "Name": "player",
     "Type": "player",
@@ -3953,7 +3953,6 @@
     "Name": "flag pole",
     "Prefix": "a",
     "Description": "very tall and is made of steel which is painted with high-gloss grey paint, the quality of the paint finish is in intended to impress.",
-
     "Type": "fixed",
     "Actions": [
       {
@@ -3986,7 +3985,7 @@
   },
   {
     "Name": "fire alarm",
-
+    "Prefix": "a",
     "Description": "a standard fire alarm break-glass although the glass has already been broken and not repaired indicating former use.",
     "Help": "sounding the fire will cause a fire drill.",
     "Type": "fixed",
@@ -4894,13 +4893,13 @@
     "Name": "jackpot",
     "Prefix": "the",
     "Description": "a pocketful of legal coins.",
-    "Help": "coins can be exchanged for good in most shops.",
+    "Help": "coins can be exchanged for goods in most shops.",
     "Type": "mobile",
     "Location": "hidden"
   },
   {
     "Name": "chips",
-    "Prefix": "a bag of",
+    "Prefix": "some",
     "Description": "wrapped in greaseproof and white paper, they are still warm although slightly soggy and smell of vinegar.",
     "Help": "despite common held beliefes eating chips will not give you achne.",
     "Type": "mobile",

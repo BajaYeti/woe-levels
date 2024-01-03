@@ -1,5 +1,5 @@
-import { Mobile, Player, Moves } from "../content/Constants";
-import { getLocation, getPlayer } from "./ItemQueries";
+import { Player, Moves } from "../content/Constants";
+import { getLocation, getVisibleItems } from "./ItemQueries";
 
 export function getExits(location: Item | undefined): string {
   if (location === undefined) {
@@ -73,18 +73,18 @@ export function getLocationDescription(
 }
 
 export function getView(items: Array<Item>): string {
-  let player = getPlayer(items);
   let location = getLocation(items);
-  if (location === null && location === undefined) {
+  if (location === null || location === undefined) {
     return "You cannot see where you are.";
   }
-  let local = items.filter(
-    (i) => i.Location === location?.Name && i.Type === Mobile
-  );
+  let local = getVisibleItems(items, location.Name);
   if (local.length === 0) {
     return "";
   }
-  let view = local.map((i) => `${i.Prefix} ${i.Name}`).join(", ");
+
+  let view = local
+    .map((i) => `${i.Prefix === undefined ? "" : i.Prefix} ${i.Name}`)
+    .join(", ");
   const lastCommaIndex = view.lastIndexOf(",");
   if (lastCommaIndex !== -1) {
     view = `${view.substring(0, lastCommaIndex)} and${view.substring(

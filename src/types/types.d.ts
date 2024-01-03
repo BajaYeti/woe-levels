@@ -51,3 +51,9 @@ type Truncation = {
   short: string;
   long: string;
 };
+
+type Process = {
+  OK: boolean;
+  Feedback: string | null;
+  Items: Array<Item>;
+};

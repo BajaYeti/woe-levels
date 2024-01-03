@@ -1,4 +1,4 @@
-import { Player, Location } from "../content/Constants";
+import { Player, Location, Mobile, Fixed } from "../content/Constants";
 
 export function getLocation(items: Array<Item>): Item | undefined {
   let player = getPlayer(items);
@@ -11,14 +11,20 @@ export function getLocalItems(
   items: Array<Item>,
   location: string
 ): Array<Item> {
-  return items.filter((i) => i.Location === location || i.Location === Player);
+  return items.filter(
+    (i) =>
+      (i.Location === location || i.Location === Player) &&
+      (i.Type === Mobile || i.Type === Fixed)
+  );
 }
 
-export function getLocalItem(
+export function getVisibleItems(
   items: Array<Item>,
   location: string
-): Item | undefined {
-  return items.find((i) => i.Location === location || i.Location === Player);
+): Array<Item> {
+  return items.filter(
+    (i) => i.Location === location && (i.Type === Mobile || i.Type === Fixed)
+  );
 }
 
 export function getGettableItem(
@@ -28,7 +34,7 @@ export function getGettableItem(
   let location = getLocation(items);
   return items.find((i) => {
     return (
-      i.Name === name && i.Location === location?.Name && i.Type === "mobile"
+      i.Name === name && i.Location === location?.Name && i.Type === Mobile
     );
   });
 }

@@ -20,7 +20,7 @@ import { Truncations } from "../content/Constants";
 import {
   getDropableItem,
   getGettableItem,
-  getLocalItem,
+  getItemByName,
   getLocalItems,
   getLocation,
   getPlayer,
@@ -285,7 +285,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
           Updates: [
             {
               TargetItem: item.Name,
-              Property: "Location",
+              Property: Location,
               Value: Player,
             },
           ],
@@ -327,7 +327,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
           Updates: [
             {
               TargetItem: item.Name,
-              Property: "Location",
+              Property: Location,
               Value: location.Name,
             },
           ],
@@ -345,7 +345,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
 
   //#region EXAMINE
   if (verb === Examine) {
-    let item = getLocalItem(items, noun);
+    let item = getItemByName(items, noun);
     if (item === null || item === undefined) {
       return {
         OK: false,
