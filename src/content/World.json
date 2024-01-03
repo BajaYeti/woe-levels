@@ -1,5 +1,5 @@
 [
-  { "Type": "version", "Name": "version", "Location": "V0.0.4" },
+  { "Type": "version", "Name": "version", "Description": "V0.0.5" },
   {
     "Name": "player",
     "Type": "player",
@@ -7,7 +7,7 @@
   },
   {
     "Name": "hidden",
-    "Description": "an unreachable location used to hide items from the player",
+    "Description": "An unreachable location used to hide items from the player",
     "Type": "location",
     "Actions": [
       {
@@ -201,7 +201,6 @@
   },
   {
     "Name": "inside the minibus",
-
     "Description": "it is sparse with scant regard to the safety of its occupants. two wooden-slat bench seats run the length of the van on either side with no restraints meaning that occupants travel sideways and face each other, while being thrown about. with the right people onboard this is arguably the most fun you could ever have at school.",
     "Help": "throwing oranges and other round fruit out the window won't help you here, but it is very amusing.",
     "Type": "location",

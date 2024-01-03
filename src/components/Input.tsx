@@ -5,7 +5,7 @@ import { Process } from "../utils/Process";
 import { Check } from "../utils/Check";
 import { Carat } from "../content/Constants";
 import { getView, getExits, getLocationDescription } from "../utils/Utils";
-import { getItemByName, getLocation, getPlayer } from "../utils/ItemQueries";
+import { getLocation } from "../utils/ItemQueries";
 
 type CommandType = {
   items: Array<Item>;

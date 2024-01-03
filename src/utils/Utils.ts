@@ -116,3 +116,24 @@ export function loadFromLocalStorage(key: string): any {
     return undefined;
   }
 }
+
+export function isVersionLessThan(
+  v1: string | undefined,
+  v2: string | undefined
+): boolean {
+  if (v1 === undefined || v2 === undefined) {
+    return false;
+  }
+  const parts1 = v1.replace("V", "").split(".").map(Number);
+  const parts2 = v2.replace("V", "").split(".").map(Number);
+
+  for (let i = 0; i < parts1.length; i++) {
+    if (parts1[i] < parts2[i]) {
+      return true;
+    } else if (parts1[i] > parts2[i]) {
+      return false;
+    }
+  }
+
+  return false;
+}

@@ -15,6 +15,7 @@ import {
   InstructionsResponse,
   Moves,
   FrontStreet,
+  Version,
 } from "../content/Constants";
 import { Truncations } from "../content/Constants";
 import {
@@ -28,6 +29,7 @@ import {
 import {
   getInventory,
   getRandomElement,
+  isVersionLessThan,
   loadFromLocalStorage,
   saveToLocalStorage,
 } from "./Utils";
@@ -148,6 +150,19 @@ export function Parse(input: string, items: Item[]): MyRequest {
     }
     //#endregion
 
+    //#region VERSION
+    if (verb === Version) {
+      let version = getItemByName(items, Version);
+      return {
+        OK: false,
+        Look: { Refresh: false, Brevity: true },
+        Action: {
+          UnconditionalResponse: `World ${version?.Description}`,
+        } as Action,
+      } as MyRequest;
+    }
+    //#endregion
+
     //#endregion
 
     //#region HELP
@@ -216,11 +231,20 @@ export function Parse(input: string, items: Item[]): MyRequest {
           } as Action,
         } as MyRequest;
       }
+      let warning = isVersionLessThan(
+        getItemByName(load, Version)?.Description,
+        getItemByName(items, Version)?.Description
+      );
+      let response = `Saved game loaded, take a look around.${
+        warning
+          ? "|WARNING: Saved game data was created using an older version of the world, you can continue from the saved position but problems may occur."
+          : ""
+      }`;
       return {
         OK: false,
         Look: { Refresh: true, Brevity: false },
         Action: {
-          UnconditionalResponse: "Saved game loaded, take a look around.",
+          UnconditionalResponse: response,
           Updates: [
             {
               TargetItem: Player,
