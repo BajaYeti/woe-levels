@@ -1,5 +1,5 @@
 [
-  { "Type": "version", "Name": "version", "Description": "V0.0.7" },
+  { "Type": "version", "Name": "version", "Description": "V0.0.8" },
   {
     "Name": "player",
     "Type": "player",
@@ -7,7 +7,7 @@
   },
   {
     "Name": "hidden",
-    "Description": "An unreachable location used to hide items from the player.",
+    "Description": "This is an unreachable location used to hide items from the player.",
     "Type": "location",
     "Actions": [
       {
@@ -25,8 +25,8 @@
   },
   {
     "Name": "front street",
-    "Description": "The street runs north/south with the school is to the west. In the morning the street is the greyest gloomiest place on earth, after 15:30 it's a brightly lit golden pathway to freedom and happiness.",
-    "Help": "You are going to need all the help you can get because last night's homework assignments were English, French, maths, physics, biology, chemistry, geography, history, woodwork, metalwork, P.E., GED, art, home economics and drama. Good job there was less than usual homework yesterday!",
+    "Description": "The street runs north/south, with the school to the west. The street is the greyest, gloomiest place in the morning; after 15:30, it's a brightly lit golden pathway to freedom and happiness.",
+    "Help": "You will need all the help you can get because last night's homework assignments were English, French, maths, physics, biology, chemistry, geography, history, woodwork, metalwork, P.E., GED, art, home economics and drama. Good job, there was less than usual homework yesterday!",
     "Type": "location",
     "Actions": [
       {
@@ -53,8 +53,8 @@
             "Item": "bike",
             "Property": "location",
             "Value": "player",
-            "PassResponse": "you have completed your goal!",
-            "FailResponse": "home is over 2 miles away, the only way to reach home is by riding your iron steed."
+            "PassResponse": "You have completed your goal!",
+            "FailResponse": "Home is over 2 miles away; riding your iron steed is the only way to reach home."
           }
         ]
       },
@@ -83,8 +83,8 @@
   },
   {
     "Name": "north driveway",
-    "Description": "The driveway connects the school property to the public road and allows small vehicle access. the north driveway entrance is used mostly by pupils who cycle to school, those who are live the furthest away and don't have the luxury of generous parents to provide endless taxi services.",
-    "Help": "A driveway is the only place you can take bicycles into and out of the school property.",
+    "Description": "The driveway connects the school property to the public road and allows small vehicle access. The north driveway entrance is used mainly by pupils who cycle to school, those who live the furthest away and don't have the luxury of generous parents to provide endless taxi services.",
+    "Help": "The driveway is the only place to take bicycles into and out of the school property.",
     "Type": "location",
     "Actions": [
       {
@@ -101,126 +101,126 @@
             "Item": "bike",
             "Property": "location",
             "Value": "player",
-            "PassResponse": "you scoot your bike through the north gate and for once your are not confronted by anyone in authority, happy days!",
-            "FailResponse": "mr broom prevents you from going any further, he shouts \"vehicular access only! don't you know pedestrians and vehicles don't mix?\" before going about his other business."
+            "PassResponse": "you scoot your bike through the north gate and for once your are not confronted by anyone in authority.",
+            "FailResponse": "Mr Broom appears from nowhere and prevents you from going any further; he shouts \"Vehicular access only! Don't you know pedestrians and vehicles don't mix?\" before going about his other business."
           },
           {
             "Item": "pencil",
             "Property": "location",
             "Value": "player",
-            "FailResponse": "it would be unwise to leave school without your trusty pencil, not only will you be unable to do any homework but you are unlikely to get back into school!"
+            "FailResponse": "It would be wise to leave school with your trusty pencil; not only will you be unable to do any homework, but you will unlikely be readmitted to school."
           },
           {
             "Item": "miss battle",
             "Property": "state",
             "Equality": "*",
             "Value": "homework",
-            "FailResponse": "miss battle prevents you from leaving, insisting that you still need to hand in your homework although her gaze never strays from the direction of the front path."
+            "FailResponse": "Miss Battle prevents you from leaving, insisting that you still need to hand in your history homework, although her gaze never strays from the direction of the front path."
           },
           {
             "Item": "miss french",
             "Property": "state",
             "Equality": "*",
             "Value": "homework",
-            "FailResponse": "miss french vous empêche de partir, insistant sur le fait que vous devez toujours rendre vos devoirs."
+            "FailResponse": "Miss French vous empêche de partir, insistant sur le fait que vous devez encore terminer vos devoirs de français."
           },
           {
             "Item": "mr ball",
             "Property": "state",
             "Equality": "*",
             "Value": "certificate",
-            "FailResponse": "mr ball prevents you from leaving, insisting that you still need to hand in your P.E. homework while jogging on the spot."
+            "FailResponse": "Mr Ball prevents you from leaving, insisting that you still need to hand in your P.E. homework while jogging on the spot."
           },
           {
             "Item": "dr atom",
             "Property": "state",
             "Equality": "*",
             "Value": "homework",
-            "FailResponse": "dr atom prevents you from leaving, insisting that you still need to hand in your physics homework."
+            "FailResponse": "Dr Atom prevents you from leaving, insisting you still need to hand in your physics homework."
           },
           {
             "Item": "mr foot",
             "Property": "state",
             "Equality": "*",
             "Value": "homework",
-            "FailResponse": "mr foot leaps out in front of you like an energetic frog and prevents you from leaving school, \"you don't seem to have submitted your biology homework.\" he asserts firmly, before hopping off as quickly as he appeared."
+            "FailResponse": "Mr Foot leaps out in front of you like an energetic frog and prevents you from leaving school, \"you don't seem to have submitted your biology homework.\" he asserts firmly before hopping off as quickly as he appeared."
           },
           {
             "Item": "mr square",
             "Property": "state",
             "Equality": "*",
             "Value": "homework",
-            "FailResponse": "mr square prevents you from leaving, insisting that you still need to hand in your homework - he seems aggrieved at having to ask you and would rather be off drawing isometric objects."
+            "FailResponse": "Mr Square prevents you from leaving, insisting that you still need to hand in your homework - he seems aggrieved at having to ask you. He would prefer to draw isometric objects elsewhere."
           },
           {
             "Item": "mr rhumb",
             "Property": "state",
             "Equality": "*",
             "Value": "homework",
-            "FailResponse": "mr rhumb prevents you from leaving, insisting that you still need to hand in your geography homework, although it pains him to do so."
+            "FailResponse": "Mr Rhumb prevents you from leaving, insisting that you still need to hand in your geography homework, although it pains him to do so."
           },
           {
             "Item": "mr silver",
             "Property": "state",
             "Equality": "*",
             "Value": "homework",
-            "FailResponse": "mr silver prevents you from leaving, insisting that you still need to hand in your homework."
+            "FailResponse": "Mr Silver prevents you from leaving, insisting that you still must hand in your chemistry homework."
           },
           {
             "Item": "miss sketch",
             "Property": "state",
             "Equality": "*",
             "Value": "homework",
-            "FailResponse": "miss sketch timidly chases after you and politely informs you that you haven't submitted your art homework yet, she is so nice it would be a crime not to hand in your art homework before going home."
+            "FailResponse": "Miss Sketch timidly chases after you and politely informs you that you haven't submitted your art homework yet; she is so lovely it would be a crime not to hand in your art homework before going home."
           },
           {
             "Item": "miss sharp",
             "Property": "state",
             "Equality": "*",
             "Value": "doodles",
-            "FailResponse": "miss sharp prevents you from leaving, stating that you still need to hand in your music homework in almost song."
+            "FailResponse": "Miss Sharp prevents you from leaving, stating almost song like that you must still hand in your music homework."
           },
           {
             "Item": "mr saw",
             "Property": "state",
             "Equality": "*",
             "Value": "homework",
-            "FailResponse": "mr saw prevents you from leaving, insisting that you still need to hand in your homework."
+            "FailResponse": "Mr Saw prevents you from leaving, insisting you still need to submit your woodwork homework."
           },
           {
             "Item": "mrs bakewell",
             "Property": "state",
             "Equality": "*",
             "Value": "homework",
-            "FailResponse": "mrs bakewell prevents you from leaving, insisting that you still need to hand in your homework - she looks hungry too!"
+            "FailResponse": "Mrs Bakewell prevents you from leaving, hungrily insisting that you still must hand in your home economics homework."
           },
           {
             "Item": "mr bodmas",
             "Property": "state",
             "Equality": "*",
             "Value": "maths homework",
-            "FailResponse": "mr bodmas leaps out from no-where and prevents you from leaving school, \"i don't seem to have your maths homework.\" he asserts firmly, before disappearing as quickly as he appeared."
+            "FailResponse": "Mr Bodmas leaps out from nowhere and prevents you from leaving school; \"I don't seem to have your maths homework.\" he asserts firmly before disappearing as quickly as he appeared."
           },
           {
             "Item": "miss mcqueen",
             "Property": "state",
             "Equality": "*",
             "Value": "homework",
-            "FailResponse": "miss mcqueen prevents you from leaving, stating that you still need to hand in your homework dramatically."
+            "FailResponse": "Miss McQueen prevents you from leaving, stating that you must still hand in your homework as dramatically as she can."
           },
           {
             "Item": "mr booker",
             "Property": "state",
             "Equality": "*",
             "Value": "homework",
-            "FailResponse": "mr booker prevents you from leaving, stating that you still need to hand in your homework in a soliloquy."
+            "FailResponse": "Mr Booker prevents you from leaving, delivers a monologue and insists that you hand in your English homework."
           },
           {
             "Item": "mr steel",
             "Property": "state",
             "Equality": "*",
             "Value": "keyring",
-            "FailResponse": "mr steel prevents you from leaving, insisting that you still need to hand in your homework."
+            "FailResponse": "Mr Steel prevents you from leaving, stating that he has not received your metalwork homework."
           }
         ]
       },
@@ -278,8 +278,8 @@
   },
   {
     "Name": "south street",
-    "Description": "lined with flint stone wall houses interspersed by thatched cottages, this is clearly heading towards the better part of town.",
-    "Help": "you will need a lot of financial help to live in this part of town.",
+    "Description": "The street is lined with flint stone wall houses interspersed by thatched cottages; this is clearly heading towards the better part of town.",
+    "Help": "You would need financial help to live in this part of town.",
     "Type": "location",
     "Actions": [
       {
@@ -307,8 +307,8 @@
             "Property": "location",
             "Equality": "=",
             "Value": "player",
-            "PassResponse": "mr. head leaps out to confront you, but on seeing you trusty pencil goes back to his regular beat, this is not the last time you will need your trusty pencil so don't lose it.",
-            "FailResponse": "mr. head leaps in front of you, blocks your progress and scorns \"you look ill equipped for a day of learning in my mind institutional establishment!\" while failing to tell you the exact problem before disaparing."
+            "PassResponse": "Mr Head leaps out to confront you, but seeing your trusty pencil return to his regular beat, this is not the last time you will need your trusty pencil, so don't lose it.",
+            "FailResponse": "Mr Head leaps in front of you, blocks your progress and scorns \"You look ill-equipped for a day of learning in my fine institutional establishment!\" while failing to tell you the exact problem before disappearing."
           }
         ]
       }
@@ -317,7 +317,7 @@
   },
   {
     "Name": "south driveway",
-    "Description": "connects the school property to the public road and allows large vehicle access. although pedestrial access is allowed pupils rarely use it because it is quicker to leave by any other exit.",
+    "Description": "The driveway connects the school property to the public road and allows extensive vehicle access. Although pedestrian access is permitted, pupils rarely use it because it is quicker to leave by any other exit.",
     "Type": "location",
     "Actions": [
       {
@@ -334,7 +334,7 @@
             "Item": "pencil",
             "Property": "location",
             "Value": "player",
-            "FailResponse": "it would be unwise to leave school without your trusty pencil, not only will you be unable to do any homework but you are unlikely to get back into school!"
+            "FailResponse": "It would be wise to leave school with your trusty pencil; not only will you be unable to do any homework, but you will unlikely be readmitted to school."
           }
         ]
       },
@@ -353,8 +353,8 @@
   },
   {
     "Name": "front path",
-    "Description": "well attended and the surrounding lawns are immaculate; it looks like the entire school maintenance budget has been spent here merely to impress passers-by and anyone who won't ever venture inside.",
-    "Help": "don't show any sign of weakness here, you will need all your fortitude to survive the day.",
+    "Description": "The path is well attended, and the surrounding lawns are immaculate; the entire school maintenance budget may have been spent here merely to impress passers-by and anyone who won't ever venture inside.",
+    "Help": "Don't show weakness here; you will need all your fortitude to survive the day.",
     "Type": "location",
     "Actions": [
       {
@@ -382,8 +382,8 @@
             "Property": "location",
             "Equality": "=",
             "Value": "player",
-            "PassResponse": "mr. head leaps out to confront you, but on seeing you trusty pencil goes back to his regular beat, this is not the last time you will need your trusty pencil so don't lose it.",
-            "FailResponse": "mr. head leaps in front of you, blocks your progress and scorns \"you look ill equipped for a day of learning in my fine institutional establishment!\" while failing to tell you the exact problem  before disaparing."
+            "PassResponse": "Mr Head leaps out to confront you, but seeing your trusty pencil return to his regular beat, this is not the last time you will need your trusty pencil, so don't lose it.",
+            "FailResponse": "Mr Head leaps in front of you, blocks your progress and scorns \"You look ill-equipped for a day of learning in my fine institutional establishment!\" while failing to tell you the exact problem before disappearing."
           }
         ]
       }
@@ -392,8 +392,8 @@
   },
   {
     "Name": "entrance hall",
-    "Description": "exhibits all the pomp and circumstance required to lull parents into a false belief that the school is being run in a professional way. the cracks are showing and it is not as well maintained as the public façade outside. celebrations of current locale festivals adorn the walls with endless contributions from pupils.",
-    "Help": "you fell very conspicuous so don't do anything silly.",
+    "Description": "The hall exhibits all the pomp and circumstance required to lull parents into a false belief that the school is being run professionally. The cracks are showing and are not as well maintained as the public façade outside. Celebrations of current local festivals adorn the walls with endless contributions from pupils.",
+    "Help": "You feel very conspicuous, so don't do anything silly.",
     "Type": "location",
     "Actions": [
       {
@@ -420,7 +420,7 @@
             "Item": "pencil",
             "Property": "location",
             "Value": "player",
-            "FailResponse": "it would be unwise to leave school without your trusty pencil, not only will you be unable to do any homework but you are unlikely to get back into school!"
+            "FailResponse": "It would be wise to leave school with your trusty pencil; not only will you be unable to do any homework, but you will unlikely be readmitted to school."
           }
         ]
       },
@@ -459,8 +459,8 @@
   },
   {
     "Name": "corridor of gloom",
-    "Description": "a horrific sense of dread overwhelms you as there is very little natural ligh heret. it's the central hub of paths behind the entrance hall but it's forebodingness sums up the remainder of the school accurately.",
-    "Help": "go towards the light, although not metaphorically!",
+    "Description": "The corridor has a horrific sense of dread that overwhelms you as very little natural light exists. It's the central hub of paths behind the entrance hall. Still, its forebodingness sums up the remainder of the school accurately.",
+    "Help": "Go towards the light, although not metaphorically.",
     "Type": "location",
     "Actions": [
       {
@@ -515,7 +515,7 @@
       },
       {
         "Verb": "up",
-        "UnconditionalResponse": "you ascend the down-leg stairs and end up directly above where you started.",
+        "UnconditionalResponse": "You ascend the dog-leg stairs and end up directly above where you started.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -529,8 +529,8 @@
   },
   {
     "Name": "east toilets",
-    "Description": "a very unpleasant place to be; most of the stall are broken and don't have locks or even doors, the remaining stalls are soiled beyond what is believable. there is a row of thankfully clean hand basins half of which have working taps.",
-    "Help": "there is a plentiful supply of water in the toilets.",
+    "Description": "The toilets are very unpleasant; most stalls are broken without locks or even doors, and the remaining stalls are soiled beyond what is believable. There is a row of thankfully clean hand basins, half of which have working taps.",
+    "Help": "There is a plentiful supply of water in the toilets.",
     "Type": "location",
     "Actions": [
       {
@@ -548,7 +548,7 @@
   },
   {
     "Name": "assembly hall",
-    "Description": "the hub of school assembly, both for internal curiculum activities and also for the wider community. the hall hosts everything from morning assembly, music concerts, dramatic performances for pupils to being ballet voting and bingo sessions for the locals.",
+    "Description": "The hall is the hub of school assembly for internal curriculum activities and the wider community. The hall hosts everything from morning assembly, music concerts, and dramatic performances for pupils to ballet voting and bingo sessions for the locals.",
     "Type": "location",
     "Actions": [
       {
@@ -577,8 +577,8 @@
   {
     "Name": "stage",
     "Prefix": "the",
-    "Description": "the secondary focal point of the school, anything of consequence usually happens here or is at least announced here. the stage is made up from rough, dusty floorboards which creak endlessly when walking across them. the stage is surrounded by ancient curtains that are equally dusty.",
-    "Help": "remember to project your voice and speak from the diaphragm.",
+    "Description": "The stage is the secondary focal point of the school; anything of consequence usually happens here or is at least announced here. It comprises rough, dusty floorboards that creak when walked across and is surrounded by ancient curtains that are equally dusty.",
+    "Help": "Remember to project your voice and speak from the diaphragm.",
     "Type": "location",
     "Actions": [
       {
@@ -615,21 +615,20 @@
             "Item": "lamp",
             "Property": "location",
             "Value": "player",
-            "PassResponse": "",
-            "FailResponse": "it is very dark under the stage, it would be unwise to go down there without being able to see anything."
+            "FailResponse": "It is very dark under the stage; it would be unwise to go down there without a source of light."
           },
           {
             "Item": "lamp",
             "Property": "state",
             "Value": "the lamp is lit.",
-            "PassResponse": "the brightly burning lamp will allow you to see while you are under the stage.",
-            "FailResponse": "it is very dark under the stage, it would be unwise to go down there without being able to see anything."
+            "PassResponse": "The brightly burning lamp allows you to see while you are under the stage.",
+            "FailResponse": "It is very dark under the stage; it would be unwise to go down there without a source of light."
           }
         ]
       },
       {
         "Verb": "west",
-        "UnconditionalResponse": "you exit, stage left.",
+        "UnconditionalResponse": "You exit, stage left.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -644,7 +643,7 @@
   {
     "Name": "main store room",
     "Prefix": "the",
-    "Description": "it has a musty smell and is lined by rows of freestanding shelving units. unsurprisingly it is full of school antiquites most of which look like they haven't been used in decades and are unfamiliar to you.",
+    "Description": "The storeroom has a musty smell and is lined by rows of freestanding shelving units. Unsurprisingly, it is full of school antiquities, most of which look like they last used decades ago and are unfamiliar to you.",
     "Type": "location",
     "Actions": [
       {
@@ -672,8 +671,8 @@
   },
   {
     "Name": "administration office",
-    "Description": "possibly the most efficient room in the entire school. filing cabinets line all the walls and above them shelves are stacked end-to-end with ring-bound folders.",
-    "Help": "every single record on every single pupil is stored in this room.",
+    "Description": "The office is the most efficient room in the entire school. Filing cabinets line all the walls; above them, shelves are stacked end-to-end with ring-bound folders.",
+    "Help": "Every single record of every single pupil is stored in this room.",
     "Type": "location",
     "Actions": [
       {
@@ -701,7 +700,7 @@
   },
   {
     "Name": "headmaster's office",
-    "Description": "the most intimidating room in the entire school. despite the school headmaster effectively being the veo of the school he still likes to medal in individual pupil disciplinaries. the walls are faded cream and all the woodwork is very aged, the only thing that looks modern is the numerous certificates and citations frames and hung on the walls.",
+    "Description": "The headmaster's office is the most intimidating room in the entire school. Despite the school headmaster effectively being the CEO of the school, he still likes to medal in individual pupil disciplinaries. The walls are faded cream, and all the woodwork is ancient; the only thing that looks modern is the numerous certificates and citation frames hung on the walls.",
     "Type": "location",
     "Actions": [
       {
@@ -719,8 +718,8 @@
   },
   {
     "Name": "east canteen",
-    "Description": "contains not enough seating for the amassed pupils, so a shift pattern is employed to ensure all pupils get to enjoy the experience on a daily basis.",
-    "Help": "the east canteen is overflowing with vanity.",
+    "Description": "The canteen does not have enough seating for the amassed pupils, so a shift pattern is employed to ensure all pupils enjoy the experience daily.",
+    "Help": "The east canteen is overflowing with vanity.",
     "Type": "location",
     "Actions": [
       {
@@ -755,12 +754,12 @@
       }
     ],
     "Location": "east canteen",
-    "State": "it is packed with popular boys and girls, everyone is doing their best to out-dress each other like strutting peacocks in an attempt to become the alpha male or female."
+    "State": "It is packed with popular boys and girls, and everyone is doing their best to out-dress each other, like strutting peacocks to become the alpha male or female."
   },
   {
     "Name": "west canteen",
-    "Description": "this west end of the canteen is filled mostly with hot food counters and a queuing serpentine made from very study railing. the smell of food in unavailable although it is not appealing.",
-    "Help": "bringing your own fruit for lunch may be more desirable that school dinners",
+    "Description": "The west end of the canteen is filled mainly with hot food counters and a queuing serpentine made from very sturdy railing. The smell of food is unavoidable, although it could be more appealing.",
+    "Help": "Bringing your own fruit for lunch is be more desirable than school dinners.",
     "Type": "location",
     "Actions": [
       {
@@ -798,7 +797,7 @@
   },
   {
     "Name": "under the stage",
-    "Description": "this is the most bizarre place in the school. although accessible via a trapdoor in the stage the stage basement is latticed with rough-wood support beam and everything is layered with deep dust. the atmosphere here has more drama than has ever been seen on the stage.",
+    "Description": "Under the stage is the most bizarre place in the school. Accessible via a trapdoor in the stage, the stage basement is latticed with rough-cut wooden support beams, and everything is layered with deep dust. The atmosphere here has more drama than ever seen on the stage.",
     "Type": "location",
     "Actions": [
       {
@@ -816,7 +815,7 @@
   },
   {
     "Name": "back stage",
-    "Description": "as old and rough as the rest of the stage, although it is a clear indication of academic and social divide; anyone without enough academic acumen to be teacher's pet is doomed to only ever become a behind-the-scenes stage hand in any school productions.",
+    "Description": "Backstage is as old and rough as the rest of the stage, although it clearly indicates the academic and social divide; anyone who needs more intellectual understanding to be a teacher's pet is doomed to only ever become a behind-the-scenes stage hand in any school productions.",
     "Type": "location",
     "Actions": [
       {

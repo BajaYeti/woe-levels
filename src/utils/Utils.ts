@@ -1,5 +1,5 @@
 import { Player, Moves, Person } from "../content/Constants";
-import { getLocation, getVisibleItems } from "./ItemQueries";
+import { getVisibleItems } from "./ItemQueries";
 
 export function getExits(location: Item | undefined): string {
   if (location === undefined) {
@@ -23,9 +23,7 @@ export function getExits(location: Item | undefined): string {
 }
 
 export function getInventory(items: Array<Item>): string {
-  let inv = items.filter((i) => {
-    return i.Location === Player;
-  });
+  let inv = getCarriedItems(items);
   let carrying =
     inv.length === 0
       ? "nothing"
@@ -38,6 +36,12 @@ export function getInventory(items: Array<Item>): string {
     )} and${carrying.substring(lastCommaIndex + 1)}`;
   }
   return `You are carrying ${carrying}`;
+}
+
+export function getCarriedItems(items: Array<Item>): Array<Item> {
+  return items.filter((i) => {
+    return i.Location === Player;
+  });
 }
 
 export function capitalizeFirstLetter(str: string): string {
@@ -144,4 +148,8 @@ export function isVersionLessThan(
   }
 
   return false;
+}
+
+function openImageInNewTab(imageUrl: string): void {
+  window.open(imageUrl, '_blank');
 }

@@ -1,4 +1,4 @@
-export const AppVersion = "V1.0.3";
+export const AppVersion = "V1.0.4";
 export const AppTitle = "Woe Levels";
 export const AppAuthor = "BajaYeti";
 export const LocalStoargeKey = "woe-levels";
@@ -21,6 +21,7 @@ export const Save = "save";
 export const Examine = "examine";
 export const FrontStreet = "front street";
 export const Version = "version";
+export const InventoryLimit = 5;
 
 export const AboutResponse =
   "Woe Levels: A text adventure conceived and set in the 1980s, a mere 40 years in the making. Based on school life in a typical British comprehensive school, your goal is the survive the day, collect all your misplaced homework assignments, submit them all to the appropriate teachers and get home.";

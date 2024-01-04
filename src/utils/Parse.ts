@@ -17,6 +17,7 @@ import {
   FrontStreet,
   Version,
   Drop,
+  InventoryLimit,
 } from "../content/Constants";
 import { Truncations } from "../content/Constants";
 import {
@@ -29,6 +30,7 @@ import {
   getAvailbleItem,
 } from "./ItemQueries";
 import {
+  getCarriedItems,
   getInventory,
   getRandomElement,
   isVersionLessThan,
@@ -287,6 +289,15 @@ export function Parse(input: string, items: Item[]): MyRequest {
 
   //#region GET
   if (verb === Get) {
+    if (getCarriedItems(items).length > InventoryLimit) {
+      return {
+        OK: false,
+        Look: { Refresh: false, Brevity: true },
+        Action: {
+          UnconditionalResponse: "You cannot carry any more.",
+        } as Action,
+      } as MyRequest;
+    }
     let item = getGettableItem(items, noun);
     if (item === null || item === undefined) {
       return {
