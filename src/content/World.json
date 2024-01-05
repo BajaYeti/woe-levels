@@ -1,5 +1,5 @@
 [
-  { "Type": "version", "Name": "version", "Description": "V0.0.8" },
+  { "Type": "version", "Name": "version", "Description": "V0.0.9" },
   {
     "Name": "player",
     "Type": "player",
@@ -107,6 +107,7 @@
           {
             "Item": "pencil",
             "Property": "location",
+            "Equality": "=",
             "Value": "player",
             "FailResponse": "It would be wise to leave school with your trusty pencil; not only will you be unable to do any homework, but you will unlikely be readmitted to school."
           },
@@ -239,13 +240,13 @@
   },
   {
     "Name": "inside the minibus",
-    "Description": "it is sparse with scant regard to the safety of its occupants. two wooden-slat bench seats run the length of the van on either side with no restraints meaning that occupants travel sideways and face each other, while being thrown about. with the right people onboard this is arguably the most fun you could ever have at school.",
-    "Help": "throwing oranges and other round fruit out the window won't help you here, but it is very amusing.",
+    "Description": "The minibus is sparse, with scant regard for the safety of its occupants. Two wooden slat bench seats run the length of the van on either side with no restraints, meaning that occupants travel sideways and face each other while being thrown about. With the right people on board, this is the most fun you could ever have at school.",
+    "Help": "Throwing oranges and other round fruit out the window won't help you here, but it is very amusing.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "out",
-        "UnconditionalResponse": "you exit the low-roofed minibus and unfold yourself into a standing position once again.",
+        "UnconditionalResponse": "You exit the low-roofed minibus and unfold yourself into a standing position once again.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -259,8 +260,8 @@
   },
   {
     "Name": "the way home",
-    "Description": "you are on \"the way home\", congratulations! you have completed your objective and are free from the hell of school for the rest of the day. be sure to get some r and r tonight and brace yourself for a repeat of the same suffering tomorrow!",
-    "Help": "you won't need any help with anything outside of school.",
+    "Description": "You are on \"the way home\" congratulations! You have completed your objective and are free from the hell of school for the rest of the day. Be sure to get some R&R tonight and brace yourself for a repeat of the same suffering tomorrow!",
+    "Help": "You won't need help with anything outside of school.",
     "Type": "location",
     "Actions": [
       {
@@ -719,7 +720,7 @@
   {
     "Name": "east canteen",
     "Description": "The canteen does not have enough seating for the amassed pupils, so a shift pattern is employed to ensure all pupils enjoy the experience daily.",
-    "Help": "The east canteen is overflowing with vanity.",
+    "Help": "The east canteen is oozing with vanity.",
     "Type": "location",
     "Actions": [
       {
@@ -843,7 +844,7 @@
   },
   {
     "Name": "gym",
-    "Description": "a large hall with a shiny parquet floor covered with different court markings. bandminton, tennis, netball, five-a-side football and basketball courts can be made out, but the others are a mystery.",
+    "Description": "The gym is a large hall with a shiny parquet floor with different court markings. Badminton, tennis, netball, five-a-side football and basketball courts can be made out, but the others are a mystery.",
     "Type": "location",
     "Actions": [
       {
@@ -871,8 +872,8 @@
   },
   {
     "Name": "gym changing room",
-    "Description": "as basic as any room can be, bare walls and brown tiled floor. even the wooden-slat benches are utilitarion with grey metal hanging pegs. there are no soft furnishings for any odour to cling to.",
-    "Help": "your privates are not private here",
+    "Description": "The changing room is as essential as any room: bare walls and brown tiled floor. Even the wooden slat benches are utilitarian with grey metal hanging pegs. There are no soft furnishings for any odour to cling to.",
+    "Help": "Your privates are not private here.",
     "Type": "location",
     "Actions": [
       {
@@ -910,8 +911,8 @@
   },
   {
     "Name": "showers",
-    "Description": "the open showers resemble nothing other than prison showers and not a nice prison - a really, really bad one. no shower in the world is as grim as this place.",
-    "Help": "the showers may clearn your body but your soul will be scarred for life if you stay too long here.",
+    "Description": "The open showers resemble nothing other than prison showers but are not as well maintained. No shower in the world is as grim as this place.",
+    "Help": "The showers may clear your body, but your soul will be scarred for life if you stay too long here.",
     "Type": "location",
     "Actions": [
       {
@@ -929,8 +930,8 @@
   },
   {
     "Name": "kitchen",
-    "Description": "large on an industrial scale; the floor is covered in utilitarian tiles and over-sized cooking utilis hang around the room above oversides sinks and cookers - even the suppliest are oversized ro cater for all the pupils and staff. it has a perma-small of cooked food.",
-    "Help": "you aren't allowed in the kitchen.",
+    "Description": "The kitchen is significant on an industrial scale; the floor is covered in practical tiles, and oversized cooking utensils hang around the room above large sinks and cookers - even the supplies are oversized to cater for all the pupils and staff. It has a perma-small of cooked food.",
+    "Help": "You aren't allowed in the kitchen, it's too dangerous for pupils, although you will be expected to use a kitchen for the rest of your life, so it can't be that bad.",
     "Type": "location",
     "Actions": [
       {
@@ -958,8 +959,8 @@
   },
   {
     "Name": "music room",
-    "Description": "it is unique in that it feels less like an academic classroom than any other room in the school. it is twice the size of other classroms and filled with more instruments than chairs and desks.",
-    "Help": "the music room is by far the loudest room in the school and the only room where you won't be punished for making noise.",
+    "Description": "The room is unique because it feels less like an academic classroom than any other one. It is twice the size of other classrooms and filled with more instruments than chairs and desks.",
+    "Help": "The music room is by far the loudest room in the school and the only room where you won't be punished for making noise.",
     "Type": "location",
     "Actions": [
       {
@@ -978,8 +979,8 @@
   {
     "Name": "bins",
     "Prefix": "the",
-    "Description": "this area contains a colleciton of large galvanized steel cylindrical bins on wheels. most of the bins are covered but one has no lid, the stench from it is repugnant so it's advisable not to linger here too long.",
-    "Help": "where there's muck there's brass.",
+    "Description": "The area contains a collection of large galvanized steel cylindrical bins on wheels. Most bins are covered, but one has no lid; its stench is disgusting, so it's advisable to leave here quickly.",
+    "Help": "Where there's muck, there's brass.",
     "Type": "location",
     "Actions": [
       {
@@ -1014,7 +1015,7 @@
       },
       {
         "Verb": "in",
-        "UnconditionalResponse": "you take a run-up at the bin and managed to get enough of a grip on the rim and traction from your shoes to clear the top.",
+        "UnconditionalResponse": "You take a run-up at the bin and get enough of a grip on the rim and traction from your shoes to clear the top.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -1028,13 +1029,13 @@
   },
   {
     "Name": "binside",
-    "Description": "inside the bin smells even worse than outside, but be thankful that you have entered the right-way-up, unlike many previous unwilling visitors!  you are standing on rubbish which is many feet deep, but at least this will allow you to exist easily.",
-    "Help": "binside is a portmanteau of bin and inside.",
+    "Description": "Inside the bin, it smells even worse than outside, but be thankful that you have entered the right way up, unlike many previous unwilling visitors! You are standing on many feet deep rubbish, but at least this will allow you to exist easily.",
+    "Help": "Binside is a portmanteau of bin and inside.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "out",
-        "UnconditionalResponse": "you climb out of the bin and your nose thanks you.",
+        "UnconditionalResponse": "You climb out of the bin, and your nose thanks you.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -1045,17 +1046,17 @@
       }
     ],
     "Location": "binside",
-    "State": "the smell is offensive."
+    "State": "The smell is offensive."
   },
   {
     "Name": "bike sheds",
-    "Description": "the bike sheds are filled with a variety of bicycles, from racers to bmxs and shoppers to choppers. they are all dilligently locked up as a bike is usually the most expensive item a school pupil owns.",
-    "Help": "to get home you will need your bike.",
+    "Description": "The sheds are filled with various bicycles, from racers to BMXs and shoppers to choppers. They are all diligently locked up as a bike is usually a school pupil's most expensive item.",
+    "Help": "To get home, you will need your bike.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-        "UnconditionalResponse": "although there isn't much room you squeeze between the end of the bike covered racks and the overgrown shrubbery.",
+        "UnconditionalResponse": "Although there isn't much room, you squeeze between the end of the bike-covered racks and the overgrown shrubbery.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -1089,7 +1090,7 @@
             "Property": "location",
             "Equality": "!",
             "Value": "player",
-            "FailResponse": "mr broom appears immediately in your path. \"hoy!  no bikes in school!  i shouldn't have to keep telling you kids\" he informs you before disappearing back to his regular work."
+            "FailResponse": "Mr Broom appears immediately in your path. \"Hoy! No bikes in school! I shouldn't have to keep telling you kids\" he informs you before returning to his regular work."
           }
         ]
       }
@@ -1098,8 +1099,8 @@
   },
   {
     "Name": "behind the bike sheds",
-    "Description": "the most illicit area in the school, the name alone is synonmous with unauthorised acitivitys from heavy petting to smoking. as if further proof is needed the ground is littered with cigarette butts.",
-    "Help": "like in prison, cigarettes can be used as currency in school.",
+    "Description": "This is notoriously the most illicit area in the school; the name alone is synonymous with unauthorised activities, from heavy petting to smoking. As if further proof is needed, the ground is littered with cigarette butts.",
+    "Help": "Cigarettes can be used as currency in school.",
     "Type": "location",
     "Actions": [
       {
@@ -1117,7 +1118,7 @@
   },
   {
     "Name": "covered path",
-    "Description": "main throroughfare through the school, joiing the front of the building to the back, while avoiding all classroms and offices inbetween. although outdoors the path is covered with a clear plastic canopy which allows dry passage during the rain.",
+    "Description": "The path is the main thoroughfare through the school, joining the front of the building to the back while avoiding all classrooms and offices in between. Although outdoors, the path is covered with a clear plastic canopy, which allows dry passage during the rain.",
     "Type": "location",
     "Actions": [
       {
@@ -1195,12 +1196,12 @@
   },
   {
     "Name": "physics lab",
-    "Description": "filled with old-fasioned fixed benches in ranks lined with high bar-like stools. this allows gas and water supplies to the benches to facilitates experiments. it still retains old-fashioned blackboards at the front of the lab. this lab is distinct for its view over the school's science courtyard, kind of like a blue peter garden but of course off-limits to pupils.",
+    "Description": "The lab is filled with old-fashioned fixed benches in ranks lined with high bar-like stools. This allows gas and water supplies to the benches to facilitate experiments. It still retains old-fashioned blackboards at the front of the lab. This lab is distinct for its view over the school's science courtyard, like a \"Blue Peter\" garden but off-limits to pupils.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "east",
-        "UnconditionalResponse": "you climb out through the open window, hoping that no-one in authority sees you.",
+        "UnconditionalResponse": "You climb through the open window, hoping no one in authority sees you.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -1224,7 +1225,7 @@
   },
   {
     "Name": "chemistry lab",
-    "Description": "filled with old-fasioned fixed benches in ranks lined with high bar-like stools. this allows gas and water supplies to the benches to facilitates chemical experiments. it still retains old-fashioned blackboards at the front of the lab.",
+    "Description": "The lab is filled with old-fashioned fixed benches in ranks lined with high bar-like stools. This allows gas and water supplies to the benches to facilitate experiments. It still retains old-fashioned blackboards at the front of the lab. This lab is distinct for its view over the school's science courtyard, like a \"Blue Peter\" garden but off-limits to pupils.",
     "Type": "location",
     "Actions": [
       {
@@ -1252,7 +1253,7 @@
   },
   {
     "Name": "science store room",
-    "Description": "separates the biology and chemistry labs with access doors leading to each. this room is often frequented by biology and chemistry teachers during lessons and houses all the supplies needed for science lessons - it's a treasure trove of dangerous chemicals!",
+    "Description": "The store room separates the biology and chemistry labs with access doors leading to each. It houses all the supplies for science lessons - a treasure trove of dangerous chemicals. Biology and chemistry teachers often frequented this room during lessons.",
     "Type": "location",
     "Actions": [
       {
@@ -1280,7 +1281,7 @@
   },
   {
     "Name": "biology lab",
-    "Description": "filled with old-fasioned fixed benches in ranks lined with high bar-like stools. this allows water supplies to the benches to facilitates biology experiments, which mostly involve washing things. it still retains old-fashioned blackboards at the front of the lab.",
+    "Description": "The lab is filled with old-fashioned fixed benches in ranks lined with high bar-like stools. This allows gas and water supplies to the benches to facilitate experiments. It still retains old-fashioned blackboards at the front of the lab. This lab is distinct for its view over the school's science courtyard, like a \"Blue Peter\" garden but off-limits to pupils.",
     "Type": "location",
     "Actions": [
       {
@@ -1308,8 +1309,8 @@
   },
   {
     "Name": "lockers",
-    "Description": "generic grey steel lockers line ever square foot of wall in this corridoor leading to its name. the only free spare are the entrances including the foot of the west stairwell.",
-    "Help": "lockers allow you to store items and keep them private from others.",
+    "Description": "Generic grey steel lockers line every square foot of the wall in this corridor, leading to its name. The only free wall space is the entrances, including the west stairwell's foot.",
+    "Help": "Lockers provide storage for items and keep them secret from others.",
     "Type": "location",
     "Actions": [
       {
@@ -3676,18 +3677,16 @@
       {
         "Verb": "use,play",
         "Updates": [
-          [
-            {
-              "TargetItem": "jackpot",
-              "Property": "location",
-              "Value": "player"
-            },
-            {
-              "TargetItem": "lead",
-              "Property": "location",
-              "Value": "hidden"
-            }
-          ]
+          {
+            "TargetItem": "jackpot",
+            "Property": "location",
+            "Value": "player"
+          },
+          {
+            "TargetItem": "lead",
+            "Property": "location",
+            "Value": "hidden"
+          }
         ],
         "Conditions": [
           {
@@ -3766,23 +3765,21 @@
       {
         "Verb": "open,unlock",
         "Updates": [
-          [
-            {
-              "TargetItem": "maths homework",
-              "Property": "location",
-              "Value": "lockers"
-            },
-            {
-              "TargetItem": "fifty quid",
-              "Property": "location",
-              "Value": "lockers"
-            },
-            {
-              "TargetItem": "locker",
-              "Property": "state",
-              "Value": "it is unlocked and open, exposing your meagre belongs to the world."
-            }
-          ]
+          {
+            "TargetItem": "maths homework",
+            "Property": "location",
+            "Value": "lockers"
+          },
+          {
+            "TargetItem": "fifty quid",
+            "Property": "location",
+            "Value": "lockers"
+          },
+          {
+            "TargetItem": "locker",
+            "Property": "state",
+            "Value": "it is unlocked and open, exposing your meagre belongs to the world."
+          }
         ],
         "Conditions": [
           {
@@ -3850,7 +3847,7 @@
         ]
       }
     ],
-    "Location": "hidden"
+    "Location": "bike sheds"
   },
   {
     "Name": "moustache",
@@ -3907,18 +3904,16 @@
       {
         "Verb": "drop",
         "Updates": [
-          [
-            {
-              "TargetItem": "moustache",
-              "Property": "state",
-              "Value": "TODO - clear state"
-            },
-            {
-              "TargetItem": "moustache",
-              "Property": "location",
-              "Value": "conditional drop!"
-            }
-          ]
+          {
+            "TargetItem": "moustache",
+            "Property": "state",
+            "Value": "TODO - clear state"
+          },
+          {
+            "TargetItem": "moustache",
+            "Property": "location",
+            "Value": "conditional drop!"
+          }
         ],
         "Conditions": [
           {
@@ -4274,40 +4269,38 @@
         ]
       },
       {
-        "Verb": "raise",
+        "Verb": "raise,hoist",
         "Updates": [
-          [
-            {
-              "TargetItem": "flag",
-              "Property": "state",
-              "Value": "it flies so high that it is now barely visible."
-            },
-            {
-              "TargetItem": "flag",
-              "Property": "location",
-              "Value": "front path"
-            },
-            {
-              "TargetItem": "flag pole",
-              "Property": "state",
-              "Value": "it proudly hosts the school's flag for the first time in ages."
-            },
-            {
-              "TargetItem": "history homework",
-              "Property": "location",
-              "Value": "front path"
-            },
-            {
-              "TargetItem": "history homework",
-              "Property": "state",
-              "Value": "it is a complete essay about the significance of flags during the war of the roses - how appropriate."
-            },
-            {
-              "TargetItem": "miss battle",
-              "Property": "state",
-              "Value": "she is staring out of the window over the front lawn and can barely contain her pride in the school flag being visible from the history room."
-            }
-          ]
+          {
+            "TargetItem": "flag",
+            "Property": "state",
+            "Value": "it flies so high that it is now barely visible."
+          },
+          {
+            "TargetItem": "flag",
+            "Property": "location",
+            "Value": "front path"
+          },
+          {
+            "TargetItem": "flag pole",
+            "Property": "state",
+            "Value": "it proudly hosts the school's flag for the first time in ages."
+          },
+          {
+            "TargetItem": "history homework",
+            "Property": "location",
+            "Value": "front path"
+          },
+          {
+            "TargetItem": "history homework",
+            "Property": "state",
+            "Value": "it is a complete essay about the significance of flags during the war of the roses - how appropriate."
+          },
+          {
+            "TargetItem": "miss battle",
+            "Property": "state",
+            "Value": "she is staring out of the window over the front lawn and can barely contain her pride in the school flag being visible from the history room."
+          }
         ],
         "Conditions": [
           {
@@ -4383,21 +4376,18 @@
         ]
       },
       {
-        "Verb": "give",
-        "UnconditionalResponse": "m",
+        "Verb": "give,submit",
         "Updates": [
-          [
-            {
-              "TargetItem": "key",
-              "Property": "location",
-              "Value": "hidden"
-            },
-            {
-              "TargetItem": "mr steel",
-              "Property": "state",
-              "Value": "he is wearing your master key on a keyring clipped to his belt."
-            }
-          ]
+          {
+            "TargetItem": "key",
+            "Property": "location",
+            "Value": "hidden"
+          },
+          {
+            "TargetItem": "mr steel",
+            "Property": "state",
+            "Value": "he is wearing your master key on a keyring clipped to his belt."
+          }
         ],
         "Conditions": [
           {
@@ -4683,23 +4673,21 @@
       {
         "Verb": "burn,ignite,light",
         "Updates": [
-          [
-            {
-              "TargetItem": "mr silver",
-              "Property": "location",
-              "Value": "chemistry lab"
-            },
-            {
-              "TargetItem": "pencil sharpener",
-              "Property": "state",
-              "Value": "it is burned beyond recognition and now useless."
-            },
-            {
-              "TargetItem": "pencil sharpener",
-              "Property": "location",
-              "Value": "chemistry lab"
-            }
-          ]
+          {
+            "TargetItem": "mr silver",
+            "Property": "location",
+            "Value": "chemistry lab"
+          },
+          {
+            "TargetItem": "pencil sharpener",
+            "Property": "state",
+            "Value": "it is burned beyond recognition and now useless."
+          },
+          {
+            "TargetItem": "pencil sharpener",
+            "Property": "location",
+            "Value": "chemistry lab"
+          }
         ],
         "Conditions": [
           {
@@ -4798,18 +4786,16 @@
       {
         "Verb": "insert",
         "Updates": [
-          [
-            {
-              "TargetItem": "cassette",
-              "Property": "location",
-              "Value": "hidden"
-            },
-            {
-              "TargetItem": "walkman",
-              "Property": "state",
-              "Value": "the batteries appear to have a charge and it has a cassette inserted, but the cassette appears to be jammed and cannot be removed."
-            }
-          ]
+          {
+            "TargetItem": "cassette",
+            "Property": "location",
+            "Value": "hidden"
+          },
+          {
+            "TargetItem": "walkman",
+            "Property": "state",
+            "Value": "the batteries appear to have a charge and it has a cassette inserted, but the cassette appears to be jammed and cannot be removed."
+          }
         ],
         "Conditions": [
           {
@@ -4864,18 +4850,16 @@
       {
         "Verb": "get",
         "Updates": [
-          [
-            {
-              "TargetItem": "apple",
-              "Property": "location",
-              "Value": "player"
-            },
-            {
-              "TargetItem": "apple",
-              "Property": "state",
-              "Value": "TODO - clear state"
-            }
-          ]
+          {
+            "TargetItem": "apple",
+            "Property": "location",
+            "Value": "player"
+          },
+          {
+            "TargetItem": "apple",
+            "Property": "state",
+            "Value": "TODO - clear state"
+          }
         ],
         "Conditions": [
           {
@@ -4919,18 +4903,16 @@
       {
         "Verb": "get",
         "Updates": [
-          [
-            {
-              "TargetItem": "bird box",
-              "Property": "location",
-              "Value": "player"
-            },
-            {
-              "TargetItem": "bird box",
-              "Property": "state",
-              "Value": "it is falling apart and requires repair before it could be used as a home for any self respecting bird."
-            }
-          ]
+          {
+            "TargetItem": "bird box",
+            "Property": "location",
+            "Value": "player"
+          },
+          {
+            "TargetItem": "bird box",
+            "Property": "state",
+            "Value": "it is falling apart and requires repair before it could be used as a home for any self respecting bird."
+          }
         ],
         "Conditions": [
           {
@@ -4968,25 +4950,23 @@
         ]
       },
       {
-        "Verb": "give",
+        "Verb": "give,submit",
         "Updates": [
-          [
-            {
-              "TargetItem": "bird box",
-              "Property": "location",
-              "Value": "hidden"
-            },
-            {
-              "TargetItem": "mr saw",
-              "Property": "location",
-              "Value": "staff room"
-            },
-            {
-              "TargetItem": "mr saw",
-              "Property": "state",
-              "Value": "he is holding the bird box, which is secretly coverts as the best homework of the year so far."
-            }
-          ]
+          {
+            "TargetItem": "bird box",
+            "Property": "location",
+            "Value": "hidden"
+          },
+          {
+            "TargetItem": "mr saw",
+            "Property": "location",
+            "Value": "staff room"
+          },
+          {
+            "TargetItem": "mr saw",
+            "Property": "state",
+            "Value": "he is holding the bird box, which is secretly coverts as the best homework of the year so far."
+          }
         ],
         "Conditions": [
           {
@@ -5049,20 +5029,18 @@
         ]
       },
       {
-        "Verb": "give",
+        "Verb": "give,submit",
         "Updates": [
-          [
-            {
-              "TargetItem": "frog",
-              "Property": "location",
-              "Value": "hidden"
-            },
-            {
-              "TargetItem": "mr foot",
-              "Property": "state",
-              "Value": "he has waived your biology homework in lieu of the frog."
-            }
-          ]
+          {
+            "TargetItem": "frog",
+            "Property": "location",
+            "Value": "hidden"
+          },
+          {
+            "TargetItem": "mr foot",
+            "Property": "state",
+            "Value": "he has waived your biology homework in lieu of the frog."
+          }
         ],
         "Conditions": [
           {
@@ -5087,18 +5065,16 @@
       {
         "Verb": "get",
         "Updates": [
-          [
-            {
-              "TargetItem": "cakes",
-              "Property": "location",
-              "Value": "player"
-            },
-            {
-              "TargetItem": "jackpot",
-              "Property": "location",
-              "Value": "hidden"
-            }
-          ]
+          {
+            "TargetItem": "cakes",
+            "Property": "location",
+            "Value": "player"
+          },
+          {
+            "TargetItem": "jackpot",
+            "Property": "location",
+            "Value": "hidden"
+          }
         ],
         "Conditions": [
           {
@@ -5113,18 +5089,16 @@
       {
         "Verb": "buy,purchase",
         "Updates": [
-          [
-            {
-              "TargetItem": "cakes",
-              "Property": "location",
-              "Value": "player"
-            },
-            {
-              "TargetItem": "jackpot",
-              "Property": "location",
-              "Value": "hidden"
-            }
-          ]
+          {
+            "TargetItem": "cakes",
+            "Property": "location",
+            "Value": "player"
+          },
+          {
+            "TargetItem": "jackpot",
+            "Property": "location",
+            "Value": "hidden"
+          }
         ],
         "Conditions": [
           {
@@ -5155,20 +5129,18 @@
         ]
       },
       {
-        "Verb": "give",
+        "Verb": "give,submit",
         "Updates": [
-          [
-            {
-              "TargetItem": "cakes",
-              "Property": "location",
-              "Value": "hidden"
-            },
-            {
-              "TargetItem": "mrs bakewell",
-              "Property": "state",
-              "Value": "she is delighted with your homework cakes!"
-            }
-          ]
+          {
+            "TargetItem": "cakes",
+            "Property": "location",
+            "Value": "hidden"
+          },
+          {
+            "TargetItem": "mrs bakewell",
+            "Property": "state",
+            "Value": "she is delighted with your homework cakes!"
+          }
         ],
         "Conditions": [
           {
@@ -5204,25 +5176,23 @@
         ]
       },
       {
-        "Verb": "give",
+        "Verb": "give,submit",
         "Updates": [
-          [
-            {
-              "TargetItem": "bangers",
-              "Property": "location",
-              "Value": "hidden"
-            },
-            {
-              "TargetItem": "pierre",
-              "Property": "state",
-              "Value": "he is now grinning from ear to ear and planning where he can set off his fireworks."
-            },
-            {
-              "TargetItem": "french homework",
-              "Property": "state",
-              "Value": "it contains a beatify worded essay in academically correct and not overly colloquial french, you don't have a clue what it says but you trust pierre."
-            }
-          ]
+          {
+            "TargetItem": "bangers",
+            "Property": "location",
+            "Value": "hidden"
+          },
+          {
+            "TargetItem": "pierre",
+            "Property": "state",
+            "Value": "he is now grinning from ear to ear and planning where he can set off his fireworks."
+          },
+          {
+            "TargetItem": "french homework",
+            "Property": "state",
+            "Value": "it contains a beatify worded essay in academically correct and not overly colloquial french, you don't have a clue what it says but you trust pierre."
+          }
         ],
         "Conditions": [
           {
@@ -5366,18 +5336,16 @@
       {
         "Verb": "drop",
         "Updates": [
-          [
-            {
-              "TargetItem": "sunglasses",
-              "Property": "state",
-              "Value": "they are folded up."
-            },
-            {
-              "TargetItem": "sunglasses",
-              "Property": "location",
-              "Value": "conditional drop!"
-            }
-          ]
+          {
+            "TargetItem": "sunglasses",
+            "Property": "state",
+            "Value": "they are folded up."
+          },
+          {
+            "TargetItem": "sunglasses",
+            "Property": "location",
+            "Value": "conditional drop!"
+          }
         ],
         "Conditions": [
           {
@@ -5410,18 +5378,16 @@
       {
         "Verb": "play",
         "Updates": [
-          [
-            {
-              "TargetItem": "walkman",
-              "Property": "state",
-              "Value": "the batteries are flat and the inserted cassette is stuck inside - great!"
-            },
-            {
-              "TargetItem": "music homework",
-              "Property": "state",
-              "Value": "it is completely covered in doodles and musings from your time listening to the walkman."
-            }
-          ]
+          {
+            "TargetItem": "walkman",
+            "Property": "state",
+            "Value": "the batteries are flat and the inserted cassette is stuck inside - great!"
+          },
+          {
+            "TargetItem": "music homework",
+            "Property": "state",
+            "Value": "it is completely covered in doodles and musings from your time listening to the walkman."
+          }
         ],
         "Conditions": [
           {
@@ -5473,18 +5439,16 @@
       {
         "Verb": "get",
         "Updates": [
-          [
-            {
-              "TargetItem": "calculator watch",
-              "Property": "location",
-              "Value": "player"
-            },
-            {
-              "TargetItem": "fifty quid",
-              "Property": "location",
-              "Value": "hidden"
-            }
-          ]
+          {
+            "TargetItem": "calculator watch",
+            "Property": "location",
+            "Value": "player"
+          },
+          {
+            "TargetItem": "fifty quid",
+            "Property": "location",
+            "Value": "hidden"
+          }
         ],
         "Conditions": [
           {
@@ -5499,18 +5463,16 @@
       {
         "Verb": "buy,purchase,take",
         "Updates": [
-          [
-            {
-              "TargetItem": "calculator watch",
-              "Property": "location",
-              "Value": "player"
-            },
-            {
-              "TargetItem": "fifty quid",
-              "Property": "location",
-              "Value": "hidden"
-            }
-          ]
+          {
+            "TargetItem": "calculator watch",
+            "Property": "location",
+            "Value": "player"
+          },
+          {
+            "TargetItem": "fifty quid",
+            "Property": "location",
+            "Value": "hidden"
+          }
         ],
         "Conditions": [
           {
@@ -5615,23 +5577,21 @@
       {
         "Verb": "use",
         "Updates": [
-          [
-            {
-              "TargetItem": "maths homework",
-              "Property": "location",
-              "Value": "lockers"
-            },
-            {
-              "TargetItem": "fifty quid",
-              "Property": "location",
-              "Value": "lockers"
-            },
-            {
-              "TargetItem": "locker",
-              "Property": "state",
-              "Value": "it is unlocked and open, exposing your meagre belongs to the world."
-            }
-          ]
+          {
+            "TargetItem": "maths homework",
+            "Property": "location",
+            "Value": "lockers"
+          },
+          {
+            "TargetItem": "fifty quid",
+            "Property": "location",
+            "Value": "lockers"
+          },
+          {
+            "TargetItem": "locker",
+            "Property": "state",
+            "Value": "it is unlocked and open, exposing your meagre belongs to the world."
+          }
         ],
         "Conditions": [
           {
@@ -5701,20 +5661,18 @@
     "Type": "mobile",
     "Actions": [
       {
-        "Verb": "give",
+        "Verb": "give,submit",
         "Updates": [
-          [
-            {
-              "TargetItem": "french homework",
-              "Property": "location",
-              "Value": "hidden"
-            },
-            {
-              "TargetItem": "miss french",
-              "Property": "state",
-              "Value": "she is carrying your perfectly worded french homework, although even this doesn't seem to please her."
-            }
-          ]
+          {
+            "TargetItem": "french homework",
+            "Property": "location",
+            "Value": "hidden"
+          },
+          {
+            "TargetItem": "miss french",
+            "Property": "state",
+            "Value": "she is carrying your perfectly worded french homework, although even this doesn't seem to please her."
+          }
         ],
         "Conditions": [
           {
@@ -5765,20 +5723,18 @@
         ]
       },
       {
-        "Verb": "give",
+        "Verb": "give,submit",
         "Updates": [
-          [
-            {
-              "TargetItem": "history homework",
-              "Property": "location",
-              "Value": "hidden"
-            },
-            {
-              "TargetItem": "miss battle",
-              "Property": "state",
-              "Value": "she is staring out of the window over the front lawn and can barely contain her pride in the school flag being visible from the history room. she is also clutching your completed history homework with both hands."
-            }
-          ]
+          {
+            "TargetItem": "history homework",
+            "Property": "location",
+            "Value": "hidden"
+          },
+          {
+            "TargetItem": "miss battle",
+            "Property": "state",
+            "Value": "she is staring out of the window over the front lawn and can barely contain her pride in the school flag being visible from the history room. she is also clutching your completed history homework with both hands."
+          }
         ],
         "Conditions": [
           {
@@ -5800,20 +5756,18 @@
     "Type": "mobile",
     "Actions": [
       {
-        "Verb": "give",
+        "Verb": "give,submit",
         "Updates": [
-          [
-            {
-              "TargetItem": "english homework",
-              "Property": "location",
-              "Value": "hidden"
-            },
-            {
-              "TargetItem": "mr booker",
-              "Property": "state",
-              "Value": "he is carrying your english homework."
-            }
-          ]
+          {
+            "TargetItem": "english homework",
+            "Property": "location",
+            "Value": "hidden"
+          },
+          {
+            "TargetItem": "mr booker",
+            "Property": "state",
+            "Value": "he is carrying your english homework."
+          }
         ],
         "Conditions": [
           {
@@ -5843,25 +5797,23 @@
     "Type": "mobile",
     "Actions": [
       {
-        "Verb": "give",
+        "Verb": "give,submit",
         "Updates": [
-          [
-            {
-              "TargetItem": "maths homework",
-              "Property": "location",
-              "Value": "hidden"
-            },
-            {
-              "TargetItem": "mr bodmas",
-              "Property": "location",
-              "Value": "staff room"
-            },
-            {
-              "TargetItem": "mr bodmas",
-              "Property": "state",
-              "Value": "he is holding your maths homework."
-            }
-          ]
+          {
+            "TargetItem": "maths homework",
+            "Property": "location",
+            "Value": "hidden"
+          },
+          {
+            "TargetItem": "mr bodmas",
+            "Property": "location",
+            "Value": "staff room"
+          },
+          {
+            "TargetItem": "mr bodmas",
+            "Property": "state",
+            "Value": "he is holding your maths homework."
+          }
         ],
         "Conditions": [
           {
@@ -5925,7 +5877,7 @@
     "Type": "mobile",
     "Actions": [
       {
-        "Verb": "give",
+        "Verb": "give,submit",
         "Updates": [
           {
             "TargetItem": "mr ball",
@@ -5956,20 +5908,18 @@
     "Type": "mobile",
     "Actions": [
       {
-        "Verb": "give",
+        "Verb": "give,submit",
         "Updates": [
-          [
-            {
-              "TargetItem": "ged homework",
-              "Property": "location",
-              "Value": "hidden"
-            },
-            {
-              "TargetItem": "mr square",
-              "Property": "state",
-              "Value": "he is holding your maths homework."
-            }
-          ]
+          {
+            "TargetItem": "ged homework",
+            "Property": "location",
+            "Value": "hidden"
+          },
+          {
+            "TargetItem": "mr square",
+            "Property": "state",
+            "Value": "he is holding your maths homework."
+          }
         ],
         "Conditions": [
           {
@@ -5998,7 +5948,7 @@
     "Type": "mobile",
     "Actions": [
       {
-        "Verb": "give",
+        "Verb": "give,submit",
         "Updates": [
           {
             "TargetItem": "miss sketch",
@@ -6034,20 +5984,18 @@
     "Type": "mobile",
     "Actions": [
       {
-        "Verb": "give",
+        "Verb": "give,submit",
         "Updates": [
-          [
-            {
-              "TargetItem": "physics homework",
-              "Property": "location",
-              "Value": "hidden"
-            },
-            {
-              "TargetItem": "dr atom",
-              "Property": "state",
-              "Value": "he is still reading the laser maintenance manual, but now carrying your physics homework rolled up in his lab coat pocket."
-            }
-          ]
+          {
+            "TargetItem": "physics homework",
+            "Property": "location",
+            "Value": "hidden"
+          },
+          {
+            "TargetItem": "dr atom",
+            "Property": "state",
+            "Value": "he is still reading the laser maintenance manual, but now carrying your physics homework rolled up in his lab coat pocket."
+          }
         ],
         "Conditions": [
           {
@@ -6079,20 +6027,18 @@
     "Type": "mobile",
     "Actions": [
       {
-        "Verb": "give",
+        "Verb": "give,submit",
         "Updates": [
-          [
-            {
-              "TargetItem": "chemistry homework",
-              "Property": "location",
-              "Value": "hidden"
-            },
-            {
-              "TargetItem": "mr silver",
-              "Property": "state",
-              "Value": "he is pleased with your homework but concerned about the next assignment which invovles hydrocholic acid."
-            }
-          ]
+          {
+            "TargetItem": "chemistry homework",
+            "Property": "location",
+            "Value": "hidden"
+          },
+          {
+            "TargetItem": "mr silver",
+            "Property": "state",
+            "Value": "he is pleased with your homework but concerned about the next assignment which invovles hydrocholic acid."
+          }
         ],
         "Conditions": [
           {
@@ -6131,20 +6077,18 @@
     "Type": "mobile",
     "Actions": [
       {
-        "Verb": "give",
+        "Verb": "give,submit",
         "Updates": [
-          [
-            {
-              "TargetItem": "music homework",
-              "Property": "location",
-              "Value": "hidden"
-            },
-            {
-              "TargetItem": "miss sharp",
-              "Property": "state",
-              "Value": "she is carrying your thoughtless though meaningful doodles and appears restless, perhaps to listen to music and create doodles herself."
-            }
-          ]
+          {
+            "TargetItem": "music homework",
+            "Property": "location",
+            "Value": "hidden"
+          },
+          {
+            "TargetItem": "miss sharp",
+            "Property": "state",
+            "Value": "she is carrying your thoughtless though meaningful doodles and appears restless, perhaps to listen to music and create doodles herself."
+          }
         ],
         "Conditions": [
           {
@@ -6175,21 +6119,19 @@
     "Type": "mobile",
     "Actions": [
       {
-        "Verb": "give",
+        "Verb": "give,submit",
         "UnconditionalResponse": "you have your written assignment to miss mcqueen and she examines it, raises an eyebrow, sighs and concedes that you have delivered on your obligation so no need for any drama which inturn make her feel melencholy.",
         "Updates": [
-          [
-            {
-              "TargetItem": "drama homework",
-              "Property": "location",
-              "Value": "hidden"
-            },
-            {
-              "TargetItem": "miss mcqueen",
-              "Property": "state",
-              "Value": "she is carrying your drama homework in a dramatic fashion."
-            }
-          ]
+          {
+            "TargetItem": "drama homework",
+            "Property": "location",
+            "Value": "hidden"
+          },
+          {
+            "TargetItem": "miss mcqueen",
+            "Property": "state",
+            "Value": "she is carrying your drama homework in a dramatic fashion."
+          }
         ],
         "Conditions": [
           {
@@ -6225,20 +6167,18 @@
     "Type": "mobile",
     "Actions": [
       {
-        "Verb": "give",
+        "Verb": "give,submit",
         "Updates": [
-          [
-            {
-              "TargetItem": "geography homework",
-              "Property": "location",
-              "Value": "hidden"
-            },
-            {
-              "TargetItem": "mr rhumb",
-              "Property": "state",
-              "Value": "he is carrying your geography homework."
-            }
-          ]
+          {
+            "TargetItem": "geography homework",
+            "Property": "location",
+            "Value": "hidden"
+          },
+          {
+            "TargetItem": "mr rhumb",
+            "Property": "state",
+            "Value": "he is carrying your geography homework."
+          }
         ],
         "Conditions": [
           {
