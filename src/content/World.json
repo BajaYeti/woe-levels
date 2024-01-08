@@ -1,5 +1,5 @@
 [
-  { "Type": "version", "Name": "version", "Description": "V0.0.9" },
+  { "Type": "version", "Name": "version", "Description": "V0.1.0" },
   {
     "Name": "player",
     "Type": "player",
@@ -1358,7 +1358,7 @@
   },
   {
     "Name": "gloomy path",
-    "Description": "leads from the main school building the to out buildings and temporary wooden classrooms, affectionately knows as huts. this path leads to you home room and is not covered, meaning that a rainy start to the school day is as miserable as it gets.",
+    "Description": "The path leads from the primary school building to the outbuildings and temporary wooden classrooms, affectionately known as huts. This path leads to your homeroom and needs to be covered, meaning that a rainy start to the school day is as miserable as it gets.",
     "Type": "location",
     "Actions": [
       {
@@ -1396,7 +1396,7 @@
   },
   {
     "Name": "workshop path",
-    "Description": "this path leads to the workshops of the school, which are snesibly kept separate from the main building due to the nature of dangerous materials and tools kept in them.",
+    "Description": "The path leads to the workshops of the school, which are sensibly kept separate from the main building due to the nature of dangerous materials and tools.",
     "Type": "location",
     "Actions": [
       {
@@ -1444,7 +1444,7 @@
   },
   {
     "Name": "grassy area",
-    "Description": "betwix the huts it borders your home room and is a gather area before class registration each morning, although outdoors and subject to the elements it could be a lot worse.",
+    "Description": "The area between the huts borders your homeroom and is a gathering area before class registration each morning. Being outdoors and subject to the elements means waiting for class to open, which often means getting wet.",
     "Type": "location",
     "Actions": [
       {
@@ -1482,8 +1482,8 @@
   },
   {
     "Name": "ged hut",
-    "Description": "(geometric engineering and design) a standlone wooden classroom, it is bitterly cold in winter and the bare wooden floor allows the draught to whistle up between the floor boards. each desk is equipped with a single drawing desk which is adjustable and has an attached horizonal rule complete with multiple goemetric drawing attachments.",
-    "Help": "pencils softer than 2h are banned in this classroom.",
+    "Description": "The GED (Geometric Engineering and Design) hut is a wooden classroom. It is bitterly cold in winter, and the bare wooden floor allows the draught to whistle between the floorboards. Each desk has an adjustable tilting drawing surface with an attached horizontal rule and other multiple geometric drawing attachments.",
+    "Help": "Pencils softer than 2h are banned in this classroom.",
     "Type": "location",
     "Actions": [
       {
@@ -1501,7 +1501,7 @@
   },
   {
     "Name": "library corridor",
-    "Description": "another hub of directions, it is often lined with pupils queuing up to enter the library or art studio but due to its proximity to the staff room there is very little mischief.",
+    "Description": "The corridor is the hub of directions, often lined with pupils queuing up to enter the library or art studio. However, there is very little mischief due to its proximity to the staff room.",
     "Type": "location",
     "Actions": [
       {
@@ -1529,15 +1529,15 @@
             "Property": "state",
             "Equality": "*",
             "Value": "wearing",
-            "PassResponse": "mr head appears fleetingly appears but assumes you are a member of staff and goes about his business.",
-            "FailResponse": "from no-where mr head appears and blocks your path, \"you know pupils aren't allowed in the staff room\" he asserts and seemingly vanishes again."
+            "PassResponse": "Mr Head fleetingly appears but assumes you are a staff member and goes about his business.",
+            "FailResponse": "From nowhere, Mr. Head appears and blocks your path, \"You know pupils aren't allowed in the staff room\", he asserts, seemingly vanishing again."
           },
           {
             "Item": "moustache",
             "Property": "state",
             "Equality": "*",
             "Value": "wearing",
-            "FailResponse": "from no-where mr head appears and blocks your path, \"you know pupils aren't allowed in the staff room\" he asserts and seemingly vanishes again."
+            "FailResponse": "From nowhere, Mr. Head appears and blocks your path, \"You know pupils aren't allowed in the staff room\", he asserts, seemingly vanishing again."
           }
         ]
       },
@@ -1583,7 +1583,7 @@
       },
       {
         "Verb": "up",
-        "UnconditionalResponse": "you ascend the down-leg stairs and end up directly above where you started.",
+        "UnconditionalResponse": "You ascend the down-leg stairs and end up directly above where you started.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -1597,8 +1597,8 @@
   },
   {
     "Name": "west toilets",
-    "Description": "school toilets are a very unpleasant plave to be. most of the stall are broken and don't have locks or even doors, the remaining stalls are soiled beyond what is believable. there is a row is thankfully clean hand basins half of which have working taps.",
-    "Help": "there is a plentiful supply of water in the toilets.",
+    "Description": "The toilets are very unpleasant; most stalls are broken without locks or even doors, and the remaining stalls are soiled beyond what is believable. There is a row of thankfully clean hand basins, half of which have working taps.",
+    "Help": "There is a plentiful supply of water in the toilets.",
     "Type": "location",
     "Actions": [
       {
@@ -1616,8 +1616,8 @@
   },
   {
     "Name": "library",
-    "Description": "tthe quietest place in the school and is the only room that can be visited at any time of day, during lessons, break time or lunch. wooden book shelves line the walls with small piers protuding to form nooks, which allow pupils to hide from teachers easily. a card based index system exists to locate books, but generally it's easier to browse alphabetically for them.",
-    "Help": "shhh!",
+    "Description": "The library is the quietest place in the school and is the only room that can be visited at any time of day, during lessons, break time or lunch. Wooden bookshelves line the walls with small piers protruding to form nooks, which allow pupils to hide from teachers easily. A card-based index system exists to locate books, but generally, it's easier to browse alphabetically for them.",
+    "Help": "Shhh!",
     "Type": "location",
     "Actions": [
       {
@@ -1635,7 +1635,7 @@
   },
   {
     "Name": "tennis courts",
-    "Description": "the tennis courts are made from a hard all-weather surfce similar to tarmac,  the nets are permanently mounted and well maintained, although this area is off-limits to boys as in an exclusive physcial education area for girls only.",
+    "Description": "The tennis courts are made from a hard all-weather surface similar to the tarmac. The nets are permanently mounted and well-maintained. However, this area is off-limits to boys and is an exclusive physical education area for girls only.",
     "Type": "location",
     "Actions": [
       {
@@ -1653,7 +1653,7 @@
   },
   {
     "Name": "sixth form",
-    "Description": "the entrance to the sixth form area is surprisingly bare, as if the area beyond is a secret government facility. it might as well be as it is off limits to pupils in fifth form and below. accasionally 17 and 18 years olds can be seen coming and going at all times dress in causal wear. the door to the south is locked and you can go no further until you pass exhibit enough academic acumen to be considered investment worthy.",
+    "Description": "The entrance to the sixth form area is surprisingly bare as if the area beyond is a secret government facility. It could be because it is off-limits to pupils in fifth form and below. Occasionally, 17 and 18-year-olds can be seen coming and going at all times dressed in casual wear. The door to the south is locked, and you can only go further once you exhibit enough academic acumen to be considered investment-worthy.",
     "Type": "location",
     "Actions": [
       {
@@ -1671,7 +1671,7 @@
   },
   {
     "Name": "south stairwell first floor",
-    "Description": "well lit by a floor-to-ceiling windows. the first floor is where the pomp ends and is the business floor of learning.",
+    "Description": "The stairwell is well-lit by floor-to-ceiling windows. The first floor is where the pomp ends and is the floor of learning.",
     "Type": "location",
     "Actions": [
       {
@@ -1686,7 +1686,7 @@
       },
       {
         "Verb": "down",
-        "UnconditionalResponse": "you descend the down-leg stairs and end up directly below where you started.",
+        "UnconditionalResponse": "You descend the down-leg stairs and end up directly below where you started.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -1697,7 +1697,7 @@
       },
       {
         "Verb": "up",
-        "UnconditionalResponse": "you ascend the down-leg stairs and end up directly above where you started.",
+        "UnconditionalResponse": "You ascend the down-leg stairs and end up directly above where you started.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -1711,7 +1711,7 @@
   },
   {
     "Name": "south stairwell second floor",
-    "Description": "well lit by a floor-to-ceiling windows. the second floor represents even more intense levels of academia.",
+    "Description": "The stairwell is well-lit by floor-to-ceiling windows. The second floor represents even more intense levels of academia.",
     "Type": "location",
     "Actions": [
       {
@@ -1726,7 +1726,7 @@
       },
       {
         "Verb": "down",
-        "UnconditionalResponse": "you descend the down-leg stairs and end up directly below where you started.",
+        "UnconditionalResponse": "You descend the down-leg stairs and end up directly below where you started.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -1740,7 +1740,7 @@
   },
   {
     "Name": "west stairwell first floor",
-    "Description": "the stairwell is well lit by a floor-to-ceiling window. the first floor is where the pomp ends and is the business floor of learning.",
+    "Description": "The stairwell is well-lit by floor-to-ceiling windows. The first floor is where the pomp ends and is the floor of learning.",
     "Type": "location",
     "Actions": [
       {
@@ -1765,7 +1765,7 @@
       },
       {
         "Verb": "up",
-        "UnconditionalResponse": "you ascend the down-leg stairs and end up directly above where you started.",
+        "UnconditionalResponse": "You ascend the down-leg stairs and end up directly above where you started.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -1776,7 +1776,7 @@
       },
       {
         "Verb": "down",
-        "UnconditionalResponse": "you descend the down-leg stairs and end up directly below where you started.",
+        "UnconditionalResponse": "You descend the down-leg stairs and end up directly below where you started.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -1790,7 +1790,7 @@
   },
   {
     "Name": "west stairwell second floor",
-    "Description": "the stairwell is well lit by a floor-to-ceiling window. the second floor represents even more intense levels of academia.",
+    "Description": "The stairwell is well-lit by floor-to-ceiling windows. The second floor represents even more intense levels of academia.",
     "Type": "location",
     "Actions": [
       {
@@ -1815,7 +1815,7 @@
       },
       {
         "Verb": "down",
-        "UnconditionalResponse": "you descend the down-leg stairs and end up directly below where you started.",
+        "UnconditionalResponse": "You descend the down-leg stairs and end up directly below where you started.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -1829,7 +1829,7 @@
   },
   {
     "Name": "east stairwell first floor",
-    "Description": "well lit by floor-to-ceiling windows. the first floor is where the pomp ends and is the business floor of learning.",
+    "Description": "The stairwell is well-lit by floor-to-ceiling windows. The first floor is where the pomp ends and is the floor of learning.",
     "Type": "location",
     "Actions": [
       {
@@ -1864,7 +1864,7 @@
       },
       {
         "Verb": "up",
-        "UnconditionalResponse": "you ascend the down-leg stairs and end up directly above where you started.",
+        "UnconditionalResponse": "You ascend the down-leg stairs and end up directly above where you started.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -1875,7 +1875,7 @@
       },
       {
         "Verb": "down",
-        "UnconditionalResponse": "you descend the down-leg stairs and end up directly below where you started.",
+        "UnconditionalResponse": "You descend the down-leg stairs and end up directly below where you started.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -1889,7 +1889,7 @@
   },
   {
     "Name": "east stairwell second floor",
-    "Description": "well lit by floor-to-ceiling windows. the second floor represents even more intense levels of academia.",
+    "Description": "The stairwell is well-lit by floor-to-ceiling windows. The second floor represents even more intense levels of academia.",
     "Type": "location",
     "Actions": [
       {
@@ -1914,7 +1914,7 @@
       },
       {
         "Verb": "up",
-        "UnconditionalResponse": "you ascend the down-leg stairs and end up directly above where you started.",
+        "UnconditionalResponse": "You ascend the down-leg stairs and end up directly above where you started.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -1925,7 +1925,7 @@
       },
       {
         "Verb": "down",
-        "UnconditionalResponse": "you descend the down-leg stairs and end up directly below where you started.",
+        "UnconditionalResponse": "You descend the down-leg stairs and end up directly below where you started.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -1939,7 +1939,7 @@
   },
   {
     "Name": "southwest corner",
-    "Description": "the southwest corner of the school building is technically the centre of the school propery.",
+    "Description": "The southwest corner of the school building is technically the centre of the school property due to the size of the surrounding sports fields.",
     "Type": "location",
     "Actions": [
       {
@@ -1997,24 +1997,24 @@
   },
   {
     "Name": "football pitch",
-    "Description": "a full sized pitch along with a five-a-side pitch accompanying it. this is where the majority of imaginationless physical exercise takes place, usually in the form of shirts vs. skins in all weather.",
+    "Description": "The pitch is full-sized, with a five-a-side pitch perpendicular to it at the north end. This is where most imaginationless physical exercise occurs, usually as shirts vs. skins in all weather.",
     "Help": "association football is also know as soccer.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-        "UnconditionalResponse": "you trek all the way across the football pitch, which seems to take forever,",
+        "UnconditionalResponse": "You trek across the football pitch, which takes forever.",
         "Updates": [
           {
             "TargetItem": "player",
             "Property": "location",
-            "Value": "north woods"
+            "Value": "north copse"
           }
         ]
       },
       {
         "Verb": "southeast",
-        "UnconditionalResponse": "you trek all the way across the football pitch, which seems to take forever,",
+        "UnconditionalResponse": "You trek across the football pitch, which takes forever.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -2025,7 +2025,7 @@
       },
       {
         "Verb": "south",
-        "UnconditionalResponse": "you trek all the way across the football pitch, which seems to take forever,",
+        "UnconditionalResponse": "You trek across the football pitch, which takes forever.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -2036,7 +2036,7 @@
       },
       {
         "Verb": "west",
-        "UnconditionalResponse": "you trek all the way across the football pitch, which seems to take forever,",
+        "UnconditionalResponse": "You trek across the football pitch, which takes forever.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -2047,16 +2047,16 @@
       }
     ],
     "Location": "football pitch",
-    "State": "it is churned up from football endless wear from studded bootball boots in wet weather."
+    "State": "It is churned from players wearing studded football boots in wet weather."
   },
   {
     "Name": "rugby pitch",
-    "Description": "any effort put into pupil safety is completely abandonded here, broken bones and blindness inducing concussions are common here all the the pursuit of mandatory black vs. whites, no doubt fuelled by staff room betting by the sports teachers.",
+    "Description": "The pitch can be seen from around the school site due to the size of the rugby posts. Any consideration of pupil safety is completely abandoned here; broken bones and blindness-inducing concussions occur here irregularly, all the pursuit of mandatory team vs team, possibly fuelled by staff room betting by the sports teachers.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-        "UnconditionalResponse": "you trek all the way across the rugby pitch, which seems to take forever,",
+        "UnconditionalResponse": "You trek across the rugby pitch, which takes forever.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -2067,7 +2067,7 @@
       },
       {
         "Verb": "east",
-        "UnconditionalResponse": "you trek all the way across the rugby pitch, which seems to take forever,",
+        "UnconditionalResponse": "You trek across the rugby pitch, which takes forever.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -2078,7 +2078,7 @@
       },
       {
         "Verb": "west",
-        "UnconditionalResponse": "you trek all the way across the rugby pitch, which seems to take forever,",
+        "UnconditionalResponse": "You trek across the rugby pitch, which takes forever.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -2092,7 +2092,7 @@
   },
   {
     "Name": "cricket pitch",
-    "Description": "rarly used and only visited in summer, although it is well maintainced thanks in part to an all weather surface between the stumps. forget any dreams of olympic glory from this physcial education.",
+    "Description": "The pitch is rarely used and only visited in summer. However, it is well-maintained thanks partly to an all-weather surface between the stumps.",
     "Type": "location",
     "Actions": [
       {
@@ -2111,7 +2111,7 @@
           {
             "TargetItem": "player",
             "Property": "location",
-            "Value": "west woods"
+            "Value": "west copse"
           }
         ]
       }
@@ -2120,12 +2120,12 @@
   },
   {
     "Name": "athletics field",
-    "Description": "a vast expanse of grass with no discenrable marking of any kind. it is used during summer for javelin and discus throwning and for long distance running during autumn, winter and spring.",
+    "Description": "The field is a vast expanse of grass with no discernable marking of any kind. It is used for javelin and discus throwing during summer and long-distance running during autumn, winter, and spring.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "east",
-        "UnconditionalResponse": "you trek all the way across the athletics field, which seems to take forever,",
+        "UnconditionalResponse": "You trek across the athletics field, which takes forever.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -2136,18 +2136,18 @@
       },
       {
         "Verb": "south",
-        "UnconditionalResponse": "you trek all the way across the athletics field, which seems to take forever,",
+        "UnconditionalResponse": "You trek across the athletics field, which takes forever.",
         "Updates": [
           {
             "TargetItem": "player",
             "Property": "location",
-            "Value": "south woods"
+            "Value": "south copse"
           }
         ]
       },
       {
         "Verb": "west",
-        "UnconditionalResponse": "you trek all the way across the athletics field, which seems to take forever,",
+        "UnconditionalResponse": "You trek across the athletics field, which takes forever.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -2161,7 +2161,7 @@
   },
   {
     "Name": "home room",
-    "Description": "is where classes gather prior to banding-lessons for purposes of registration, twice daily; in the morning and after lunch. for some pupils this is as long as they will stay in school each day. the room is some kind of lab, but rarely used for lessons.",
+    "Description": "The homeroom is where classes gather for registration before banding lessons, twice daily, in the morning and after lunch. For some pupils, this is as long as they stay in school daily. The room is a laboratory but is rarely used for lessons.",
     "Type": "location",
     "Actions": [
       {
@@ -2189,7 +2189,7 @@
   },
   {
     "Name": "home store room",
-    "Description": "separates the home room and the weird room labs, with access doors leading to each. there is a large selection of supplies for a variety of lessons.",
+    "Description": "The store room separates the home room and the weird room labs, with access doors leading to each. There is a large selection of supplies for a variety of lessons.",
     "Type": "location",
     "Actions": [
       {
@@ -2217,7 +2217,7 @@
   },
   {
     "Name": "weird room",
-    "Description": "this room is weird in that it's identical to your home room, but a perfect mirror image in its layout. this serves as the home room for the pupils with behavioral problems, who have long since been abandonded by the school based purely on their willingness to conform to the system rather than their academic abilities.",
+    "Description": "The room is identical to your home room but is almost a perfect mirror image, which is disturbing. It serves as the homeroom for a class of unruly pupils who have long since been abandoned by the school purely due to their willingness to conform to the system rather than their academic abilities.",
     "Type": "location",
     "Actions": [
       {
@@ -2235,7 +2235,7 @@
   },
   {
     "Name": "art studio",
-    "Description": "a large room which is light and airy to facility the creative art process. exhibits from former pupils adorn the wall, leaving little space for new submissions, unless they are deemed better than those already existing.",
+    "Description": "The studio is a large room that is light and airy to facilitate the creative art process. Exhibits from former pupils adorn the wall, leaving little space for new submissions unless they are deemed better than those already existing.",
     "Type": "location",
     "Actions": [
       {
@@ -2253,8 +2253,9 @@
   },
   {
     "Name": "swimming pool",
-    "Description": "a place of dread; while simming is a fun pastime for most kids at school it becomes a funless lesson in a freezing unheated outdoor pool that is over chlorinated and full of bullys who are angry that they can't swim.",
+    "Description": "The pool is a place of dread. Swimming is a fun pastime enjoyed by most school kids. Still, at school, it becomes a fun-less lesson in a freezing, unheated outdoor pool where body shaming is ramped up to unbearable levels.",
     "Type": "location",
+    "Help": "Water softens the landing when jumping from a height.",
     "Actions": [
       {
         "Verb": "west",
@@ -2271,7 +2272,7 @@
   },
   {
     "Name": "swimming changing room",
-    "Description": "basic at best; the building is a wooden hut with no windows for privacy which leads to the room being very dimley lit and unnerving. it is also unheated and drafty; you are expected to get naked in here.",
+    "Description": "The changing room could be more modern at best; the building is a wooden hut with no windows for privacy, leading to the room being dimly lit and unnerving. It is also unheated and drafty; you are expected to get naked in here after swimming in an unheated pool.",
     "Type": "location",
     "Actions": [
       {
@@ -2298,7 +2299,7 @@
             "Item": "never",
             "Property": "state",
             "Value": "pass",
-            "FailResponse": "the gate to the swimming pool is locked from the other side."
+            "FailResponse": "The gate to the swimming pool is locked from the other side."
           }
         ]
       },
@@ -2317,7 +2318,7 @@
   },
   {
     "Name": "west path",
-    "Description": "the east path leads round the back of the school past the library, connecting the huts to the school playing fields.",
+    "Description": "The west path leads around the back of the school past the library, connecting the huts to the school playing fields.",
     "Type": "location",
     "Actions": [
       {
@@ -2355,8 +2356,8 @@
   },
   {
     "Name": "sewing room",
-    "Description": "the most tranquil room in the entire school. there is nothing to do here except needle point in near silence, like a form of meditation it relaxes even the harshest bully who tries it.",
-    "Help": "the sewing room is a great place to repair clothes.",
+    "Description": "The room is the most tranquil in the entire school. There is nothing to do here except needlepoint in near silence; like meditation, it relaxes even the harshest bully who tries it.",
+    "Help": "The sewing room is a great place to repair clothes.",
     "Type": "location",
     "Actions": [
       {
@@ -2384,8 +2385,8 @@
   },
   {
     "Name": "cooking room",
-    "Description": "lined with worktops, sinks and half as many ovens. there is an enormous industrial sized fridge in the corner.",
-    "Help": "overs make things hot and frieges make things cold.",
+    "Description": "The room is lined with worktops, sinks and half as many ovens. There is an enormous industrial-sized fridge in the corner for storing spoilable ingredients.",
+    "Help": "Ovens make things hot, and fridges make things cold.",
     "Type": "location",
     "Actions": [
       {
@@ -2413,8 +2414,8 @@
   },
   {
     "Name": "french room",
-    "Description": "les murs sont couverts d'affiches évoquant la culture française stéréotypée ainsi que des phrases sans fin et des exemples de situation de la langue française. rien n'est en anglais ici.",
-    "Help": "je ne comprends pas.",
+    "Description": "Les murs sont recouverts d'affiches représentant des stéréotypes de la culture française, des phrases interminables et des exemples de situations de la langue française. Rien n'est en anglais ici.",
+    "Help": "Je ne comprends pas.",
     "Type": "location",
     "Actions": [
       {
@@ -2442,8 +2443,8 @@
   },
   {
     "Name": "german room",
-    "Description": "die wände sind mit plakaten bedeckt, die auch stereotype französische kultur vorgeben, und endlose satz- und situationsbeispiele der deutschen sprache. hier ist nichts auf englisch.",
-    "Help": "ich verstehe nicht.",
+    "Description": "Die Wände sind mit Plakaten bedeckt, die die stereotype deutsche Kultur, endlose Phrasen und situative Beispiele der deutschen Sprache darstellen. Hier ist nichts auf Englisch.",
+    "Help": "Ich verstehe nicht.",
     "Type": "location",
     "Actions": [
       {
@@ -2471,7 +2472,7 @@
   },
   {
     "Name": "audio lab",
-    "Description": "like a classroom that was high tech in the 1970s. instead of desks it is filled with ranks of partitioned booths each containing a pair of uncomfortable pre-war looking headphones and an open reel tape desk made from bakelite.",
+    "Description": "The room is like a high-tech classroom in the 1970s. Instead of desks, it is filled with partitioned booths, each containing a pair of uncomfortable pre-war-looking headphones and an open reel tape deck made from bakelite.",
     "Type": "location",
     "Actions": [
       {
@@ -2499,7 +2500,7 @@
   },
   {
     "Name": "maths room",
-    "Description": "there are no posters on the walls here - maths related posts woulkd look too childish here, instead the walls are bare anbd uninviting.",
+    "Description": "The room has no posters on the walls. Maths-related posters would look too childish here. Instead, the walls are bare and uninviting.",
     "Type": "location",
     "Actions": [
       {
@@ -2527,8 +2528,8 @@
   },
   {
     "Name": "english language",
-    "Description": "the walls are covered with information about the correct use of punctiation, margins, case, tense, nouns, verbs,  similies, metaphors and onomatopoeias yet strangely nothing of swear words - something that exists in equal measures in the real world.",
-    "Help": "swearing will get you an immediate detention in any part of the school, but if used grammatically correctly here you might get away with it.",
+    "Description": "The room has walls covered with information about the correct use of punctuation, case, tense, nouns, verbs,  similies, metaphors and onomatopoeias, yet strangely, nothing of swear words - something that exists in equal measures in the real world.",
+    "Help": "Swearing will get you an immediate detention in any part of the school. Still, if used grammatically correctly here, you might get away with it.",
     "Type": "location",
     "Actions": [
       {
@@ -2565,8 +2566,8 @@
             "Item": "swimming trunks",
             "Property": "state",
             "Value": "you are wearing the trunks.",
-            "PassResponse": "you pluck up all your courage, step onto the open window sill and leap forward. you grab your nose as you plummet earthward and splash into the swimming pool.",
-            "FailResponse": "you look out the open window at the swimming pool below, with its murky green water and think better of it."
+            "PassResponse": "You pluck up all your courage, step onto the open window sill and leap forward. You grab your nose as you plummet earthward and splash into the swimming pool unhurt.",
+            "FailResponse": "You look out the open window at the swimming pool below, with its murky green water and think better of it."
           }
         ]
       }
@@ -2575,8 +2576,8 @@
   },
   {
     "Name": "english literature",
-    "Description": "the walls are covered with posters of shakespeare, keats, dickens, orwell, eliot, chaucer, tolkien and wordsworth. here are you expected to forget everything you learned about modern english language next door and appreacite an unrecognisabl;e language from centuries ago.",
-    "Help": "to be, or not to be?",
+    "Description": "The room walls are covered with posters of Shakespeare, Keats, Dickens, Orwell, Eliot, Chaucer, Tolkien and Wordsworth. Here, you are expected to forget everything you learned about the modern English language next door and appreciate an unrecognisable language from centuries ago.",
+    "Help": "To be, or not to be?",
     "Type": "location",
     "Actions": [
       {
@@ -2604,8 +2605,8 @@
   },
   {
     "Name": "metal workshop",
-    "Description": "a large room full of lathes and pillar drills, along with surrounding benches with rows of vices; in the corner there is a furnaces for heating metal to extremely dangerous levels complete with a bucket for quenching and case hardning.",
-    "Help": "the metal workshop is a great place for working metals of all types.",
+    "Description": "The workshop is full of lathes, pillar drills, and surrounding benches with rows of vices. In the corner is a furnace for heating metal to hazardous temperatures, complete with a bucket for quenching and case hardening.",
+    "Help": "The metal workshop is a great place for working metals of all types.",
     "Type": "location",
     "Actions": [
       {
@@ -2623,7 +2624,7 @@
   },
   {
     "Name": "wood workshop",
-    "Description": "the wood workshop is large and full of work benches and metal cabinets which house a variety of very sharp tools, all kept under lock and key by the teacher. the air smells of sawdust and treatment oils.",
+    "Description": "The workshop is large and full of workbenches and metal cabinets, which house a variety of very sharp tools, all kept under lock and key by the teacher. The air smells of sawdust and treatment oils.",
     "Type": "location",
     "Actions": [
       {
@@ -2651,7 +2652,7 @@
   },
   {
     "Name": "back street",
-    "Description": "a narrow but busy road, it is frequented by a large preportion on the pupils who attend the shcool; those who live to the west for daily access and other who visit the local shops during lunch break. there are no consesions for pupil safety here, no crossing or traffic calming.",
+    "Description": "The street is a narrow but busy road frequented by many pupils who attend school, those who live to the west and others who visit the local shops during lunch break. There are no concessions for pupil safety here, no crossing or traffic calming.",
     "Type": "location",
     "Actions": [
       {
@@ -2679,7 +2680,7 @@
   },
   {
     "Name": "news agent",
-    "Description": "a misnomer of a shop, although it sells news papers it sells just about everything from magazine, snacks, groceries and school supplies. no more than four pupils are allowed in at any time to reduce the chances of theivery.",
+    "Description": "The shop is a misnomer; although it sells newspapers, it sells just about everything from magazines, snacks, groceries and school supplies. No more than four pupils are allowed in at any time to reduce the chances of thievery.",
     "Help": "being located opposite a school it sells plenty of items that would be helpful during a normal schoolday.",
     "Type": "location",
     "Actions": [
@@ -2698,7 +2699,7 @@
   },
   {
     "Name": "typing pool",
-    "Description": "TODO",
+    "Description": "The room is full of manual typewriters bolted to the desks to ensure they are present. Each typewriter is old and well-worn, with long, irregular keystrokes which often jam the hammers. The recent advent of affordable microcomputers means that learning to touch type can be helpful to almost everyone.",
     "Type": "location",
     "Actions": [
       {
@@ -2726,8 +2727,8 @@
   },
   {
     "Name": "poker den",
-    "Description": "a spare classroom that rarely sees academic use, it has plenty of seating and desks which go unused and are ideal for lunch time poker games. although seedy in nature playing poker is not frowned upon by the faculty.",
-    "Help": "healthy profits can be made by playing the odds.",
+    "Description": "The den is a spare classroom that rarely sees academic use; it has plenty of seating and desks which go unused and are ideal for lunchtime poker games. Although considered seedy, playing poker is not outlawed by the faculty.",
+    "Help": "Healthy profits can be made by playing the odds in the long run.",
     "Type": "location",
     "Actions": [
       {
@@ -2745,7 +2746,7 @@
   },
   {
     "Name": "north street",
-    "Description": "an eclectic collection of detached and semi-detached houses line each side of the street, their value would increase greatly if there weren't thousands of school kids traipsing past twice daily.",
+    "Description": "The street has an eclectic collection of detached and semi-detached houses lining each side; their value would increase significantly if fewer school kids were traipsing past twice daily.",
     "Type": "location",
     "Actions": [
       {
@@ -2791,12 +2792,12 @@
   },
   {
     "Name": "main road",
-    "Description": "it is the main road through the town and runs east/west with two lanes of traffic in each direction, intersecting the school street at a large traffic light controlled junction. due to the volume of traffic the only way across is via a pedestrian bridge.",
+    "Description": "The main road through the town runs east/west with two lanes of traffic in each direction, intersecting the school street at an ample traffic light-controlled junction. Due to the traffic volume, the only way across is via a pedestrian bridge.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "up",
-        "UnconditionalResponse": "you climb the dog-leg steps of the blue bridge and walk across to the middle of the bridge's span.",
+        "UnconditionalResponse": "You climb the dog-leg steps of the blue bridge and walk across to the middle of the bridge's span.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -2820,23 +2821,23 @@
   },
   {
     "Name": "blue bridge",
-    "Description": "you are in the middle of the span of a steel pedestrian bridge across the main road, named for its colour. it is safe from traffic here.",
+    "Description": "The bridge is a steel pedestrian bridge spanning the main road, named for its colour. It is safe from traffic here.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "north",
-        "UnconditionalResponse": "you cross the remainder of the bridge and climb down the dog-leg steps on the north side.",
+        "UnconditionalResponse": "You cross the remainder of the bridge and climb down the dog-leg steps.",
         "Updates": [
           {
             "TargetItem": "player",
             "Property": "location",
-            "Value": "grassy knoll"
+            "Value": "grassy common"
           }
         ]
       },
       {
         "Verb": "south",
-        "UnconditionalResponse": "you cross the remainder of the bridge and climb down the dog-leg steps on the south side.",
+        "UnconditionalResponse": "You cross the remainder of the bridge and climb down the dog-leg steps.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -2849,9 +2850,8 @@
     "Location": "blue bridge"
   },
   {
-    "Name": "grassy knoll",
-    "Description": "traffic races past to the south and houses line the streets to the north accompanied by a row of shops.",
-    "Help": "there is no lone shooter here",
+    "Name": "grassy common",
+    "Description": "The common is a small grassy area separating traffic to the south and houses to the north, accompanied by a row of shops. It is frequented primarily by dog walkers.",
     "Type": "location",
     "Actions": [
       {
@@ -2866,7 +2866,7 @@
       },
       {
         "Verb": "north",
-        "UnconditionalResponse": "you cross the street and enter the chinese takeaway.",
+        "UnconditionalResponse": "You cross the common, followed by the street and are drawn into the Chinese takeaway.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -2876,11 +2876,11 @@
         ]
       }
     ],
-    "Location": "grassy knoll"
+    "Location": "grassy common"
   },
   {
     "Name": "chinese takeaway",
-    "Description": "affectionately known as the 'chippy' the takeaway restaurant is adorned with chinese decore.",
+    "Description": "The takeaway is affectionately known as the 'chippy'. The takeaway restaurant is sparse but adorned with Chinese decor.",
     "Type": "location",
     "Actions": [
       {
@@ -2889,7 +2889,7 @@
           {
             "TargetItem": "player",
             "Property": "location",
-            "Value": "grassy knoll"
+            "Value": "grassy common"
           }
         ]
       }
@@ -2898,7 +2898,7 @@
   },
   {
     "Name": "computer room",
-    "Description": "despite sounding high-tech the school can only afford a single computer; a commodire pet, which is mostly off limits to pupils. it is possible to connect the pet to another computer elsewhere in the world via a phone line using called a modem with an accoustic coupler, but this is isn't taught in the computer room.",
+    "Description": "The room is sparse and has only a single computer, a Commodore PET, which is mainly off-limits to pupils. Connecting the PET to another computer worldwide via a phone line using a modem with an acoustic coupler is possible. Unfortunately, this is also off-limits.",
     "Type": "location",
     "Actions": [
       {
@@ -2916,8 +2916,8 @@
   },
   {
     "Name": "first aid room",
-    "Description": "small but well stocked with medial supplies. it smells of antiseptic and there is a single bed in the corner, this is the only place in the entire school where you are authorised to lay down.",
-    "Help": "if you need to vomit, this is the best place to do it.",
+    "Description": "The room is small but well-stocked with medical supplies. It smells of antiseptic, and there is a single bed in the corner; this is the only place in the entire school where you are authorised to lie down.",
+    "Help": "If you need to vomit, this is the best place to do it.",
     "Type": "location",
     "Actions": [
       {
@@ -2935,7 +2935,7 @@
   },
   {
     "Name": "caretaker's office",
-    "Description": "an office by name only and moreover an extension of the store room. items are scattered accross the room piled high and stacked deep. although there is a desk is is covered by ring binders of inventories maintenance instructions and schedules.",
+    "Description": "The office is in name only and an extension of the store room. Items are scattered across the room, piled high and stacked deep. Although there is a desk, it is covered by ring binders of inventories, maintenance instructions, and schedules, leaving no space to work.",
     "Type": "location",
     "Actions": [
       {
@@ -2973,7 +2973,7 @@
   },
   {
     "Name": "car park",
-    "Description": "filled with an assortment of cars ranging from teacher's classics, the head master's modern luxury saloon and the starter-cars of the eldest and richest sixth formers.",
+    "Description": "The car park is filled with various cars ranging from teachers' classics, the headmaster's modern luxury saloon, and the starter cars of the eldest and richest sixth formers.",
     "Type": "location",
     "Actions": [
       {
@@ -3030,7 +3030,7 @@
   },
   {
     "Name": "staff room",
-    "Description": "the only place in the school where you can find armchairs and sofas, although the quality of them is more line with a care home. there is a kitchenette to meet teacher's dietry needs and the air is thick with cigarette smoke.",
+    "Description": "The room is the only place in the school where you can find armchairs and sofas, although their quality is more in line with a care home. There is a kitchenette to meet the teacher's dietary needs, and the air is thick with cigarette smoke.",
     "Type": "location",
     "Actions": [
       {
@@ -3048,7 +3048,7 @@
   },
   {
     "Name": "hall corridor",
-    "Description": "runs the length of the assembly hall and it most commonly used to que for the gym or hall. sometimes pupils will be ejected from assemblies and made to stand in the hall corridor, although this less of a punishment than attending assemblies.",
+    "Description": "The corridor runs the length of the assembly hall to the west of the hall and is commonly used to queue for the gym or assembly hall. Sometimes, pupils will be ejected from assemblies and made to stand in the hall corridor. However, this is less of a punishment than attending assemblies.",
     "Type": "location",
     "Actions": [
       {
@@ -3105,8 +3105,8 @@
     "Location": "hall corridor"
   },
   {
-    "Name": "north woods",
-    "Description": "a small haven from the rest of the school. the trees here provide a dense canopy of leaves which prevents any sun from penetrating and offers seculusion whent he deciduous trees have leaves.",
+    "Name": "north copse",
+    "Description": "The copse is a small haven from the rest of the school. The trees here provide a dense canopy of leaves, which prevents any sun from penetrating and offers seclusion when the deciduous trees have leaves.",
     "Type": "location",
     "Actions": [
       {
@@ -3120,12 +3120,12 @@
         ]
       }
     ],
-    "Location": "north woods"
+    "Location": "north copse"
   },
   {
-    "Name": "west woods",
-    "Description": "the west woods is a small haven from the rest of the school. the trees here provide a dense canopy of leaves which prevents anything from growning on the ground, as a result the soil is very loose here.",
-    "Help": "loose soil is easy to dig.",
+    "Name": "west copse",
+    "Description": "The copse is a small haven from the rest of the school. The trees here provide a dense canopy of leaves, which prevents anything from growing on the ground. As a result, the soil is very loose here.",
+    "Help": "Loose soil is easy to dig.",
     "Type": "location",
     "Actions": [
       {
@@ -3139,11 +3139,11 @@
         ]
       }
     ],
-    "Location": "west woods"
+    "Location": "west copse"
   },
   {
-    "Name": "south woods",
-    "Description": "a small haven from the rest of the school. the trees here are small and dense with bushes and shrubs creating a maze of small pathways in which to evade capture from teachers and pupils alike.",
+    "Name": "south copse",
+    "Description": "The copse is a small haven from the rest of the school. The trees here are small and dense with bushes and shrubs, creating a maze of small pathways to evade capture from teachers and pupils alike.",
     "Type": "location",
     "Actions": [
       {
@@ -3157,11 +3157,11 @@
         ]
       }
     ],
-    "Location": "south woods"
+    "Location": "south copse"
   },
   {
     "Name": "back gate",
-    "Description": "a pedestrian-only entrace to the school, it is a large rusty metal gate flanked by matching metal railing to supposidly keep people out but more likely pupils in.",
+    "Description": "The gate is a pedestrian-only entrance to the school; it is a large rusty metal gate flanked by matching metal railing to supposedly keep people out but more likely pupils in.",
     "Type": "location",
     "Actions": [
       {
@@ -3189,8 +3189,8 @@
   },
   {
     "Name": "history room",
-    "Description": "the walls are adorned with stock picture of british kings and queens however not of the lessons ever focus on this part of history. other posters highlight the current ciriculum of crop rotation in the 14th century so pointless to anyone who isn't going to become a farmer.",
-    "Help": "those who do not learn history are doomed to repeat it.",
+    "Description": "The room walls are adorned with stock pictures of British kings and queens; however, no lessons ever focus on this part of history. Other posters highlight the current curriculum of crop rotation in the 14th century, so it is pointless to anyone who isn't going to become a farmer.",
+    "Help": "Those who do not learn history are doomed to repeat it.",
     "Type": "location",
     "Actions": [
       {
@@ -3218,8 +3218,8 @@
   },
   {
     "Name": "geography room",
-    "Description": "unsurprisingly the walls are covered with maps; world maps, teraing maps, geo-political maps, topological maps and geographical features such as ox-bow lakes and volcanoes.",
-    "Help": "ox-bow lake and volcano knowledge won't help you as an adult but map reading will yield dividends immediately, like finding yuour way around the school.",
+    "Description": "The room walls are covered with maps: world maps, terrain maps, geo-political maps, topological maps and geographical features such as oxbow lakes and volcanoes.",
+    "Help": "Knowledge of oxbow lakes and volcanos won't help you as an adult. Still, map reading will yield dividends immediately, such as finding your way around the school.",
     "Type": "location",
     "Actions": [
       {
@@ -3237,7 +3237,7 @@
   },
   {
     "Name": "drama room",
-    "Description": "full of chairs without desks or benches and a few oversized props such as trees and shrubs. it smells like \"back stage\" here.",
+    "Description": "The room has chairs and benches without desks arranged in a circle. There are also a few oversized props, such as trees and walls. It smells the same as backstage here.",
     "Type": "location",
     "Actions": [
       {
@@ -3275,8 +3275,8 @@
             "Property": "state",
             "Equality": "*",
             "Value": "homework",
-            "PassResponse": "you sneak into the drama cupboard in a dramatic way.",
-            "FailResponse": "the drama cupboard is locked."
+            "PassResponse": "You sneak into the drama cupboard dramatically.",
+            "FailResponse": "The drama cupboard is locked."
           }
         ]
       }
@@ -3285,8 +3285,8 @@
   },
   {
     "Name": "drama cupboard",
-    "Description": "full of small props for the school plays and a wide variety of costumes. if you've ever wanted to be a roman centurion or ghost this is the place to be.",
-    "Help": "drama costumes allow actors to become other people, albeit as part of a subterfuge.",
+    "Description": "The cupboard contains small props for the school plays and various costumes. If you've ever wanted to be a Roman centurion or a ghost, this is the place to be.",
+    "Help": "Drama costumes allow actors to become other people, albeit as part of a subterfuge.",
     "Type": "location",
     "Actions": [
       {
@@ -3304,12 +3304,12 @@
   },
   {
     "Name": "top of east stairwell",
-    "Description": "the top of the each stairwell is not afforded the lighting of the lower floors and is technically off limits, ending in a mysterious locked door.",
+    "Description": "The top of the stairwell needs to be afforded the lighting of the lower floors. Although not blockaded, it is off-limits, ending in a mysterious locked door.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "down",
-        "UnconditionalResponse": "you descend the down-leg stairs and end up directly below where you started.",
+        "UnconditionalResponse": "You descend the down-leg stairs and end up directly below where you started.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -3332,15 +3332,15 @@
             "Item": "key",
             "Property": "location",
             "Value": "player",
-            "PassResponse": "you insert the homemade master key into the latch lock and turn it, to your surprise the lock opens and you push the door open nervously.",
-            "FailResponse": "the door leading south from the top of the stairwell is closed - it is a mystery what is on the other side."
+            "PassResponse": "You insert the homemade master key into the latch lock and turn it cautiously. To your surprise, the lock opens, and you push the door open nervously.",
+            "FailResponse": "The door leading south from the top of the stairwell is closed; what is on the other side is a mystery."
           },
           {
             "Item": "key",
             "Property": "state",
             "Equality": "*",
             "Value": "master",
-            "FailResponse": "the door leading south from the top of the stairwell is closed - it is a mystery what is on the other side."
+            "FailResponse": "The door leading south from the top of the stairwell is closed; what is on the other side is a mystery."
           }
         ]
       }
@@ -3349,8 +3349,8 @@
   },
   {
     "Name": "flat roof",
-    "Description": "an expansive area of flat grey roofing felt covering the whole scool footage, save a some plant and chimney stacks. there is a small parapet around the edge but only large enough to provide a trip hazard.",
-    "Help": "you could race go-karts around the roof.",
+    "Description": "The roof is an expansive area of flat grey roofing felt covering the whole school footage, save some plant and chimney stacks. A small parapet around the edge is only high enough to provide a trip hazard.",
+    "Help": "The roof would make an excellent go-kart track.",
     "Type": "location",
     "Actions": [
       {
@@ -3368,12 +3368,12 @@
   },
   {
     "Name": "science courtyard",
-    "Description": "a tranquil place of beauty, herbaceous borders guide a narrow pathway around the courtyard while other indigenous shrubs separate the path from the central pond. the courtyard is surrounded by buildings with no apparent entry or exist which makes you wonder how it can be so well maintained, yet it is teaming with flora and fauna.",
+    "Description": "The courtyard is a tranquil place of beauty; herbaceous borders guide a narrow pathway around the courtyard, while other indigenous shrubs separate the path from the central pond. The courtyard is surrounded by buildings with no apparent entry or exit, which makes you wonder how it can be so well maintained. Yet, it is teaming with flora and fauna.",
     "Type": "location",
     "Actions": [
       {
         "Verb": "west",
-        "UnconditionalResponse": "you climb back in through the open window, hoping that no-one in authority sees you.",
+        "UnconditionalResponse": "You climb back through the open window, hoping no one in authority sees you.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -3529,7 +3529,7 @@
     "Description": "an unthinking oaf, it would be kind to describe him as misundertood but realistically it would be difficult for anyone to understand how callous one person could be.",
     "Help": "it is best to avoid the bully, he cannot be bargained with.",
     "Type": "person",
-    "Location": "south woods",
+    "Location": "south copse",
     "State": "his is perpetually angry."
   },
   {
@@ -3537,7 +3537,7 @@
     "Description": "the french exchange student.he is effortlessly chic and oozes european charisma that makes him attractive but is unbothered by such existential concerns.",
     "Help": "pierre is not adapting well to uk life and missing his french customs.",
     "Type": "person",
-    "Location": "north woods",
+    "Location": "north copse",
     "State": "he is feeling ennui."
   },
   {
@@ -3940,7 +3940,7 @@
     "Prefix": "a",
     "Description": "a small piece of softwood that looks like a long thin lolly stick. splits must be used to light bunson burners, any other naken flame is strictly forbidden.",
     "Type": "mobile",
-    "Location": "south woods"
+    "Location": "south copse"
   },
   {
     "Name": "bunsen burner",
@@ -4029,7 +4029,7 @@
         "UnconditionalResponse": "the file can be used on many metal items to shape them, try filing specific items."
       }
     ],
-    "Location": "north woods",
+    "Location": "north copse",
     "State": "the wooden handle is worn and split and the blade is rusty but still functional."
   },
   {
@@ -4646,7 +4646,7 @@
     "Description": "a standard box of matches, it contains dozens of matches ,. as long as they stay dry will always strike.",
     "Help": "matches are great for setting light to thing",
     "Type": "mobile",
-    "Location": "north woods"
+    "Location": "north copse"
   },
   {
     "Name": "cigarettes",
@@ -4891,7 +4891,7 @@
         ]
       }
     ],
-    "Location": "north woods",
+    "Location": "north copse",
     "State": "the apple is hanging from a branch of one of the trees."
   },
   {
@@ -4992,7 +4992,7 @@
         ]
       }
     ],
-    "Location": "west woods",
+    "Location": "west copse",
     "State": "it is perched on a branch of one of the trees."
   },
   {
@@ -5198,7 +5198,7 @@
           {
             "Item": "player",
             "Property": "location",
-            "Value": "north woods",
+            "Value": "north copse",
             "PassResponse": "pierre is aroused from his funk at the sight of some fireworks; \"mon deue! these are available on every street corner in my home village, but not so in england\" he exclaims. he offers to do you french homework for you in exchange for the bangers, which seems like fair barter, and he scribbles a couple of pages of text into your french homework book for you completing the exchange.",
             "FailResponse": "there isn't anyone around who wants the bangers."
           },
@@ -5211,7 +5211,7 @@
         ]
       }
     ],
-    "Location": "south woods"
+    "Location": "south copse"
   },
   {
     "Name": "gloves",
@@ -5626,7 +5626,7 @@
           {
             "TargetItem": "locker key",
             "Property": "location",
-            "Value": "west woods"
+            "Value": "west copse"
           }
         ],
         "Conditions": [
@@ -5640,7 +5640,7 @@
           {
             "Item": "player",
             "Property": "location",
-            "Value": "west woods",
+            "Value": "west copse",
             "FailResponse": "you can't dig here and if you tried it would be pointless."
           },
           {
