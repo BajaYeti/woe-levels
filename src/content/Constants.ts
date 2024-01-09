@@ -1,4 +1,4 @@
-export const AppVersion = "V1.0.5";
+export const AppVersion = "V1.0.6";
 export const AppTitle = "Woe Levels";
 export const AppAuthor = "BajaYeti";
 export const LocalStoargeKey = "woe-levels";
@@ -27,7 +27,7 @@ export const AboutResponse =
   "Woe Levels: A text adventure conceived and set in the 1980s, a mere 40 years in the making. Based on school life in a typical British comprehensive school, your goal is to survive the day, collect all your misplaced homework assignments, submit them to the appropriate teachers and get home.";
 
 export const InstructionsResponse = `Type 'verb noun' actions. Nouns are multi-word items or people, 
-  each having a collection of specific verbs, e.g.:|
+  each having a collection of specific verbs, for example:|
   - get lamp|- examine lamp|- light lamp|
   Nonspecific verbs include:|
   - Move; north, northeast, east, southeast, south, southwest, west, northwest, in, out, up and down.|
@@ -66,5 +66,4 @@ export const Truncations: Array<Truncation> = [
   { short: "inv", long: "inventory" },
   { short: "exam", long: "examine" },
   { short: "h", long: "help" },
-  { short: "ver", long: "version" },
 ];

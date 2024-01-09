@@ -1,8 +1,14 @@
 import { Typography } from "@mui/material";
 import "../global.css";
-import { AppAuthor, AppTitle, AppVersion } from "../content/Constants";
+import { AppAuthor, AppTitle, AppVersion, Version } from "../content/Constants";
+import { getItemByName } from "../utils/ItemQueries";
 
-export default function Footer(props: any) {
+type FooterType = {
+  items: Array<Item>;
+};
+
+export default function Footer(props: FooterType) {
+  const world = getItemByName(props.items, Version);
   return (
     <Typography
       variant="body2"
@@ -11,7 +17,7 @@ export default function Footer(props: any) {
       sx={{ pt: 3 }}
       className="wl-noselect"
     >
-      {AppTitle} {AppVersion} - Copyright © {AppAuthor}{" "}
+      {AppTitle} {AppVersion}/{world?.Description} - Copyright © {AppAuthor}{" "}
       {new Date().getFullYear()}
     </Typography>
   );

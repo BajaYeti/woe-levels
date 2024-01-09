@@ -141,6 +141,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
         } as Action,
       } as MyRequest;
     }
+    //#endregion
 
     //#region INVENTORY
     if (verb === Inventory) {
@@ -152,21 +153,6 @@ export function Parse(input: string, items: Item[]): MyRequest {
         } as Action,
       } as MyRequest;
     }
-    //#endregion
-
-    //#region VERSION
-    if (verb === Version) {
-      let version = getItemByName(items, Version);
-      return {
-        OK: false,
-        Look: { Refresh: false, Brevity: true },
-        Action: {
-          UnconditionalResponse: `World ${version?.Description}`,
-        } as Action,
-      } as MyRequest;
-    }
-    //#endregion
-
     //#endregion
 
     //#region HELP

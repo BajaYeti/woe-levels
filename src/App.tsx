@@ -74,7 +74,7 @@ function App() {
             <History history={log} />
           </Box>
           <Input items={items} setItems={setItems} log={log} setLog={setLog} />
-          <Footer />
+          <Footer items={items} />
         </Container>
       </CssBaseline>
     </ThemeProvider>
