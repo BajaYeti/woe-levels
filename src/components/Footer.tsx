@@ -17,7 +17,7 @@ export default function Footer(props: FooterType) {
       sx={{ pt: 3 }}
       className="wl-noselect"
     >
-      {AppTitle} {AppVersion}/{world?.Description} - Copyright © {AppAuthor}{" "}
+      {AppTitle} V{AppVersion}.{world?.Description} Copyright © {AppAuthor}{" "}
       {new Date().getFullYear()}
     </Typography>
   );

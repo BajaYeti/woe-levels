@@ -2,7 +2,7 @@
   {
     "Type": "version",
     "Name": "version",
-    "Description": "W0.1.1"
+    "Description": "012"
   },
   {
     "Name": "bunsen burner",
@@ -3213,7 +3213,7 @@
           {
             "Item": "lamp",
             "Property": "state",
-            "Value": "the lamp is lit.",
+            "Value": "The lamp is lit and shines brightly.",
             "PassResponse": "The brightly burning lamp allows you to see while you are under the stage.",
             "FailResponse": "It is very dark under the stage; it would be unwise to go down there without a source of light."
           }
@@ -3800,7 +3800,7 @@
             "Property": "location",
             "Value": "art studio",
             "PassResponse": "You hand your art homework to Miss Sketch, and she rotates it to the correct orientation, consumes the image for a short time and then wells up. \"You have captured our town beautifully, and the imaginary perspective you have applied is ingenious\". It is best to keep your rooftop excursion a secret.",
-            "FailResponse": "There is no one around to accept your art homework."
+            "FailResponse": "There is no one here who wants your art homework."
           },
           {
             "Item": "art homework",
@@ -4048,13 +4048,13 @@
             "Property": "location",
             "Value": "wood workshop",
             "PassResponse": "Mr Saw takes the bird box, examines it, and is impressed with your handiwork. \"This looks similar to one I made when I was a pupil here - I don't know what ever happened to it\", he ponders.",
-            "FailResponse": "There is no one around to accept the bird box."
+            "FailResponse": "There is no one here who wants the bird box."
           },
           {
             "Item": "player",
             "Property": "location",
             "Value": "wood workshop",
-            "FailResponse": "There is no one around to accept the bird box."
+            "FailResponse": "There is no one here who wants the bird box."
           }
         ]
       }
@@ -4077,13 +4077,14 @@
   },
   {
     "Name": "cakes",
-    "Prefix": "a packet of",
-    "Description": "a full packet of delicious cakes, although overly sugared and more processed than the home-made variety.",
-    "Help": "you can't have your cake and eat it!",
+    "Prefix": "some",
+    "Description": "The cakes look delicious, although overly sugared and more processed than the homemade variety.",
+    "Help": "You can't have your cake and eat it.",
+    "State": "They are in an unopened carboard box.",
     "Type": "mobile",
     "Actions": [
       {
-        "Verb": "get",
+        "Verb": "get,buy,purchase",
         "Updates": [
           {
             "TargetItem": "cakes",
@@ -4101,32 +4102,8 @@
             "Item": "jackpot",
             "Property": "location",
             "Value": "player",
-            "PassResponse": "you had over the illicitly gained jackpot in exchange for the cakes.",
-            "FailResponse": "you don't seem to be carrying any currency that would cover the purchase price of the cakes."
-          }
-        ]
-      },
-      {
-        "Verb": "buy,purchase",
-        "Updates": [
-          {
-            "TargetItem": "cakes",
-            "Property": "location",
-            "Value": "player"
-          },
-          {
-            "TargetItem": "jackpot",
-            "Property": "location",
-            "Value": "hidden"
-          }
-        ],
-        "Conditions": [
-          {
-            "Item": "jackpot",
-            "Property": "location",
-            "Value": "player",
-            "PassResponse": "you had over the illicitly gained jackpot in exchange for the cakes.",
-            "FailResponse": "you don't seem to be carrying any currency that would cover the purchase price of the cakes."
+            "PassResponse": "You had over the illicitly gained jackpot in exchange for the cakes.",
+            "FailResponse": "You aren't carrying any currency that would cover the purchase price of the cakes."
           }
         ]
       },
@@ -4135,8 +4112,8 @@
         "Updates": [
           {
             "TargetItem": "cakes",
-            "Property": "description",
-            "Value": "a full packet of delicious cakes, although overly sugared and more processed than the home-made variety."
+            "Property": "state",
+            "Value": "They are in an opened carboard box, some of the cakes are missing."
           }
         ],
         "Conditions": [
@@ -4144,7 +4121,7 @@
             "Item": "cakes",
             "Property": "location",
             "Value": "player",
-            "PassResponse": "despite being hungry, it would be wise to save the cakes for anther use."
+            "PassResponse": "You open the box and take a single cake; they are delicious but overly sugared."
           }
         ]
       },
@@ -4159,7 +4136,7 @@
           {
             "TargetItem": "mrs bakewell",
             "Property": "state",
-            "Value": "she is delighted with your homework cakes!"
+            "Value": "She is delighted with your homework cakes."
           }
         ],
         "Conditions": [
@@ -4167,8 +4144,8 @@
             "Item": "player",
             "Property": "location",
             "Value": "cooking room",
-            "PassResponse": "you take the cakes out of their cardboard box and gingerly hand the cakes to mrs bakewell. \"they are my favourite - wow did you know?\" she exclaims, followed by \"and good to see you recycling plastic packaging to transport them too. you deserve an a for these cakes.\".",
-            "FailResponse": "surprisingly, there is no one around that wants the cakes."
+            "PassResponse": "You take the cakes from their cardboard box and gingerly hand them to Mrs Bakewell. \"Wow! They are my favourite; how did you know?\" she exclaims, followed by \"And good to see you recycling plastic packaging to transport them too. You deserve an \"A\" for these cakes.\".",
+            "FailResponse": "There is no one here who wants the cakes."
           }
         ]
       }
@@ -4178,12 +4155,12 @@
   {
     "Name": "calculator watch",
     "Prefix": "a",
-    "Description": "an oh-so desiarable state of the art casio ca-86 calculator watch, it even has a game built in to combat boring maths lessons.",
-    "Help": "calculators can help solve complex mathematical problems.",
+    "Description": "The watch is an oh-so-desirable state-of-the-art Casio CA-86 calculator watch; it even has a built-in game to combat boring maths lessons.",
+    "Help": "Calculators can help solve complex mathematical problems.",
     "Type": "mobile",
     "Actions": [
       {
-        "Verb": "get",
+        "Verb": "get,buy,purchase,take",
         "Updates": [
           {
             "TargetItem": "calculator watch",
@@ -4201,32 +4178,8 @@
             "Item": "fifty quid",
             "Property": "location",
             "Value": "player",
-            "PassResponse": "you had over the crisp fifty pound note and the news agent gingerly checks it against the light before handing your the prized calcualtor watch.",
-            "FailResponse": "you don't seem to be carrying any currency that would cover the purchase price of the calculator watch."
-          }
-        ]
-      },
-      {
-        "Verb": "buy,purchase,take",
-        "Updates": [
-          {
-            "TargetItem": "calculator watch",
-            "Property": "location",
-            "Value": "player"
-          },
-          {
-            "TargetItem": "fifty quid",
-            "Property": "location",
-            "Value": "hidden"
-          }
-        ],
-        "Conditions": [
-          {
-            "Item": "fifty quid",
-            "Property": "location",
-            "Value": "player",
-            "PassResponse": "you had over the crisp fifty pound note and the news agent gingerly checks it against the light before handing you the prized calcualtor watch.",
-            "FailResponse": "you don't seem to be carrying any currency that would cover the purchase price of the calculator watch."
+            "PassResponse": "You hand over the crisp fifty-pound note, and the newsagent suspiciously checks it against the light before handing you the prized calculator watch.",
+            "FailResponse": "You aren't carrying any currency that would cover the purchase price of the calculator watch."
           }
         ]
       },
@@ -4236,7 +4189,7 @@
           {
             "TargetItem": "maths homework",
             "Property": "state",
-            "Value": "your maths homework assignment is to compare percentages and fractions, thankfully it is 100% complete."
+            "Value": "It is 100% complete."
           }
         ],
         "Conditions": [
@@ -4245,15 +4198,15 @@
             "Property": "state",
             "Equality": "*",
             "Value": "wearing",
-            "PassResponse": "you extend your arm fully then crook your elbow to position your calculator watch in your gaze. with your other hand you tap away at the keys glancing to and from your maths homework, within a few minutes the homework is complete - phew!",
-            "FailResponse": "although fairly simple you fail to grasp the concepts and scale of the mathematical problems in your head and defer its completion until later summising that there is a 95% chance that you will complete it in time."
+            "PassResponse": "You extend your arm fully, then crook your elbow to position your calculator watch in your gaze. With your other hand, you tap away at the keys, glancing to and from your maths homework; within a few minutes, the homework is complete.",
+            "FailResponse": "Although reasonably simple, you fail to grasp the concepts and scale of the mathematical problems in your head and defer their completion until later, surmising that there is a 95% chance that you will complete it in time."
           },
           {
             "Item": "maths homework",
             "Property": "state",
             "Equality": "*",
-            "Value": "blank",
-            "FailResponse": "thankfully you have already completed your maths homework."
+            "Value": "_blank_",
+            "FailResponse": "Thankfully, you have already completed your maths homework."
           }
         ]
       },
@@ -4263,7 +4216,7 @@
           {
             "TargetItem": "calculator watch",
             "Property": "state",
-            "Value": "you are proudly wearing the calculator watch."
+            "Value": "You are proudly wearing it."
           }
         ],
         "Conditions": [
@@ -4271,15 +4224,15 @@
             "Item": "calculator watch",
             "Property": "location",
             "Value": "player",
-            "PassResponse": "you don the calcualtor watch with pride and roll up your left sleeve so that everyone will know you have a calculator watch!",
-            "FailResponse": "you aren't carrying the calculator watch"
+            "PassResponse": "You don the watch pridefully and roll up your left sleeve so everyone knows you have a calculator watch.",
+            "FailResponse": "You aren't carrying the calculator watch."
           },
           {
             "Item": "calculator watch",
             "Property": "state",
             "Equality": "!*",
             "Value": "wearing",
-            "FailResponse": "you are already wearing the calculator watch"
+            "FailResponse": "You are already wearing the calculator watch."
           }
         ]
       },
@@ -4289,7 +4242,7 @@
           {
             "TargetItem": "calculator watch",
             "Property": "state",
-            "Value": "TODO - clear state"
+            "Value": ""
           }
         ],
         "Conditions": [
@@ -4298,8 +4251,8 @@
             "Property": "state",
             "Equality": "*",
             "Value": "wearing",
-            "PassResponse": "you reluctantly remove the calcualtor watch, your day just become a little more miserable.",
-            "FailResponse": "you are already wearing the calculator watch."
+            "PassResponse": "You reluctantly remove the calculator watch; your day becomes a little more miserable.",
+            "FailResponse": "You are already wearing the calculator watch."
           }
         ]
       }
@@ -4309,8 +4262,8 @@
   {
     "Name": "canister",
     "Prefix": "a",
-    "Description": "a 35mm film canister.",
-    "Help": "film canisters are useful for storing small amounts of fuild or small goods.",
+    "Description": "The canister is designed to hold a 35mm film cartridge, although it could be used to have anything that will fit inside.",
+    "Help": "Film canisters help store small amounts of fluids or small goods.",
     "Type": "mobile",
     "Location": "west toilets",
     "State": "it is empty"
@@ -4318,18 +4271,18 @@
   {
     "Name": "cards",
     "Prefix": "some",
-    "Description": "a pack of playing cards, they are slightly worn but execessively enough to identify individual cards.",
-    "Help": "a lot of money can be won play cards... and lost!",
+    "Description": "The cards are a standard pack of playing cards, slightly worn but not excessively enough to identify individual cards.",
+    "Help": "A lot of money can be won playing cards... and lost.",
     "Type": "mobile",
     "Actions": [
       {
         "Verb": "shuffle",
-        "UnconditionalResponse": "you shuffle the cars by placing on them face down and giving them a good \"wash\".",
+        "UnconditionalResponse": "You shuffle the cars by placing them face down and giving them a good \"wash\".",
         "Updates": [
           {
             "TargetItem": "cards",
             "Property": "state",
-            "Value": "the cards are randomly shuffled and ready to deal."
+            "Value": "The cards are randomly shuffled and ready to deal."
           }
         ],
         "Conditions": [
@@ -4338,19 +4291,19 @@
             "Property": "location",
             "Equality": "=",
             "Value": "player",
-            "FailResponse": "TODO"
+            "FailResponse": "You aren't carrying the playing cards."
           }
         ]
       }
     ],
     "Location": "poker den",
-    "State": "all the cards are ordered by value and suit."
+    "State": "All the cards are ordered by suit and face value."
   },
   {
     "Name": "cassette",
     "Prefix": "an audio tape",
-    "Description": "a standard d90 audio cassette of an affordable grade. the label partiall reads now that's what i call, but the rest of the label has been torn off.",
-    "Help": "a cassette will help you groove on the move.",
+    "Description": "The cassette is a standard D90 audio cassette of an affordable grade. The label partially reads \"Now That's What I Call\", but the rest of the label has been torn off.",
+    "Help": "A cassette will help you groove on the move, but only if you have a player.",
     "Type": "mobile",
     "Actions": [
       {
@@ -4359,7 +4312,7 @@
           {
             "TargetItem": "cassette",
             "Property": "state",
-            "Value": "the tape is tightly wound around the spools inside the cassette as it should be."
+            "Value": "The tape is tightly wound around the spools inside the cassette, ready to play."
           }
         ],
         "Conditions": [
@@ -4367,14 +4320,14 @@
             "Item": "cassette",
             "Property": "location",
             "Value": "player",
-            "PassResponse": "you insert your trusty pencil into the sprocket and gentle wind the tape back inside the cassette, being careful not to crease or tear it. your confidence growns and near the end you whirl the cassette on the pencil around your head as thought it were a football rattle.",
-            "FailResponse": "you are not holding the cassette."
+            "PassResponse": "You insert your trusty pencil into the sprocket and gently wind the tape back inside the cassette, careful not to crease or tear it. Your confidence grows, and near the end, you whirl the cassette on the pencil around your head as though it were a football rattle.",
+            "FailResponse": "You aren't carrying the cassette."
           },
           {
             "Item": "pencil",
             "Property": "location",
             "Value": "player",
-            "FailResponse": "you don't have anything to wind the cassette."
+            "FailResponse": "You aren't carrying anything to wind the cassette."
           }
         ]
       },
@@ -4389,7 +4342,7 @@
           {
             "TargetItem": "walkman",
             "Property": "state",
-            "Value": "the batteries appear to have a charge and it has a cassette inserted, but the cassette appears to be jammed and cannot be removed."
+            "Value": "The batteries appear to have a charge and a cassette is inserted. Still, the cassette seems to be jammed and cannot be removed."
           }
         ],
         "Conditions": [
@@ -4397,34 +4350,34 @@
             "Item": "walkman",
             "Property": "location",
             "Value": "player",
-            "FailResponse": "you don't have anything that could play the cassette."
+            "FailResponse": "You aren't carrying anything that could play the cassette."
           },
           {
             "Item": "cassette",
             "Property": "state",
             "Equality": "*",
             "Value": "spools",
-            "PassResponse": "you insert the cassette eagerly into the walkmen with nervous anticipation, so nervously that you manage to jam the cassette in so hard that it becomes stuck.",
-            "FailResponse": "you can't insert the cassette into the walkman with all the tape unwound."
+            "PassResponse": "You insert the cassette eagerly into the walkmen with nervous anticipation, so nervously that you jam it so hard that it becomes stuck.",
+            "FailResponse": "You can't insert the cassette into the walkman with all the tape unwound."
           },
           {
             "Item": "cassette",
             "Property": "location",
             "Value": "player",
-            "PassResponse": "you insert the cassette eagerly into the walkmen with nervous anticipation, so nervously that you manage to jam the cassette in so hard that it becomes stuck.",
-            "FailResponse": "you are not holding the cassette."
+            "PassResponse": "You insert the cassette eagerly into the walkmen with nervous anticipation, so nervously that you jam it so hard that it becomes stuck.",
+            "FailResponse": "You aren't carrying the cassette."
           }
         ]
       }
     ],
     "Location": "binside",
-    "State": "the tape has unwound and is hanging out of the cassette."
+    "State": "The tape has unwound and is hanging out of the cassette."
   },
   {
     "Name": "chemistry homework",
     "Prefix": "your",
-    "Description": "an assignment about the properties of magnesium.",
-    "Help": "magnesium burns at a very high temperature and cannot be extinguished with water.",
+    "Description": "The homework assignment is to investigate the properties of magnesium.",
+    "Help": "Magnesium burns at very high temperatures and cannot be extinguished with water.",
     "Type": "mobile",
     "Actions": [
       {
@@ -4438,7 +4391,7 @@
           {
             "TargetItem": "mr silver",
             "Property": "state",
-            "Value": "he is pleased with your homework but concerned about the next assignment which invovles hydrocholic acid."
+            "Value": "He is pleased with your homework but concerned about the next assignment, which involves hydrochloric acid."
           }
         ],
         "Conditions": [
@@ -4447,57 +4400,57 @@
             "Property": "location",
             "Equality": "=",
             "Value": "player",
-            "PassResponse": "you have you chemistry homework to mr silver and he looks up from his desk, glacnes at you homework and says \"ah... your escipaed earlier make sense, i'm glad you're taking an interst in chemistry but please be more careful in the future\".",
-            "FailResponse": "you haven't got you checmistry homework."
+            "PassResponse": "You hand your chemistry homework to Mr Silver. He looks up from his desk, glances at your homework and says \"Ah... your escapades earlier make sense. I'm glad you're taking an interest in chemistry, but please be more careful in the future\".",
+            "FailResponse": "You aren't carrying your chemistry homework."
           },
           {
             "Item": "player",
             "Property": "location",
             "Equality": "=",
             "Value": "chemistry lab",
-            "FailResponse": "there is no one around to accept your homework."
+            "FailResponse": "There is no one here who wants your chemistry homework."
           },
           {
             "Item": "mr silver",
             "Property": "location",
             "Equality": "=",
             "Value": "chemistry lab",
-            "FailResponse": "there is no one around to accept your homework."
+            "FailResponse": "There is no one here who wants your chemistry homework."
           }
         ]
       }
     ],
     "Location": "west toilets",
-    "State": "thankfully you have already completed it."
+    "State": "It is complete."
   },
   {
     "Name": "chips",
     "Prefix": "some",
-    "Description": "wrapped in greaseproof and white paper, they are still warm although slightly soggy and smell of vinegar.",
-    "Help": "despite common held beliefes eating chips will not give you acne.",
+    "Description": "The chips are wrapped in greaseproof and white paper; they are still warm, although slightly soggy and smell of vinegar.",
+    "Help": "Despite the commonly held belief, eating chips will not give you acne.",
     "Type": "mobile",
     "Location": "chinese takeaway"
   },
   {
     "Name": "cigarettes",
     "Prefix": "some",
-    "Description": "a 20 packette of filter tipped 100mm popular brand \"cigs\" - the most illicit of school currency",
-    "Help": "like in prison, cigarettes can be used as currency in school.",
+    "Description": "The cigarettes are in packet of 20 and are filter-tipped, 100mm long and of a famous brand. They are the most illicit school currency.",
+    "Help": "Cigarettes can be used as currency in school.",
     "Type": "mobile",
     "Location": "behind the bike sheds",
-    "State": "the packet is full of cigarettes except one that has been either been smoked or exchanged for illicit goods or services"
+    "State": "The packet is complete of cigarettes except one that has either been smoked or exchanged for illicit goods or services."
   },
   {
     "Name": "compasses",
     "Prefix": "a pair of",
-    "Description": "better know as just a 'compass', it's a basic school instrument that houses a pencil and allows circles to be drawn, angles to be measured and hands to be stabbed.",
+    "Description": "The compasses are better known as just \"a compass\"; it's a primary school instrument for drawing circles that holds a pencil and allows circles to be removed, angles to be measured, and body parts to be stabbed.",
     "Type": "mobile",
     "Location": "hidden"
   },
   {
     "Name": "crowbar",
     "Prefix": "a",
-    "Description": "a large, heavy case-hardened steel crowbar. it is well worn and chipped from former illicit use but still performs its function.",
+    "Description": "The crowbar is large, heavy and made of case-hardened steel. It is well-worn and chipped from former illicit use but performs its function.",
     "Type": "mobile",
     "Actions": [
       {
@@ -4514,8 +4467,8 @@
             "Item": "player",
             "Property": "location",
             "Value": "bike sheds",
-            "PassResponse": "you insert the case hardened end of the crowbar intro the shackle lock and put your weight against it. the shackle lock breaks apart with a satisfying pop and you manage not to graze your knuckles in the process.",
-            "FailResponse": "you don't see anything worthy of using the crowbar on."
+            "PassResponse": "You insert the case-hardened end of the crowbar into the shackle lock and put your weight against it. The shackle lock breaks apart with a satisfying pop, and you manage not to graze your knuckles when the force is released.",
+            "FailResponse": "You don't see anything to use the crowbar on."
           }
         ]
       }
@@ -4525,12 +4478,12 @@
   {
     "Name": "drama homework",
     "Prefix": "your",
-    "Description": "the assignment is to write an essay on the practical usage of dramatic pose.",
+    "Description": "The homework assignment is to write an essay on the practical usage of dramatic pose.",
     "Type": "mobile",
     "Actions": [
       {
         "Verb": "give,submit",
-        "UnconditionalResponse": "you have your written assignment to miss mcqueen and she examines it, raises an eyebrow, sighs and concedes that you have delivered on your obligation so no need for any drama which inturn make her feel melencholy.",
+        "UnconditionalResponse": "You hand your written assignment to Miss McQueen. She examines it, raises an eyebrow, sighs and concedes that you have delivered on your obligation, so there is no need for any drama, which, in turn, makes her feel melancholy.",
         "Updates": [
           {
             "TargetItem": "drama homework",
@@ -4540,7 +4493,7 @@
           {
             "TargetItem": "miss mcqueen",
             "Property": "state",
-            "Value": "she is carrying your drama homework in a dramatic fashion."
+            "Value": "She is dramatically carrying your drama homework."
           }
         ],
         "Conditions": [
@@ -4548,25 +4501,25 @@
             "Item": "player",
             "Property": "location",
             "Value": "drama room",
-            "PassResponse": "you hand your drama homework to miss mcqueen which surprises her because she has prepared for you to fail. in her flummoxed state she shouts \"line\" and unlocks the drama cupboard to look for a prop to conceal her confusion.",
-            "FailResponse": "you aren't carrying your drama homework."
+            "PassResponse": "You hand your drama homework to Miss McQueen, which surprises her because she had prepared for you to fail. In her flummoxed state, she shouts \"Line!\" and heads into the drama cupboard to look for a prop to conceal her confusion.",
+            "FailResponse": "You aren't carrying your drama homework."
           },
           {
             "Item": "drama homework",
             "Property": "location",
             "Value": "player",
-            "FailResponse": "there isn't anyone around who wants your french homework."
+            "FailResponse": "There isn't anyone around who wants your French homework."
           }
         ]
       }
     ],
     "Location": "under the stage",
-    "State": "it is complete. you have chosen to write about faking poker tell which is technically correct but you know that the daram teacher will frown on your chosen subject matter - just because."
+    "State": "It is complete. You have chosen to write about faking poker tells, which is technically correct. Still, the drama teacher will frown on your chosen subject matter."
   },
   {
     "Name": "english homework",
     "Prefix": "your",
-    "Description": "an assignment to write an essay about espionage.",
+    "Description": "The homework is an assignment to write an essay about espionage.",
     "Type": "mobile",
     "Actions": [
       {
@@ -4580,7 +4533,7 @@
           {
             "TargetItem": "mr booker",
             "Property": "state",
-            "Value": "he is carrying your english homework."
+            "Value": "He is carrying your English homework."
           }
         ],
         "Conditions": [
@@ -4588,48 +4541,48 @@
             "Item": "english homework",
             "Property": "location",
             "Value": "player",
-            "PassResponse": "mr booker accepts your homework and takes out a red pen and clicks the end so the ball-point is exposed, \"am i going to need this again?\" he half-jokingly enquires.",
+            "PassResponse": "Mr Booker accepts your homework, takes out a red pen, and clicks the end so the ballpoint is exposed; \"Am I going to need this again?\" he half-jokingly enquires.",
             "FailResponse": "you don't have your english homework."
           },
           {
             "Item": "player",
             "Property": "location",
             "Value": "english language",
-            "FailResponse": "there isn't anyone around who wants your english homework."
+            "FailResponse": "There isn't anyone who wants your English homework."
           }
         ]
       }
     ],
     "Location": "staff room",
-    "State": "the homework assignment is complete. you have chosen to write the synopsis of the james bond 007 film you saw on tv last night."
+    "State": "It is complete. You have chosen to write the synopsis of the James Bond 007 film you watched on TV last night."
   },
   {
     "Name": "fifty quid",
-    "Description": "a crisp bearly used fifty pound note. it is huge compares to one pound notes, almost as big as a handkerchief and far more rare.",
-    "Help": "fifty pound will buy a lot!",
+    "Description": "It is a crisp, barely used fifty-pound note. It is vast compared to one-pound notes, almost as big as a handkerchief and far rarer.",
+    "Help": "Fifty pounds will buy a lot of goods.",
     "Type": "mobile",
     "Location": "hidden"
   },
   {
     "Name": "file",
     "Prefix": "a",
-    "Description": "a bastard rasp file; yes - you can legitemately use that word here.",
-    "Help": "the file can be used to shape metal, although it must be done in accordance with mr steel's teachings.",
+    "Description": "The file is a bastard cut flat file; despite being an outlawed word at school, this usage is justified and is allowed to be spoken in the metal workshop.",
+    "Help": "The file can be used to shape metal, although it must be done following Mr Steel's teachings.",
     "Type": "mobile",
     "Actions": [
       {
         "Verb": "use",
-        "UnconditionalResponse": "the file can be used on many metal items to shape them, try filing specific items."
+        "UnconditionalResponse": "The file can be used on many metal items to shape them; try filing specific items."
       }
     ],
     "Location": "north copse",
-    "State": "the wooden handle is worn and split and the blade is rusty but still functional."
+    "State": "The wooden handle is worn and split, and the blade is rusty but still functional."
   },
   {
     "Name": "flag",
     "Prefix": "a",
     "Description": "old and tatty, it has the school's faded emblem screen-printed on each side of the flag. the school emblem is an image of a tree and a motivated student which is supposed to represent learning growing acorns into mighty oaks, but instead it looks more like a pupil fleeing a poisonous gas cloud.",
-    "Help": "a flag is also known as a standard.",
+    "Help": "A flag is also known as a standard.",
     "Type": "mobile",
     "Actions": [
       {
@@ -4638,7 +4591,7 @@
           {
             "TargetItem": "flag",
             "Property": "state",
-            "Value": "it is as clean as a new metaphore."
+            "Value": "It is as clean as a new metaphor."
           }
         ],
         "Conditions": [
@@ -4647,8 +4600,8 @@
             "Property": "location",
             "Equality": "*",
             "Value": "toilet",
-            "PassResponse": "you fill one of the basins with water, submerge the flag and agitate it to remove all the dirt. a quick rinse under the cold tap has the flag as clean as new, albeit somewhat faded.",
-            "FailResponse": "there is no way to wash the flag here."
+            "PassResponse": "You fill one of the basins with water, submerge the flag and agitate it to remove all the dirt. A quick rinse under the cold tap has the flag as clean as new, albeit somewhat faded.",
+            "FailResponse": "There is no way to clean the flag here."
           }
         ]
       },
@@ -4658,7 +4611,7 @@
           {
             "TargetItem": "flag",
             "Property": "state",
-            "Value": "it flies so high that it is now barely visible."
+            "Value": "It flies so high that it is now barely visible."
           },
           {
             "TargetItem": "flag",
@@ -4668,7 +4621,7 @@
           {
             "TargetItem": "flag pole",
             "Property": "state",
-            "Value": "it proudly hosts the school's flag for the first time in ages."
+            "Value": "It proudly hosts the school's flag for the first time in ages."
           },
           {
             "TargetItem": "history homework",
@@ -4678,12 +4631,12 @@
           {
             "TargetItem": "history homework",
             "Property": "state",
-            "Value": "it is a complete essay about the significance of flags during the war of the roses - how appropriate."
+            "Value": "It is a complete essay about the significance of flags during the War of the Roses."
           },
           {
             "TargetItem": "miss battle",
             "Property": "state",
-            "Value": "she is staring out of the window over the front lawn and can barely contain her pride in the school flag being visible from the history room."
+            "Value": "She is staring out of the window over the front lawn and can barely contain her pride in the school flag being visible from the history room."
           }
         ],
         "Conditions": [
@@ -4691,32 +4644,32 @@
             "Item": "player",
             "Property": "location",
             "Value": "front path",
-            "PassResponse": "you attach the flag to the halyards on the flag pole and raise the flag. as the flag reaches the top of the flap pole it dislodges your history homework which falls to the ground by your feet.",
+            "PassResponse": "You attach the flag to the halyards on the flag pole and raise it. As the flag reaches the top of the flap pole, it dislodges your history homework, which falls to the ground by your feet.",
             "FailResponse": "there is now way to raise the flag here."
           },
           {
             "Item": "flag",
             "Property": "location",
             "Value": "player",
-            "FailResponse": "you are not carrying the flag."
+            "FailResponse": "You are not carrying the flag."
           },
           {
             "Item": "flag",
             "Property": "state",
             "Equality": "*",
             "Value": "clean",
-            "FailResponse": "from nowhere mr. broom appears and exclaims \"what the raggity anne is going on?  you can't raise that filthy thing up the flag pole, what will the neighbours think?\" and huffs off again."
+            "FailResponse": "From nowhere, Mr Broom appears and exclaims \"What is going on?  You can't raise that filthy thing up the flag pole; what will the neighbours think?\" and huffs off again."
           }
         ]
       }
     ],
     "Location": "main store room",
-    "State": "it is very dirty from being left in the storeroom for years."
+    "State": "It is filthy from being left in the storeroom for years."
   },
   {
     "Name": "french homework",
     "Prefix": "your",
-    "Description": "TODO",
+    "Description": "The homework assignment is to write an essay about the French Revolution, in French.",
     "Type": "mobile",
     "Actions": [
       {
@@ -4730,7 +4683,7 @@
           {
             "TargetItem": "miss french",
             "Property": "state",
-            "Value": "she is carrying your perfectly worded french homework, although even this doesn't seem to please her."
+            "Value": "She carries your perfectly worded French homework, which still doesn't please her."
           }
         ],
         "Conditions": [
@@ -4739,7 +4692,7 @@
             "Property": "location",
             "Equality": "=",
             "Value": "french room",
-            "PassResponse": "miss french snatches your homework and callously looks at it, then at your, again at the homework and finally at you again. \"this'll do.\" she murmurs tersely.",
+            "PassResponse": "Miss French snatches your homework and callously glances at it, then at you, again at the homework, and finally at you again. \"Cela fera l'affaire.\" she murmurs tersely.",
             "FailResponse": "there isn't anyone around who wants your french homework."
           },
           {
@@ -4747,19 +4700,19 @@
             "Property": "state",
             "Equality": "*",
             "Value": "pierre",
-            "FailResponse": "you can't possible hand in incomplete homework!"
+            "FailResponse": "You can only hand in complete homework."
           }
         ]
       }
     ],
     "Location": "showers",
-    "State": "it is completely blank - zut alors!"
+    "State": "It is entirely blank. Zut alors!"
   },
   {
     "Name": "frog",
     "Prefix": "a",
-    "Description": "a common-or-garden frog. he is a cute but slippery fella.",
-    "Help": "frogs are amphibious.",
+    "Description": "The frog is a common or garden breed. It is cute but slippery.",
+    "Help": "It is best to wear some form of protection when handling frogs.",
     "Type": "mobile",
     "Actions": [
       {
@@ -4776,15 +4729,15 @@
             "Item": "gloves",
             "Property": "location",
             "Value": "player",
-            "PassResponse": "you grab the frog and quickly drop it into your pocket. the frog seems surprisingly content in its new temporary home.",
-            "FailResponse": "you grab the frog successfully, but it feels so gross and you involuntarily let go and the frog goes about its froggy ways."
+            "PassResponse": "You grab the frog and quickly drop it into your pocket. The frog seems surprisingly content in its new temporary home.",
+            "FailResponse": "You grab the frog successfully, but it feels so gross and slippery you involuntarily let go, and the frog hops to a safe distance."
           },
           {
             "Item": "gloves",
             "Property": "state",
             "Equality": "*",
             "Value": "wearing",
-            "FailResponse": "you grab the frog successfully, but it feels so gross and you involuntarily let go and the frog goes about its froggy ways."
+            "FailResponse": "You grab the frog successfully, but it feels so gross and slippery you involuntarily let go, and the frog hops to a safe distance."
           }
         ]
       },
@@ -4799,7 +4752,7 @@
           {
             "TargetItem": "mr foot",
             "Property": "state",
-            "Value": "he has waived your biology homework in lieu of the frog."
+            "Value": "He has waived your biology homework in lieu of the frog."
           }
         ],
         "Conditions": [
@@ -4807,8 +4760,8 @@
             "Item": "player",
             "Property": "location",
             "Value": "biology lab",
-            "PassResponse": "you pluck the frog from your pocket quickly and hand it to mr. foot who slips it into his jacket pocket and is delighted; \"well done for finding such a great specimen, i'll let you off that missing homework as reward.\" he declares.",
-            "FailResponse": "there is no one around who wants to frog."
+            "PassResponse": "You quickly pluck the frog from your pocket and hand it to Mr Foot, who slips it into his jacket pocket and is delighted; \"Well done for finding such a great specimen; I'll let you off that missing homework as a reward.\" he declares.",
+            "FailResponse": "There is no one here who wants to frog."
           }
         ]
       }
@@ -4816,10 +4769,11 @@
     "Location": "science courtyard"
   },
   {
-    "Name": "ged homework",
+    "Name": "GED homework",
     "Prefix": "your",
-    "Description": "geometric, engineering and design class homework, it's like an art class but more engineery using set-squares and compasses.",
-    "Help": "don't confuse a compass with a pair of compasses.",
+    "Description": "The homework is for the Geometric, Engineering and Design class. It's like an art class but more technical, using set squares and compasses.",
+    "Help": "Make sure to distinguish a compass from a pair of compasses, or you may get lost.",
+    "State": "It is complete.",
     "Type": "mobile",
     "Actions": [
       {
@@ -4833,7 +4787,7 @@
           {
             "TargetItem": "mr square",
             "Property": "state",
-            "Value": "he is holding your maths homework."
+            "Value": "He is holding your GED homework."
           }
         ],
         "Conditions": [
@@ -4841,14 +4795,14 @@
             "Item": "player",
             "Property": "location",
             "Value": "ged hut",
-            "PassResponse": "you hand your ged homework to mr square who gratefully receives it. mr square isn't as strict as he makes out to control a class full of teenage boys, you see a slight smile appear on his face because he has to chase one less pupil for their homework.",
-            "FailResponse": "this is not the best place to submit your ged homework."
+            "PassResponse": "You hand your GED homework to Mr Square, who gratefully receives it. You see a slight smile on his face because he has to chase one less pupil for their homework.",
+            "FailResponse": "There is no one here who wants your GED homework."
           },
           {
             "Item": "ged homework",
             "Property": "location",
             "Value": "player",
-            "FailResponse": "you don't seem to be carrying your ged homework."
+            "FailResponse": "You aren't carrying your GED homework."
           }
         ]
       }
@@ -4858,7 +4812,8 @@
   {
     "Name": "geography homework",
     "Prefix": "your",
-    "Description": "you don't rememebr the assignent but it contains a detailed analysis of the runcorn bus service and some sketches of corfe castle.",
+    "Description": "The homework assignment is two-fold: write an essay on the Runcorn bus service and sketch Corfe Castle.",
+    "State": "It is complete.",
     "Type": "mobile",
     "Actions": [
       {
@@ -4872,7 +4827,7 @@
           {
             "TargetItem": "mr rhumb",
             "Property": "state",
-            "Value": "he is carrying your geography homework."
+            "Value": "He is carrying your geography homework."
           }
         ],
         "Conditions": [
@@ -4880,26 +4835,25 @@
             "Item": "player",
             "Property": "location",
             "Value": "geography room",
-            "PassResponse": "mr rhumb takes your homework but is too busy to even look at it, he tucks it under his arm and carries on cleaning the blackboard.",
-            "FailResponse": "this is not the best place to submit your geography homework."
+            "PassResponse": "Mr Rhumb takes your homework but is too busy to even look at it; he tucks it under his arm and cleans the blackboard.",
+            "FailResponse": "There is no one here who wants your geography homework."
           },
           {
             "Item": "geography homework",
             "Property": "location",
             "Value": "player",
-            "FailResponse": "you don't seem to be carrying your geography homework."
+            "FailResponse": "You aren't carrying your geography homework."
           }
         ]
       }
     ],
-    "Location": "inside the minibus",
-    "State": "the homework is complete - thankfully!"
+    "Location": "inside the minibus"
   },
   {
     "Name": "gloves",
     "Prefix": "a pair of",
-    "Description": "sturdy rigger-style gloves are well worn but made of leather and suede and still serve their purpose.",
-    "Help": "gloves are great for handling hazardous items.",
+    "Description": "The gloves are sturdy rigger-style made from leather and suede; they are well-worn and still serve their purpose.",
+    "Help": "Gloves are great for handling unpleasant items.",
     "Type": "mobile",
     "Actions": [
       {
@@ -4908,7 +4862,7 @@
           {
             "TargetItem": "gloves",
             "Property": "state",
-            "Value": "you are wearing the gloves."
+            "Value": "You are wearing the gloves."
           }
         ],
         "Conditions": [
@@ -4916,32 +4870,13 @@
             "Item": "gloves",
             "Property": "location",
             "Value": "player",
-            "PassResponse": "you pull the gloves onto each hand and they are a perfect fit you could say they fit like a glove, but mr booker would say that was a cliché.",
-            "FailResponse": "you are not carrying the gloves."
+            "PassResponse": "You pull the gloves onto each hand, which is a perfect fit. You could say they fit like a glove, but Mr Booker would denounce that as a cliché.",
+            "FailResponse": "You are not carrying the gloves."
           }
         ]
       },
       {
-        "Verb": "drop",
-        "Updates": [
-          {
-            "TargetItem": "gloves",
-            "Property": "location",
-            "Value": "n/a"
-          }
-        ],
-        "Conditions": [
-          {
-            "Item": "gloves",
-            "Property": "state",
-            "Value": "they look like a perfect fit.",
-            "PassResponse": "you dropped the gloves.",
-            "FailResponse": "maybe take the gloves off first."
-          }
-        ]
-      },
-      {
-        "Verb": "remove,undress,doff",
+        "Verb": "drop,remove,undress,doff",
         "Updates": [
           {
             "TargetItem": "gloves",
@@ -4961,27 +4896,26 @@
       }
     ],
     "Location": "caretaker's office",
-    "State": "they look like a perfect fit."
+    "State": "They look like a perfect fit."
   },
   {
     "Name": "glue",
     "Prefix": "some",
-    "Description": "mild pva glue, not particularly strong.",
-    "Help": "despite the craze it is not for sniffing as it contains no solvants.",
+    "Description": "The glue is a mild PVA glue, not particularly strong.",
     "Type": "mobile",
     "Location": "wood workshop"
   },
   {
     "Name": "hammer",
-    "Description": "a standard imperial 12lb ball pein hammer with a smooth wooden handle.",
-    "Help": "hammers are great for hammering home nails.",
+    "Description": " The hammer is a standard imperial 12lb ball pein hammer with a smooth wooden handle.",
+    "Help": "Hammers are great for hammering, especially nails.",
     "Type": "mobile",
     "Location": "wood workshop"
   },
   {
     "Name": "history homework",
     "Prefix": "your",
-    "Description": "an assignment to write about the battle of hastings, which is far less interesting than it sounds.",
+    "Description": "The homework is an assignment to write about the Battle of Hastings, which is far less attractive than it sounds.",
     "Type": "mobile",
     "Actions": [
       {
@@ -4999,8 +4933,8 @@
             "Property": "state",
             "Equality": "*",
             "Value": "complete",
-            "PassResponse": "you got your history homework.",
-            "FailResponse": "your history homework is way out of reach."
+            "PassResponse": "You finally got your history homework.",
+            "FailResponse": "Your history homework is way out of reach."
           }
         ]
       },
@@ -5015,7 +4949,7 @@
           {
             "TargetItem": "miss battle",
             "Property": "state",
-            "Value": "she is staring out of the window over the front lawn and can barely contain her pride in the school flag being visible from the history room. she is also clutching your completed history homework with both hands."
+            "Value": "She is staring out of the window over the front lawn and can barely contain her pride in the school flag being visible from the history room. She is also clutching your completed history homework with both hands."
           }
         ],
         "Conditions": [
@@ -5023,34 +4957,33 @@
             "Item": "history homework",
             "Property": "location",
             "Value": "player",
-            "PassResponse": "you hand your history homework to a now cheerful miss battle and notice that her eyes are welling-up. \"i saw that you raised the school flag, well done - i'll see that your homework is marked fairly.\" she says unsubtly."
+            "PassResponse": "You hand your history homework to a now cheerful miss battle and notice her eyes welling up. \"I saw that you raised the school flag; well done. I'll see that your homework is marked fairly.\" she says unsubtly."
           }
         ]
       }
     ],
     "Location": "front path",
-    "State": "it is affixed to the top of the flag pole and barely visible from the ground, some joker managed to put it up there somehow."
+    "State": "It is affixed to the top of the flag pole and barely visible from the ground; some joker somehow managed to put it up there."
   },
   {
     "Name": "jackpot",
     "Prefix": "the",
-    "Description": "a pocketful of legal coins.",
-    "Help": "coins can be exchanged for goods in most shops.",
+    "Description": "The jackpot is a pocketful of assorted legal coins.",
+    "Help": "Coins can be exchanged for goods in most shops.",
     "Type": "mobile",
     "Location": "hidden"
   },
   {
     "Name": "javelin",
     "Prefix": "a",
-    "Description": "long and sharp enough to piece soft ground when dropped from a height, but not sharp enough to cause injury to pupils.",
-    "Help": "throwing the javalin anywhere other than the atheltics field will incur an immediate detention.",
+    "Description": "The javelin is long and sharp enough to piece soft ground when dropped from a height but not strong enough to cause injury to pupils.",
     "Type": "mobile",
     "Location": "home store room"
   },
   {
     "Name": "key",
     "Prefix": "a",
-    "Description": "the key is a standard key to fit a night latch lock, it has a dull nickel finish.",
+    "Description": "The key is a standard key to fit a night latch lock; it has a dull nickel finish.",
     "Type": "mobile",
     "Actions": [
       {
@@ -5059,7 +4992,7 @@
           {
             "TargetItem": "key",
             "Property": "state",
-            "Value": "it roughly resembles the shape of a master key."
+            "Value": "It roughly resembles the shape of a master key."
           }
         ],
         "Conditions": [
@@ -5067,21 +5000,21 @@
             "Item": "file",
             "Property": "location",
             "Value": "player",
-            "PassResponse": "you place the key into the vice and tighten it to privde a strong purchase. you start filing carefully and shortly you have shaped a number of random peaks and grooves in the key.",
-            "FailResponse": "you aren't carrying the file."
+            "PassResponse": "You place the key into the vice and tighten it for a firm purchase. You start filling carefully, and shortly, you have shaped several random peaks and grooves in the key.",
+            "FailResponse": "You aren't carrying anything that could fabricate the key."
           },
           {
             "Item": "key",
             "Property": "location",
             "Equality": null,
             "Value": "player",
-            "FailResponse": "there doesn't seem to be anything to use the file on here."
+            "FailResponse": "You aren't carrying anything to fabricate."
           },
           {
             "Item": "player",
             "Property": "location",
             "Value": "metal workshop",
-            "FailResponse": "you don't have the correct equipment to use the file."
+            "FailResponse": "It would help if you had the correct paraphernalia to fabricate."
           }
         ]
       },
@@ -5096,7 +5029,7 @@
           {
             "TargetItem": "mr steel",
             "Property": "state",
-            "Value": "he is wearing your master key on a keyring clipped to his belt."
+            "Value": "He is wearing your master key on a keyring clipped to his belt."
           }
         ],
         "Conditions": [
@@ -5105,56 +5038,56 @@
             "Property": "location",
             "Equality": "=",
             "Value": "metal workshop",
-            "PassResponse": "my steel stands up from behind his metal desk and instinctively grabs for your arm preparing to chastise you, on seeing the perfectly shaped key his mood brightens. \"that is amazing craftmanship, i see you have been paying attention in class. i know it's not what i assigned you but i consider extracurricular practical work far more important than a historic essay. let's call this a pass.\"",
-            "FailResponse": "there is no one around to accept your metalwork homework."
+            "PassResponse": "Mr Steel stands up from behind his metal desk. He instinctively grabs your arm, preparing to chastise you, but seeing the perfectly shaped key brightens his mood. \"That is amazing craftmanship; you have been paying attention in class. I know it's not what I assigned you. Still, I consider extracurricular practical work far more important than a historical essay. Let's call this a pass.\"",
+            "FailResponse": "There is no one here who wants the key."
           },
           {
             "Item": "mr rhumb",
             "Property": "state",
             "Equality": "*",
             "Value": "geography homework",
-            "FailResponse": "it would be wise to hang onto the key until you've found all your homework."
+            "FailResponse": "It would be wise to hang onto the key until you've found all your homework."
           },
           {
             "Item": "miss sketch",
             "Property": "state",
             "Equality": "*",
             "Value": "carrying your art homework",
-            "FailResponse": "it would be wise to hang onto the key until you've found all your homework."
+            "FailResponse": "It would be wise to hang onto the key until you've found all your homework."
           },
           {
             "Item": "mrs bakewell",
             "Property": "state",
             "Equality": "*",
             "Value": "delighted",
-            "FailResponse": "it would be wise to hang onto the key until you've found all your homework."
+            "FailResponse": "It would be wise to hang onto the key until you've found all your homework."
           },
           {
             "Item": "mr bodmas",
             "Property": "state",
             "Equality": "*",
             "Value": "holding your maths homework",
-            "FailResponse": "it would be wise to hang onto the key until you've found all your homework."
+            "FailResponse": "It would be wise to hang onto the key until you've found all your homework."
           }
         ]
       }
     ],
     "Location": "bike sheds",
-    "State": "it is blank and uncut."
+    "State": "It is blank with no bidding, so it won't fit any lock."
   },
   {
     "Name": "ladder",
     "Prefix": "a",
-    "Description": "a sturdy aluminium work ladder, it's lightweight but robust.",
-    "Help": "ladders can be used to reach high places",
+    "Description": "The ladders is a sturdy aluminium combination step ladder and work ladder; it's lightweight but robust.",
+    "Help": "The ladder can be used to reach high places.",
     "Type": "mobile",
     "Location": "main store room"
   },
   {
     "Name": "lamp",
     "Prefix": "a",
-    "Description": "an old oil burning lamp. yeah... these were still a thing in the 1980s and by far the most common item in any adventure.",
-    "Help": "the lamp can he used to see in dark places.",
+    "Description": "The lamp is an old oil-burning lamp. Although primarily surpassed by electric torches, they are still the most common item in any adventure.",
+    "Help": "The lamp can be used to see in dark places.",
     "Type": "mobile",
     "Actions": [
       {
@@ -5163,22 +5096,22 @@
           {
             "TargetItem": "lamp",
             "Property": "state",
-            "Value": "the lamp is lit."
+            "Value": "The lamp is lit and shines brightly."
           }
         ],
         "Conditions": [
           {
             "Item": "lamp",
             "Property": "state",
-            "Value": "the lamp is off.",
-            "FailResponse": "the lamp is in no condition to be lit."
+            "Value": "The lamp is out and emits no light.",
+            "FailResponse": "The lamp is in no condition to be lit."
           },
           {
             "Item": "matches",
             "Property": "location",
             "Value": "player",
-            "PassResponse": "you take a match from the matches, strike it on the box's edge and light the lamp using the matches and it shines brightly enough to dazzle you. it would be best to not look directly at it again.",
-            "FailResponse": "you don't have anything that could light the lamp."
+            "PassResponse": "You take a match from the matches, strike it on the edge of the box and light the lamp. It shines brightly enough to dazzle you. It would be best not to look directly at it again.",
+            "FailResponse": "You aren't carrying anything which could light the lamp."
           }
         ]
       },
@@ -5188,16 +5121,16 @@
           {
             "TargetItem": "lamp",
             "Property": "state",
-            "Value": "the lamp is off."
+            "Value": "The lamp is out and emits no light."
           }
         ],
         "Conditions": [
           {
             "Item": "lamp",
             "Property": "state",
-            "Value": "the lamp is lit.",
-            "PassResponse": "you take a deep breath and blow on the lamp to no effect, then you remember to turn the wick down and the lamp slowly fades.",
-            "FailResponse": "the lamp is not lit."
+            "Value": "The lamp is lit and shines brightly.",
+            "PassResponse": "You take a deep breath and blow on the lamp with no effect, then you remember to turn the wick down, and the light slowly fades.",
+            "FailResponse": "The lamp is not lit."
           }
         ]
       },
@@ -5207,7 +5140,7 @@
           {
             "TargetItem": "lamp",
             "Property": "state",
-            "Value": "the lamp is off."
+            "Value": "The lamp is out and emits no light."
           }
         ],
         "Conditions": [
@@ -5215,19 +5148,19 @@
             "Item": "oil",
             "Property": "location",
             "Value": "player",
-            "PassResponse": "you carefully and successfully fill the lamp with oil.",
-            "FailResponse": "you don't seem to have anything to fill the lamp with."
+            "PassResponse": "You carefully and successfully fill the lamp with oil.",
+            "FailResponse": "You aren't carrying anything to fill the lamp with."
           }
         ]
       }
     ],
     "Location": "main store room",
-    "State": "the lamp is empty."
+    "State": "The lamp is empty."
   },
   {
     "Name": "lead",
     "Prefix": "some",
-    "Description": "a slab of soft roofing lead. lead is highly toxic if injested but is maliable and easily shpaed making it easy to work with compared to harder metals.",
+    "Description": "The lead is a slug of soft roofing lead. It is highly toxic if ingested but is malleable and easily shaped, making it easier to work with than harder metals.",
     "Help": "the chemical symbol for lead is pb.",
     "Type": "mobile",
     "Actions": [
@@ -5237,7 +5170,7 @@
           {
             "TargetItem": "lead",
             "Property": "state",
-            "Value": "it is the perfect dimensions of a 50 pence piece. it would never pass as legal tender to a person, but the shape and weight might fool a machine."
+            "Value": "It has the perfect dimensions of a 50-pence piece. It would never pass as legal tender to a person, but the shape and weight might fool a machine."
           }
         ],
         "Conditions": [
@@ -5245,27 +5178,27 @@
             "Item": "file",
             "Property": "location",
             "Value": "player",
-            "PassResponse": "you place the lead into the vice and tighten it enough to give a strong purchase on the lead but not deform it. you start filing carefully and within a short time you have shaped a lead slug in the shape of a 50 pence piece.",
-            "FailResponse": "you aren't carrying the file."
+            "PassResponse": "You place the lead into the vice and tighten it enough to give a firm purchase on the lead without deforming it. You start filling carefully, and shortly, you have shaped the lead slug into the shape of a 50-pence piece.",
+            "FailResponse": "You aren't carrying anything that could fabricate the lead."
           },
           {
             "Item": "lead",
             "Property": "location",
-            "Equality": null,
+            "Equality": "=",
             "Value": "player",
-            "FailResponse": "there doesn't seem to be anything to use the file on here."
+            "FailResponse": "You aren't carrying anything to fabricate."
           },
           {
             "Item": "player",
             "Property": "location",
             "Value": "metal workshop",
-            "FailResponse": "you don't have the correct equipment to use the file."
+            "FailResponse": "It would help if you had the correct paraphernalia to fabricate."
           }
         ]
       }
     ],
     "Location": "flat roof",
-    "State": "it's flat and shapeless."
+    "State": "It is flat and shapeless."
   },
   {
     "Name": "locker key",
@@ -5332,7 +5265,7 @@
   {
     "Name": "maths homework",
     "Prefix": "your",
-    "Description": "TODO",
+    "Description": "your maths homework assignment is to compare percentages and fractions",
     "Help": "maths is an unpopular subject but one of the more useful subjects.",
     "Type": "mobile",
     "Actions": [
@@ -5361,7 +5294,7 @@
             "Property": "location",
             "Value": "maths room",
             "PassResponse": "mr bodmas takes your maths homework, flips through it briefly and scuttles off to the staff room.",
-            "FailResponse": "there is no one around to accept your maths homework."
+            "FailResponse": "there is no one here who wants your maths homework."
           },
           {
             "Item": "player",
@@ -5377,7 +5310,7 @@
           {
             "TargetItem": "maths homework",
             "Property": "state",
-            "Value": "your maths homework assignment is to compare percentages and fractions, thankfully it is 100% complete."
+            "Value": "It is 100% complete."
           }
         ],
         "Conditions": [
@@ -5386,15 +5319,15 @@
             "Property": "state",
             "Equality": "*",
             "Value": "wearing",
-            "PassResponse": "you extend your arm fully then crook your elbow to position your calculator watch in your gaze. with your other hand you tap away at the keys glancing to and from your maths homework, within a few minutes the homework is complete - phew!",
-            "FailResponse": "although fairly simple you fail to grasp the concepts and scale of the mathematical problems in your head and defer its completion until later summising that there is a 95% chance that you will complete it in time."
+            "PassResponse": "You extend your arm fully, then crook your elbow to position your calculator watch in your gaze. With your other hand, you tap away at the keys, glancing to and from your maths homework; within a few minutes, the homework is complete.",
+            "FailResponse": "Although reasonably simple, you fail to grasp the concepts and scale of the mathematical problems in your head and defer their completion until later, surmising that there is a 95% chance that you will complete it in time."
           },
           {
             "Item": "maths homework",
             "Property": "state",
             "Equality": "*",
-            "Value": "blank",
-            "FailResponse": "thankfully you have already completed your maths homework."
+            "Value": "_blank_",
+            "FailResponse": "Thankfully, you have already completed your maths homework."
           }
         ]
       }
@@ -5566,7 +5499,7 @@
           {
             "TargetItem": "lamp",
             "Property": "state",
-            "Value": "the lamp is off."
+            "Value": "The lamp is out and emits no light."
           }
         ],
         "Conditions": [
@@ -5574,8 +5507,8 @@
             "Item": "lamp",
             "Property": "location",
             "Value": "player",
-            "PassResponse": "you carefully and successfully fill the lamp with oil.",
-            "FailResponse": "pouring oil over random things is irresponsible."
+            "PassResponse": "You carefully and successfully fill the lamp with oil.",
+            "FailResponse": "Pouring oil over random things is irresponsible."
           }
         ]
       }
@@ -5693,7 +5626,7 @@
             "Equality": "=",
             "Value": "physics lab",
             "PassResponse": "you have your physics homework to dr atom who pushes his spectacles up his nose and examines it. \"i can barely read it with these glasses, but you seem to have found an application for lasers\" he jests before returning to reading the manual.",
-            "FailResponse": "no one around here wants you physics homework."
+            "FailResponse": "There is no one here who wants your physics homework."
           },
           {
             "Item": "physics homework",
