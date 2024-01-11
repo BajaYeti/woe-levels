@@ -1,4 +1,4 @@
-export const AppVersion = "107";
+export const AppVersion = "108";
 export const AppTitle = "Woe Levels";
 export const AppAuthor = "BajaYeti";
 export const LocalStoargeKey = "woe-levels";
@@ -24,7 +24,7 @@ export const Version = "version";
 export const InventoryLimit = 5;
 
 export const AboutResponse =
-  "Woe Levels: A text adventure conceived and set in the 1980s, a mere 40 years in the making. Based on school life in a typical British comprehensive school, your goal is to survive the day, collect all your misplaced homework assignments, submit them to the appropriate teachers and get home.";
+  "Woe Levels: A text adventure conceived and set in the 1980s, a mere 40 years in the making. Based on school life in a typical British comprehensive school, your goal is to collect all your misplaced homework assignments, submit them to the appropriate teachers and get home.";
 
 export const InstructionsResponse = `Type 'verb noun' actions. Nouns are multi-word items or people, 
   each having a collection of specific verbs, for example:|

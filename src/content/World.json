@@ -2,7 +2,7 @@
   {
     "Type": "version",
     "Name": "version",
-    "Description": "012"
+    "Description": "013"
   },
   {
     "Name": "bunsen burner",
@@ -3382,7 +3382,7 @@
   },
   {
     "Name": "typing pool",
-    "Description": "The room is full of manual typewriters bolted to the desks to ensure they are present. Each typewriter is old and well-worn, with long, irregular keystrokes which often jam the hammers. The recent advent of affordable microcomputers means that learning to touch type can be helpful to almost everyone.",
+    "Description": "The room is full of manual typewriters bolted to the desks to ensure they are present.",
     "Type": "location",
     "Actions": [
       {
@@ -4450,7 +4450,7 @@
   {
     "Name": "crowbar",
     "Prefix": "a",
-    "Description": "The crowbar is large, heavy and made of case-hardened steel. It is well-worn and chipped from former illicit use but performs its function.",
+    "Description": "The crowbar is large, heavy and made of hardened steel. It is well-worn and chipped from former illicit use but performs its function.",
     "Type": "mobile",
     "Actions": [
       {
@@ -4467,7 +4467,7 @@
             "Item": "player",
             "Property": "location",
             "Value": "bike sheds",
-            "PassResponse": "You insert the case-hardened end of the crowbar into the shackle lock and put your weight against it. The shackle lock breaks apart with a satisfying pop, and you manage not to graze your knuckles when the force is released.",
+            "PassResponse": "You insert the hardened end of the crowbar into the shackle lock and put your weight against it. The shackle lock breaks apart with a satisfying pop, and you manage not to graze your knuckles when the force is released.",
             "FailResponse": "You don't see anything to use the crowbar on."
           }
         ]
@@ -5203,8 +5203,8 @@
   {
     "Name": "locker key",
     "Prefix": "a",
-    "Description": "a small and simple key with very little bidding, it looks like even the most amature lock picker could circumvent the lock for this key.",
-    "Help": "everyone has their own locker and their own locker key.",
+    "Description": "The key is small and straightforward, with very little bidding; even the most amateur lock picker could circumvent the lock for this key.",
+    "Help": "Everyone has their own locker and their own locker key.",
     "Type": "mobile",
     "Actions": [
       {
@@ -5223,7 +5223,7 @@
           {
             "TargetItem": "locker",
             "Property": "state",
-            "Value": "it is unlocked and open, exposing your meagre belongs to the world."
+            "Value": "It is unlocked and open, exposing your meagre belongs to the world."
           }
         ],
         "Conditions": [
@@ -5231,15 +5231,15 @@
             "Item": "player",
             "Property": "location",
             "Value": "lockers",
-            "PassResponse": "you insert the locker key and twist the lock which emmits a horible metalic squeek, the locker door makes as much noise and it hinges open exposing your meagre belongs to the world.",
-            "FailResponse": "you can't see your locker here."
+            "PassResponse": "You insert the locker key and twist the lock, which emits a horrible metallic squeak; the locker door makes as much noise as its hinges open, exposing your meagre belonging to the world.",
+            "FailResponse": "You can't see your locker here."
           },
           {
             "Item": "locker",
             "Property": "state",
             "Equality": "*",
             "Value": "shut",
-            "FailResponse": "your locker is already unlocked and open."
+            "FailResponse": "Your locker is already unlocked and open."
           }
         ]
       }
@@ -5249,24 +5249,24 @@
   {
     "Name": "magazine",
     "Prefix": "a",
-    "Description": "a \"nudie\" mag called razzle. while this is obviously ontraband they intention of confescation by a mail teach is somewhat ambiguous.",
+    "Description": "The magazine is a monthly video game mag.",
     "Type": "mobile",
     "Location": "news agent",
-    "State": "it is very tatty and worn, clearly read a lot more than many books in the school library."
+    "State": "It is very tatty and worn; it has been read much more than many books in the school library."
   },
   {
     "Name": "matches",
     "Prefix": "some",
-    "Description": "a standard box of matches, it contains dozens of matches ,. as long as they stay dry will always strike.",
-    "Help": "matches are great for setting light to thing",
+    "Description": "The matches are in a pocket-sized box containing dozens of matches. As long as they stay dry, they will always strike.",
+    "Help": "Matches are great for setting fire to things.",
     "Type": "mobile",
     "Location": "north copse"
   },
   {
     "Name": "maths homework",
     "Prefix": "your",
-    "Description": "your maths homework assignment is to compare percentages and fractions",
-    "Help": "maths is an unpopular subject but one of the more useful subjects.",
+    "Description": "The homework is an assignment to compare percentages and fractions.",
+    "Help": "Maths is an unpopular subject but one of the more practical subjects.",
     "Type": "mobile",
     "Actions": [
       {
@@ -5285,7 +5285,7 @@
           {
             "TargetItem": "mr bodmas",
             "Property": "state",
-            "Value": "he is holding your maths homework."
+            "Value": "He is holding your maths homework."
           }
         ],
         "Conditions": [
@@ -5293,14 +5293,14 @@
             "Item": "mr bodmas",
             "Property": "location",
             "Value": "maths room",
-            "PassResponse": "mr bodmas takes your maths homework, flips through it briefly and scuttles off to the staff room.",
-            "FailResponse": "there is no one here who wants your maths homework."
+            "PassResponse": "Mr Bodmas takes your maths homework, flips through it briefly, shrugs and scuttles off to the staff room.",
+            "FailResponse": "There is no one here who wants your maths homework."
           },
           {
             "Item": "player",
             "Property": "location",
             "Value": "maths room",
-            "FailResponse": "this is not the best place to submit your maths homework."
+            "FailResponse": "There is no one here who wants your maths homework."
           }
         ]
       },
@@ -5338,16 +5338,16 @@
   {
     "Name": "metalwork homework",
     "Prefix": "your",
-    "Description": "the assignment is to write an essay on the life and work of richard trevithick, despite metalwork being a practical subject utilising dangerous tools it can still be brought down to academic drudgery.",
-    "Help": "who is richard trevithick?",
+    "Description": "The homework is an assignment to write an essay on the life and work of Richard Trevithick; despite metalwork being a practical subject utilising dangerous tools, it can still be brought down to academic drudgery.",
+    "Help": "Who is Richard Trevithick?",
     "Type": "mobile",
     "Location": "tennis courts"
   },
   {
     "Name": "moustache",
     "Prefix": "a false",
-    "Description": "a cheap plastic black moustache, the kind you would expect to find inside inexpensive christmas crackers along a terrible joke and paper crown that is too small.",
-    "Help": "a false moustache works well as a disguise and allows you to pretend to be someone else.",
+    "Description": "The moustache is cheap and made of black plastic, the kind you would expect to find inside inexpensive Christmas crackers, along with a terrible joke and a paper crown which is too small.",
+    "Help": "A false moustache works well as a disguise and allows you to pretend to be someone else.",
     "Type": "mobile",
     "Actions": [
       {
@@ -5356,7 +5356,7 @@
           {
             "TargetItem": "moustache",
             "Property": "state",
-            "Value": "you are wearing the moustache."
+            "Value": "You are wearing the moustache."
           }
         ],
         "Conditions": [
@@ -5364,18 +5364,18 @@
             "Item": "moustache",
             "Property": "location",
             "Value": "player",
-            "PassResponse": "the cheap rough plastic of the moustache pinches your septum.",
-            "FailResponse": "you are not carrying the moustache."
+            "PassResponse": "The cheap, rough plastic of the moustache pinches and irritates your septum.",
+            "FailResponse": "You aren't carrying the moustache."
           }
         ]
       },
       {
-        "Verb": "remove,doff",
+        "Verb": "drop, remove,doff",
         "Updates": [
           {
             "TargetItem": "moustache",
             "Property": "state",
-            "Value": "they are folded up."
+            "Value": ""
           }
         ],
         "Conditions": [
@@ -5383,46 +5383,15 @@
             "Item": "moustache",
             "Property": "state",
             "Value": "you are wearing the moustache.",
-            "PassResponse": "you remove the moustache and wiggle your nose to relieve the desire to sneeze.",
-            "FailResponse": "you are not wearing the moustache."
+            "PassResponse": "You remove the moustache and wiggle your nose to relieve the desire to sneeze.",
+            "FailResponse": "You are not wearing the moustache."
           },
           {
             "Item": "player",
             "Property": "location",
             "Equality": "!",
             "Value": "staff room",
-            "FailResponse": "removing the moustache in the staff room will blow your cover!"
-          }
-        ]
-      },
-      {
-        "Verb": "drop",
-        "Updates": [
-          {
-            "TargetItem": "moustache",
-            "Property": "state",
-            "Value": "TODO - clear state"
-          },
-          {
-            "TargetItem": "moustache",
-            "Property": "location",
-            "Value": "conditional drop!"
-          }
-        ],
-        "Conditions": [
-          {
-            "Item": "moustache",
-            "Property": "state",
-            "Value": "you are wearing the moustache.",
-            "PassResponse": "you remove the moustache and wiggle your nose to relieve the desire to sneeze.",
-            "FailResponse": "you are not carrying the moustache."
-          },
-          {
-            "Item": "player",
-            "Property": "location",
-            "Equality": "!",
-            "Value": "staff room",
-            "FailResponse": "removing the moustache in the staff room will blow your cover!"
+            "FailResponse": "Removing the moustache in the staff room will blow your cover."
           }
         ]
       }
@@ -5432,8 +5401,7 @@
   {
     "Name": "music homework",
     "Prefix": "your",
-    "Description": "your asignment is to evaluate the meaning of a classical piece of music and dissect the lyrics.",
-    "Help": "music homework is the second easiest homework, after pe, unless you hate pe then it's the first easiest.",
+    "Description": "The homework is an assignment to evaluate the meaning of a classical piece of music and dissect the lyrics.",
     "Type": "mobile",
     "Actions": [
       {
@@ -5447,7 +5415,7 @@
           {
             "TargetItem": "miss sharp",
             "Property": "state",
-            "Value": "she is carrying your thoughtless though meaningful doodles and appears restless, perhaps to listen to music and create doodles herself."
+            "Value": "She carries your thoughtless though meaningful doodles and appears restless, perhaps to listen to music and create doodles herself."
           }
         ],
         "Conditions": [
@@ -5456,41 +5424,41 @@
             "Property": "location",
             "Equality": "=",
             "Value": "music room",
-            "PassResponse": "miss sharp politely accepts your homework and thoughtfully examines it. clamping her hand to her mouth to prevent a delightful gasp escaping she starts to well-up. \"you've capture the spirit of music perfectly, the flow and feel need not be expressed in limiting words, well done!\" she exclaims.",
-            "FailResponse": "there isn't anyone around who wants your music homework."
+            "PassResponse": "Miss Sharp politely accepts your homework and thoughtfully examines it. Clamping her hand to her mouth to prevent a delightful gasp from escaping, she starts to well up. \"You've captured the spirit of music perfectly; the flow need not be expressed in limited words; well done!\" she exclaims.",
+            "FailResponse": "There isn't anyone around who wants your music homework."
           },
           {
             "Item": "music homework",
             "Property": "state",
             "Equality": "*",
             "Value": "doodles",
-            "FailResponse": "you can't possible hand in incomplete homework!"
+            "FailResponse": "You can only hand in complete homework."
           }
         ]
       }
     ],
     "Location": "audio lab",
-    "State": "it is completely blank."
+    "State": "It is completely blank."
   },
   {
     "Name": "nails",
     "Prefix": "some",
-    "Description": "common nails made of bright steel which are 1 inch in length.",
-    "Help": "nail are great for holding pieces of wood together",
+    "Description": "The nails are box nails made of bright steel, which are 1 inch long.",
+    "Help": "Nails are great for holding pieces of wood together.",
     "Type": "mobile",
     "Location": "wood workshop"
   },
   {
     "Name": "never",
-    "Description": "a dummy item that never passes, and can be used as a generic fail state",
+    "Description": "A dummy item that never passes and can be used as a generic fail state.",
     "Type": "mobile",
     "Location": "hidden"
   },
   {
     "Name": "oil",
     "Prefix": "some",
-    "Description": "a large can of multipurpose oil.",
-    "Help": "multipurpose oil can be used for many things.",
+    "Description": "The oil is multipurpose in a large can.",
+    "Help": "Multipurpose oil can be used for many things.",
     "Type": "mobile",
     "Actions": [
       {
@@ -5518,24 +5486,24 @@
   {
     "Name": "paint",
     "Prefix": "some",
-    "Description": "a can of spray paint. although a valid art utensil spray cans are categorised as serious contraband along with cigarettes and bangers.",
-    "Help": "paint can be used to mark items or completely cover them.",
+    "Description": "The paint is in a spray can. Although valid art utensil spray cans are categorised as severe contraband along with cigarettes and bangers.",
+    "Help": "Paint can be used to mark items or cover marks on items.",
     "Type": "mobile",
     "Location": "art studio"
   },
   {
     "Name": "patch",
     "Prefix": "a",
-    "Description": "a puncture repair patch. it is pre-glued so fixing a puncture is as easy as peeling the backing off and applying the patch - providing the inner tube is exposed and has been prepared.",
-    "Help": "a bicycle with a puncture is just a walking machine.",
+    "Description": "The patch is from a bicycle tyre puncture repair kit. It is pre-glued, so fixing a puncture is as easy as peeling the backing off and applying the patch, provided the inner tube is accessible and prepared.",
+    "Help": "A bicycle with a puncture is just a walking machine.",
     "Type": "mobile",
     "Location": "art studio"
   },
   {
     "Name": "pencil",
     "Prefix": "a",
-    "Description": "a standard hb pencil, useful for most situations.",
-    "Help": "a pencil is the basic requirement to write or drawn anything.",
+    "Description": "The pencil is a standard HB pencil; not too hard, not too soft; it's the Goldilocks of pencils, valid for most situations.",
+    "Help": "A pencil is an essential requirement to write or draw anything.",
     "Type": "mobile",
     "Actions": [
       {
@@ -5543,7 +5511,7 @@
         "Updates": [
           {
             "TargetItem": "pencil",
-            "Value": "it has been licked (gross)."
+            "Value": "It has been licked."
           }
         ],
         "Conditions": [
@@ -5551,8 +5519,8 @@
             "Item": "pencil",
             "Property": "location",
             "Value": "player",
-            "PassResponse": "you lick the tip of the pencil preparing it for use as only an old person does.",
-            "FailResponse": "gross! i wouldn't want to lick anything that laying is on the floor."
+            "PassResponse": "You lick the pencil's tip, preparing it for use as only Mr Saw does.",
+            "FailResponse": "Licking things that have been on the ground is unhygienic."
           }
         ]
       }
@@ -5561,8 +5529,8 @@
   },
   {
     "Name": "pencil sharpener",
-    "Description": "it has has a rusty steel blade and a dull grey metal body, it doesn't weigh much. essential for shaprening a blunt or broken pencil.",
-    "Help": "metal pencil sharpeners are made of a magnesium alloy.",
+    "Description": "The sharpener has a rusty steel blade and a dull grey metal body; it doesn't weigh much. It is essential for sharpening a blunt or broken pencil.",
+    "Help": "Metal pencil sharpeners are made of a magnesium alloy.",
     "Type": "mobile",
     "Actions": [
       {
@@ -5576,7 +5544,7 @@
           {
             "TargetItem": "pencil sharpener",
             "Property": "state",
-            "Value": "it is burned beyond recognition and now useless."
+            "Value": "It is burned beyond recognition and is now useless."
           },
           {
             "TargetItem": "pencil sharpener",
@@ -5590,19 +5558,19 @@
             "Property": "location",
             "Equality": "=",
             "Value": "chemistry lab",
-            "PassResponse": "you grab a pair of tongs and hold the sharpener at length then turn the bunsen burner collar so that the flame burns blue and you insert the sharperner into the flame. as soon as the sharpener ignites my silver rushes in grabs a fire extinguisher and puts out the flame. \"an interesting experiment and one i've done myself, so i'll overlook it this time, but don't do it again\" he admirably grumbles, then goes and sites behind his desk.",
-            "FailResponse": "there's no way you could burn the pencil sharpener here."
+            "PassResponse": "You grab a pair of tongs and hold the sharpener at length, then turn the Bunsen burner collar so that the flame burns blue, and you insert the sharpener into the flame. As soon as the sharpener ignites, Mr Silver rushes in, grabs a fire extinguisher, and puts out the flame. \"An interesting experiment and one I've done myself, so I'll overlook it this time, but don't do it again\" he admirably grumbles, then goes and sits behind his desk.",
+            "FailResponse": "It would help if you had the correct paraphernalia to burn the sharpener."
           }
         ]
       }
     ],
     "Location": "physics lab",
-    "State": "it's in good condition considering its age."
+    "State": "It's in good condition considering its age."
   },
   {
     "Name": "physics homework",
     "Prefix": "your",
-    "Description": "it is an assignment to investgate the applciations of light amplification stimulation by emission of radiation. It has a membership card for the physics club attached.",
+    "Description": "The homework is an assignment to investigate the applications of light amplification stimulation by the emission of radiation. It has a membership card for the physics club attached.",
     "Type": "mobile",
     "Actions": [
       {
@@ -5616,7 +5584,7 @@
           {
             "TargetItem": "dr atom",
             "Property": "state",
-            "Value": "he is still reading the laser maintenance manual, but now carrying your physics homework rolled up in his lab coat pocket."
+            "Value": "He is still reading the laser maintenance manual but is carrying your physics homework in his lab coat pocket."
           }
         ],
         "Conditions": [
@@ -5625,7 +5593,7 @@
             "Property": "location",
             "Equality": "=",
             "Value": "physics lab",
-            "PassResponse": "you have your physics homework to dr atom who pushes his spectacles up his nose and examines it. \"i can barely read it with these glasses, but you seem to have found an application for lasers\" he jests before returning to reading the manual.",
+            "PassResponse": "You hand your physics homework to Dr Atom, who pushes his spectacles up his nose and examines it. \"I can barely read with these glasses, but you seem to have found an application for lasers\" he jests before returning to reading the manual.",
             "FailResponse": "There is no one here who wants your physics homework."
           },
           {
@@ -5633,18 +5601,18 @@
             "Property": "state",
             "Equality": "*",
             "Value": "burn",
-            "FailResponse": "dr atom is too busy reading the maintenance manual for the laser to accept your homework."
+            "FailResponse": "Dr Atom is too busy reading the maintenance manual for the laser to accept your homework."
           }
         ]
       }
     ],
     "Location": "library",
-    "State": "it's complete all exclept the conclusions."
+    "State": "It is complete all except the conclusions."
   },
   {
     "Name": "shackle lock",
-    "Description": "it has a combination lock. unfortunately you have forgotten the combination number.",
-    "Help": "a key cannot open a combination lock.",
+    "Description": "The lock is a combination lock.",
+    "Help": "A key cannot open a combination lock.",
     "Type": "mobile",
     "Actions": [
       {
@@ -5661,20 +5629,20 @@
             "Item": "crowbar",
             "Property": "location",
             "Value": "player",
-            "PassResponse": "you insert the case hardened end of the crowbar intro the shackle lock and put your weight against it. the shackle lock breaks apart with a satisfying pop and you manage not to graze your knuckles in the process.",
-            "FailResponse": "you don't have anything that could open the shackle lock."
+            "PassResponse": "You insert the hardened end of the crowbar into the shackle lock and put your weight against it. The shackle lock breaks apart with a satisfying pop, and you manage not to graze your knuckles when the force is released.",
+            "FailResponse": "You can't remember if you ever knew the lock's combination or whether you have forgotten it."
           }
         ]
       }
     ],
     "Location": "bike sheds",
-    "State": "it secures your bike to the bike rack."
+    "State": "It secures your bike to the bike rack."
   },
   {
     "Name": "shovel",
     "Prefix": "a",
-    "Description": "a very worn but solid shovel. it has wide shoulders so can be driving into the ground with study fooitware.",
-    "Help": "shovels are great for digging holes.",
+    "Description": "The shovel is very worn but solid. It has broad shoulders to drive into the ground with sturdy footwear.",
+    "Help": "Shovels are great for digging.",
     "Type": "mobile",
     "Actions": [
       {
@@ -5691,20 +5659,20 @@
             "Item": "shovel",
             "Property": "location",
             "Value": "player",
-            "PassResponse": "you plant the shovel on the ground and place one foot on the top of the blade, stepping your weight onto the shovel drives it into the soft soil easily and you fling the spoil over your shoulder recklessly. after repeating a few times you spot something glinting in the new hole and stop digging.",
-            "FailResponse": "you aren't carrying anything you can dig with."
+            "PassResponse": "You plant the shovel on the ground and place one foot on the top of the blade. Stepping your weight onto the shovel quickly drives it into the soft soil, and you fling the spoil over your shoulder recklessly. After repeating a few times, you spot something glinting in the new hole and stop digging.",
+            "FailResponse": "You aren't carrying anything you can dig with."
           },
           {
             "Item": "player",
             "Property": "location",
             "Value": "west copse",
-            "FailResponse": "you can't dig here and if you tried it would be pointless."
+            "FailResponse": "You can't dig here; if you tried, it would be pointless."
           },
           {
             "Item": "locker key",
             "Property": "location",
             "Value": "hidden",
-            "FailResponse": "after a short trial you have decided that digging is not your vocational calling and decided not to repeat the excerise."
+            "FailResponse": "After a short trial, you decide that digging is not your vocational calling and choose not to repeat the exercise."
           }
         ]
       }
@@ -5714,15 +5682,15 @@
   {
     "Name": "splint",
     "Prefix": "a",
-    "Description": "a small piece of softwood that looks like a long thin lolly stick. splits must be used to light bunson burners, any other naken flame is strictly forbidden.",
+    "Description": "A small piece of softwood that looks like a long, thin lolly stick. Splints must be used to light Bunsen burners; any other naken flame is strictly forbidden.",
     "Type": "mobile",
     "Location": "south copse"
   },
   {
     "Name": "sunglasses",
     "Prefix": "a pair of",
-    "Description": "a cheap pair of plastic sunglasses although styled to look like an expensive fashion brand. although cool for models and rock stars to wear pupils wearing them at school is not appreciated.",
-    "Help": "sunglasses help block light from entering your eye, they also cover your eyes from being seen.",
+    "Description": "The sunglasses are cheap and made of plastic, styled to look like an expensive fashion brand. Although excellent for models and rock stars to wear, pupils wearing them at school is not appreciated.",
+    "Help": "Sunglasses help block light from entering your eyes and protect your eyes from being seen.",
     "Type": "mobile",
     "Actions": [
       {
@@ -5731,7 +5699,7 @@
           {
             "TargetItem": "sunglasses",
             "Property": "state",
-            "Value": "you are wearing the sunglasses."
+            "Value": "You are wearing them."
           }
         ],
         "Conditions": [
@@ -5739,18 +5707,18 @@
             "Item": "sunglasses",
             "Property": "location",
             "Value": "player",
-            "PassResponse": "heeeeey, cool man!",
-            "FailResponse": "you are not carrying the sunglasses."
+            "PassResponse": "Hey, cool, man!",
+            "FailResponse": "You aren't carrying the sunglasses."
           }
         ]
       },
       {
-        "Verb": "remove,doff",
+        "Verb": "drop,remove,doff",
         "Updates": [
           {
             "TargetItem": "sunglasses",
             "Property": "state",
-            "Value": "they are folded up."
+            "Value": "They are folded up."
           }
         ],
         "Conditions": [
@@ -5758,46 +5726,15 @@
             "Item": "sunglasses",
             "Property": "state",
             "Value": "you are wearing the sunglasses.",
-            "PassResponse": "you remove the sunglasses and squint in response to your perceived brighter environment.",
-            "FailResponse": "you are not wearing the sunglasses."
+            "PassResponse": "You remove the sunglasses and squint in response to your perceived brighter environment.",
+            "FailResponse": "You are not wearing the sunglasses."
           },
           {
             "Item": "player",
             "Property": "location",
             "Equality": "!",
             "Value": "staff room",
-            "FailResponse": "removing the sunglasses in the staff room will blow your cover!"
-          }
-        ]
-      },
-      {
-        "Verb": "drop",
-        "Updates": [
-          {
-            "TargetItem": "sunglasses",
-            "Property": "state",
-            "Value": "they are folded up."
-          },
-          {
-            "TargetItem": "sunglasses",
-            "Property": "location",
-            "Value": "conditional drop!"
-          }
-        ],
-        "Conditions": [
-          {
-            "Item": "sunglasses",
-            "Property": "state",
-            "Value": "you are wearing the sunglasses.",
-            "PassResponse": "you remove and drop the sunglasses, and squint in response to your perceived brighter environment.",
-            "FailResponse": "you are not carrying the sunglasses."
-          },
-          {
-            "Item": "player",
-            "Property": "location",
-            "Equality": "!",
-            "Value": "staff room",
-            "FailResponse": "removing the sunglasses in the staff room will blow your cover!"
+            "FailResponse": "Removing the sunglasses in the staff room will blow your cover."
           }
         ]
       }
@@ -5808,7 +5745,7 @@
   {
     "Name": "swimming certificate",
     "Prefix": "your",
-    "Description": "it certifies that you have swam 40 lengths of the swimming pool, or 1km in closed water.",
+    "Description": "The certificate confirms that you have swam 40 lengths of a swimming pool or 1km in closed water.",
     "Type": "mobile",
     "Actions": [
       {
@@ -5817,7 +5754,7 @@
           {
             "TargetItem": "mr ball",
             "Property": "state",
-            "Value": "he is carrying your bedraggled swimming certificate wedged under a discus under his arm."
+            "Value": "He is carrying your bedraggled swimming certificate wedged against a discus under his arm."
           }
         ],
         "Conditions": [
@@ -5826,20 +5763,20 @@
             "Property": "location",
             "Equality": "=",
             "Value": "athletics field",
-            "PassResponse": "you hand your swimming certificate to mr ball, who takes it and squits at it. \"what's this?\" he barks before scrutinising it further. \"i can barely read this - and it stinks of chlorine... so i guess you've done your laps\"",
-            "FailResponse": "there doesn't seem to be anyone who wants it."
+            "PassResponse": "You hand your swimming certificate to Mr Ball, who takes it and squints at it. \"What's this?\" he barks before scrutinising it further. \"I can barely read this, and it stinks of chlorine... but I guess you've done your laps.\" he huffs.",
+            "FailResponse": "There is no one here who wants your swimming certificate."
           }
         ]
       }
     ],
     "Location": "swimming pool",
-    "State": "it is soaking wet and the ink has ran making it barely readable."
+    "State": "It is soaking wet, and the ink has run, making it barely readable."
   },
   {
     "Name": "swimming trunks",
-    "Prefix": "some",
-    "Description": "a pair of unflattering swimming trunks, you outgrew them a long time ago and they leave nothing to the imagination.",
-    "Help": "swimming trunks are the only attire that can be worn in the pool.",
+    "Prefix": "a pair of",
+    "Description": "The trunks are unflattering, and you outgrew them long ago, meaning they leave nothing to the imagination.",
+    "Help": "Swimming trunks are the only attire permitted to be worn in the pool.",
     "Type": "mobile",
     "Actions": [
       {
@@ -5856,8 +5793,8 @@
             "Item": "swimming trunks",
             "Property": "state",
             "Value": "they look like a tight fit.",
-            "PassResponse": "you dropped the swimming trunks.",
-            "FailResponse": "it would be the most embarrassing mistake to drop your trunks in school! maybe take them off first."
+            "PassResponse": "You dropped the swimming trunks.",
+            "FailResponse": "It would be the most embarrassing mistake to drop your trunks in school; take them off first."
           }
         ]
       },
@@ -5875,53 +5812,52 @@
             "Item": "swimming trunks",
             "Property": "location",
             "Value": "player",
-            "PassResponse": "you don the swimming trunks, but feel very self conscious about it - no one else is wearing swimming attire.",
-            "FailResponse": "you don't have the swimming trunks."
+            "PassResponse": "You don the swimming trunks but feel very self-conscious about it; no one else is wearing a swimming suit.",
+            "FailResponse": "You aren't carrying the swimming trunks."
           }
         ]
       },
       {
-        "Verb": "remove,undress,doff",
+        "Verb": "remove,doff",
         "Updates": [
           {
             "TargetItem": "swimming trunks",
             "Property": "state",
-            "Value": "they look like a tight fit."
+            "Value": "They look like a tight fit."
           }
         ],
         "Conditions": [
           {
             "Item": "swimming trunks",
             "Property": "state",
-            "Value": "you are wearing the trunks.",
-            "PassResponse": "you carefully struggle out of the overly-tight trunks ensuring no one is looking.",
-            "FailResponse": "TODO"
+            "Value": "You are wearing the trunks.",
+            "PassResponse": "You carefully struggle out of the overly tight trunks, ensuring no one is looking."
           }
         ]
       }
     ],
     "Location": "swimming changing room",
-    "State": "they look like a tight fit."
+    "State": "They look like a tight fit."
   },
   {
     "Name": "tennis ball",
     "Prefix": "a",
-    "Description": "TODO",
+    "Description": "The ball is standard but of an expensive brand. The felt is worn, and the seem has seen better days.",
     "Type": "mobile",
     "Location": "tennis courts"
   },
   {
     "Name": "typewriter",
     "Prefix": "a",
-    "Description": "TODO",
-    "Type": "mobile",
+    "Description": "The typewriter is old and well-worn, with long, irregular keystrokes which often jam the hammers. The recent advent of affordable microcomputers means that learning to touch type can be helpful to almost everyone.",
+    "Type": "fixed",
     "Location": "typing pool"
   },
   {
-    "Name": "walkman",
-    "Prefix": "a sony",
-    "Description": "this is the holy grail of musical entertainment during break times. this particular model is a range-topper complete with a rewind feature.",
-    "Help": "other portable cassette players than a walkman are available",
+    "Name": "Walkman",
+    "Prefix": "a Sony",
+    "Description": "The Walkman is the holy grail of musical entertainment during break times. This particular model is a twin-motor range-topper complete with a rewind feature.",
+    "Help": "Other portable cassette players are available.",
     "Type": "mobile",
     "Actions": [
       {
@@ -5930,12 +5866,12 @@
           {
             "TargetItem": "walkman",
             "Property": "state",
-            "Value": "the batteries are flat and the inserted cassette is stuck inside - great!"
+            "Value": "The batteries are flat, and the inserted cassette is stuck inside."
           },
           {
             "TargetItem": "music homework",
             "Property": "state",
-            "Value": "it is completely covered in doodles and musings from your time listening to the walkman."
+            "Value": "It is completely covered in doodles and musings from your time listening to the Walkman."
           }
         ],
         "Conditions": [
@@ -5943,47 +5879,40 @@
             "Item": "walkman",
             "Property": "location",
             "Value": "player",
-            "PassResponse": "you don the headphones, although they are a little greasy from the previous user and press the play button. immediately your head is filled with high fidelity stereo music which seems to dance and dart around you skull,  as you listen to the latest hits of the day you start doodling on your music homework, but before long the batteries the run flat and your are plunged into silence again, other than a slight ringing in both ears now.",
-            "FailResponse": "you are not holding the walkman."
+            "PassResponse": "You don the headphones, which are a little greasy from the previous user and press the play button. Immediately, your head is filled with high-fidelity stereo music, which seems to dance and dart around your skull; as you listen to the latest hits of the day, you start doodling on your music homework. Before long, the batteries run flat, and you are plunged into silence again, other than a slight ringing in both ears.",
+            "FailResponse": "You aren't carrying the Walkman."
           },
           {
             "Item": "walkman",
             "Property": "state",
             "Equality": "*",
             "Value": "inserted",
-            "FailResponse": "the walkman doesn't have a cassette in it."
+            "FailResponse": "The Walkman has no cassette."
           },
           {
             "Item": "music homework",
             "Property": "location",
             "Value": "player",
-            "FailResponse": "although desparate to relieve the boredom of school with some kicking tunes you feel the urge to save the experience for a more fulfilling time later."
+            "FailResponse": "Although desperate to relieve the boredom of school with some banging tunes, you feel the urge to save the experience until it can facilitate your music homework."
           },
           {
             "Item": "pencil",
             "Property": "location",
             "Value": "player",
-            "FailResponse": "although desparate to relieve the boredom of school with some kicking tunes you feel the urge to save the experience for a more fulfilling time later."
+            "FailResponse": "Although desperate to relieve the boredom of school with some banging tunes, you need to capture the experience in your homework with a suitable writing implement."
           },
           {
             "Item": "walkman",
             "Property": "state",
             "Equality": "*",
             "Value": "charge",
-            "FailResponse": "the batteries are flat."
+            "FailResponse": "The batteries are flat."
           }
         ]
       }
     ],
     "Location": "headmaster's office",
-    "State": "the batteries appear to have a charge, but it is cassetteless."
-  },
-  {
-    "Name": "woodwork homework",
-    "Prefix": "your",
-    "Description": "TODO",
-    "Type": "mobile",
-    "Location": "hidden"
+    "State": "The batteries appear to have a charge, but the Walkman is cassetteless."
   },
   {
     "Name": "bully",
