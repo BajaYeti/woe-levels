@@ -2,7 +2,7 @@
   {
     "Type": "version",
     "Name": "version",
-    "Description": "013"
+    "Description": "014"
   },
   {
     "Name": "bunsen burner",
@@ -5917,155 +5917,155 @@
   {
     "Name": "bully",
     "Prefix": "the school",
-    "Description": "an unthinking oaf, it would be kind to describe him as misundertood but realistically it would be difficult for anyone to understand how callous one person could be.",
-    "Help": "it is best to avoid the bully, he cannot be bargained with.",
+    "Description": "He is an unthinking oaf; it would be kind to describe him as misunderstood, but realistically, it would be difficult for anyone to understand how callous one person could be.",
+    "Help": "Unless you can appease the bully, it is best to avoid him, he cannot be bargained with.",
     "Type": "person",
     "Location": "south copse",
-    "State": "his is perpetually angry."
+    "State": "He is perpetually angry."
   },
   {
     "Name": "dog",
     "Prefix": "a",
-    "Description": "a long haired golden retriever with mischeif in its eyes and energy in its belly. it bounds around when you approach in an attempt to play. a random dog on school propertly is the best thing that can happen during a school day.",
+    "Description": "It is a long-haired golden retriever with mischief in its eyes and energy in its belly. It bounds around when you approach in an attempt to play. A random dog on school property is the best thing to happen during a school day.",
     "Type": "person",
     "Location": "athletics field",
-    "State": "it has some homework in its mouth, unless you recover it the dog really will eat your homework."
+    "State": "It has some homework in its mouth; unless you recover it, you can use the cliched excuse, \"The dog ate my homework.\""
   },
   {
-    "Name": "dr atom",
-    "Description": "the physics teacher; he habitually wears a white lab coat and large thick pebble glasses. he is frienmdly but slightly mad and unpredictable in a doc brown kind of way.",
-    "Help": "dr atom maybe the cleverest person in school so it is wise to heed his wise counsel.",
+    "Name": "Dr Atom",
+    "Description": "He is the physics teacher; he habitually wears a white lab coat and large, thick pebble glasses. He is friendly but slightly mad and unpredictable in a \"mad scientist\" way.",
+    "Help": "Dr Atom is the cleverest person in school, so it is wise to heed his wise counsel.",
     "Type": "person",
     "Location": "physics lab",
-    "State": "he is busy reading the maintenance manual for the school laser."
+    "State": "He is busy reading the maintenance manual for the school laser."
   },
   {
-    "Name": "miss battle",
-    "Description": "she is a recently qualified teacher and has yet to be come bitter towards all her pupils.",
-    "Help": "miss battle has very high standards.",
+    "Name": "Miss Battle",
+    "Description": "She is a recently qualified young history teacher who has yet to become bitter towards her pupils.",
+    "Help": "Miss Battle has very high standards.",
     "Type": "person",
     "Location": "history room",
-    "State": "she is staring out of the window over the front lawn forlornly."
+    "State": "She is staring forlornly out of the window over the front lawn."
   },
   {
-    "Name": "miss french",
-    "Description": "miss french is a young teacher and a francophile, meaning that she loves her job teaching french even though 99% of her pupils are uninterested and undeserving of her ambition.",
-    "Help": "peut-être que parler français aiderait ?",
+    "Name": "Miss French",
+    "Description": "Miss French is a young teacher and a francophile; she loves her job teaching French even though 99% of her pupils are uninterested and undeserving of her ambition.",
+    "Help": "Peut-être que parler français aiderait ?",
     "Type": "person",
     "Location": "french room"
   },
   {
-    "Name": "miss mcqueen",
-    "Description": "the drama teacher and the epitome of a drama queen - she lives for drama but can also defuse a crisis down to a drama.",
+    "Name": "Miss McQueen",
+    "Description": "She is the drama teacher and the epitome of a drama queen; she lives for drama but can also defuse a crisis down to a drama.",
     "Type": "person",
     "Location": "drama room",
-    "State": "she is practising her dramatic reaction to not receiving your drama assignment."
+    "State": "She is practising her dramatic reaction to not receiving your drama homework."
   },
   {
-    "Name": "miss sharp",
-    "Description": "a newly qualified music teacher in her early twenties, she is sporting a contemporary blond perm. she lives and breaths music although is reticent about her favourite band and won't be drawn into discussions about popular music.",
+    "Name": "Miss Sharp",
+    "Description": "She is a newly qualified young music teacher sporting a contemporary blond perm. She lives and breathes music, although she is reticent about her favourite artist and won't be drawn into discussions about popular music.",
     "Help": "if you don't know the lyrics try humming it.",
     "Type": "person",
     "Location": "music room"
   },
   {
-    "Name": "miss sketch",
-    "Description": "the art teacher, she is middle ages and as learned enough to not let pupils take advantage or control. she is friendly but firm and throouglky organised as shjown by the immacualte state of the art studio.",
-    "Help": "miss sketch would apprciate anything drawn by hand.",
+    "Name": "Miss Sketch",
+    "Description": "She is the art teacher; she is middle-aged and has learned enough not to let pupils take advantage or control. She is friendly but firm and thoroughly organised as shown by the immaculate state-of-the-art studio.",
+    "Help": "Miss Sketch apprciates anything drawn by hand.",
     "Type": "person",
     "Location": "art studio"
   },
   {
-    "Name": "mr ball",
-    "Description": "the p.e. teacher; he is wearing disturbingly short shorts, a track suit top and a stopwatch around his neck - at least it has purpose and is better than a necktie. he has no sense of humour and has never been seen smiling.",
-    "Help": "mr ball is impressed by any feet of physical strength or perseverence and less imporessed by academic achievments.",
+    "Name": "Mr Ball",
+    "Description": "He is the physical exercise (PE) teacher; he wears disturbingly short shorts, a tracksuit top and a stopwatch around his neck; at least it has a purpose and is better than a necktie. He has no sense of humour and has never been seen smiling.",
+    "Help": "Mr Ball is impressed by any feet of physical strength or perseverance and less by academic achievements.",
     "Type": "person",
     "Location": "athletics field"
   },
   {
-    "Name": "mr bodmas",
-    "Description": "a middle aged maths teacher. he is extremely very firm but fair once his dominance is acknowledged. his har is thinning and wsipy and he had a large lumberjack beard - he looks like a caveman.",
-    "Help": "it is best not to upset mr bodmas, he has been known to weaponise blackboard rubbers.",
+    "Name": "Mr Bodmas",
+    "Description": "He is a middle-aged maths teacher, extremely firm but fair once his dominance is acknowledged. His hair is long, thinning and wispy, with a large lumberjack beard, giving him the appearance of a caveman.",
+    "Help": "It is best not to upset Mr Bodmas, he is known to weaponise blackboard rubbers.",
     "Type": "person",
     "Location": "maths room",
-    "State": "he is irritable."
+    "State": "He appears irritable."
   },
   {
-    "Name": "mr booker",
-    "Description": "english language teacher; he is perputuially carrying a novel around in his flap-topped jacket pockets and taking every opportunity to read it. he smells musty like a secondhand bookshop.",
+    "Name": "Mr Booker",
+    "Description": "He is the elderly and gentle English language teacher, perpetually carrying a novel around in his flap-topped jacket pockets and taking every opportunity to read it. He smells musty, like a secondhand bookshop.",
     "Type": "person",
     "Location": "english language"
   },
   {
-    "Name": "mr broom",
-    "Description": "the caretaker; grumpier than the local park-keeper and he clearly hates his job and/or teenagers. it is inconceivable how someone with his disposition can home the position.",
-    "Help": "dropping litter would be the worst thing to do in mr broom's presence.",
+    "Name": "Mr Broom",
+    "Description": "He is the caretaker and is grumpier than the local parkkeeper. He clearly hates his job and/or teenagers, taking every opportunity to shout at pupils. It is inconceivable how someone with his disposition can hold the caretaker position.",
+    "Help": "Dropping litter would be the worst thing to do in Mr Broom's presence.",
     "Type": "person",
     "Location": "caretaker's office"
   },
   {
-    "Name": "mr foot",
-    "Description": "the biology teacher; he is young and enthusiastic. he will listen to any biological questions pupils have without judgment, as if he still remembers being a teenager himself.",
+    "Name": "Mr Foot",
+    "Description": "He is a young and enthusiastic biology teacher; H engages with pupils to answer any biological questions pupils have without judgment, as if he still remembers being a teenager.",
     "Type": "person",
     "Location": "biology lab"
   },
   {
-    "Name": "mr head",
-    "Description": "the headmaster; the highest authority in the school, although his purpose is not really known to pupils - he takes no classes and doesn't appear to do anything other than preach assemblies, it seems like an easy job so it is a wondy why is he so furious all the time.",
+    "Name": "Mr Head",
+    "Description": "He is the headmaster, the highest authority in the school, but his purpose is unknown to pupils; he takes no classes. He doesn't appear to do anything other than preach assemblies. It seems like an easy job, so it's a wonder why he is always furious.",
     "Type": "person",
     "Location": "headmaster's office"
   },
   {
-    "Name": "mr rhumb",
-    "Description": "the geography teacher; he is young but already bitter, possibly that he intentiosn to travel have been ruined by having to baby-sit ungrateful teens who have no aspiration to travel the world as he did during his year off. he often regails his time living in brazil and eating star fruit.",
-    "Help": "what is a star fruit?",
+    "Name": "Mr Rhumb",
+    "Description": "He is the geography teacher; he is young but already bitter, possibly because his intentions to travel have been ruined by babysitting ungrateful teens who have no aspiration to travel the world as he did during his year off. He often regales his time living in Brazil and eating star fruit to anyone who will listen.",
+    "Help": "What is a star fruit?",
     "Type": "person",
     "Location": "geography room"
   },
   {
-    "Name": "mr saw",
-    "Description": "the woodwork teacher; he is nearing retirement and has always lvoed teaching pupils practical uses of wood. he is stick-think and his nostril are stained brown from all the saw-dust he has inhaled over the decades.",
-    "Help": "talking abour egg-shell finish will engane mr saw.",
+    "Name": "Mr Saw",
+    "Description": "He is a woodwork teacher nearing retirement and has always loved teaching pupils practical uses of wood. He is stick-think, and his nostrils are stained brown from all the saw-dust he has inhaled over the decades.",
+    "Help": "Talking about egg-shell finish will engage Mr Saw.",
     "Type": "person",
     "Location": "wood workshop"
   },
   {
-    "Name": "mr silver",
-    "Description": "a daring young chemistry teacher, although chemistry is not even remotely related to archeology he comes across like indiana jones and appears to be a risk taker.",
-    "Help": "mr silver would sacrifice personal health to save lab equipment.",
+    "Name": "Mr Silver",
+    "Description": "He is a daring young chemistry teacher, and although chemistry is not remotely related to archaeology, he comes across like Indiana Jones and appears to be a risk taker.",
+    "Help": "Mr Silver would sacrifice personal health to save lab equipment.",
     "Type": "person",
     "Location": "staff room"
   },
   {
-    "Name": "mr square",
-    "Description": "the ged teacher; he is beyong excentric and is of senior years. middle age spread has not been good to him and he dresses mostly in comfortable brown clothes but is kiond and gentle - unless pushed to the edge.",
+    "Name": "Mr Square",
+    "Description": "He is the GED teacher, beyond excentric, and in his senior years. Middle age spread has not been kind to him, and he dresses mostly in comfortable brown clothes but is some sort and gentle unless pushed to the limit.",
     "Type": "person",
     "Location": "ged hut"
   },
   {
-    "Name": "mr steel",
-    "Description": "the metalwork teacher know for his furious grip. hje is calm but has little patience and any infraction is pushed with an immediate and unnerving \"grip\", usually around the upper arm.",
+    "Name": "Mr Steel",
+    "Description": "He is the metalwork teacher infamous for his furious grip. He is primarily calm but has little patience, and any infraction is punished with an immediate and unnerving grip, usually around the perp's upper arm.",
     "Type": "person",
     "Location": "metal workshop"
   },
   {
-    "Name": "mrs bakewell",
-    "Description": "the cooking teacher; she is middle aged, somewhat scatty and very easy going making cooking lessons easy and untaxing, although unsafe practices will not be tolerated.",
+    "Name": "Mrs Bakewell",
+    "Description": "She is the cooking teacher, a middle-aged lover of food, somewhat scatty, and easygoing, making cooking lessons easy and untaxing. However, unsafe practices will not be tolerated.",
     "Type": "person",
     "Location": "cooking room",
-    "State": "she looks like she missed breakfast and looks hungry and agitated."
+    "State": "She looked like she missed breakfast and looked hungry and agitated."
   },
   {
     "Name": "pierre",
-    "Description": "the french exchange student.he is effortlessly chic and oozes european charisma that makes him attractive but is unbothered by such existential concerns.",
-    "Help": "pierre is not adapting well to uk life and missing his french customs.",
+    "Description": "He is a French exchange student who is effortlessly chic and oozes European charisma that makes him attractive. Still, he is unbothered by such existential concerns.",
+    "Help": "Pierre does not appreciate UK life and misses his home country.",
     "Type": "person",
     "Location": "north copse",
-    "State": "he is feeling ennui."
+    "State": "He is feeling ennui."
   },
   {
-    "Name": "spider web",
-    "Description": "a bizarre pupil, sometimes friendly and other times aggressive, probably best avoided.",
+    "Name": "Spider Webb",
+    "Description": "He is an unpredictable pupil, sometimes friendly and other times aggressive, probably best avoided.",
     "Type": "person",
     "Location": "french room"
   },
