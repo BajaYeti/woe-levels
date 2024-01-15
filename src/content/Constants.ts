@@ -1,4 +1,4 @@
-export const AppVersion = "108";
+export const AppVersion = "109";
 export const AppTitle = "Woe Levels";
 export const AppAuthor = "BajaYeti";
 export const LocalStoargeKey = "woe-levels";

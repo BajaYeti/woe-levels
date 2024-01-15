@@ -1,5 +1,5 @@
 import { FrontStreet, Player } from "../content/Constants";
-import { getItemByName } from "./ItemQueries";
+import { getItemByName, getLocation } from "./ItemQueries";
 
 /**
  * Process a user parsed and checked action
@@ -22,7 +22,13 @@ export function Process(request: Action, items: Array<Item>): Process {
           item.State = u.Value;
           break;
         default: //location is default property to update
-          item.Location = u.Value;
+          //item.Location = u.Value;
+          //check if custom drop action and replace *location placeholder with current location
+          let dropLocation = getLocation(items);
+          item.Location =
+            dropLocation !== undefined && u.Value.toLowerCase() === "*location"
+              ? dropLocation.Name
+              : u.Value;
           //if player is moving, update location counter for brevity
           if (item.Name.toLowerCase() === Player) {
             let location = getItemByName(items, item.Location);

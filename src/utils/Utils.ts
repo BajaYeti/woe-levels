@@ -1,5 +1,5 @@
-import { Player, Moves, Person } from "../content/Constants";
-import { getVisibleItems } from "./ItemQueries";
+import { Moves, Person } from "../content/Constants";
+import { getCarriedItems, getVisibleItems } from "./ItemQueries";
 
 export function getExits(location: Item | undefined): string {
   if (location === undefined) {
@@ -27,7 +27,7 @@ export function getInventory(items: Array<Item>): string {
   let carrying =
     inv.length === 0
       ? "nothing"
-      : inv.map((i) => `${i.Prefix} ${i.Name}`).join(", ");
+      : inv.map((i) => `${i.Prefix} ${i.Name.split(",")[0]}`).join(", ");
   const lastCommaIndex = carrying.lastIndexOf(",");
   if (lastCommaIndex !== -1) {
     carrying = `${carrying.substring(
@@ -36,12 +36,6 @@ export function getInventory(items: Array<Item>): string {
     )} and${carrying.substring(lastCommaIndex + 1)}`;
   }
   return `You are carrying ${carrying}`;
-}
-
-export function getCarriedItems(items: Array<Item>): Array<Item> {
-  return items.filter((i) => {
-    return i.Location === Player;
-  });
 }
 
 export function capitalizeFirstLetter(str: string): string {
@@ -93,7 +87,7 @@ export function getView(items: Array<Item>): string {
     .map(
       (i) =>
         `${i.Prefix === undefined ? "" : i.Prefix} ${
-          i.Type === Person ? capitalizeEveryWord(i.Name) : i.Name
+          i.Type === Person ? capitalizeEveryWord(i.Name) : i.Name.split(",")[0]
         }`
     )
     .join(", ");
@@ -150,6 +144,21 @@ export function isVersionLessThan(
   return false;
 }
 
-function openImageInNewTab(imageUrl: string): void {
-  window.open(imageUrl, '_blank');
+export function inCsv(csv: string, str: string): boolean {
+  if (!okString(csv)) return false;
+  if (!okString(str)) return false;
+  const values = csv.toLowerCase().split(",");
+  return values.includes(str.trim().toLowerCase());
+}
+
+export function okObject(obj: any): boolean {
+  return obj !== undefined && obj !== null;
+}
+
+export function okString(obj: any): boolean {
+  return obj !== undefined && obj !== null && obj !== "";
+}
+
+export function primaryAlias(item: Item): string {
+  return item.Name?.split(",")[0];
 }

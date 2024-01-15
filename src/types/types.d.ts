@@ -1,5 +1,8 @@
 type Item = {
   // read only
+  // CSV ID of the item. The first CSV element MUST be unique
+  //  subsequent entries can be non-unique aliases or truncations
+  //  e.g. "art homework,homework" or "fire alarm,alarm"
   Name: string;
   Type: string;
   Prefix: string;

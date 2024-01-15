@@ -21,20 +21,24 @@ import {
 } from "../content/Constants";
 import { Truncations } from "../content/Constants";
 import {
-  getDropableItem,
-  getGettableItem,
   getItemByName,
   getHelpItems,
   getLocation,
   getPlayer,
-  getAvailbleItem,
+  getAccessibleItems,
+  getCarriedItems,
+  getGettableItems,
+  getDropableItems,
+  getItemsByName,
 } from "./ItemQueries";
 import {
-  getCarriedItems,
+  capitalizeFirstLetter,
   getInventory,
   getRandomElement,
+  inCsv,
   isVersionLessThan,
   loadFromLocalStorage,
+  okObject,
   saveToLocalStorage,
 } from "./Utils";
 
@@ -284,7 +288,18 @@ export function Parse(input: string, items: Item[]): MyRequest {
         } as Action,
       } as MyRequest;
     }
-    let item = getGettableItem(items, noun);
+    let gettables = getGettableItems(items, noun);
+    if (gettables.length > 1) {
+      return {
+        OK: false,
+        Look: { Refresh: false, Brevity: true },
+        Action: {
+          UnconditionalResponse: "You'll have to be more specific.",
+        } as Action,
+      } as MyRequest;
+    }
+
+    let item = gettables[0];
     if (item === null || item === undefined) {
       return {
         OK: false,
@@ -296,7 +311,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
     }
     //get any specified get actions (with conditions)
     let action = item.Actions?.find((a) => {
-      return a.Verb === Get;
+      return inCsv(a.Verb, Get);
     });
     //create default get action if no custom get action defined
     if (action === null || action === undefined) {
@@ -304,10 +319,10 @@ export function Parse(input: string, items: Item[]): MyRequest {
         OK: true,
         Look: { Refresh: false, Brevity: true },
         Action: {
-          UnconditionalResponse: `You got the ${item.Name}.`,
+          UnconditionalResponse: `You got the ${item.Name.split(",")[0]}.`,
           Updates: [
             {
-              TargetItem: item.Name,
+              TargetItem: item.Name.split(",")[0],
               Property: Location,
               Value: Player,
             },
@@ -326,7 +341,18 @@ export function Parse(input: string, items: Item[]): MyRequest {
 
   //#region DROP
   if (verb === Drop) {
-    let item = getDropableItem(items, noun);
+    let droppables = getDropableItems(items, noun);
+    if (droppables.length > 1) {
+      return {
+        OK: false,
+        Look: { Refresh: false, Brevity: true },
+        Action: {
+          UnconditionalResponse: "You'll have to be more specific.",
+        } as Action,
+      } as MyRequest;
+    }
+
+    let item = droppables[0];
     if (item === null || item === undefined) {
       return {
         OK: false,
@@ -338,7 +364,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
     }
     //get any specified drop actions (with conditions)
     let action = item.Actions?.find((a) => {
-      return a.Verb === Drop;
+      return inCsv(a.Verb, Drop);
     });
     //create default drop action is no custom drop action defined
     if (action === null || action === undefined) {
@@ -346,10 +372,10 @@ export function Parse(input: string, items: Item[]): MyRequest {
         OK: true,
         Look: { Refresh: false, Brevity: true },
         Action: {
-          UnconditionalResponse: `You dropped the ${item.Name}.`,
+          UnconditionalResponse: `You dropped the ${item.Name.split(",")[0]}.`,
           Updates: [
             {
-              TargetItem: item.Name,
+              TargetItem: item.Name.split(",")[0],
               Property: Location,
               Value: location.Name,
             },
@@ -368,19 +394,33 @@ export function Parse(input: string, items: Item[]): MyRequest {
 
   //#region EXAMINE
   if (verb === Examine) {
-    let item = getItemByName(items, noun);
+    let local = getAccessibleItems(items);
+    let examinables = getItemsByName(local, noun);
+    if (examinables.length > 1) {
+      return {
+        OK: false,
+        Look: { Refresh: false, Brevity: true },
+        Action: {
+          UnconditionalResponse: "You'll have to be more specific.",
+        } as Action,
+      } as MyRequest;
+    }
+
+    let item = examinables[0];
     if (item === null || item === undefined) {
       return {
         OK: false,
         Look: { Refresh: false, Brevity: true },
         Action: {
-          UnconditionalResponse: "You can't examine that here.",
+          UnconditionalResponse: "You can't see that here.",
         } as Action,
       } as MyRequest;
     }
     //create default examine action is no custom examine action defined
     let state =
-      item.State === null || item.State === undefined ? "" : ` ${item.State}`;
+      item.State === null || item.State === undefined
+        ? ""
+        : ` ${capitalizeFirstLetter(item.State)}`;
     return {
       OK: false,
       Look: { Refresh: false, Brevity: true },
@@ -392,10 +432,21 @@ export function Parse(input: string, items: Item[]): MyRequest {
   //#endregion
 
   //#region CUSTOM VERB
-  let local = getAvailbleItem(items);
+  let local = getAccessibleItems(items);
+  let accessibles = getItemsByName(local, noun);
+  if (accessibles.length > 1) {
+    return {
+      OK: false,
+      Look: { Refresh: false, Brevity: true },
+      Action: {
+        UnconditionalResponse: "You'll have to be more specific.",
+      } as Action,
+    } as MyRequest;
+  }
+
   let target = getItemByName(local, noun);
-  let action = target?.Actions.find((a) => a.Verb.toLowerCase().includes(verb));
-  if (action !== null && action !== undefined) {
+  let action = target?.Actions?.find((a) => inCsv(a.Verb, verb));
+  if (okObject(action)) {
     return {
       OK: true,
       Look: { Refresh: false, Brevity: true },

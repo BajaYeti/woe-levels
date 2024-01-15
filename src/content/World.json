@@ -2,10 +2,10 @@
   {
     "Type": "version",
     "Name": "version",
-    "Description": "014"
+    "Description": "015"
   },
   {
-    "Name": "bunsen burner",
+    "Name": "bunsen burner,bunsen",
     "Prefix": "a",
     "Description": "It is a standard school grey metal burner with a round base and rotating collar to control the amount of air provided to the flame.",
     "Help": "Bunsen burners are great for burning things.",
@@ -36,7 +36,7 @@
     "State": "It is unlit but connected to the gas supply."
   },
   {
-    "Name": "fire alarm",
+    "Name": "fire alarm,alarm",
     "Prefix": "a",
     "Description": "It is a standard fire alarm break-glass, although the glass has already been broken and not repaired, indicating several former pranks.",
     "Help": "Triggering the fire alarm will cause a fire drill.",
@@ -57,7 +57,7 @@
     "Location": "entrance hall"
   },
   {
-    "Name": "flag pole",
+    "Name": "flag pole,pole",
     "Prefix": "a",
     "Description": "It is very tall and made of steel, painted with high-gloss grey paint; the quality of the paint finish is intended to impress.",
     "Type": "fixed",
@@ -295,7 +295,7 @@
     "Location": "assembly hall"
   },
   {
-    "Name": "table saw",
+    "Name": "table saw,saw",
     "Help": "Unless you fancy a trip to the hospital, it would be best left alone.",
     "Description": "The saw is dangerously unguarded and can be turned on with a simple switch to make it even less safe.",
     "Type": "fixed",
@@ -931,7 +931,7 @@
   },
   {
     "Name": "cooking room",
-    "Description": "The room is lined with worktops, sinks and half as many ovens. There is an enormous industrial-sized fridge in the corner for storing spoilable ingredients.",
+    "Description": "The room is lined with worktops, sinks and half as many ovens. There is an enormous industrial-sized fridge in the corner for storing spoilable ingredients. For safety reasons, you cannot use any equipment without express permission.",
     "Help": "Ovens make things hot, and fridges make things cold.",
     "Type": "location",
     "Actions": [
@@ -1372,7 +1372,7 @@
   },
   {
     "Name": "english language",
-    "Description": "The room has walls covered with information about the correct use of punctuation, case, tense, nouns, verbs,  similies, metaphors and onomatopoeias, yet strangely, nothing of swear words - something that exists in equal measures in the real world.",
+    "Description": "The room has walls covered with information about the correct use of punctuation, case, tense, nouns, verbs,  similies, metaphors and onomatopoeias, yet strangely, nothing of swear words; something that exists in equal measures in the real world.",
     "Help": "Swearing will get you an immediate detention in any part of the school. Still, if used grammatically correctly here, you might get away with it.",
     "Type": "location",
     "Actions": [
@@ -2720,7 +2720,7 @@
             "Item": "bike",
             "Property": "location",
             "Value": "player",
-            "FailResponse": "mr broom prevents you from going any further, he shouts \"vehicular access only! don't you know pedestrians and vehicles don't mix?\" before going about his other business."
+            "FailResponse": "Mr Broom appears and prevents you from going any further; he says \"Vehicular access only! Don't you know pedestrians and vehicles don't mix?\" before going about his business."
           }
         ]
       }
@@ -3287,6 +3287,7 @@
     "Actions": [
       {
         "Verb": "west",
+        "UnconditionalResponse": "You exit the pool area to the changing rooms and the gate closes behind you.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -3725,7 +3726,7 @@
     "Location": "workshop path"
   },
   {
-    "Name": "golden apple",
+    "Name": "golden apple,apple",
     "Prefix": "a",
     "Description": "The pure gold apple is inscribed with the words 'to the fairest'. Something tells you that it is filled with seeds of discord.",
     "Help": "The golden apple jogs your memory about something in one of the boring history lessons.",
@@ -3779,7 +3780,7 @@
     "State": "It is hanging from a tree branch."
   },
   {
-    "Name": "art homework",
+    "Name": "art homework,homework",
     "Prefix": "your",
     "Description": "The homework assignment is to draw something to please Miss Sketch based on the subjective discussions during the last art lessons. This is merely a test to show that you were paying attention. You couldn't ask Miss Sketch for clarification as your lack of concentration would be exposed; it would be best to extract the homework objective from Miss Sketch surreptiously.",
     "Help": "The roof of the school offers a great view of the town.",
@@ -3829,7 +3830,7 @@
     ]
   },
   {
-    "Name": "bangers",
+    "Name": "bangers,fireworks,crackers",
     "Prefix": "some",
     "Description": "The bangers are a packet of miniature fireworks, often procured on day trips to France. Rumour is that these are illegal in the UK, so they must be super-illegal in school.",
     "Help": "Setting light to the bangers is a jolly jape, but they would be better used as currency.",
@@ -3915,23 +3916,44 @@
             "Equality": "*",
             "Value": "toilet",
             "FailResponse": "There is nothing to fill the beaker with here."
+          },
+          {
+            "Item": "beaker",
+            "Property": "state",
+            "Equality": "*",
+            "Value": "empty",
+            "FailResponse": "The beaker is already full."
           }
         ]
       },
       {
-        "Verb": "drop",
+        "Verb": "empty,pour",
+        "Updates": [
+          {
+            "TargetItem": "beaker",
+            "Property": "state",
+            "Value": "It is empty, although it is scientifically full of air; this can be proved by submerging the inverted beaker into water."
+          }
+        ],
         "Conditions": [
           {
             "Item": "beaker",
+            "Property": "location",
+            "Value": "player",
+            "PassResponse": "You empty the beaker onto the floor, which is a waste of water but is also a waste of time."
+          },
+          {
+            "Item": "beaker",
             "Property": "state",
-            "Value": "empty",
-            "FailResponse": "Dropping a beaker full of water would make noise and a mess and draw attention from someone in authority, so it should be avoided."
+            "Equality": "*",
+            "Value": "water",
+            "FailResponse": "The beaker is already empty."
           }
         ]
       }
     ],
     "Location": "cooking room",
-    "State": "The beaker is empty, although it is scientifically full of air; this can be proved by submerging the inverted beaker into water."
+    "State": "It is empty, although it is scientifically full of air; this can be proved by submerging the inverted beaker into water."
   },
   {
     "Name": "bike",
@@ -3962,7 +3984,7 @@
     "Location": "bike sheds"
   },
   {
-    "Name": "bird box",
+    "Name": "bird box,box",
     "Prefix": "a",
     "Description": "The bird box is a simple construction, basically four sides, a floor, a sloped roof and a hole for entrance and egress.",
     "Type": "mobile",
@@ -4063,7 +4085,7 @@
     "State": "It is wedged in the crotch of two branches of one of the trees."
   },
   {
-    "Name": "blackboard rubber",
+    "Name": "blackboard rubber,rubber",
     "Prefix": "a",
     "Description": "The rubber has a smooth wooden handle attached to a very dusty felt pad. It is used primarily to remove chalk from a blackboard and secondarily as a weapon hurled by angry teachers and pupils.",
     "Type": "mobile",
@@ -4153,7 +4175,7 @@
     "Location": "news agent"
   },
   {
-    "Name": "calculator watch",
+    "Name": "calculator watch,watch",
     "Prefix": "a",
     "Description": "The watch is an oh-so-desirable state-of-the-art Casio CA-86 calculator watch; it even has a built-in game to combat boring maths lessons.",
     "Help": "Calculators can help solve complex mathematical problems.",
@@ -4260,7 +4282,7 @@
     "Location": "news agent"
   },
   {
-    "Name": "canister",
+    "Name": "film canister,canister",
     "Prefix": "a",
     "Description": "The canister is designed to hold a 35mm film cartridge, although it could be used to have anything that will fit inside.",
     "Help": "Film canisters help store small amounts of fluids or small goods.",
@@ -4269,7 +4291,7 @@
     "State": "it is empty"
   },
   {
-    "Name": "cards",
+    "Name": "playing cards,cards",
     "Prefix": "some",
     "Description": "The cards are a standard pack of playing cards, slightly worn but not excessively enough to identify individual cards.",
     "Help": "A lot of money can be won playing cards... and lost.",
@@ -4300,8 +4322,8 @@
     "State": "All the cards are ordered by suit and face value."
   },
   {
-    "Name": "cassette",
-    "Prefix": "an audio tape",
+    "Name": "audio cassette,tape",
+    "Prefix": "an",
     "Description": "The cassette is a standard D90 audio cassette of an affordable grade. The label partially reads \"Now That's What I Call\", but the rest of the label has been torn off.",
     "Help": "A cassette will help you groove on the move, but only if you have a player.",
     "Type": "mobile",
@@ -4374,7 +4396,7 @@
     "State": "The tape has unwound and is hanging out of the cassette."
   },
   {
-    "Name": "chemistry homework",
+    "Name": "chemistry homework,homework",
     "Prefix": "your",
     "Description": "The homework assignment is to investigate the properties of magnesium.",
     "Help": "Magnesium burns at very high temperatures and cannot be extinguished with water.",
@@ -4476,7 +4498,7 @@
     "Location": "bike sheds"
   },
   {
-    "Name": "drama homework",
+    "Name": "drama homework,homework",
     "Prefix": "your",
     "Description": "The homework assignment is to write an essay on the practical usage of dramatic pose.",
     "Type": "mobile",
@@ -4517,7 +4539,7 @@
     "State": "It is complete. You have chosen to write about faking poker tells, which is technically correct. Still, the drama teacher will frown on your chosen subject matter."
   },
   {
-    "Name": "english homework",
+    "Name": "english homework,homework",
     "Prefix": "your",
     "Description": "The homework is an assignment to write an essay about espionage.",
     "Type": "mobile",
@@ -4557,7 +4579,7 @@
     "State": "It is complete. You have chosen to write the synopsis of the James Bond 007 film you watched on TV last night."
   },
   {
-    "Name": "fifty quid",
+    "Name": "fifty quid,fifty",
     "Description": "It is a crisp, barely used fifty-pound note. It is vast compared to one-pound notes, almost as big as a handkerchief and far rarer.",
     "Help": "Fifty pounds will buy a lot of goods.",
     "Type": "mobile",
@@ -4667,7 +4689,7 @@
     "State": "It is filthy from being left in the storeroom for years."
   },
   {
-    "Name": "french homework",
+    "Name": "french homework,homework",
     "Prefix": "your",
     "Description": "The homework assignment is to write an essay about the French Revolution, in French.",
     "Type": "mobile",
@@ -4769,7 +4791,7 @@
     "Location": "science courtyard"
   },
   {
-    "Name": "GED homework",
+    "Name": "GED homework,homework",
     "Prefix": "your",
     "Description": "The homework is for the Geometric, Engineering and Design class. It's like an art class but more technical, using set squares and compasses.",
     "Help": "Make sure to distinguish a compass from a pair of compasses, or you may get lost.",
@@ -4810,7 +4832,7 @@
     "Location": "hidden"
   },
   {
-    "Name": "geography homework",
+    "Name": "geography homework,homework",
     "Prefix": "your",
     "Description": "The homework assignment is two-fold: write an essay on the Runcorn bus service and sketch Corfe Castle.",
     "State": "It is complete.",
@@ -4857,6 +4879,26 @@
     "Type": "mobile",
     "Actions": [
       {
+        "Verb": "drop",
+        "Updates": [
+          {
+            "TargetItem": "gloves",
+            "Property": "location",
+            "Value": "*location"
+          }
+        ],
+        "Conditions": [
+          {
+            "Item": "gloves",
+            "Property": "state",
+            "Equality": "!*",
+            "Value": "wearing",
+            "PassResponse": "You dropped the gloves.",
+            "FailResponse": "You try to drop the gloves, but they fail to slide off your hands."
+          }
+        ]
+      },
+      {
         "Verb": "wear,don",
         "Updates": [
           {
@@ -4876,12 +4918,12 @@
         ]
       },
       {
-        "Verb": "drop,remove,undress,doff",
+        "Verb": "remove,undress,doff",
         "Updates": [
           {
             "TargetItem": "gloves",
             "Property": "state",
-            "Value": "they look like a perfect fit."
+            "Value": "They look like a perfect fit."
           }
         ],
         "Conditions": [
@@ -4913,7 +4955,7 @@
     "Location": "wood workshop"
   },
   {
-    "Name": "history homework",
+    "Name": "history homework,homework",
     "Prefix": "your",
     "Description": "The homework is an assignment to write about the Battle of Hastings, which is far less attractive than it sounds.",
     "Type": "mobile",
@@ -5263,7 +5305,7 @@
     "Location": "north copse"
   },
   {
-    "Name": "maths homework",
+    "Name": "maths homework,homework",
     "Prefix": "your",
     "Description": "The homework is an assignment to compare percentages and fractions.",
     "Help": "Maths is an unpopular subject but one of the more practical subjects.",
@@ -5336,7 +5378,7 @@
     "State": "your maths homework assignment is to compare percentages and fractions, unfortunately it is completely blank."
   },
   {
-    "Name": "metalwork homework",
+    "Name": "metalwork homework,homework",
     "Prefix": "your",
     "Description": "The homework is an assignment to write an essay on the life and work of Richard Trevithick; despite metalwork being a practical subject utilising dangerous tools, it can still be brought down to academic drudgery.",
     "Help": "Who is Richard Trevithick?",
@@ -5344,12 +5386,32 @@
     "Location": "tennis courts"
   },
   {
-    "Name": "moustache",
+    "Name": "moustache,tache",
     "Prefix": "a false",
     "Description": "The moustache is cheap and made of black plastic, the kind you would expect to find inside inexpensive Christmas crackers, along with a terrible joke and a paper crown which is too small.",
     "Help": "A false moustache works well as a disguise and allows you to pretend to be someone else.",
     "Type": "mobile",
     "Actions": [
+      {
+        "Verb": "drop",
+        "Updates": [
+          {
+            "TargetItem": "moustache",
+            "Property": "location",
+            "Value": "*location"
+          }
+        ],
+        "Conditions": [
+          {
+            "Item": "moustache",
+            "Property": "state",
+            "Equality": "!*",
+            "Value": "wearing",
+            "PassResponse": "You drop the moustache.",
+            "FailResponse": "You try to drop the moustache, but it is still attached to your face."
+          }
+        ]
+      },
       {
         "Verb": "wear,don",
         "Updates": [
@@ -5370,7 +5432,7 @@
         ]
       },
       {
-        "Verb": "drop, remove,doff",
+        "Verb": "remove,doff",
         "Updates": [
           {
             "TargetItem": "moustache",
@@ -5399,7 +5461,7 @@
     "Location": "drama cupboard"
   },
   {
-    "Name": "music homework",
+    "Name": "music homework,homework",
     "Prefix": "your",
     "Description": "The homework is an assignment to evaluate the meaning of a classical piece of music and dissect the lyrics.",
     "Type": "mobile",
@@ -5528,7 +5590,7 @@
     "Location": "chinese takeaway"
   },
   {
-    "Name": "pencil sharpener",
+    "Name": "pencil sharpener,sharpener",
     "Description": "The sharpener has a rusty steel blade and a dull grey metal body; it doesn't weigh much. It is essential for sharpening a blunt or broken pencil.",
     "Help": "Metal pencil sharpeners are made of a magnesium alloy.",
     "Type": "mobile",
@@ -5568,7 +5630,7 @@
     "State": "It's in good condition considering its age."
   },
   {
-    "Name": "physics homework",
+    "Name": "physics homework,homework",
     "Prefix": "your",
     "Description": "The homework is an assignment to investigate the applications of light amplification stimulation by the emission of radiation. It has a membership card for the physics club attached.",
     "Type": "mobile",
@@ -5610,13 +5672,13 @@
     "State": "It is complete all except the conclusions."
   },
   {
-    "Name": "shackle lock",
+    "Name": "shackle lock,lock",
     "Description": "The lock is a combination lock.",
     "Help": "A key cannot open a combination lock.",
     "Type": "mobile",
     "Actions": [
       {
-        "Verb": "break,pry,open",
+        "Verb": "break,pry,open,unlock",
         "Updates": [
           {
             "TargetItem": "shackle lock",
@@ -5694,6 +5756,26 @@
     "Type": "mobile",
     "Actions": [
       {
+        "Verb": "drop",
+        "Updates": [
+          {
+            "TargetItem": "sunglasses",
+            "Property": "location",
+            "Value": "*location"
+          }
+        ],
+        "Conditions": [
+          {
+            "Item": "sunglasses",
+            "Property": "state",
+            "Equality": "!*",
+            "Value": "wearing",
+            "PassResponse": "You drop the sunglasses.",
+            "FailResponse": "You try to drop the sunglasses, but they are still attached to your face."
+          }
+        ]
+      },
+      {
         "Verb": "wear,don",
         "Updates": [
           {
@@ -5713,7 +5795,7 @@
         ]
       },
       {
-        "Verb": "drop,remove,doff",
+        "Verb": "remove,doff",
         "Updates": [
           {
             "TargetItem": "sunglasses",
@@ -5743,7 +5825,7 @@
     "State": "they are folded up."
   },
   {
-    "Name": "swimming certificate",
+    "Name": "swimming certificate,certificate",
     "Prefix": "your",
     "Description": "The certificate confirms that you have swam 40 lengths of a swimming pool or 1km in closed water.",
     "Type": "mobile",
@@ -5773,7 +5855,7 @@
     "State": "It is soaking wet, and the ink has run, making it barely readable."
   },
   {
-    "Name": "swimming trunks",
+    "Name": "swimming trunks,trunks",
     "Prefix": "a pair of",
     "Description": "The trunks are unflattering, and you outgrew them long ago, meaning they leave nothing to the imagination.",
     "Help": "Swimming trunks are the only attire permitted to be worn in the pool.",
@@ -5785,7 +5867,7 @@
           {
             "TargetItem": "swimming trunks",
             "Property": "location",
-            "Value": "n/a"
+            "Value": "*location"
           }
         ],
         "Conditions": [
@@ -5804,7 +5886,7 @@
           {
             "TargetItem": "swimming trunks",
             "Property": "state",
-            "Value": "you are wearing the trunks."
+            "Value": "You are wearing the trunks."
           }
         ],
         "Conditions": [
@@ -5840,7 +5922,7 @@
     "State": "They look like a tight fit."
   },
   {
-    "Name": "tennis ball",
+    "Name": "tennis ball,ball",
     "Prefix": "a",
     "Description": "The ball is standard but of an expensive brand. The felt is worn, and the seem has seen better days.",
     "Type": "mobile",
@@ -5854,8 +5936,8 @@
     "Location": "typing pool"
   },
   {
-    "Name": "Walkman",
-    "Prefix": "a Sony",
+    "Name": "Sony Walkman,Sony,Walkman",
+    "Prefix": "a",
     "Description": "The Walkman is the holy grail of musical entertainment during break times. This particular model is a twin-motor range-topper complete with a rewind feature.",
     "Help": "Other portable cassette players are available.",
     "Type": "mobile",

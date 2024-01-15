@@ -53,11 +53,11 @@ export default function Input(props: CommandType) {
     //#endregion
 
     //#region check conditions
-    let repsone = Check(request.Action, props.items);
-    if (repsone.Feedback) {
-      newLog.push(repsone.Feedback);
+    let response = Check(request.Action, props.items);
+    if (response.Feedback) {
+      newLog.push(capitalizeFirstLetter(response.Feedback));
     }
-    if (repsone.OK === false) {
+    if (response.OK === false) {
       props.setLog(newLog);
       setInput("");
       return;
@@ -71,7 +71,7 @@ export default function Input(props: CommandType) {
       props.setItems(result.Items);
       //display any message returned from processing
       if (result.Feedback) {
-        newLog.push(result.Feedback);
+        newLog.push(capitalizeFirstLetter(result.Feedback));
       }
       let location = getLocation(props.items);
       //if user moved, display new location description

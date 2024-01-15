@@ -1,4 +1,5 @@
 import { getItemByName } from "./ItemQueries";
+import { okString } from "./Utils";
 
 /**
  * Check all conditions for an action
@@ -76,7 +77,8 @@ export function Check(action: Action, items: Array<Item>): Check {
   //return flatted uncondition response if all conditions pass
   let failed = checked.find((c) => c.OK === false);
   if (failed === null || failed === undefined) {
-    let flattened = checked.map((c) => c.Feedback).join(". ");
+    let filtered = checked.filter((c) => okString(c.Feedback));
+    let flattened = filtered.map((c) => c.Feedback).join(". ");
     return { OK: true, Feedback: flattened };
   }
   return failed;
