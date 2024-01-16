@@ -2,7 +2,7 @@
   {
     "Type": "version",
     "Name": "version",
-    "Description": "015"
+    "Description": "016"
   },
   {
     "Name": "bunsen burner,bunsen",
@@ -61,6 +61,7 @@
     "Prefix": "a",
     "Description": "It is very tall and made of steel, painted with high-gloss grey paint; the quality of the paint finish is intended to impress.",
     "Type": "fixed",
+    "Help": "The flag pole cannot be scaled, but hoisting something up the flag pole would dislodge your history homework.",
     "Actions": [
       {
         "Verb": "climb,scale",
@@ -75,12 +76,23 @@
     "State": "It is devoid of any flag."
   },
   {
-    "Name": "fruit machine",
+    "Name": "fruit machine,machine,fruity",
     "Prefix": "a",
     "Description": "The standard JDM unit has flashing lights and hold and nudge functionality. The volume has been turned way down, so the endless attract mode does not drive the chippy owner mad.",
     "Help": "The fruit machine costs 50 pence to play but yields a healthy jackpot if you're lucky.",
     "Type": "fixed",
     "Actions": [
+      {
+        "Verb": "shake,wobble,hit,smash,strike",
+        "UnconditionalResponse": "You hit and shake the fruit machine, hoping to dispense free money, but the alarm blares, and you hear the owner approaching from the kitchen. Without waiting to see what happens, you scarper until you run out of breath.",
+        "Updates": [
+          {
+            "TargetItem": "player",
+            "Property": "location",
+            "Value": "front street"
+          }
+        ]
+      },
       {
         "Verb": "use,play",
         "Updates": [
@@ -1667,7 +1679,7 @@
             "Equality": "=",
             "Value": "player",
             "PassResponse": "Mr Head leaps out to confront you, but seeing your trusty pencil return to his regular beat, this is not the last time you will need your trusty pencil, so don't lose it.",
-            "FailResponse": "Mr Head leaps in front of you, blocks your progress and scorns \"You look ill-equipped for a day of learning in my fine institutional establishment!\" while failing to tell you the exact problem before disappearing."
+            "FailResponse": "Mr Head leaps in front of you, blocks your progress and scorns \"You look ill-equipped for a day of learning in my exemplary academic institution.\" while failing to tell you the exact problem before disappearing."
           }
         ]
       }
@@ -3084,7 +3096,7 @@
             "Equality": "=",
             "Value": "player",
             "PassResponse": "Mr Head leaps out to confront you, but seeing your trusty pencil return to his regular beat, this is not the last time you will need your trusty pencil, so don't lose it.",
-            "FailResponse": "Mr Head leaps in front of you, blocks your progress and scorns \"You look ill-equipped for a day of learning in my fine institutional establishment!\" while failing to tell you the exact problem before disappearing."
+            "FailResponse": "Mr Head leaps in front of you, blocks your progress and scorns \"You look ill-equipped for a day of learning in my exemplary academic institution.\" while failing to tell you the exact problem before disappearing."
           }
         ]
       }
@@ -3813,7 +3825,7 @@
         ]
       }
     ],
-    "Location": "main store room",
+    "Location": "ged hut",
     "State": "The page or your art homework folder is entirely blank."
   },
   {
@@ -3821,7 +3833,7 @@
     "Prefix": "a",
     "Description": "The balloon is a polka-dotted behemoth and promises adventures untold when inflated. ",
     "Type": "mobile",
-    "Location": "news agent",
+    "Location": "west stairwell second floor",
     "Actions": [
       {
         "Verb": "inflate",
@@ -4287,7 +4299,7 @@
     "Description": "The canister is designed to hold a 35mm film cartridge, although it could be used to have anything that will fit inside.",
     "Help": "Film canisters help store small amounts of fluids or small goods.",
     "Type": "mobile",
-    "Location": "west toilets",
+    "Location": "sixth form",
     "State": "it is empty"
   },
   {
@@ -4495,7 +4507,7 @@
         ]
       }
     ],
-    "Location": "bike sheds"
+    "Location": "car park"
   },
   {
     "Name": "drama homework,homework",
@@ -4597,7 +4609,7 @@
         "UnconditionalResponse": "The file can be used on many metal items to shape them; try filing specific items."
       }
     ],
-    "Location": "north copse",
+    "Location": "weird room",
     "State": "The wooden handle is worn and split, and the blade is rusty but still functional."
   },
   {
@@ -4952,7 +4964,7 @@
     "Description": " The hammer is a standard imperial 12lb ball pein hammer with a smooth wooden handle.",
     "Help": "Hammers are great for hammering, especially nails.",
     "Type": "mobile",
-    "Location": "wood workshop"
+    "Location": "typing pool"
   },
   {
     "Name": "history homework,homework",
@@ -5020,7 +5032,7 @@
     "Prefix": "a",
     "Description": "The javelin is long and sharp enough to piece soft ground when dropped from a height but not strong enough to cause injury to pupils.",
     "Type": "mobile",
-    "Location": "home store room"
+    "Location": "athletics field"
   },
   {
     "Name": "key",
@@ -5114,7 +5126,7 @@
         ]
       }
     ],
-    "Location": "bike sheds",
+    "Location": "administration office",
     "State": "It is blank with no bidding, so it won't fit any lock."
   },
   {
@@ -5123,7 +5135,7 @@
     "Description": "The ladders is a sturdy aluminium combination step ladder and work ladder; it's lightweight but robust.",
     "Help": "The ladder can be used to reach high places.",
     "Type": "mobile",
-    "Location": "main store room"
+    "Location": "back stage"
   },
   {
     "Name": "lamp",
@@ -5132,6 +5144,10 @@
     "Help": "The lamp can be used to see in dark places.",
     "Type": "mobile",
     "Actions": [
+      {
+        "Verb": "rub",
+        "UnconditionalResponse": "You rub the lamp in the hope of being granted 3 wishes, but instead, you get a single dose of reality; there is no magic here."
+      },
       {
         "Verb": "light,on",
         "Updates": [
@@ -5196,7 +5212,7 @@
         ]
       }
     ],
-    "Location": "main store room",
+    "Location": "top of east stairwell",
     "State": "The lamp is empty."
   },
   {
@@ -5293,7 +5309,7 @@
     "Prefix": "a",
     "Description": "The magazine is a monthly video game mag.",
     "Type": "mobile",
-    "Location": "news agent",
+    "Location": "computer room",
     "State": "It is very tatty and worn; it has been read much more than many books in the school library."
   },
   {
@@ -5302,7 +5318,7 @@
     "Description": "The matches are in a pocket-sized box containing dozens of matches. As long as they stay dry, they will always strike.",
     "Help": "Matches are great for setting fire to things.",
     "Type": "mobile",
-    "Location": "north copse"
+    "Location": "science store room"
   },
   {
     "Name": "maths homework,homework",
@@ -5383,7 +5399,7 @@
     "Description": "The homework is an assignment to write an essay on the life and work of Richard Trevithick; despite metalwork being a practical subject utilising dangerous tools, it can still be brought down to academic drudgery.",
     "Help": "Who is Richard Trevithick?",
     "Type": "mobile",
-    "Location": "tennis courts"
+    "Location": "south stairwell second floor"
   },
   {
     "Name": "moustache,tache",
@@ -5508,7 +5524,7 @@
     "Description": "The nails are box nails made of bright steel, which are 1 inch long.",
     "Help": "Nails are great for holding pieces of wood together.",
     "Type": "mobile",
-    "Location": "wood workshop"
+    "Location": "sewing room"
   },
   {
     "Name": "never",
@@ -5559,7 +5575,7 @@
     "Description": "The patch is from a bicycle tyre puncture repair kit. It is pre-glued, so fixing a puncture is as easy as peeling the backing off and applying the patch, provided the inner tube is accessible and prepared.",
     "Help": "A bicycle with a puncture is just a walking machine.",
     "Type": "mobile",
-    "Location": "art studio"
+    "Location": "gym"
   },
   {
     "Name": "pencil",
@@ -5739,14 +5755,14 @@
         ]
       }
     ],
-    "Location": "main store room"
+    "Location": "bins"
   },
   {
     "Name": "splint",
     "Prefix": "a",
     "Description": "A small piece of softwood that looks like a long, thin lolly stick. Splints must be used to light Bunsen burners; any other naken flame is strictly forbidden.",
     "Type": "mobile",
-    "Location": "south copse"
+    "Location": "cricket pitch"
   },
   {
     "Name": "sunglasses",
@@ -6008,7 +6024,7 @@
   {
     "Name": "dog",
     "Prefix": "a",
-    "Description": "It is a long-haired golden retriever with mischief in its eyes and energy in its belly. It bounds around when you approach in an attempt to play. A random dog on school property is the best thing to happen during a school day.",
+    "Description": "It is a long-haired golden retriever with mischief in its eyes and energy in its belly. It bounds around when you approach in an attempt to play. A random dog on school property is the best thing to happen during a school day. It has a tag around its neck that reads \"McGuffin\".",
     "Type": "person",
     "Location": "athletics field",
     "State": "It has some homework in its mouth; unless you recover it, you can use the cliched excuse, \"The dog ate my homework.\""
