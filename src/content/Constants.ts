@@ -1,4 +1,4 @@
-export const AppVersion = "109";
+export const AppVersion = "110";
 export const AppTitle = "Woe Levels";
 export const AppAuthor = "BajaYeti";
 export const LocalStoargeKey = "woe-levels";
@@ -28,10 +28,10 @@ export const AboutResponse =
 
 export const InstructionsResponse = `Type 'verb noun' actions. Nouns are multi-word items or people, 
   each having a collection of specific verbs, for example:|
-  - get lamp|- examine lamp|- light lamp|
+  - get lamp|- rub lamp|- light lamp|
   Nonspecific verbs include:|
-  - Move; north, northeast, east, southeast, south, southwest, west, northwest, in, out, up and down.|
-  - Interact; look, inventory and help.|
+  - Move; north (n), northeast (ne), east (e), southeast (se), south (s), southwest (sw), west (w), northwest (nw), in (i), out (o), up (u) and down (d).|
+  - Interact; look (l), inventory (inv) and help (h).|
   - Progress; about, instructions, save and load.`;
 
 export const Moves: Array<string> = [
