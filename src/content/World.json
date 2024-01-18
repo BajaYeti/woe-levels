@@ -2,7 +2,7 @@
   {
     "Type": "version",
     "Name": "version",
-    "Description": "016"
+    "Description": "100"
   },
   {
     "Name": "bunsen burner,bunsen",
@@ -1650,7 +1650,7 @@
   {
     "Name": "front path",
     "Description": "The path is well attended, and the surrounding lawns are immaculate; the entire school maintenance budget may have been spent here merely to impress passers-by and anyone who won't ever venture inside.",
-    "Help": "Don't show weakness here; you will need all your fortitude to survive the day.",
+    "Help": "Mr Head is keen that all pupils are permanently equipped for learning, which starts with a humble pencil. You remember last having your pencil in a nearby shop.",
     "Type": "location",
     "Actions": [
       {
@@ -1688,7 +1688,7 @@
   },
   {
     "Name": "front street",
-    "Description": "The street runs north/south, with the school to the west. The street is the greyest, gloomiest place in the morning; after 15:30, it's a brightly lit golden pathway to freedom and happiness.",
+    "Description": "The street runs north/south, with the school to the west. It is the greyest, gloomiest place in the morning; after 15:30, it's a brightly lit golden pathway to freedom and happiness.",
     "Help": "You will need all the help you can get because last night's homework assignments were English, French, maths, physics, biology, chemistry, geography, history, woodwork, metalwork, P.E., GED, art, home economics and drama. Good job, there was less than usual homework yesterday!",
     "Type": "location",
     "Actions": [
@@ -1861,6 +1861,23 @@
             "TargetItem": "player",
             "Property": "location",
             "Value": "ged hut"
+          }
+        ],
+        "Conditions": [
+          {
+            "Item": "compasses",
+            "Property": "location",
+            "Equality": "=",
+            "Value": "player",
+            "PassResponse": "Mr Square greets you with a smile, a rarity among teachers.",
+            "FailResponse": "Mr Square blocks your path. \"All the compasses have been stolen, probably for homemade tattooing; you'll need to provide your own this week.\" he assumes."
+          },
+          {
+            "Item": "pencil",
+            "Property": "location",
+            "Equality": "!",
+            "Value": "player",
+            "FailResponse": "Mr Square blocks your path. \"Come on! You know the rules. Anything less than H2 will carbon-stain the equipment and cause smudges.\" he asserts."
           }
         ]
       },
@@ -2539,7 +2556,7 @@
   {
     "Name": "north driveway",
     "Description": "The driveway connects the school property to the public road and allows small vehicle access. The north driveway entrance is used mainly by pupils who cycle to school, those who live the furthest away and don't have the luxury of generous parents to provide endless taxi services.",
-    "Help": "The driveway is the only place to take bicycles into and out of the school property.",
+    "Help": "The driveway is the only place to take bicycles into and out of the school property. But even with your bike, you are unlikely to escape with submitting all your homework assignments from last night: English, French, maths, physics, biology, chemistry, geography, history, woodwork, metalwork, P.E., GED, art, home economics and drama.",
     "Type": "location",
     "Actions": [
       {
@@ -3857,7 +3874,7 @@
             "Property": "location",
             "Value": "player",
             "PassResponse": "As amusing as it would be, setting off fireworks in school would guarantee a suspension or, at worst, permanent exclusion!",
-            "FailResponse": "You aren't carrying anything to light the bangers with."
+            "FailResponse": "You aren't carrying anything which could light the bangers."
           }
         ]
       },
@@ -4334,6 +4351,37 @@
     "State": "All the cards are ordered by suit and face value."
   },
   {
+    "Name": "RS homework",
+    "Prefix": "your",
+    "Description": "The Religeous Studies homework assignment is to write an essay on the meaning of life. You have yet to learn the meaning of life, but it is a theological lesson to show that you are not alone.",
+    "Help": "The meaning of life is not 42.",
+    "Type": "mobile",
+    "State": "You have facetiously completed the essay with a simple \"42\"; the shorted essay in history, but shows you have read at least one library book.",
+    "Location": "hidden",
+    "Actions": [
+      {
+        "Verb": "give,submit",
+        "Conditions": [
+          {
+            "Item": "rs homework",
+            "Property": "location",
+            "Equality": "=",
+            "Value": "player",
+            "PassResponse": "You attempt to hand your RS homework to Mrs Cross, but she spurns the exercise book, and your RS homework stays in your hand.",
+            "FailResponse": "You aren't carrying your RS homework."
+          },
+          {
+            "Item": "player",
+            "Property": "location",
+            "Equality": "=",
+            "Value": "staff room",
+            "FailResponse": "There is no one here who wants your RS homework."
+          }
+        ]
+      }
+    ]
+  },
+  {
     "Name": "audio cassette,tape",
     "Prefix": "an",
     "Description": "The cassette is a standard D90 audio cassette of an affordable grade. The label partially reads \"Now That's What I Call\", but the rest of the label has been torn off.",
@@ -4463,7 +4511,28 @@
     "Description": "The chips are wrapped in greaseproof and white paper; they are still warm, although slightly soggy and smell of vinegar.",
     "Help": "Despite the commonly held belief, eating chips will not give you acne.",
     "Type": "mobile",
-    "Location": "chinese takeaway"
+    "Location": "chinese takeaway",
+    "Actions": [
+      {
+        "Verb": "eat",
+        "Updates": [
+          {
+            "TargetItem": "chips",
+            "Property": "state",
+            "Value": "They are in an opened paper bag, some of the chips are missing."
+          }
+        ],
+        "Conditions": [
+          {
+            "Item": "chips",
+            "Property": "location",
+            "Value": "player",
+            "PassResponse": "You gingerly eat one of the chips; it's not great, but it's better than school dinners.",
+            "FailResponse": "You aren't carrying the chips."
+          }
+        ]
+      }
+    ]
   },
   {
     "Name": "cigarettes",
@@ -5032,7 +5101,20 @@
     "Prefix": "a",
     "Description": "The javelin is long and sharp enough to piece soft ground when dropped from a height but not strong enough to cause injury to pupils.",
     "Type": "mobile",
-    "Location": "athletics field"
+    "Location": "athletics field",
+    "Actions": [
+      {
+        "Verb": "throw,chuck,lob,toss",
+        "UnconditionalResponse": "You throw the javelin as far as possible, but it only goes so far. You will never make the Olympics.",
+        "Updates": [
+          {
+            "TargetItem": "javelin",
+            "Property": "location",
+            "Value": "*location"
+          }
+        ]
+      }
+    ]
   },
   {
     "Name": "key",
@@ -5310,7 +5392,46 @@
     "Description": "The magazine is a monthly video game mag.",
     "Type": "mobile",
     "Location": "computer room",
-    "State": "It is very tatty and worn; it has been read much more than many books in the school library."
+    "State": "It is very tatty and worn; it has been read much more than many books in the school library.",
+    "Actions": [
+      {
+        "Verb": "give",
+        "Conditions": [
+          {
+            "Item": "magazine",
+            "Property": "location",
+            "Equality": "=",
+            "Value": "player",
+            "FailResponse": "You aren't carrying the compasses.",
+            "PassResponse": "You hand the magazine to Spider, who is delighted to receive it. \"Ah, cool, I'm missing that edition from my collection. Here, swap you this for it?\" he enquires and completes the deal by tossing the compasses at your feet without waiting for confirmation."
+          },
+          {
+            "Item": "player",
+            "Property": "location",
+            "Equality": "=",
+            "Value": "french room",
+            "FailResponse": "There is no one here who wants the magazine."
+          }
+        ],
+        "Updates": [
+          {
+            "TargetItem": "magazine",
+            "Property": "location",
+            "Value": "hidden"
+          },
+          {
+            "TargetItem": "compasses",
+            "Property": "location",
+            "Value": "french room"
+          },
+          {
+            "TargetItem": "spider webb",
+            "Property": "state",
+            "Value": "He is happily reading the magazine."
+          }
+        ]
+      }
+    ]
   },
   {
     "Name": "matches",
@@ -5337,11 +5458,6 @@
           },
           {
             "TargetItem": "mr bodmas",
-            "Property": "location",
-            "Value": "staff room"
-          },
-          {
-            "TargetItem": "mr bodmas",
             "Property": "state",
             "Value": "He is holding your maths homework."
           }
@@ -5351,7 +5467,7 @@
             "Item": "mr bodmas",
             "Property": "location",
             "Value": "maths room",
-            "PassResponse": "Mr Bodmas takes your maths homework, flips through it briefly, shrugs and scuttles off to the staff room.",
+            "PassResponse": "Mr Bodmas takes your maths homework, flips through it briefly, shrugs and returns to cleaning the blackboard.",
             "FailResponse": "There is no one here who wants your maths homework."
           },
           {
@@ -5762,7 +5878,28 @@
     "Prefix": "a",
     "Description": "A small piece of softwood that looks like a long, thin lolly stick. Splints must be used to light Bunsen burners; any other naken flame is strictly forbidden.",
     "Type": "mobile",
-    "Location": "cricket pitch"
+    "Location": "cricket pitch",
+    "Actions": [
+      {
+        "Verb": "light,use",
+        "Conditions": [
+          {
+            "Item": "splint",
+            "Property": "location",
+            "Value": "player",
+            "PassResponse": "You light the splint and use it to light the Bunsen burner.",
+            "FailResponse": "You aren't carrying the splint."
+          },
+          {
+            "Item": "matches",
+            "Property": "location",
+            "Equality": "=",
+            "Value": "player",
+            "FailResponse": "YYou aren't carrying anything which could light the splint."
+          }
+        ]
+      }
+    ]
   },
   {
     "Name": "sunglasses",
@@ -5942,7 +6079,44 @@
     "Prefix": "a",
     "Description": "The ball is standard but of an expensive brand. The felt is worn, and the seem has seen better days.",
     "Type": "mobile",
-    "Location": "tennis courts"
+    "Location": "tennis courts",
+    "Actions": [
+      {
+        "Verb": "throw",
+        "Updates": [
+          {
+            "TargetItem": "tennis ball",
+            "Property": "location",
+            "Value": "hidden"
+          },
+          {
+            "TargetItem": "dog",
+            "Property": "state",
+            "Value": "It is playing contentedly with the tennis ball."
+          },
+          {
+            "TargetItem": "RS Homework",
+            "Property": "location",
+            "Value": "athletics field"
+          }
+        ],
+        "Conditions": [
+          {
+            "Item": "tennis ball",
+            "Property": "location",
+            "Value": "player",
+            "PassResponse": "MacGuffin sits and fixes its gaze on you, ready to react. MacGuffin drops the less attractive homework as you throw the ball and leaps into the air, intercepting the tennis ball and performing a perfect landing.",
+            "FailResponse": "You aren't carrying the tennis ball."
+          },
+          {
+            "Item": "player",
+            "Property": "location",
+            "Value": "athletics field",
+            "FailResponse": "You throw the tennis ball with all your might, and it sails into the distance; it strikes something solid, rebounds and returns. To your amazement, you catch it."
+          }
+        ]
+      }
+    ]
   },
   {
     "Name": "typewriter",
@@ -6024,7 +6198,7 @@
   {
     "Name": "dog",
     "Prefix": "a",
-    "Description": "It is a long-haired golden retriever with mischief in its eyes and energy in its belly. It bounds around when you approach in an attempt to play. A random dog on school property is the best thing to happen during a school day. It has a tag around its neck that reads \"McGuffin\".",
+    "Description": "It is a long-haired golden retriever with mischief in its eyes and energy in its belly. It bounds around when you approach in an attempt to play. A random dog on school property is the best thing to happen during a school day. It has a tag around its neck that reads \"MacGuffin\".",
     "Type": "person",
     "Location": "athletics field",
     "State": "It has some homework in its mouth; unless you recover it, you can use the cliched excuse, \"The dog ate my homework.\""
@@ -6154,7 +6328,14 @@
     "State": "She looked like she missed breakfast and looked hungry and agitated."
   },
   {
-    "Name": "pierre",
+    "Name": "Mrs Cross",
+    "Description": "She is the Religious Studies teacher responsible for helping pupils find and follow their faith, regardless of denomination.",
+    "Type": "person",
+    "Location": "staff room",
+    "State": "She is having a crisis of faith and is refusing to take any further classes or even leave the staff room."
+  },
+  {
+    "Name": "Pierre",
     "Description": "He is a French exchange student who is effortlessly chic and oozes European charisma that makes him attractive. Still, he is unbothered by such existential concerns.",
     "Help": "Pierre does not appreciate UK life and misses his home country.",
     "Type": "person",
@@ -6163,9 +6344,10 @@
   },
   {
     "Name": "Spider Webb",
-    "Description": "He is an unpredictable pupil, sometimes friendly and other times aggressive, probably best avoided.",
+    "Description": "He is an unpredictable pupil, sometimes friendly and other times unknowingly aggressive. Unfortunately, you are paired with him for French studies.",
     "Type": "person",
-    "Location": "french room"
+    "Location": "french room",
+    "State": "He is carrying a pair of compasses with which he lunges at you, but you competently avoid it."
   },
   {
     "Name": "player",
