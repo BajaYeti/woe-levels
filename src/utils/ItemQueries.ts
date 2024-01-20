@@ -45,7 +45,9 @@ export function getAccessibleItems(items: Array<Item>): Array<Item> {
   let location = getLocation(items);
   return items.filter((i) => {
     return (
-      (i.Type.toLowerCase() === Mobile || i.Type.toLowerCase() === Fixed) &&
+      (i.Type.toLowerCase() === Mobile ||
+        i.Type.toLowerCase() === Fixed ||
+        i.Type.toLowerCase() === Person) &&
       (i.Location.toLowerCase() === location?.Name.toLowerCase() ||
         i.Location.toLowerCase() === Player)
     );
@@ -63,7 +65,9 @@ export function getVisibleItems(items: Array<Item>): Array<Item> {
   return items.filter(
     (i) =>
       i.Location === location?.Name &&
-      (i.Type === Mobile || i.Type === Fixed || i.Type === Person)
+      (i.Type.toLowerCase() === Mobile ||
+        i.Type.toLowerCase() === Fixed ||
+        i.Type.toLowerCase() === Person)
   );
 }
 

@@ -2,10 +2,10 @@
   {
     "Type": "version",
     "Name": "version",
-    "Description": "101"
+    "Description": "102"
   },
   {
-    "Name": "bunsen burner,bunsen",
+    "Name": "bunsen burner,bunsen,burner",
     "Prefix": "a",
     "Description": "It is a standard school grey metal burner with a round base and rotating collar to control the amount of air provided to the flame.",
     "Help": "Bunsen burners are great for burning things.",
@@ -149,7 +149,7 @@
             "Property": "location",
             "Equality": "=",
             "Value": "player",
-            "PassResponse": "You reconnect the wire, tuck it back into the body of the laser and close the panel, knocking the power switch on and firing a red beam of light which reflects off a chrome tap., then a mirror and finally focus on your physics homework, burning a mark on it.",
+            "PassResponse": "You reconnect the wire, tuck it back into the body of the laser and close the panel, knocking the power switch on and firing a red beam of light which reflects off a chrome tap, then a mirror and finally focus on your physics homework, burning a mark on it.",
             "FailResponse": "Dr Atom looks up from reading the laser maintenance manual and shouts \"Don't touch that! Only members of the physics club are allowed to use it\""
           },
           {
@@ -1251,7 +1251,7 @@
       }
     ],
     "Location": "east canteen",
-    "State": "It is packed with popular boys and girls, and everyone is doing their best to out-dress each other, like strutting peacocks to become the alpha male or female."
+    "State": "It is packed with popular pupils, and everyone is doing their best to out-dress each other, like strutting peacocks to become the alpha male or female."
   },
   {
     "Name": "east stairwell first floor",
@@ -3772,7 +3772,7 @@
           {
             "TargetItem": "golden apple",
             "Property": "state",
-            "Value": "TODO - clear state"
+            "Value": ""
           }
         ],
         "Conditions": [
@@ -3792,6 +3792,11 @@
             "TargetItem": "ged homework",
             "Property": "location",
             "Value": "east canteen"
+          },
+          {
+            "TargetItem": "apple",
+            "Property": "location",
+            "Value": "hidden"
           }
         ],
         "Conditions": [
@@ -5723,6 +5728,7 @@
   },
   {
     "Name": "pencil sharpener,sharpener",
+    "Prefix": "a",
     "Description": "The sharpener has a rusty steel blade and a dull grey metal body; it doesn't weigh much. It is essential for sharpening a blunt or broken pencil.",
     "Help": "Metal pencil sharpeners are made of a magnesium alloy.",
     "Type": "mobile",
@@ -5934,7 +5940,7 @@
           {
             "TargetItem": "sunglasses",
             "Property": "state",
-            "Value": "You are wearing them."
+            "Value": "You are wearing the sunglasses."
           }
         ],
         "Conditions": [

@@ -19,7 +19,7 @@ export function getExits(location: Item | undefined): string {
       lastCommaIndex
     )} and${exitList?.substring(lastCommaIndex + 1)}`;
   }
-  return `Exits: ${capitalizeFirstLetter(exitList)}`;
+  return `Exits: ${capitalizeFirstLetter(exitList)}.`;
 }
 
 export function getInventory(items: Array<Item>): string {
@@ -70,7 +70,7 @@ export function getLocationDescription(
   ) {
     description = `${capitalizeFirstLetter(location?.Name)}: ${
       location?.Description
-    }`;
+    }${okString(location?.State) ? ` ${location?.State}` : ""}`;
   } else {
     description = `${capitalizeFirstLetter(location?.Name)}.`;
   }
