@@ -2,7 +2,7 @@
   {
     "Type": "version",
     "Name": "version",
-    "Description": "102"
+    "Description": "103"
   },
   {
     "Name": "bunsen burner,bunsen,burner",
@@ -149,7 +149,7 @@
             "Property": "location",
             "Equality": "=",
             "Value": "player",
-            "PassResponse": "You reconnect the wire, tuck it back into the body of the laser and close the panel, knocking the power switch on and firing a red beam of light which reflects off a chrome tap, then a mirror and finally focus on your physics homework, burning a mark on it.",
+            "PassResponse": "You reconnect the wire, tuck it back into the body of the laser and close the panel, knocking the power switch on and firing a red beam of light which reflects off a chrome tap, then off the mirrored sunglasses and finally focus on your physics homework, burning a mark on it.",
             "FailResponse": "Dr Atom looks up from reading the laser maintenance manual and shouts \"Don't touch that! Only members of the physics club are allowed to use it\""
           },
           {
@@ -175,11 +175,6 @@
       {
         "Verb": "open,unlock",
         "Updates": [
-          {
-            "TargetItem": "maths homework",
-            "Property": "location",
-            "Value": "lockers"
-          },
           {
             "TargetItem": "fifty quid",
             "Property": "location",
@@ -308,7 +303,7 @@
   },
   {
     "Name": "table saw,saw",
-    "Help": "Unless you fancy a trip to the hospital, it would be best left alone.",
+    "Help": "Unless you fancy a trip to the hospital, the table saw is best left alone.",
     "Description": "The saw is dangerously unguarded and can be turned on with a simple switch to make it even less safe.",
     "Type": "fixed",
     "Location": "wood workshop"
@@ -671,6 +666,7 @@
       },
       {
         "Verb": "west",
+        "UnconditionalResponse": "You head west and turn the corner to the south.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -1047,6 +1043,7 @@
     "Actions": [
       {
         "Verb": "north",
+        "UnconditionalResponse": "You head north and turn the corner to the east.",
         "Updates": [
           {
             "TargetItem": "player",
@@ -1204,7 +1201,7 @@
             "Item": "miss mcqueen",
             "Property": "state",
             "Equality": "*",
-            "Value": "homework",
+            "Value": "dramatically",
             "PassResponse": "You sneak into the drama cupboard dramatically.",
             "FailResponse": "The drama cupboard is locked."
           }
@@ -1567,7 +1564,7 @@
   {
     "Name": "football pitch",
     "Description": "The pitch is full-sized, with a five-a-side pitch perpendicular to it at the north end. This is where most imaginationless physical exercise occurs, usually as shirts vs. skins in all weather.",
-    "Help": "association football is also know as soccer.",
+    "Help": "Association football is also know as soccer.",
     "Type": "location",
     "Actions": [
       {
@@ -2277,7 +2274,7 @@
             "Property": "state",
             "Equality": "*",
             "Value": "wearing",
-            "PassResponse": "Mr Head fleetingly appears but assumes you are a staff member and goes about his business.",
+            "PassResponse": "Mr Head fleetingly appears but, due to the brilliance of your disguise, assumes you are a staff member and goes about his business.",
             "FailResponse": "From nowhere, Mr. Head appears and blocks your path, \"You know pupils aren't allowed in the staff room\", he asserts, seemingly vanishing again."
           },
           {
@@ -2519,7 +2516,7 @@
   {
     "Name": "news agent",
     "Description": "The shop is a misnomer; although it sells newspapers, it sells just about everything from magazines, snacks, groceries and school supplies. No more than four pupils are allowed in at any time to reduce the chances of thievery.",
-    "Help": "being located opposite a school it sells plenty of items that would be helpful during a normal schoolday.",
+    "Help": "Being located opposite a school it sells plenty of items that would be helpful during a normal schoolday.",
     "Type": "location",
     "Actions": [
       {
@@ -3477,7 +3474,7 @@
   {
     "Name": "west canteen",
     "Description": "The west end of the canteen is filled mainly with hot food counters and a queuing serpentine made from very sturdy railing. The smell of food is unavoidable, although it could be more appealing.",
-    "Help": "Bringing your own fruit for lunch is be more desirable than school dinners.",
+    "Help": "Bringing your own fruit for lunch is more desirable than school dinners.",
     "Type": "location",
     "Actions": [
       {
@@ -3827,6 +3824,11 @@
             "TargetItem": "miss sketch",
             "Property": "state",
             "Value": "She is carrying your art homework carefully so that the fresh pencil doesn't smudge on her jumper, not because she is concerned about her clothes but because she appreciates your contribution to the arts."
+          },
+          {
+            "TargetItem": "art homework",
+            "Property": "location",
+            "Value": "hidden"
           }
         ],
         "Conditions": [
@@ -3847,7 +3849,7 @@
         ]
       }
     ],
-    "Location": "ged hut",
+    "Location": "south street",
     "State": "The page or your art homework folder is entirely blank."
   },
   {
@@ -4214,6 +4216,7 @@
     "Description": "The watch is an oh-so-desirable state-of-the-art Casio CA-86 calculator watch; it even has a built-in game to combat boring maths lessons.",
     "Help": "Calculators can help solve complex mathematical problems.",
     "Type": "mobile",
+    "State": "It is in its clear packaging.",
     "Actions": [
       {
         "Verb": "get,buy,purchase,take",
@@ -4255,13 +4258,19 @@
             "Equality": "*",
             "Value": "wearing",
             "PassResponse": "You extend your arm fully, then crook your elbow to position your calculator watch in your gaze. With your other hand, you tap away at the keys, glancing to and from your maths homework; within a few minutes, the homework is complete.",
-            "FailResponse": "Although reasonably simple, you fail to grasp the concepts and scale of the mathematical problems in your head and defer their completion until later, surmising that there is a 95% chance that you will complete it in time."
+            "FailResponse": "Although reasonably simple, you fail to grasp the concepts and scale of the mathematical problems in your head and defer their completion until later, surmising that there is a 95% chance that you will complete it in time, but only if you wear a calculator watch."
+          },
+          {
+            "Item": "maths homework",
+            "Property": "location",
+            "Value": "player",
+            "FailResponse": "You aren't carrying your maths homework."
           },
           {
             "Item": "maths homework",
             "Property": "state",
             "Equality": "*",
-            "Value": "_blank_",
+            "Value": "blank",
             "FailResponse": "Thankfully, you have already completed your maths homework."
           }
         ]
@@ -4298,7 +4307,7 @@
           {
             "TargetItem": "calculator watch",
             "Property": "state",
-            "Value": ""
+            "Value": "It is in its clear packaging."
           }
         ],
         "Conditions": [
@@ -4307,7 +4316,7 @@
             "Property": "state",
             "Equality": "*",
             "Value": "wearing",
-            "PassResponse": "You reluctantly remove the calculator watch; your day becomes a little more miserable.",
+            "PassResponse": "You reluctantly remove the calculator watch and place it back in its packaging for safekeeping; your day becomes a little more miserable.",
             "FailResponse": "You are already wearing the calculator watch."
           }
         ]
@@ -4356,12 +4365,12 @@
     "State": "All the cards are ordered by suit and face value."
   },
   {
-    "Name": "RS homework",
+    "Name": "RS homework,homework",
     "Prefix": "your",
-    "Description": "The Religeous Studies homework assignment is to write an essay on the meaning of life. You have yet to learn the meaning of life, but it is a theological lesson to show that you are not alone.",
+    "Description": "The Religious Studies homework assignment is to write an essay on the meaning of life. You have yet to learn the meaning of life, but it is a theological lesson to show that you are not alone in that respect.",
     "Help": "The meaning of life is not 42.",
     "Type": "mobile",
-    "State": "You have facetiously completed the essay with a simple \"42\"; the shorted essay in history, but shows you have read at least one library book.",
+    "State": "You have facetiously completed the essay with a simple \"42\"; the shortest essay in history but shows you have read at least one library book.",
     "Location": "hidden",
     "Actions": [
       {
@@ -4372,7 +4381,7 @@
             "Property": "location",
             "Equality": "=",
             "Value": "player",
-            "PassResponse": "You attempt to hand your RS homework to Mrs Cross, but she spurns the exercise book, and your RS homework stays in your hand.",
+            "PassResponse": "You attempt to hand your RS homework to Miss Cross, but she spurns the exercise book, and your RS homework stays in your hand.",
             "FailResponse": "You aren't carrying your RS homework."
           },
           {
@@ -4387,7 +4396,7 @@
     ]
   },
   {
-    "Name": "audio cassette,tape",
+    "Name": "audio cassette,cassette,tape",
     "Prefix": "an",
     "Description": "The cassette is a standard D90 audio cassette of an affordable grade. The label partially reads \"Now That's What I Call\", but the rest of the label has been torn off.",
     "Help": "A cassette will help you groove on the move, but only if you have a player.",
@@ -4602,6 +4611,11 @@
             "TargetItem": "miss mcqueen",
             "Property": "state",
             "Value": "She is dramatically carrying your drama homework."
+          },
+          {
+            "TargetItem": "miss mcqueen",
+            "Property": "location",
+            "Value": "drama cupboard"
           }
         ],
         "Conditions": [
@@ -5035,6 +5049,7 @@
   },
   {
     "Name": "hammer",
+    "Prefix": "a",
     "Description": " The hammer is a standard imperial 12lb ball pein hammer with a smooth wooden handle.",
     "Help": "Hammers are great for hammering, especially nails.",
     "Type": "mobile",
@@ -5095,7 +5110,7 @@
   },
   {
     "Name": "jackpot",
-    "Prefix": "the",
+    "Prefix": "a",
     "Description": "The jackpot is a pocketful of assorted legal coins.",
     "Help": "Coins can be exchanged for goods in most shops.",
     "Type": "mobile",
@@ -5106,7 +5121,7 @@
     "Prefix": "a",
     "Description": "The javelin is long and sharp enough to piece soft ground when dropped from a height but not strong enough to cause injury to pupils.",
     "Type": "mobile",
-    "Location": "athletics field",
+    "Location": "back gate",
     "Actions": [
       {
         "Verb": "throw,chuck,lob,toss",
@@ -5179,7 +5194,7 @@
             "Property": "location",
             "Equality": "=",
             "Value": "metal workshop",
-            "PassResponse": "Mr Steel stands up from behind his metal desk. He instinctively grabs your arm, preparing to chastise you, but seeing the perfectly shaped key brightens his mood. \"That is amazing craftmanship; you have been paying attention in class. I know it's not what I assigned you. Still, I consider extracurricular practical work far more important than a historical essay. Let's call this a pass.\"",
+            "PassResponse": "Mr Steel finds his keys and turns his attention to you. He instinctively grabs your arm, preparing to chastise you, but seeing the perfectly shaped key brightens his mood. \"That is amazing craftmanship; you have been paying attention in class. I know it's not what I assigned you. Still, I consider extracurricular practical work far more important than a historical essay. Let's call this a pass.\"",
             "FailResponse": "There is no one here who wants the key."
           },
           {
@@ -5187,28 +5202,21 @@
             "Property": "state",
             "Equality": "*",
             "Value": "geography homework",
-            "FailResponse": "It would be wise to hang onto the key until you've found all your homework."
+            "FailResponse": "Hang onto the key until you've found and submitted all your homework assignments."
           },
           {
             "Item": "miss sketch",
             "Property": "state",
             "Equality": "*",
             "Value": "carrying your art homework",
-            "FailResponse": "It would be wise to hang onto the key until you've found all your homework."
+            "FailResponse": "Hang onto the key until you've found and submitted all your homework assignments."
           },
           {
             "Item": "mrs bakewell",
             "Property": "state",
             "Equality": "*",
             "Value": "delighted",
-            "FailResponse": "It would be wise to hang onto the key until you've found all your homework."
-          },
-          {
-            "Item": "mr bodmas",
-            "Property": "state",
-            "Equality": "*",
-            "Value": "holding your maths homework",
-            "FailResponse": "It would be wise to hang onto the key until you've found all your homework."
+            "FailResponse": "Hang onto the key until you've found and submitted all your homework assignments."
           }
         ]
       }
@@ -5220,7 +5228,7 @@
     "Name": "ladder",
     "Prefix": "a",
     "Description": "The ladders is a sturdy aluminium combination step ladder and work ladder; it's lightweight but robust.",
-    "Help": "The ladder can be used to reach high places.",
+    "Help": "A ladder can be used to reach high places.",
     "Type": "mobile",
     "Location": "back stage"
   },
@@ -5228,7 +5236,7 @@
     "Name": "lamp",
     "Prefix": "a",
     "Description": "The lamp is an old oil-burning lamp. Although primarily surpassed by electric torches, they are still the most common item in any adventure.",
-    "Help": "The lamp can be used to see in dark places.",
+    "Help": "A lamp can be used to see in dark places.",
     "Type": "mobile",
     "Actions": [
       {
@@ -5306,7 +5314,7 @@
     "Name": "lead",
     "Prefix": "some",
     "Description": "The lead is a slug of soft roofing lead. It is highly toxic if ingested but is malleable and easily shaped, making it easier to work with than harder metals.",
-    "Help": "the chemical symbol for lead is pb.",
+    "Help": "The chemical symbol for lead is pb.",
     "Type": "mobile",
     "Actions": [
       {
@@ -5346,7 +5354,7 @@
     "State": "It is flat and shapeless."
   },
   {
-    "Name": "locker key",
+    "Name": "locker key,key",
     "Prefix": "a",
     "Description": "The key is small and straightforward, with very little bidding; even the most amateur lock picker could circumvent the lock for this key.",
     "Help": "Everyone has their own locker and their own locker key.",
@@ -5355,11 +5363,6 @@
       {
         "Verb": "use",
         "Updates": [
-          {
-            "TargetItem": "maths homework",
-            "Property": "location",
-            "Value": "lockers"
-          },
           {
             "TargetItem": "fifty quid",
             "Property": "location",
@@ -5450,7 +5453,7 @@
     "Name": "maths homework,homework",
     "Prefix": "your",
     "Description": "The homework is an assignment to compare percentages and fractions.",
-    "Help": "Maths is an unpopular subject but one of the more practical subjects.",
+    "Help": "Maths is an unpopular subject but one of the more practical ones.",
     "Type": "mobile",
     "Actions": [
       {
@@ -5484,7 +5487,7 @@
         ]
       },
       {
-        "Verb": "do",
+        "Verb": "do,complete",
         "Updates": [
           {
             "TargetItem": "maths homework",
@@ -5499,19 +5502,25 @@
             "Equality": "*",
             "Value": "wearing",
             "PassResponse": "You extend your arm fully, then crook your elbow to position your calculator watch in your gaze. With your other hand, you tap away at the keys, glancing to and from your maths homework; within a few minutes, the homework is complete.",
-            "FailResponse": "Although reasonably simple, you fail to grasp the concepts and scale of the mathematical problems in your head and defer their completion until later, surmising that there is a 95% chance that you will complete it in time."
+            "FailResponse": "Although reasonably simple, you fail to grasp the concepts and scale of the mathematical problems in your head and defer their completion until later, surmising that there is a 95% chance that you will complete it in time, but only if you wear a calculator watch."
+          },
+          {
+            "Item": "maths homework",
+            "Property": "location",
+            "Value": "player",
+            "FailResponse": "You aren't carrying your maths homework."
           },
           {
             "Item": "maths homework",
             "Property": "state",
             "Equality": "*",
-            "Value": "_blank_",
+            "Value": "blank",
             "FailResponse": "Thankfully, you have already completed your maths homework."
           }
         ]
       }
     ],
-    "Location": "hidden",
+    "Location": "west stairwell first floor",
     "State": "your maths homework assignment is to compare percentages and fractions, unfortunately it is completely blank."
   },
   {
@@ -5520,7 +5529,21 @@
     "Description": "The homework is an assignment to write an essay on the life and work of Richard Trevithick; despite metalwork being a practical subject utilising dangerous tools, it can still be brought down to academic drudgery.",
     "Help": "Who is Richard Trevithick?",
     "Type": "mobile",
-    "Location": "south stairwell second floor"
+    "Location": "south stairwell second floor",
+    "Actions": [
+      {
+        "Verb": "give,submit",
+        "Conditions": [
+          {
+            "Item": "player",
+            "Property": "location",
+            "Value": "metal workshop",
+            "PassResponse": "Mr Steel shoos you away; he is busy looking for his keys and is less interested in academic work than he is supposed to be.",
+            "FailResponse": "There is no one here who wants your metalwork homework."
+          }
+        ]
+      }
+    ]
   },
   {
     "Name": "moustache,tache",
@@ -5642,7 +5665,7 @@
   {
     "Name": "nails",
     "Prefix": "some",
-    "Description": "The nails are box nails made of bright steel, which are 1 inch long.",
+    "Description": "The nails are in a box and made of bright steel; they are 1 inch long.",
     "Help": "Nails are great for holding pieces of wood together.",
     "Type": "mobile",
     "Location": "sewing room"
@@ -5908,9 +5931,9 @@
     ]
   },
   {
-    "Name": "sunglasses",
+    "Name": "sunglasses,sunnies,shades,glasses",
     "Prefix": "a pair of",
-    "Description": "The sunglasses are cheap and made of plastic, styled to look like an expensive fashion brand. Although excellent for models and rock stars to wear, pupils wearing them at school is not appreciated.",
+    "Description": "The sunglasses are aviator style with mirrored lenses and are the latest fashion. Although excellent for models and rock stars to wear, pupils wearing them at school is not appreciated.",
     "Help": "Sunglasses help block light from entering your eyes and protect your eyes from being seen.",
     "Type": "mobile",
     "Actions": [
@@ -6096,14 +6119,14 @@
             "Value": "hidden"
           },
           {
-            "TargetItem": "dog",
+            "TargetItem": "macguffin",
             "Property": "state",
-            "Value": "It is playing contentedly with the tennis ball."
+            "Value": "He is playing contentedly with the tennis ball."
           },
           {
             "TargetItem": "RS Homework",
             "Property": "location",
-            "Value": "athletics field"
+            "Value": "rugby pitch"
           }
         ],
         "Conditions": [
@@ -6111,13 +6134,13 @@
             "Item": "tennis ball",
             "Property": "location",
             "Value": "player",
-            "PassResponse": "MacGuffin sits and fixes its gaze on you, ready to react. MacGuffin drops the less attractive homework as you throw the ball and leaps into the air, intercepting the tennis ball and performing a perfect landing.",
+            "PassResponse": "MacGuffin sits and fixes his gaze on you, ready to react. He drops the less attractive homework as you throw the ball and leaps into the air, intercepting the tennis ball and performing a perfect landing.",
             "FailResponse": "You aren't carrying the tennis ball."
           },
           {
             "Item": "player",
             "Property": "location",
-            "Value": "athletics field",
+            "Value": "rugby pitch",
             "FailResponse": "You throw the tennis ball with all your might, and it sails into the distance; it strikes something solid, rebounds and returns. To your amazement, you catch it."
           }
         ]
@@ -6135,7 +6158,7 @@
     "Name": "Sony Walkman,Sony,Walkman",
     "Prefix": "a",
     "Description": "The Walkman is the holy grail of musical entertainment during break times. This particular model is a twin-motor range-topper complete with a rewind feature.",
-    "Help": "Other portable cassette players are available.",
+    "Help": "Other brand portable cassette players are available.",
     "Type": "mobile",
     "Actions": [
       {
@@ -6193,26 +6216,25 @@
     "State": "The batteries appear to have a charge, but the Walkman is cassetteless."
   },
   {
-    "Name": "bully",
-    "Prefix": "the school",
-    "Description": "He is an unthinking oaf; it would be kind to describe him as misunderstood, but realistically, it would be difficult for anyone to understand how callous one person could be.",
-    "Help": "Unless you can appease the bully, it is best to avoid him, he cannot be bargained with.",
+    "Name": "Knuckles",
+    "Description": "He is the school bully and an unthinking oaf; it would be kind to describe him as misunderstood, but realistically, it would be difficult for anyone to understand how callous one person could be.",
+    "Help": "Unless you can appease the school bully, it is best to avoid him, he cannot be bargained with.",
     "Type": "person",
     "Location": "south copse",
     "State": "He is perpetually angry."
   },
   {
-    "Name": "dog",
-    "Prefix": "a",
-    "Description": "It is a long-haired golden retriever with mischief in its eyes and energy in its belly. It bounds around when you approach in an attempt to play. A random dog on school property is the best thing to happen during a school day. It has a tag around its neck that reads \"MacGuffin\".",
+    "Name": "MacGuffin",
+    "Description": "He is a long-haired golden retriever with mischief in its eyes and energy in its belly. It bounds around when you approach in an attempt to play. A random dog on school property is the best thing to happen during a school day.",
     "Type": "person",
-    "Location": "athletics field",
-    "State": "It has some homework in its mouth; unless you recover it, you can use the cliched excuse, \"The dog ate my homework.\""
+    "Location": "rugby pitch",
+    "State": "He has some homework in its mouth; unless you recover it, you can use the cliched excuse, \"The dog ate my homework.\"",
+    "Help": "Dogs are easily distracted by a tennis ball."
   },
   {
     "Name": "Dr Atom",
     "Description": "He is the physics teacher; he habitually wears a white lab coat and large, thick pebble glasses. He is friendly but slightly mad and unpredictable in a \"mad scientist\" way.",
-    "Help": "Dr Atom is the cleverest person in school, so it is wise to heed his wise counsel.",
+    "Help": "Dr Atom is the cleverest person in school, so it is best to heed his wise counsel.",
     "Type": "person",
     "Location": "physics lab",
     "State": "He is busy reading the maintenance manual for the school laser."
@@ -6255,7 +6277,7 @@
   },
   {
     "Name": "Mr Ball",
-    "Description": "He is the physical exercise (PE) teacher; he wears disturbingly short shorts, a tracksuit top and a stopwatch around his neck; at least it has a purpose and is better than a necktie. He has no sense of humour and has never been seen smiling.",
+    "Description": "He is the physical exercise (PE) teacher; he wears disturbingly short shorts, a tracksuit top and a stopwatch around his neck; at least it has a purpose and is better than a necktie. He teaches that exercise is good for your mental well-being but has no sense of humour and has never been seen smiling, so it does appear to be working for him.",
     "Help": "Mr Ball is impressed by any feet of physical strength or perseverance and less by academic achievements.",
     "Type": "person",
     "Location": "athletics field"
@@ -6312,7 +6334,7 @@
     "Description": "He is a daring young chemistry teacher, and although chemistry is not remotely related to archaeology, he comes across like Indiana Jones and appears to be a risk taker.",
     "Help": "Mr Silver would sacrifice personal health to save lab equipment.",
     "Type": "person",
-    "Location": "staff room"
+    "Location": "hidden"
   },
   {
     "Name": "Mr Square",
@@ -6324,6 +6346,7 @@
     "Name": "Mr Steel",
     "Description": "He is the metalwork teacher infamous for his furious grip. He is primarily calm but has little patience, and any infraction is punished with an immediate and unnerving grip, usually around the perp's upper arm.",
     "Type": "person",
+    "State": "He is searching the workshop, looking for his keys.",
     "Location": "metal workshop"
   },
   {
@@ -6334,7 +6357,7 @@
     "State": "She looked like she missed breakfast and looked hungry and agitated."
   },
   {
-    "Name": "Mrs Cross",
+    "Name": "Miss Cross",
     "Description": "She is the Religious Studies teacher responsible for helping pupils find and follow their faith, regardless of denomination.",
     "Type": "person",
     "Location": "staff room",

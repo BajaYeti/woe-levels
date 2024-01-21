@@ -27,7 +27,14 @@ export function getInventory(items: Array<Item>): string {
   let carrying =
     inv.length === 0
       ? "nothing"
-      : inv.map((i) => `${i.Prefix} ${i.Name.split(",")[0]}`).join(", ");
+      : inv
+          .map(
+            (i) =>
+              `${i.Prefix === undefined ? "" : i.Prefix} ${
+                i.Name.split(",")[0]
+              }`
+          )
+          .join(", ");
   const lastCommaIndex = carrying.lastIndexOf(",");
   if (lastCommaIndex !== -1) {
     carrying = `${carrying.substring(
@@ -35,7 +42,7 @@ export function getInventory(items: Array<Item>): string {
       lastCommaIndex
     )} and${carrying.substring(lastCommaIndex + 1)}`;
   }
-  return `You are carrying ${carrying}`;
+  return `You are carrying ${carrying}.`;
 }
 
 export function capitalizeFirstLetter(str: string): string {
@@ -45,7 +52,7 @@ export function capitalizeFirstLetter(str: string): string {
 export function capitalizeEveryWord(sentence: string): string {
   return sentence
     .split(" ")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 }
 

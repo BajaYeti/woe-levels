@@ -18,6 +18,9 @@ import {
   Version,
   Drop,
   InventoryLimit,
+  Count,
+  Where,
+  Go,
 } from "../content/Constants";
 import { Truncations } from "../content/Constants";
 import {
@@ -326,6 +329,11 @@ export function Parse(input: string, items: Item[]): MyRequest {
               Property: Location,
               Value: Player,
             },
+            //add counter update
+            {
+              TargetItem: item.Name.split(",")[0],
+              Property: Count,
+            },
           ],
         } as Action,
       } as MyRequest;
@@ -379,6 +387,11 @@ export function Parse(input: string, items: Item[]): MyRequest {
               Property: Location,
               Value: location.Name,
             },
+            //add counter update
+            {
+              TargetItem: item.Name.split(",")[0],
+              Property: Count,
+            },
           ],
         } as Action,
       } as MyRequest;
@@ -422,13 +435,101 @@ export function Parse(input: string, items: Item[]): MyRequest {
         ? ""
         : ` ${capitalizeFirstLetter(item.State)}`;
     return {
-      OK: false,
+      OK: true,
       Look: { Refresh: false, Brevity: true },
       Action: {
         UnconditionalResponse: `${item.Description}${state}`,
+        //add counter update
+        Updates: [
+          {
+            TargetItem: item.Name.split(",")[0],
+            Property: Count,
+          },
+        ],
       } as Action,
     } as MyRequest;
   }
+  //#endregion
+
+  //#region WHERE
+  if (verb === Where) {
+    let item = getItemByName(items, noun);
+    if (
+      item === null ||
+      item === undefined ||
+      item.Count === undefined ||
+      Number.isNaN(item.Count) ||
+      item.Count === 0
+    ) {
+      return {
+        OK: false,
+        Look: { Refresh: false, Brevity: true },
+        Action: {
+          UnconditionalResponse: `You haven't discovered ${
+            item?.Prefix === undefined ? "" : item?.Prefix
+          } ${item?.Name?.split(",")[0]} yet.`,
+        } as Action,
+      } as MyRequest;
+    }
+    //if item is in inventory, return carried message
+    if (item?.Location === Player) {
+      return {
+        OK: false,
+        Look: { Refresh: false, Brevity: true },
+        Action: {
+          UnconditionalResponse: `You are carrying ${
+            item?.Prefix === undefined ? "" : item?.Prefix
+          } ${item?.Name?.split(",")[0]}.`,
+        } as Action,
+      } as MyRequest;
+    }
+    return {
+      OK: false,
+      Look: { Refresh: false, Brevity: true },
+      Action: {
+        UnconditionalResponse: `You close your eyes and concentrate on where you last saw ${
+          item?.Prefix === undefined ? "" : item?.Prefix
+        } ${item?.Name?.split(",")[0]}... \"${
+          item?.Location
+        }\" springs to mind.`,
+      } as Action,
+    } as MyRequest;
+  }
+  //#endregion
+
+  //#region GO
+  if (verb === Go) {
+    let target = getItemByName(items, noun);
+    if (
+      target === null ||
+      target === undefined ||
+      target.Count === undefined ||
+      Number.isNaN(target.Count)
+    ) {
+      return {
+        OK: false,
+        Look: { Refresh: false, Brevity: true },
+        Action: {
+          UnconditionalResponse: `You close your eyes and think of \"${noun}\", but it doesn't ring any bells.`,
+        } as Action,
+      } as MyRequest;
+    }
+    return {
+      OK: true,
+      Look: { Refresh: true, Brevity: true },
+      Action: {
+        UnconditionalResponse: `You close your eyes, think of \"${noun}\", recall the route and quickly follow it.`,
+        Updates: [
+          {
+            TargetItem: Player,
+            Property: Location,
+            Value: target.Name,
+          } as Update,
+        ],
+      } as Action,
+    } as MyRequest;
+  }
+
   //#endregion
 
   //#region CUSTOM VERB
@@ -447,7 +548,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
   let target = getItemByName(local, noun);
   let action = target?.Actions?.find((a) => inCsv(a.Verb, verb));
   if (okObject(action)) {
-    return {
+        return {
       OK: true,
       Look: { Refresh: false, Brevity: true },
       Action: action,
