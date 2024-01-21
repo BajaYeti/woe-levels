@@ -1,5 +1,8 @@
 import { Moves, Person } from "../content/Constants";
-import { getCarriedItems, getVisibleItems } from "./ItemQueries";
+import {
+  getCarriedItems,
+  getVisibleItems,
+} from "./ItemQueries";
 
 export function getExits(location: Item | undefined): string {
   if (location === undefined) {
@@ -30,9 +33,7 @@ export function getInventory(items: Array<Item>): string {
       : inv
           .map(
             (i) =>
-              `${i.Prefix === undefined ? "" : i.Prefix} ${
-                i.Name.split(",")[0]
-              }`
+              `${i.Prefix === undefined ? "" : i.Prefix} ${primaryAlias(i)}`
           )
           .join(", ");
   const lastCommaIndex = carrying.lastIndexOf(",");
@@ -94,7 +95,7 @@ export function getView(items: Array<Item>): string {
     .map(
       (i) =>
         `${i.Prefix === undefined ? "" : i.Prefix} ${
-          i.Type === Person ? capitalizeEveryWord(i.Name) : i.Name.split(",")[0]
+          i.Type === Person ? capitalizeEveryWord(i.Name) : primaryAlias(i)
         }`
     )
     .join(", ");
@@ -167,5 +168,5 @@ export function okString(obj: any): boolean {
 }
 
 export function primaryAlias(item: Item): string {
-  return item.Name?.split(",")[0];
+  return item?.Name?.split(",")[0];
 }

@@ -42,6 +42,7 @@ import {
   isVersionLessThan,
   loadFromLocalStorage,
   okObject,
+  primaryAlias,
   saveToLocalStorage,
 } from "./Utils";
 
@@ -142,7 +143,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
             {
               TargetItem: Player,
               Property: Location,
-              Value: location.Name,
+              Value: primaryAlias(location),
             } as Update,
           ],
         } as Action,
@@ -246,7 +247,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
             {
               TargetItem: Player,
               Property: Location,
-              Value: location.Name,
+              Value: primaryAlias(location),
             } as Update,
           ],
         } as Action,
@@ -322,16 +323,16 @@ export function Parse(input: string, items: Item[]): MyRequest {
         OK: true,
         Look: { Refresh: false, Brevity: true },
         Action: {
-          UnconditionalResponse: `You got the ${item.Name.split(",")[0]}.`,
+          UnconditionalResponse: `You got the ${primaryAlias(item)}.`,
           Updates: [
             {
-              TargetItem: item.Name.split(",")[0],
+              TargetItem: primaryAlias(item),
               Property: Location,
               Value: Player,
             },
             //add counter update
             {
-              TargetItem: item.Name.split(",")[0],
+              TargetItem: primaryAlias(item),
               Property: Count,
             },
           ],
@@ -380,16 +381,16 @@ export function Parse(input: string, items: Item[]): MyRequest {
         OK: true,
         Look: { Refresh: false, Brevity: true },
         Action: {
-          UnconditionalResponse: `You dropped the ${item.Name.split(",")[0]}.`,
+          UnconditionalResponse: `You dropped the ${primaryAlias(item)}.`,
           Updates: [
             {
-              TargetItem: item.Name.split(",")[0],
+              TargetItem: primaryAlias(item),
               Property: Location,
-              Value: location.Name,
+              Value: primaryAlias(location),
             },
             //add counter update
             {
-              TargetItem: item.Name.split(",")[0],
+              TargetItem: primaryAlias(item),
               Property: Count,
             },
           ],
@@ -442,7 +443,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
         //add counter update
         Updates: [
           {
-            TargetItem: item.Name.split(",")[0],
+            TargetItem: primaryAlias(item),
             Property: Count,
           },
         ],
@@ -453,6 +454,17 @@ export function Parse(input: string, items: Item[]): MyRequest {
 
   //#region WHERE
   if (verb === Where) {
+    let interacted = getItemsByName(items, noun);
+    if (interacted.length > 1) {
+      return {
+        OK: false,
+        Look: { Refresh: false, Brevity: true },
+        Action: {
+          UnconditionalResponse: "You'll have to be more specific.",
+        } as Action,
+      } as MyRequest;
+    }
+
     let item = getItemByName(items, noun);
     if (
       item === null ||
@@ -465,9 +477,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
         OK: false,
         Look: { Refresh: false, Brevity: true },
         Action: {
-          UnconditionalResponse: `You haven't discovered ${
-            item?.Prefix === undefined ? "" : item?.Prefix
-          } ${item?.Name?.split(",")[0]} yet.`,
+          UnconditionalResponse: `You haven't discovered that yet.`,
         } as Action,
       } as MyRequest;
     }
@@ -479,7 +489,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
         Action: {
           UnconditionalResponse: `You are carrying ${
             item?.Prefix === undefined ? "" : item?.Prefix
-          } ${item?.Name?.split(",")[0]}.`,
+          } ${primaryAlias(item)}.`,
         } as Action,
       } as MyRequest;
     }
@@ -489,9 +499,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
       Action: {
         UnconditionalResponse: `You close your eyes and concentrate on where you last saw ${
           item?.Prefix === undefined ? "" : item?.Prefix
-        } ${item?.Name?.split(",")[0]}... \"${
-          item?.Location
-        }\" springs to mind.`,
+        } ${primaryAlias(item)}... \"${item?.Location}\" springs to mind.`,
       } as Action,
     } as MyRequest;
   }
@@ -499,7 +507,10 @@ export function Parse(input: string, items: Item[]): MyRequest {
 
   //#region GO
   if (verb === Go) {
+    console.log("noun", noun);
+    console.log("verb", verb);
     let target = getItemByName(items, noun);
+    console.log("target", target);
     if (
       target === null ||
       target === undefined ||
@@ -510,7 +521,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
         OK: false,
         Look: { Refresh: false, Brevity: true },
         Action: {
-          UnconditionalResponse: `You close your eyes and think of \"${noun}\", but it doesn't ring any bells.`,
+          UnconditionalResponse: `You close your eyes and think \"${noun}\", but it doesn't ring any bells.`,
         } as Action,
       } as MyRequest;
     }
@@ -523,7 +534,7 @@ export function Parse(input: string, items: Item[]): MyRequest {
           {
             TargetItem: Player,
             Property: Location,
-            Value: target.Name,
+            Value: primaryAlias(target),
           } as Update,
         ],
       } as Action,
@@ -547,8 +558,21 @@ export function Parse(input: string, items: Item[]): MyRequest {
 
   let target = getItemByName(local, noun);
   let action = target?.Actions?.find((a) => inCsv(a.Verb, verb));
+  //add counter update
+  if (
+    action !== null &&
+    action !== undefined &&
+    target !== null &&
+    target !== undefined
+  ) {
+    action.Updates?.push({
+      TargetItem: primaryAlias(target),
+      Property: Count,
+    } as Update);
+  }
+
   if (okObject(action)) {
-        return {
+    return {
       OK: true,
       Look: { Refresh: false, Brevity: true },
       Action: action,

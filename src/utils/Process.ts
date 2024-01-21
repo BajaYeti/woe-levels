@@ -38,24 +38,24 @@ export function Process(request: Action, items: Array<Item>): Process {
               : u.Value;
           //if player is moving, update location counter for brevity
           if (item.Name.toLowerCase() === Player) {
-          let location = getItemByName(items, item.Location);
-          if (location !== undefined) {
-          //update location counter
-          if (
-          location.Count === undefined ||
-          Number.isNaN(location.Count)
-          ) {
-          location.Count = 0;
-          } else {
-          location.Count++;
-          }
+            let location = getItemByName(items, item.Location);
+            if (location !== undefined) {
+              //update location counter
+              if (
+                location.Count === undefined ||
+                Number.isNaN(location.Count)
+              ) {
+                location.Count = 0;
+              } else {
+                location.Count++;
+              }
             } else {
-          //catch breaking move and tele port back to front street
-          Feedback.push(
-          `You try to move to "${item.Location}, but you pass out and wake up in a different location."`
-          );
-          item.Location = FrontStreet;
-          }
+              //catch breaking move and tele port back to front street
+              Feedback.push(
+                `You try to move to "${item.Location}, but you pass out and wake up in a different location."`
+              );
+              item.Location = FrontStreet;
+            }
           }
           break;
       }
