@@ -2,7 +2,7 @@
   {
     "Type": "version",
     "Name": "version",
-    "Description": "104"
+    "Description": "105"
   },
   {
     "Name": "bunsen burner,bunsen,burner",
@@ -150,14 +150,14 @@
             "Equality": "=",
             "Value": "player",
             "PassResponse": "You reconnect the wire, tuck it back into the body of the laser and close the panel, knocking the power switch on and firing a red beam of light which reflects off a chrome tap, then off the mirrored sunglasses and finally focus on your physics homework, burning a mark on it.",
-            "FailResponse": "Dr Atom looks up from reading the laser maintenance manual and shouts \"Don't touch that! Only members of the physics club are allowed to use it\""
+            "FailResponse": "Dr Atom looks up from reading the laser maintenance manual and yells \"Don't touch that! Only members of the physics club are allowed to use it\""
           },
           {
             "Item": "sunglasses",
             "Property": "state",
             "Equality": "*",
             "Value": "wearing",
-            "FailResponse": "Dr Atom looks up from the laser maintenance manual and says \"You can play with the laser if you want, but you only get two goes before you are blind\""
+            "FailResponse": "Dr Atom looks up from the laser maintenance manual and says \"You can play with the laser if you want, but you only get two goes before you are blind.\"."
           }
         ]
       }
@@ -254,13 +254,13 @@
         ],
         "Conditions": [
           {
-            "Item": "key",
+            "Item": "master key",
             "Property": "location",
             "Value": "player",
             "FailResponse": "You aren't carrying anything that could unlock the padlock."
           },
           {
-            "Item": "key",
+            "Item": "master key",
             "Property": "state",
             "Equality": "*",
             "Value": "master",
@@ -3389,14 +3389,14 @@
         ],
         "Conditions": [
           {
-            "Item": "key",
+            "Item": "master key",
             "Property": "location",
             "Value": "player",
             "PassResponse": "You insert the homemade master key into the latch lock and turn it cautiously. To your surprise, the lock opens, and you push the door open nervously.",
             "FailResponse": "The door leading south from the top of the stairwell is closed; what is on the other side is a mystery."
           },
           {
-            "Item": "key",
+            "Item": "master key",
             "Property": "state",
             "Equality": "*",
             "Value": "master",
@@ -3757,6 +3757,7 @@
     "Description": "The pure gold apple is inscribed with the words 'to the fairest'. Something tells you that it is filled with seeds of discord.",
     "Help": "The golden apple jogs your memory about something in one of the boring history lessons.",
     "Type": "mobile",
+    "State": "It is hanging from a tree branch, out of reach.",
     "Actions": [
       {
         "Verb": "get",
@@ -3765,20 +3766,16 @@
             "TargetItem": "golden apple",
             "Property": "location",
             "Value": "player"
-          },
-          {
-            "TargetItem": "golden apple",
-            "Property": "state",
-            "Value": ""
           }
         ],
         "Conditions": [
           {
-            "Item": "ladder",
-            "Property": "location",
-            "Value": "player",
-            "PassResponse": "You steady the ladder against the tree and use the rungs to elevate yourself into the reach of the apple, pluck it from the tree and jump back down to the ground.",
-            "FailResponse": "The apple is just out of reach; you must leave it for now."
+            "Item": "golden apple",
+            "Property": "state",
+            "Equality": "!*",
+            "Value": "out of reach",
+            "PassResponse": "You got the golden apple.",
+            "FailResponse": "The apple is just out of reach; you need to climb something like a ladder."
           }
         ]
       },
@@ -3807,8 +3804,7 @@
         ]
       }
     ],
-    "Location": "north copse",
-    "State": "It is hanging from a tree branch."
+    "Location": "north copse"
   },
   {
     "Name": "art homework,homework",
@@ -4024,31 +4020,10 @@
     "Prefix": "a",
     "Description": "The bird box is a simple construction, basically four sides, a floor, a sloped roof and a hole for entrance and egress.",
     "Type": "mobile",
+    "Location": "grassy common",
+    "State": "It is falling apart and requires repair before it can be used as a home for any self-respecting bird.",
+
     "Actions": [
-      {
-        "Verb": "get",
-        "Updates": [
-          {
-            "TargetItem": "bird box",
-            "Property": "location",
-            "Value": "player"
-          },
-          {
-            "TargetItem": "bird box",
-            "Property": "state",
-            "Value": "It is falling apart and requires repair before it can be used as a home for any self-respecting bird."
-          }
-        ],
-        "Conditions": [
-          {
-            "Item": "ladder",
-            "Property": "location",
-            "Value": "player",
-            "PassResponse": "You steady the ladder against the tree and use the rungs to elevate yourself into the reach of the bird box, grab it from the tree and jump back down to the ground.",
-            "FailResponse": "The bird box is just out of reach; you must leave it for now."
-          }
-        ]
-      },
       {
         "Verb": "fix,repair",
         "Updates": [
@@ -4084,11 +4059,6 @@
           },
           {
             "TargetItem": "mr saw",
-            "Property": "location",
-            "Value": "staff room"
-          },
-          {
-            "TargetItem": "mr saw",
             "Property": "state",
             "Value": "He is holding the bird box, which is secretly considered the best homework of the year."
           }
@@ -4116,9 +4086,7 @@
           }
         ]
       }
-    ],
-    "Location": "west copse",
-    "State": "It is wedged in the crotch of two branches of one of the trees."
+    ]
   },
   {
     "Name": "blackboard rubber,rubber",
@@ -4138,16 +4106,46 @@
     "Prefix": "some",
     "Description": "The cakes look delicious, although overly sugared and more processed than the homemade variety.",
     "Help": "You can't have your cake and eat it.",
-    "State": "They are in an unopened carboard box.",
+    "State": "The purchase price is a pocketful of coins.",
     "Type": "mobile",
     "Actions": [
       {
-        "Verb": "get,buy,purchase",
+        "Verb": "get,take",
+        "Updates": [
+          {
+            "TargetItem": "cakes",
+            "Property": "state",
+            "Value": "They are in an opened carboard box, some of the cakes are missing."
+          },
+          {
+            "TargetItem": "cakes",
+            "Property": "location",
+            "Value": "player"
+          }
+        ],
+        "Conditions": [
+          {
+            "Item": "cakes",
+            "Property": "state",
+            "Equality": "!*",
+            "Value": "purchase",
+            "PassResponse": "You got the cakes.",
+            "FailResponse": "It would help if you bought the cakes before you take them."
+          }
+        ]
+      },
+      {
+        "Verb": "buy,purchase",
         "Updates": [
           {
             "TargetItem": "cakes",
             "Property": "location",
             "Value": "player"
+          },
+          {
+            "TargetItem": "cakes",
+            "Property": "state",
+            "Value": "They are in an unopened carboard box."
           },
           {
             "TargetItem": "jackpot",
@@ -4178,8 +4176,10 @@
           {
             "Item": "cakes",
             "Property": "location",
+            "Equality": "=",
             "Value": "player",
-            "PassResponse": "You open the box and take a single cake; they are delicious but overly sugared."
+            "PassResponse": "You open the box and take a single cake; they are delicious but overly sugared.",
+            "FailResponse": "You are not carrying the cakes."
           }
         ]
       },
@@ -4216,15 +4216,47 @@
     "Description": "The watch is an oh-so-desirable state-of-the-art Casio CA-86 calculator watch; it even has a built-in game to combat boring maths lessons.",
     "Help": "Calculators can help solve complex mathematical problems.",
     "Type": "mobile",
-    "State": "It is in its clear packaging.",
+    "State": "It is on sale for £50.",
     "Actions": [
       {
-        "Verb": "get,buy,purchase,take",
+        "Verb": "get,take",
+        "Conditions": [
+          {
+            "Item": "calculator watch",
+            "Property": "state",
+            "Equality": "!*",
+            "Value": "£50",
+            "PassResponse": "You got the calculator watch.",
+            "FailResponse": "It would help if you bought the watch before you take it."
+          },
+          {
+            "Item": "calculator watch",
+            "Property": "state",
+            "Equality": "!*",
+            "Value": "wearing",
+            "FailResponse": "You are already wearing the calculator watch."
+          }
+        ],
         "Updates": [
           {
             "TargetItem": "calculator watch",
             "Property": "location",
             "Value": "player"
+          }
+        ]
+      },
+      {
+        "Verb": "buy,purchase",
+        "Updates": [
+          {
+            "TargetItem": "calculator watch",
+            "Property": "location",
+            "Value": "player"
+          },
+          {
+            "TargetItem": "calculator watch",
+            "Property": "state",
+            "Value": "It is in its clear packaging."
           },
           {
             "TargetItem": "fifty quid",
@@ -4318,6 +4350,26 @@
             "Value": "wearing",
             "PassResponse": "You reluctantly remove the calculator watch and place it back in its packaging for safekeeping; your day becomes a little more miserable.",
             "FailResponse": "You are already wearing the calculator watch."
+          }
+        ]
+      },
+      {
+        "Verb": "drop",
+        "Updates": [
+          {
+            "TargetItem": "calculator watch",
+            "Property": "location",
+            "Value": "*location"
+          }
+        ],
+        "Conditions": [
+          {
+            "Item": "calculator watch",
+            "Property": "state",
+            "Equality": "!*",
+            "Value": "wearing",
+            "PassResponse": "You dropped the calculator watch.",
+            "FailResponse": "You try to drop the watch, but it is firmly attached to your wrist."
           }
         ]
       }
@@ -4562,7 +4614,29 @@
     "Prefix": "a pair of",
     "Description": "The compasses are better known as just \"a compass\"; it's a primary school instrument for drawing circles that holds a pencil and allows circles to be removed, angles to be measured, and body parts to be stabbed.",
     "Type": "mobile",
-    "Location": "hidden"
+    "Location": "hidden",
+    "Actions": [
+      {
+        "Verb": "drop",
+        "Updates": [
+          {
+            "TargetItem": "compasses",
+            "Property": "location",
+            "Value": "*location"
+          }
+        ],
+        "Conditions": [
+          {
+            "Item": "player",
+            "Property": "location",
+            "Equality": "!*",
+            "Value": "ged hut",
+            "PassResponse": "You dropped the compasses.",
+            "FailResponse": "Dropping the compasses here would undoubtedly result in them being stolen, so you think better of it."
+          }
+        ]
+      }
+    ]
   },
   {
     "Name": "crowbar",
@@ -5137,7 +5211,7 @@
     ]
   },
   {
-    "Name": "key",
+    "Name": "master key,key",
     "Prefix": "a",
     "Description": "The key is a standard key to fit a night latch lock; it has a dull nickel finish.",
     "Type": "mobile",
@@ -5146,7 +5220,7 @@
         "Verb": "file,shape",
         "Updates": [
           {
-            "TargetItem": "key",
+            "TargetItem": "master key",
             "Property": "state",
             "Value": "It roughly resembles the shape of a master key."
           }
@@ -5160,7 +5234,7 @@
             "FailResponse": "You aren't carrying anything that could fabricate the key."
           },
           {
-            "Item": "key",
+            "Item": "master key",
             "Property": "location",
             "Equality": null,
             "Value": "player",
@@ -5178,7 +5252,7 @@
         "Verb": "give,submit",
         "Updates": [
           {
-            "TargetItem": "key",
+            "TargetItem": "master key",
             "Property": "location",
             "Value": "hidden"
           },
@@ -5230,7 +5304,33 @@
     "Description": "The ladders is a sturdy aluminium combination step ladder and work ladder; it's lightweight but robust.",
     "Help": "A ladder can be used to reach high places.",
     "Type": "mobile",
-    "Location": "back stage"
+    "Location": "back stage",
+    "Actions": [
+      {
+        "Verb": "climb,scale,ascend",
+        "Updates": [
+          {
+            "TargetItem": "golden apple",
+            "Property": "state",
+            "Value": ""
+          },
+          {
+            "TargetItem": "golden apple",
+            "Property": "location",
+            "Value": "player"
+          }
+        ],
+        "Conditions": [
+          {
+            "Item": "player",
+            "Property": "location",
+            "Value": "north copse",
+            "PassResponse": "You steady the ladder against the tree and use the rungs to elevate yourself into the reach of the apple, pluck it from the tree and jump back down to the ground.",
+            "FailResponse": "There is no point climbing the ladder here."
+          }
+        ]
+      }
+    ]
   },
   {
     "Name": "lamp",
@@ -5395,7 +5495,7 @@
     "Location": "hidden"
   },
   {
-    "Name": "magazine",
+    "Name": "magazine,mag",
     "Prefix": "a",
     "Description": "The magazine is a monthly video game mag.",
     "Type": "mobile",
@@ -5567,7 +5667,7 @@
             "Property": "state",
             "Equality": "!*",
             "Value": "wearing",
-            "PassResponse": "You drop the moustache.",
+            "PassResponse": "You dropped the moustache.",
             "FailResponse": "You try to drop the moustache, but it is still attached to your face."
           }
         ]
@@ -5862,10 +5962,10 @@
     "State": "It secures your bike to the bike rack."
   },
   {
-    "Name": "shovel",
+    "Name": "shovel,spade",
     "Prefix": "a",
     "Description": "The shovel is very worn but solid. It has broad shoulders to drive into the ground with sturdy footwear.",
-    "Help": "Shovels are great for digging.",
+    "Help": "Instead of typing \"dig\" type \"use shovel\".",
     "Type": "mobile",
     "Actions": [
       {
@@ -5952,7 +6052,7 @@
             "Property": "state",
             "Equality": "!*",
             "Value": "wearing",
-            "PassResponse": "You drop the sunglasses.",
+            "PassResponse": "You dropped the sunglasses.",
             "FailResponse": "You try to drop the sunglasses, but they are still attached to your face."
           }
         ]
@@ -6027,7 +6127,7 @@
             "Property": "location",
             "Equality": "=",
             "Value": "athletics field",
-            "PassResponse": "You hand your swimming certificate to Mr Ball, who takes it and squints at it. \"What's this?\" he barks before scrutinising it further. \"I can barely read this, and it stinks of chlorine... but I guess you've done your laps.\" he huffs.",
+            "PassResponse": "You hand your swimming certificate to Mr Ball, who takes it and squints at it. \"What's this?\" he barks before scrutinising it further. \"I can barely read this, and it stinks of chlorine... but I guess you've done your laps.\" he huffs before handing it back.",
             "FailResponse": "There is no one here who wants your swimming certificate."
           }
         ]

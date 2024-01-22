@@ -3,8 +3,13 @@ import { TextField } from "@mui/material";
 import { Parse } from "../utils/Parse";
 import { Process } from "../utils/Process";
 import { Check } from "../utils/Check";
-import { Carat } from "../content/Constants";
-import { getView, getExits, getLocationDescription, capitalizeFirstLetter } from "../utils/Utils";
+import { Carat, HistoryLimit } from "../content/Constants";
+import {
+  getView,
+  getExits,
+  getLocationDescription,
+  capitalizeFirstLetter,
+} from "../utils/Utils";
 import { getLocation } from "../utils/ItemQueries";
 
 type CommandType = {
@@ -32,7 +37,13 @@ export default function Input(props: CommandType) {
 
   const act = (scopedInput: string) => {
     let newLog = [...props.log];
+
     newLog.push(`${Carat} ${scopedInput}`);
+
+    // If newLog length exceeds 200, remove the first 10 elements
+    if (newLog.length > HistoryLimit) {
+      newLog = newLog.slice(10);
+    }
 
     //#region parse scopedInput
     let request = Parse(scopedInput, props.items);

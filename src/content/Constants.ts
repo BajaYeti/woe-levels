@@ -1,4 +1,4 @@
-export const AppVersion = "113";
+export const AppVersion = "114";
 export const AppTitle = "Woe Levels";
 export const AppAuthor = "BajaYeti";
 export const LocalStoargeKey = "woe-levels";
@@ -21,17 +21,20 @@ export const Load = "load";
 export const Save = "save";
 export const Examine = "examine";
 export const Where = "where";
-export const Go = "go";
 export const FrontStreet = "front street";
 export const Version = "version";
+export const Hidden = "hidden";
 export const InventoryLimit = 5;
+export const HistoryLimit = 300;
 
 export const AboutResponse =
   "Woe Levels: A text adventure conceived and set in the 1980s, a mere 40 years in the making. Based on school life in a typical British comprehensive school, your goal is to collect all your misplaced homework assignments, submit them to the appropriate teachers and get home.";
 
-export const InstructionsResponse = `Type 'verb noun' actions. Nouns are multi-word items or people, 
+export const QuickInstructions = `Type "instructions" if you have never played a text adventure before.`
+
+  export const InstructionsResponse = `Type "verb noun" actions. Nouns are multi-word items or people, 
   each having a collection of specific verbs, for example:|
-  - get lamp|- rub lamp|- light lamp|
+  - get lamp|- rub lamp|- drop lamp|
   Nonspecific verbs include:|
   - Move; north (n), northeast (ne), east (e), southeast (se), south (s), southwest (sw), west (w), northwest (nw), in (i), out (o), up (u) and down (d).|
   - Interact; look (l), inventory (inv) and help (h).|

@@ -20,7 +20,7 @@ import {
   InventoryLimit,
   Count,
   Where,
-  Go,
+  Hidden,
 } from "../content/Constants";
 import { Truncations } from "../content/Constants";
 import {
@@ -493,53 +493,18 @@ export function Parse(input: string, items: Item[]): MyRequest {
         } as Action,
       } as MyRequest;
     }
+    let location = item?.Location === Hidden ? "nowhere" : item?.Location;
     return {
       OK: false,
       Look: { Refresh: false, Brevity: true },
       Action: {
         UnconditionalResponse: `You close your eyes and concentrate on where you last saw ${
           item?.Prefix === undefined ? "" : item?.Prefix
-        } ${primaryAlias(item)}... \"${item?.Location}\" springs to mind.`,
+        } ${primaryAlias(item)}... \"${location}\" springs to mind.`,
       } as Action,
     } as MyRequest;
   }
   //#endregion
-
-  //#region GO
-  if (verb === Go) {
-    console.log("noun", noun);
-    console.log("verb", verb);
-    let target = getItemByName(items, noun);
-    console.log("target", target);
-    if (
-      target === null ||
-      target === undefined ||
-      target.Count === undefined ||
-      Number.isNaN(target.Count)
-    ) {
-      return {
-        OK: false,
-        Look: { Refresh: false, Brevity: true },
-        Action: {
-          UnconditionalResponse: `You close your eyes and think \"${noun}\", but it doesn't ring any bells.`,
-        } as Action,
-      } as MyRequest;
-    }
-    return {
-      OK: true,
-      Look: { Refresh: true, Brevity: true },
-      Action: {
-        UnconditionalResponse: `You close your eyes, think of \"${noun}\", recall the route and quickly follow it.`,
-        Updates: [
-          {
-            TargetItem: Player,
-            Property: Location,
-            Value: primaryAlias(target),
-          } as Update,
-        ],
-      } as Action,
-    } as MyRequest;
-  }
 
   //#endregion
 

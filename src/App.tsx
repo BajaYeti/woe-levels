@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 import History from "./components/History";
 import React from "react";
 import World from "../src/content/World.json";
-import { AboutResponse, InstructionsResponse } from "./content/Constants";
+import { AboutResponse, QuickInstructions } from "./content/Constants";
 
 function App() {
   //#region ThemeProvider
@@ -61,7 +61,7 @@ function App() {
   const [log, setLog] = React.useState<string[]>([
     AboutResponse,
     ".",
-    InstructionsResponse,
+    QuickInstructions,
     ".",
   ]);
   //#endregion

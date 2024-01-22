@@ -1,5 +1,5 @@
 import { getItemByName } from "./ItemQueries";
-import { okString } from "./Utils";
+import { okObject, okString, valuesEqual, valuesLike } from "./Utils";
 
 /**
  * Check all conditions for an action
@@ -18,7 +18,7 @@ export function Check(action: Action, items: Array<Item>): Check {
 
   let checked: Array<Check> = action.Conditions.map((c) => {
     let item = getItemByName(items, c.Item);
-    if (item === null || item === undefined) {
+    if (!okObject(item) === null || item === undefined) {
       return { OK: false, Feedback: "Uh oh!" };
     }
 
@@ -33,44 +33,31 @@ export function Check(action: Action, items: Array<Item>): Check {
         break;
     }
 
-    //if state undefined, just return fail
-    if (value === null || value === undefined) {
-      return { OK: false, Feedback: c.FailResponse };
-    }
-
     //check condition against value using the equality operator
     switch (c.Equality) {
       case "!":
-        //does not equal
-        if (value !== c.Value.toLowerCase()) {
-          return { OK: true, Feedback: c.PassResponse };
-        } else {
-          return { OK: false, Feedback: c.FailResponse };
-        }
+        //DOES NOT EQUAL
+        return valuesEqual(value, c.Value)
+          ? { OK: false, Feedback: c.FailResponse }
+          : { OK: true, Feedback: c.PassResponse };
 
       case "*":
-        //like/contains
-        if (value.includes(c.Value.toLowerCase())) {
-          return { OK: true, Feedback: c.PassResponse };
-        } else {
-          return { OK: false, Feedback: c.FailResponse };
-        }
+        //LIKE
+        return valuesLike(value, c.Value)
+          ? { OK: true, Feedback: c.PassResponse }
+          : { OK: false, Feedback: c.FailResponse };
 
       case "!*":
-        //is not like, does not contain
-        if (!value.includes(c.Value.toLowerCase())) {
-          return { OK: true, Feedback: c.PassResponse };
-        } else {
-          return { OK: false, Feedback: c.FailResponse };
-        }
+        //NOT LIKE
+        return valuesLike(value, c.Value)
+          ? { OK: false, Feedback: c.FailResponse }
+          : { OK: true, Feedback: c.PassResponse };
 
       default:
-        //Equals exactly
-        if (value === c.Value.toLowerCase()) {
-          return { OK: true, Feedback: c.PassResponse };
-        } else {
-          return { OK: false, Feedback: c.FailResponse };
-        }
+        //EQUALS
+        return valuesEqual(value, c.Value)
+          ? { OK: true, Feedback: c.PassResponse }
+          : { OK: false, Feedback: c.FailResponse };
     }
   });
 

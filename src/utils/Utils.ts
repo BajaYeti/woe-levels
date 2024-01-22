@@ -1,8 +1,5 @@
 import { Moves, Person } from "../content/Constants";
-import {
-  getCarriedItems,
-  getVisibleItems,
-} from "./ItemQueries";
+import { getCarriedItems, getVisibleItems } from "./ItemQueries";
 
 export function getExits(location: Item | undefined): string {
   if (location === undefined) {
@@ -138,18 +135,7 @@ export function isVersionLessThan(
   if (v1 === undefined || v2 === undefined) {
     return false;
   }
-  const parts1 = v1.replace("V", "").split(".").map(Number);
-  const parts2 = v2.replace("V", "").split(".").map(Number);
-
-  for (let i = 0; i < parts1.length; i++) {
-    if (parts1[i] < parts2[i]) {
-      return true;
-    } else if (parts1[i] > parts2[i]) {
-      return false;
-    }
-  }
-
-  return false;
+  return v1 < v2;
 }
 
 export function inCsv(csv: string, str: string): boolean {
@@ -169,4 +155,27 @@ export function okString(obj: any): boolean {
 
 export function primaryAlias(item: Item): string {
   return item?.Name?.split(",")[0];
+}
+
+export function valuesEqual(
+  str1: string | undefined,
+  str2: string | undefined
+): boolean {
+  if (str1 === undefined && str2 === undefined) {
+    return true;
+  }
+  if (str1 === undefined || str2 === undefined) {
+    return false;
+  }
+  return str1.toLowerCase() === str2.toLowerCase();
+}
+
+export function valuesLike(
+  str1: string | undefined,
+  str2: string | undefined
+): boolean {
+  if (str1 === undefined || str2 === undefined) {
+    return str1 === str2;
+  }
+  return str1.toLowerCase().includes(str2);
 }
