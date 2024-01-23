@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/woe-levels/static/css/main.64c6e761.css",
-    "main.js": "/woe-levels/static/js/main.d5dc46ab.js",
+    "main.js": "/woe-levels/static/js/main.f3ae7bc5.js",
     "index.html": "/woe-levels/index.html",
     "main.64c6e761.css.map": "/woe-levels/static/css/main.64c6e761.css.map",
-    "main.d5dc46ab.js.map": "/woe-levels/static/js/main.d5dc46ab.js.map"
+    "main.f3ae7bc5.js.map": "/woe-levels/static/js/main.f3ae7bc5.js.map"
   },
   "entrypoints": [
     "static/css/main.64c6e761.css",
-    "static/js/main.d5dc46ab.js"
+    "static/js/main.f3ae7bc5.js"
   ]
 }
