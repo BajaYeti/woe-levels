@@ -2,7 +2,7 @@
   {
     "Type": "version",
     "Name": "version",
-    "Description": "105"
+    "Description": "106"
   },
   {
     "Name": "bunsen burner,bunsen,burner",
@@ -4777,7 +4777,7 @@
   {
     "Name": "flag",
     "Prefix": "a",
-    "Description": "old and tatty, it has the school's faded emblem screen-printed on each side of the flag. the school emblem is an image of a tree and a motivated student which is supposed to represent learning growing acorns into mighty oaks, but instead it looks more like a pupil fleeing a poisonous gas cloud.",
+    "Description": "The flag is old and worn; it has the school's faded emblem screen-printed on each side of the flag. The school emblem is an image of a tree and a motivated student, which is supposed to represent learning to grow acorns into mighty oaks.",
     "Help": "A flag is also known as a standard.",
     "Type": "mobile",
     "Actions": [
