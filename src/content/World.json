@@ -2,7 +2,7 @@
   {
     "Type": "version",
     "Name": "version",
-    "Description": "106"
+    "Description": "107"
   },
   {
     "Name": "bunsen burner,bunsen,burner",
@@ -2198,7 +2198,7 @@
   },
   {
     "Name": "kitchen",
-    "Description": "The kitchen is significant on an industrial scale; the floor is covered in practical tiles, and oversized cooking utensils hang around the room above large sinks and cookers - even the supplies are oversized to cater for all the pupils and staff. It has a perma-small of cooked food.",
+    "Description": "The kitchen is significant on an industrial scale; the floor is covered in practical tiles, and oversized cooking utensils hang around the room above large sinks and cookers - even the supplies are oversized to cater for all the pupils and staff. It has a perma-smell of cooked food.",
     "Help": "You aren't allowed in the kitchen, it's too dangerous for pupils, although you will be expected to use a kitchen for the rest of your life, so it can't be that bad.",
     "Type": "location",
     "Actions": [

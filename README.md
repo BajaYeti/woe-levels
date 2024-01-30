@@ -1,33 +1,32 @@
-# woe-levels-public
-Public app to test GitHub Pages
+# Woe Levels
+A React.js SPA 2text adventure/interactive fiction" engine with simple verb/noun parser.
 
 ## To deploy to GitHub Pages
  - https://youtu.be/Q9n2mLqXFpU?si=91REn4J6yImnTXAx
 
-to install:
+To install gh-pages:
 ```
 npm install gh-pages
 ```
 
-Add the following to package.json:
+Then add the following to package.json:
 root:
 ```
 "homepage": "http://BajaYeti.github.io/woe-levels",
 ```
 
-
-scripts:
+Update scripts section of package.json:
 ```
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
 ```
 
-to deploy, type:
+To deploy, type:
 ```
 npm run deploy
 ```
 
-## Engine
+## Engine Sequence Diagram
 - https://mermaid.js.org/syntax/sequenceDiagram.html#messages
 
 ``` mermaid
